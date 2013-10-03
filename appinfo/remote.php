@@ -17,9 +17,8 @@ if(!$urlParser->isValid()) {
   exit();
 }
 
-OCA_mozilla_sync\Utils::generateMozillaTimestamp();
-
 if($service === 'userapi') {
+  OCA_mozilla_sync\Utils::generateMozillaTimestamp();
   $userService = new OCA_mozilla_sync\UserService($urlParser);
   $userService->run();
 }

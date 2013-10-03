@@ -299,7 +299,7 @@ class StorageService extends Service
 	* X-Weave-Records: 9
 	* X-Weave-Timestamp: 1332692961.71
 	*
-	* [16.1923828125, null]
+	* {"passwords": 574, "tabs": 2, "clients": 4 }
 	*
 	* @param integer $userId
 	* @return bool true if success
@@ -396,13 +396,10 @@ class StorageService extends Service
 			return false;
 		}
 
-		// array used in id only request
-		$resultIdArray = array();
-
-		$hasData = false;
+		// results are sent in a JSON list
+		$resultArray = array();
 
 		while (($row = $result->fetchRow())) {
-			$hasData = true;
 
             // Return modified as float, not string
             if ($row['modified'] != null) {
@@ -410,24 +407,19 @@ class StorageService extends Service
             }
 
 			if(isset($modifiers['full'])) {
-				OutputData::write($row);
+                $resultArray[] = $row;
 			}
 			else{
-				$resultIdArray[] = $row['id'];
+				$resultArray[] = $row['id'];
 			}
 		}
 
-		// No data
-		if($hasData == false) {
-			Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
-			return true;
-		}
+        // Set number of elements in header
+        header('X-Weave-Records: ' . count($resultArray));
 
-		if(!isset($modifiers['full'])) {
-			OutputData::write($resultIdArray);
-		}
+		OutputData::write($resultArray);
 
-		return true;
+        return true;
 	}
 
 	/**
@@ -475,9 +467,11 @@ class StorageService extends Service
 		}
 
 		$resultArray["success"] = $successArray;
-		$resultArray["failed"] = $failedArray;
+        // The failed field is a hash containing arrays
+		$resultArray["failed"] = (object) $failedArray;
 
-		OutputData::write($resultArray);
+        // Return modification time in X-Weave-Timestamp header
+		OutputData::write($resultArray, $modifiedTime);
 		return true;
 	}
 
@@ -597,7 +591,8 @@ class StorageService extends Service
 			return false;
 		}
 
-		OutputData::write($modifiedTime);
+        // Return the same modification time in payload and X-Weave-Timestamp header
+		OutputData::write($modifiedTime, $modifiedTime);
 	}
 
 	/**
