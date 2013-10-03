@@ -24,8 +24,9 @@ namespace OCA_mozilla_sync;
 */
 class OutputData
 {
-	const NewLineFormat         = 0;
+	const NewlinesFormat        = 0;
 	const LengthFormat          = 1;
+    const JsonFormat            = 2;
 
 	const ConstOutputNormal     = 0;
 	const ConstOutputBuffer     = 1;
@@ -41,21 +42,29 @@ class OutputData
 	*
 	* @param any $output
 	*/
-	static public function write($output) {
+	static public function write($output, $modifiedTime=null) {
+
+        if ($modifiedTime == null) {
+            $modifiedTime = Utils::getMozillaTimestamp();
+        }
+
+        header('X-Weave-Timestamp: ' . $modifiedTime);
 
 		// write simple output
 		if(gettype($output) != 'array') {
 			self::writeOutput($output);
 		}
 		// write json encoded output
-		else{
-			if(OutputData::getOutputFormat() == self::NewLineFormat) {
-				self::writeNewLineFormat($output);
-			}
-			else{
-				self::writeLengthFormat($output);
-			}
-		}
+        else {
+            switch(OutputData::getOutputFormat()) {
+                case self::NewlinesFormat:
+                    self::writeNewlinesFormat($output); break;
+                case self::LengthFormat:
+                    self::writeLengthFormat($output); break;
+                case self::JsonFormat:
+                    self::writeJsonFormat($output); break;
+            }
+        }
 	}
 
 	/**
@@ -71,23 +80,49 @@ class OutputData
 	*                            Newlines in the body of the json object are replaced by ‘u000a’
 	*/
 	static private function getOutputFormat() {
-		if( isset($_SERVER['HTTP_ACCEPT']) && stristr($_SERVER['HTTP_ACCEPT'], 'application/whoisi') ) {
+		if( isset($_SERVER['HTTP_ACCEPT']) && stristr($_SERVER['HTTP_ACCEPT'], 'application/newlines') ) {
+			return self::NewlinesFormat;
+		}
+		else if( isset($_SERVER['HTTP_ACCEPT']) && stristr($_SERVER['HTTP_ACCEPT'], 'application/whoisi') ) {
 			return self::LengthFormat;
 		}
-		return self::NewLineFormat;
+		return self::JsonFormat;
 	}
 
-	static private function writeNewLineFormat($outputArray) {
+	static private function writeJsonFormat($outputArray) {
+        header('Content-Type: application/json');
+
 		self::writeOutput(json_encode($outputArray));
-		self::writeOutput("\n");
 	}
+
+    static private function writeNewlinesFormat($outputArray) {
+        header('Content-Type: application/newlines');
+
+        $output = '';
+        foreach ($outputArray as $value) {
+            $output = $output . json_encode($value) . "\n";
+        }
+
+        self::writeOutput($output);
+    }
 
 	static private function writeLengthFormat($outputArray) {
-		//TODO: application/whoisi ouput format
+        header('Content-Type: application/whoisi');
+
+        $output = '';
+        foreach ($outputArray as $value) {
+            $json_obj = json_encode($value);
+            $json_len = strlen($json_obj);
+
+            $output = $output . pack('N', $json_len) . $json_obj;
+        }
+
+        self::writeOutput($output);
 	}
 
 	static private function writeOutput($outputString) {
 		if(self::$outputFlag == self::ConstOutputNormal) {
+            header('Content-Length: ' . strlen($outputString));
 			print $outputString;
 		}
 		else{
