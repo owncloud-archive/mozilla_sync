@@ -28,3 +28,6 @@ abstract class Service
 	protected $urlParser;
 	protected $inputData;
 }
+
+
+/* vim: set ts=4 sw=4 tw=80 noet : */

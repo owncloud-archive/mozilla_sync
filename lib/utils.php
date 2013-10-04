@@ -232,3 +232,5 @@ class Utils
 		return 'storageapi';
 	}
 }
+
+/* vim: set ts=4 sw=4 tw=80 noet : */

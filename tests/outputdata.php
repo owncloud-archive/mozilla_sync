@@ -56,3 +56,6 @@ class Test_OutputData extends PHPUnit_Framework_TestCase {
   }
 
 }
+
+
+/* vim: set ts=4 sw=4 tw=80 noet : */
