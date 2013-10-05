@@ -6,6 +6,16 @@ Description:
 Simple ownCloud app integrating the Mozilla Sync API.
 It allows users to synchronize Firefox data (e.g. bookmarks, passwords, history,...) using their ownCloud server.
 
+Firefox on Android:
+-------------------
+Firefox on Android uses the ````RC4-SHA```` SSL cipher suite.
+This must be enabled on your server in order for synchronization to work with Firefox on your smartphone or tablet.
+
+If you use nginx you can add the following to your ````nginx.conf````:
+````
+ssl_ciphers HIGH:RC4-SHA:!aNULL:!MD5;
+````
+
 Maintainers:
 ------------
 Mozilla Sync is currently maintained by [@ogasser](https://github.com/ogasser).
