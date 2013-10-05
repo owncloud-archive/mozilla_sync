@@ -315,7 +315,8 @@ class StorageService extends Service
 			return false;
 		}
 
-		$size = ((float) ($result->fetchRow()['size']))/1000.0;
+		$row = $result->fetchRow();
+		$size = ((float) ($row['size']))/1000.0;
 
 		OutputData::write(array($size, null));
 		return true;
