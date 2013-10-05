@@ -10,7 +10,6 @@ class Test_OutputData extends PHPUnit_Framework_TestCase {
 
 	OCA_mozilla_sync\OutputData::write('test 1');
 	$this->assertTrue(OCA_mozilla_sync\OutputData::$outputBuffer === 'test 1');
-
   }
 
   function test_JsonOutput() {
@@ -46,16 +45,13 @@ class Test_OutputData extends PHPUnit_Framework_TestCase {
 	$this->assertTrue(OCA_mozilla_sync\OutputData::$outputBuffer === $outputBuffer);
   }
 
-  function test_EmptyArray()
-  {
+  function test_EmptyArray() {
 	OCA_mozilla_sync\OutputData::$outputFlag = OCA_mozilla_sync\OutputData::ConstOutputBuffer;
 	OCA_mozilla_sync\OutputData::$outputBuffer = '';
 
 	OCA_mozilla_sync\OutputData::write( array() );
 	$this->assertTrue(OCA_mozilla_sync\OutputData::$outputBuffer === "[]\n");
   }
-
 }
-
 
 /* vim: set ts=4 sw=4 tw=80 noet : */

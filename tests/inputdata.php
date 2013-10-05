@@ -36,9 +36,7 @@ class Test_InputData extends PHPUnit_Framework_TestCase {
 
 		$InputData = new OCA_mozilla_sync\InputData($json_input);
 		$this->assertFalse($InputData->isValid());
-
 	}
-
 }
 
 /* vim: set ts=4 sw=4 tw=80 noet : */

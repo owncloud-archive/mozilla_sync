@@ -644,9 +644,6 @@ class StorageService extends Service
 		OutputData::write(Utils::getMozillaTimestamp());
 		return true;
 	}
-
 }
-
-
 
 /* vim: set ts=4 sw=4 tw=80 noet : */

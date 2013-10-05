@@ -63,7 +63,6 @@ class Test_UserService extends PHPUnit_Framework_TestCase {
 	$this->userExist();
 	$this->assertTrue(OCA_mozilla_sync\Utils::$lastStatus == OCA_mozilla_sync\Utils::STATUS_OK);
 	$this->assertTrue(OCA_mozilla_sync\OutputData::$outputBuffer === '0');
-
   }
 
   /**
@@ -129,7 +128,6 @@ class Test_UserService extends PHPUnit_Framework_TestCase {
 	$this->userExist();
 	$this->assertTrue(OCA_mozilla_sync\Utils::$lastStatus == OCA_mozilla_sync\Utils::STATUS_OK);
 	$this->assertTrue(OCA_mozilla_sync\OutputData::$outputBuffer === '1');
-
   }
 
   /**
@@ -227,7 +225,6 @@ class Test_UserService extends PHPUnit_Framework_TestCase {
 	$urlParser = new OCA_mozilla_sync\UrlParser('/1.0/'. $this->userHash);
 	$userService = new OCA_mozilla_sync\UserService($urlParser, $inputData);
 	$userService->run();
-
   }
 
   private function deleteUser() {
@@ -241,10 +238,7 @@ class Test_UserService extends PHPUnit_Framework_TestCase {
 	$urlParser = new OCA_mozilla_sync\UrlParser('/1.0/'. $this->userHash);
 	$userService = new OCA_mozilla_sync\UserService($urlParser);
 	$userService->run();
-
   }
-
 }
-
 
 /* vim: set ts=4 sw=4 tw=80 noet : */

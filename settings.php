@@ -6,7 +6,6 @@ $email = OCP\Config::getUserValue(OCP\User::getUser(), 'settings', 'email');
 //no email address set
 if($email === null) {
   $tmpl = new OCP\Template( 'mozilla_sync', 'noemail');
-
 }
 else{
   $tmpl = new OCP\Template( 'mozilla_sync', 'settings');
@@ -15,6 +14,5 @@ else{
 }
 
 return $tmpl->fetchPage();
-
 
 /* vim: set ts=4 sw=4 tw=80 noet : */

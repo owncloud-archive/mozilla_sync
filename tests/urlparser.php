@@ -10,14 +10,12 @@ class Test_UrlParser extends PHPUnit_Framework_TestCase {
 	$this->assertTrue($urlParser->getUserName() === 'aaa');
 	$this->assertTrue($urlParser->getVersion() === '1.0');
 	$this->assertTrue($urlParser->getCommands() === array());
-
   }
 
   function testUserApi_2() {
 
 	$urlParser = new OCA_mozilla_sync\UrlParser('/1.0/');
 	$this->assertFalse($urlParser->isValid());
-
   }
 
   function testUserApi_3() {
@@ -86,8 +84,6 @@ class Test_UrlParser extends PHPUnit_Framework_TestCase {
 	$modifierArray = array('full' => '1', 'ids' => array('1', '2', '3', '{12345}'));
 	$this->assertTrue($urlParser->getCommandModifiers(1) === $modifierArray);
   }
-
 }
-
 
 /* vim: set ts=4 sw=4 tw=80 noet : */
