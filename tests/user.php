@@ -9,7 +9,10 @@ class Test_User extends PHPUnit_Framework_TestCase {
 	}
 
 	function test() {
-    // TODO
+	// TODO
 	}
 
 }
+
+
+/* vim: set ts=4 sw=4 tw=80 noet : */

@@ -149,3 +149,6 @@ class User
 		return \OCP\User::checkPassword($userId, $_SERVER['PHP_AUTH_PW']);
 	}
 }
+
+
+/* vim: set ts=4 sw=4 tw=80 noet : */

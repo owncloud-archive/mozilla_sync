@@ -263,13 +263,16 @@ class Storage
 		//
 		// limit and offset
 		//
-        if(isset($modifiers['limit'])) {
-            $limit = intval($modifiers['limit']);
-        }
-        if(isset($modifiers['offset'])) {
-            $offset = intval($modifiers['offset']);
-        }
+		if(isset($modifiers['limit'])) {
+			$limit = intval($modifiers['limit']);
+		}
+		if(isset($modifiers['offset'])) {
+			$offset = intval($modifiers['offset']);
+		}
 
 		return $whereString;
 	}
 }
+
+
+/* vim: set ts=4 sw=4 tw=80 noet : */
