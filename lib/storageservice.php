@@ -165,7 +165,7 @@ class StorageService extends Service
 			}
 
 			$key = $row['name'];
-            // Return modified as float, not string
+			// Return modified as float, not string
 			$value = (float) $row['modified'];
 
 			$resultArray[$key] = $value;
@@ -175,7 +175,7 @@ class StorageService extends Service
 		return true;
 	}
 
-    /**
+	/**
 	* @brief Returns a hash of collections associated with the account, along with the data volume used for each (in KB).
 	*
 	* HTTP request: GET https://server/pathname/version/username/info/collection_usage
@@ -220,7 +220,7 @@ class StorageService extends Service
 			}
 
 			$key = $row['name'];
-            // Convert bytes to KB
+			// Convert bytes to KB
 			$value = ((float) $row['size'])/1000.0;
 
 			$resultArray[$key] = $value;
@@ -230,7 +230,7 @@ class StorageService extends Service
 		return true;
 	}
 
-    /**
+	/**
 	* @brief Returns a hash of collections associated with the account, along with the total number of items in each collection.
 	*
 	* HTTP request: GET https://server/pathname/version/username/info/collection_counts
@@ -284,7 +284,7 @@ class StorageService extends Service
 		return true;
 	}
 
-    /**
+	/**
 	* @brief  Returns a list containing the user's current usage and quota (in KB). The second value will be null if no quota is defined.
 	*
 	* HTTP request: GET https://server/pathname/version/username/info/quota
@@ -307,15 +307,15 @@ class StorageService extends Service
 	private function getInfoQuota($userId) {
 
 		$query = \OCP\DB::prepare( 'SELECT SUM(CHAR_LENGTH(payload)) as size
-                                    FROM *PREFIX*mozilla_sync_wbo JOIN *PREFIX*mozilla_sync_collections
-                                    ON *PREFIX*mozilla_sync_wbo.collectionid = *PREFIX*mozilla_sync_collections.id WHERE userid = ?');
-        $result = $query->execute( array($userId) );
+									FROM *PREFIX*mozilla_sync_wbo JOIN *PREFIX*mozilla_sync_collections
+									ON *PREFIX*mozilla_sync_wbo.collectionid = *PREFIX*mozilla_sync_collections.id WHERE userid = ?');
+		$result = $query->execute( array($userId) );
 
-        if($result == false || $result->numRows() != 1) {
+		if($result == false || $result->numRows() != 1) {
 			return false;
 		}
 
-        $size = ((float) ($result->fetchRow()['size']))/1000.0;
+		$size = ((float) ($result->fetchRow()['size']))/1000.0;
 
 		OutputData::write(array($size, null));
 		return true;
@@ -401,25 +401,25 @@ class StorageService extends Service
 
 		while (($row = $result->fetchRow())) {
 
-            // Return modified as float, not string
-            if ($row['modified'] != null) {
-                $row['modified'] = (float) $row['modified'];
-            }
+			// Return modified as float, not string
+			if ($row['modified'] != null) {
+				$row['modified'] = (float) $row['modified'];
+			}
 
 			if(isset($modifiers['full'])) {
-                $resultArray[] = $row;
+				$resultArray[] = $row;
 			}
 			else{
 				$resultArray[] = $row['id'];
 			}
 		}
 
-        // Set number of elements in header
-        header('X-Weave-Records: ' . count($resultArray));
+		// Set number of elements in header
+		header('X-Weave-Records: ' . count($resultArray));
 
 		OutputData::write($resultArray);
 
-        return true;
+		return true;
 	}
 
 	/**
@@ -467,10 +467,10 @@ class StorageService extends Service
 		}
 
 		$resultArray["success"] = $successArray;
-        // The failed field is a hash containing arrays
+		// The failed field is a hash containing arrays
 		$resultArray["failed"] = (object) $failedArray;
 
-        // Return modification time in X-Weave-Timestamp header
+		// Return modification time in X-Weave-Timestamp header
 		OutputData::write($resultArray, $modifiedTime);
 		return true;
 	}
@@ -546,10 +546,10 @@ class StorageService extends Service
 			return true;
 		}
 
-        // Return modified as float, not string
-        if ($row['modified'] != null) {
-            $row['modified'] = (float) $row['modified'];
-        }
+		// Return modified as float, not string
+		if ($row['modified'] != null) {
+			$row['modified'] = (float) $row['modified'];
+		}
 
 		OutputData::write($row);
 		return true;
@@ -591,7 +591,7 @@ class StorageService extends Service
 			return false;
 		}
 
-        // Return the same modification time in payload and X-Weave-Timestamp header
+		// Return the same modification time in payload and X-Weave-Timestamp header
 		OutputData::write($modifiedTime, $modifiedTime);
 	}
 
