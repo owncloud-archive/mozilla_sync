@@ -402,7 +402,7 @@ class StorageService extends Service
 		while (($row = $result->fetchRow())) {
 
 			// Return modified as float, not string
-			if ($row['modified'] != null) {
+			if($row['modified'] != null) {
 				$row['modified'] = (float) $row['modified'];
 			}
 
@@ -547,7 +547,7 @@ class StorageService extends Service
 		}
 
 		// Return modified as float, not string
-		if ($row['modified'] != null) {
+		if($row['modified'] != null) {
 			$row['modified'] = (float) $row['modified'];
 		}
 

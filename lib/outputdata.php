@@ -44,7 +44,7 @@ class OutputData
 	*/
 	static public function write($output, $modifiedTime=null) {
 
-		if ($modifiedTime == null) {
+		if($modifiedTime == null) {
 			$modifiedTime = Utils::getMozillaTimestamp();
 		}
 
