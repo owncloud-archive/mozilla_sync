@@ -26,7 +26,7 @@ class OutputData
 {
 	const NewlinesFormat        = 0;
 	const LengthFormat          = 1;
-    const JsonFormat            = 2;
+	const JsonFormat            = 2;
 
 	const ConstOutputNormal     = 0;
 	const ConstOutputBuffer     = 1;
@@ -44,27 +44,27 @@ class OutputData
 	*/
 	static public function write($output, $modifiedTime=null) {
 
-        if ($modifiedTime == null) {
-            $modifiedTime = Utils::getMozillaTimestamp();
-        }
+		if($modifiedTime == null) {
+			$modifiedTime = Utils::getMozillaTimestamp();
+		}
 
-        header('X-Weave-Timestamp: ' . $modifiedTime);
+		header('X-Weave-Timestamp: ' . $modifiedTime);
 
 		// write simple output
 		if(gettype($output) != 'array') {
 			self::writeOutput($output);
 		}
 		// write json encoded output
-        else {
-            switch(OutputData::getOutputFormat()) {
-                case self::NewlinesFormat:
-                    self::writeNewlinesFormat($output); break;
-                case self::LengthFormat:
-                    self::writeLengthFormat($output); break;
-                case self::JsonFormat:
-                    self::writeJsonFormat($output); break;
-            }
-        }
+		else {
+			switch(OutputData::getOutputFormat()) {
+				case self::NewlinesFormat:
+					self::writeNewlinesFormat($output); break;
+				case self::LengthFormat:
+					self::writeLengthFormat($output); break;
+				case self::JsonFormat:
+					self::writeJsonFormat($output); break;
+			}
+		}
 	}
 
 	/**
@@ -90,39 +90,39 @@ class OutputData
 	}
 
 	static private function writeJsonFormat($outputArray) {
-        header('Content-Type: application/json');
+		header('Content-Type: application/json');
 
 		self::writeOutput(json_encode($outputArray));
 	}
 
-    static private function writeNewlinesFormat($outputArray) {
-        header('Content-Type: application/newlines');
+	static private function writeNewlinesFormat($outputArray) {
+		header('Content-Type: application/newlines');
 
-        $output = '';
-        foreach ($outputArray as $value) {
-            $output = $output . json_encode($value) . "\n";
-        }
+		$output = '';
+		foreach ($outputArray as $value) {
+			$output = $output . json_encode($value) . "\n";
+		}
 
-        self::writeOutput($output);
-    }
+		self::writeOutput($output);
+	}
 
 	static private function writeLengthFormat($outputArray) {
-        header('Content-Type: application/whoisi');
+		header('Content-Type: application/whoisi');
 
-        $output = '';
-        foreach ($outputArray as $value) {
-            $json_obj = json_encode($value);
-            $json_len = strlen($json_obj);
+		$output = '';
+		foreach ($outputArray as $value) {
+			$json_obj = json_encode($value);
+			$json_len = strlen($json_obj);
 
-            $output = $output . pack('N', $json_len) . $json_obj;
-        }
+			$output = $output . pack('N', $json_len) . $json_obj;
+		}
 
-        self::writeOutput($output);
+		self::writeOutput($output);
 	}
 
 	static private function writeOutput($outputString) {
 		if(self::$outputFlag == self::ConstOutputNormal) {
-            header('Content-Length: ' . strlen($outputString));
+			header('Content-Length: ' . strlen($outputString));
 			print $outputString;
 		}
 		else{
@@ -130,3 +130,6 @@ class OutputData
 		}
 	}
 }
+
+
+/* vim: set ts=4 sw=4 tw=80 noet : */

@@ -20,3 +20,6 @@ OC::$CLASSPATH['OCA_mozilla_sync\StorageService'] = 'mozilla_sync/lib/storageser
 OC::$CLASSPATH['OCA_mozilla_sync\UserService'] = 'mozilla_sync/lib/userservice.php';
 
 OCP\App::registerPersonal('mozilla_sync', 'settings');
+
+
+/* vim: set ts=4 sw=4 tw=80 noet : */
