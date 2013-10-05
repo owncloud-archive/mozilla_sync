@@ -11,10 +11,12 @@ Firefox on Android:
 Firefox on Android uses the ````RC4-SHA```` SSL cipher suite.
 This must be enabled on your server in order for synchronization to work with Firefox on your smartphone or tablet.
 
-If you use nginx you can add the following to your ````nginx.conf````:
+If you use *nginx* you can add the following to your ````nginx.conf````:
 ````
 ssl_ciphers HIGH:RC4-SHA:!aNULL:!MD5;
 ````
+
+If you use *apache* have a look at [the documentation](https://httpd.apache.org/docs/2.2/mod/mod_ssl.html#sslciphersuite).
 
 Maintainers:
 ------------
