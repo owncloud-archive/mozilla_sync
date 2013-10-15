@@ -379,7 +379,7 @@ class StorageService extends Service
 		// full or id modifier
 		$queryFields = '';
 		if(isset($modifiers['full'])) {
-			$queryFields = '`payload`, `name` AS `id`, `modified`, `parentid`, `predecessorid`, `sortindex`, `ttl`';
+			$queryFields = '`payload`, `name` AS `id`, `modified`, `sortindex`';
 		}
 		else{
 			$queryFields = '`name` AS `id`';
