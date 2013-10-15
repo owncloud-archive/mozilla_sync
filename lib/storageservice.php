@@ -407,6 +407,11 @@ class StorageService extends Service
 				$row['modified'] = (float) $row['modified'];
 			}
 
+			// Return sortindex as int, not string
+			if ($row['sortindex'] != null) {
+				$row['sortindex'] = (int) $row['sortindex'];
+			}
+
 			if(isset($modifiers['full'])) {
 				$resultArray[] = $row;
 			}
