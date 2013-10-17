@@ -164,9 +164,11 @@ class StorageService extends Service
 				continue;
 			}
 
+			// Cast returned values to the correct type
+			$row = $this->forceTypeCasting($row);
+
 			$key = $row['name'];
-			// Return modified as float, not string
-			$value = (float) $row['modified'];
+			$value = $row['modified'];
 
 			$resultArray[$key] = $value;
 		}
@@ -402,18 +404,9 @@ class StorageService extends Service
 
 		while (($row = $result->fetchRow())) {
 
-			// Return modified as float, not string
-			if($row['modified'] != null) {
-				$row['modified'] = (float) $row['modified'];
-			}
-
-			// Return sortindex as int, not string
-			if ($row['sortindex'] != null) {
-				$row['sortindex'] = (int) $row['sortindex'];
-			}
-
 			if(isset($modifiers['full'])) {
-				$resultArray[] = $row;
+				// Cast returned values to the correct type
+				$resultArray[] = $this->forceTypeCasting($row);
 			}
 			else{
 				$resultArray[] = $row['id'];
@@ -552,15 +545,8 @@ class StorageService extends Service
 			return true;
 		}
 
-		// Return modified as float, not string
-		if($row['modified'] != null) {
-			$row['modified'] = (float) $row['modified'];
-		}
-
-		// Return sortindex as int, not string
-		if ($row['sortindex'] != null) {
-			$row['sortindex'] = (int) $row['sortindex'];
-		}
+		// Cast returned values to the correct type
+		$row = $this->forceTypeCasting($row);
 
 		OutputData::write($row);
 		return true;
@@ -654,6 +640,30 @@ class StorageService extends Service
 
 		OutputData::write(Utils::getMozillaTimestamp());
 		return true;
+	}
+
+	/**
+	* @brief Casts result rows to correct type
+	*
+	* Some implementations (e.g. PHP 5.3 in combination with MySQL 5.5) don't return the
+	* correct type in JSON. To fix this we explicitly cast the values that have been
+	* returned by the database.
+	*
+	* Casts <code>modified</code> to float, <code>sortindex</code> to int.
+	*
+	* @param array $row row returned from the database
+	* @return array $row row with explicitly casted types
+	*/
+	private function forceTypeCasting($row) {
+		// Return modified as float, not string
+		if($row['modified'] != null) {
+			$row['modified'] = (float) $row['modified'];
+		}
+		// Return sortindex as int, not string
+		if ($row['sortindex'] != null) {
+			$row['sortindex'] = (int) $row['sortindex'];
+		}
+		return $row;
 	}
 }
 
