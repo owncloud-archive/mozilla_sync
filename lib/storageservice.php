@@ -313,7 +313,7 @@ class StorageService extends Service
 									ON *PREFIX*mozilla_sync_wbo.collectionid = *PREFIX*mozilla_sync_collections.id WHERE userid = ?');
 		$result = $query->execute( array($userId) );
 
-		if($result == false || $result->numRows() != 1) {
+		if($result == false || ((int) $result->numRows()) !== 1) {
 			return false;
 		}
 
