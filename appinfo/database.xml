@@ -36,7 +36,7 @@
       </field>
 
       <index>
-        <name>*dbprefix*mozilla_sync_users_sync_user</name>
+        <name>mozilla_sync_users_sync_user</name>
         <field>
           <name>sync_user</name>
           <sorting/>
@@ -78,7 +78,7 @@
       </field>
 
       <index>
-        <name>*dbprefix*mozilla_sync_collections_userid_name</name>
+        <name>mozilla_sync_collections_userid_name</name>
         <field>
           <name>userid</name>
           <sorting/>
@@ -173,7 +173,7 @@
       </field>
 
       <index>
-        <name>*dbprefix*mozilla_sync_wbo_collectionid</name>
+        <name>mozilla_sync_wbo_collectionid</name>
         <field>
           <name>collectionid</name>
           <sorting/>
@@ -181,7 +181,7 @@
       </index>
 
       <index>
-        <name>*dbprefix*mozilla_sync_wbo_coll_name</name>
+        <name>mozilla_sync_wbo_coll_name</name>
         <field>
           <name>collectionid</name>
           <sorting/>
@@ -193,7 +193,7 @@
       </index>
 
       <index>
-        <name>*dbprefix*mozilla_sync_wbo_coll_name_mod</name>
+        <name>mozilla_sync_wbo_coll_name_mod</name>
         <field>
           <name>collectionid</name>
           <sorting/>
