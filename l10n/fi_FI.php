@@ -1,7 +1,7 @@
 <?php $TRANSLATIONS = array(
-"Mozilla Sync Service" => "Mozilla-synkronointipalvelu",
-"Please set your email address in account settings" => "Aseta sähköpostiosoitteesi tilin asetuksissa",
+"Mozilla Sync" => "Mozilla-synkronointipalvelu",
+"Please fill in an email address in your account settings" => "Aseta sähköpostiosoitteesi tilin asetuksissa",
 "Email" => "Sähköpostiosoite",
-"Password and Confirmation" => "Salasana ja vahvistus",
+"Password" => "Salasana ja vahvistus",
 "Server address" => "Palvelimen osoite"
 );

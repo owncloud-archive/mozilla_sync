@@ -1,7 +1,7 @@
 <?php $TRANSLATIONS = array(
-"Mozilla Sync Service" => "Услуга Мозила усклађивања",
-"Please set your email address in account settings" => "Унесите е-адресу у подешавањима налога",
+"Mozilla Sync" => "Услуга Мозила усклађивања",
+"Please fill in an email address in your account settings" => "Унесите е-адресу у подешавањима налога",
 "Email" => "Е-пошта",
-"Password and Confirmation" => "Лозинка и потврда",
+"Password" => "Лозинка и потврда",
 "Server address" => "Адреса сервера"
 );

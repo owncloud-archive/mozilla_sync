@@ -1,7 +1,7 @@
 <?php $TRANSLATIONS = array(
-"Mozilla Sync Service" => "Serwis Mozilla Sync",
-"Please set your email address in account settings" => "Proszę ustawić adres e-mail w ustawieniach konta",
+"Mozilla Sync" => "Serwis Mozilla Sync",
+"Please fill in an email address in your account settings" => "Proszę ustawić adres e-mail w ustawieniach konta",
 "Email" => "Email",
-"Password and Confirmation" => "Hasło i potwierdzenie",
+"Password" => "Hasło i potwierdzenie",
 "Server address" => "Adres Serwera"
 );

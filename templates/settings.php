@@ -1,5 +1,5 @@
 <fieldset class="personalblock">
-	<legend><?php p($l->t('Mozilla Sync Service')); ?></legend>
+	<legend><?php p($l->t('Mozilla Sync')); ?></legend>
     <table class="nostyle">
 
       <tr>
@@ -7,7 +7,7 @@
         <td><?php p($_['email']);?></td>
       </tr>
       <tr>
-        <td><label class="bold"><?php p($l->t('Password and Confirmation'));?></label></td>
+        <td><label class="bold"><?php p($l->t('Password'));?></label></td>
         <td>Use your owncloud account password</td>
       </tr>
       <tr>
