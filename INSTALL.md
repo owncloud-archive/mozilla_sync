@@ -20,10 +20,10 @@ To completely uninstall Mozilla Sync, *deactivate/uninstall* it in your ownCloud
 Finally, delete all four entries related to the app from the ````oc_appconfig```` table by executing the following SQL statement:
 
 ````
-DELETE FROM oc_appconfig WHERE oc_appconfig.appid = 'mozilla_sync' AND oc_appconfig.configkey = 'types' AND oc_appconfig.configvalue = '' LIMIT 1;
-DELETE FROM oc_appconfig WHERE oc_appconfig.appid = 'core' AND oc_appconfig.configkey = 'remote_mozilla_sync' AND oc_appconfig.configvalue = 'mozilla_sync/appinfo/remote.php' LIMIT 1;
-DELETE FROM oc_appconfig WHERE oc_appconfig.appid = 'mozilla_sync' AND oc_appconfig.configkey = 'installed_version' AND oc_appconfig.configvalue = '1.0' LIMIT 1;
-DELETE FROM oc_appconfig WHERE oc_appconfig.appid = 'mozilla_sync' AND oc_appconfig.configkey = 'enabled' AND oc_appconfig.configvalue = 'no' LIMIT 1;
+DELETE FROM oc_appconfig WHERE oc_appconfig.appid = 'mozilla_sync' AND oc_appconfig.configkey = 'types';
+DELETE FROM oc_appconfig WHERE oc_appconfig.appid = 'core' AND oc_appconfig.configkey = 'remote_mozilla_sync';
+DELETE FROM oc_appconfig WHERE oc_appconfig.appid = 'mozilla_sync' AND oc_appconfig.configkey = 'installed_version';
+DELETE FROM oc_appconfig WHERE oc_appconfig.appid = 'mozilla_sync' AND oc_appconfig.configkey = 'enabled';
 ````
 
 Now you have completely removed Mozilla Sync and are free to do a clean reinstall of the app.
