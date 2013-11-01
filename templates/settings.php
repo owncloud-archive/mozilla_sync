@@ -15,7 +15,4 @@
         <td><?php p($_['syncaddress']);?></td>
       </tr>
     </table>
-    Video tutorial on Mozilla Sync Service configuration can be found at
-    <a href="http://www.mozilla.org/en-US/firefox/video/?video=fx4-sync-instructions">
-    http://www.mozilla.org/en-US/firefox/video/?video=fx4-sync-instructions</a>
 </fieldset>
