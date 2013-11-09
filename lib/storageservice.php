@@ -656,15 +656,18 @@ class StorageService extends Service
 	*/
 	private function forceTypeCasting($row) {
 		// Return modified as float, not string
-		if($row['modified'] != null) {
+		if (is_null($row['modified'])) {
+			unset($row['modified']);
+		} else {
 			$row['modified'] = (float) $row['modified'];
 		}
 		// Return sortindex as int, not string
-		if ($row['sortindex'] != null) {
+		if (is_null($row['sortindex'])) {
+			unset($row['sortindex']);
+		} else {
 			$row['sortindex'] = (int) $row['sortindex'];
 		}
 		return $row;
 	}
-}
 
 /* vim: set ts=4 sw=4 tw=80 noet : */
