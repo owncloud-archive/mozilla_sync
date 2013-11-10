@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.net
+
+[owncloud.mozilla_sync]
+file_filter = <lang>/mozilla_sync.po
+source_file = templates/mozilla_sync.pot
+source_lang = en
+type = PO
+
