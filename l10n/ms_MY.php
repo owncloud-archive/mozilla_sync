@@ -1,5 +1,5 @@
 <?php $TRANSLATIONS = array(
 "Email" => "Email",
-"Password and Confirmation" => "Katalaluan dan konfirmasi",
+"Password" => "Katalaluan dan konfirmasi",
 "Server address" => "Alamat pelayan"
 );
