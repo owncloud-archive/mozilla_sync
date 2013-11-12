@@ -14,4 +14,5 @@
         <td><?php p($_['syncaddress']);?></td>
       </tr>
     </table>
+    <?php p($l->t("Once set up, additional devices can be added via Mozilla's device pairing service or manually."));?>
 </fieldset>
