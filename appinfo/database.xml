@@ -144,6 +144,7 @@
         <name>modified</name>
         <type>decimal</type>
         <notnull>true</notnull>
+        <default>0.00</default>
         <length>15</length>
       </field>
 
