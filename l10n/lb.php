@@ -1,3 +1,4 @@
 <?php $TRANSLATIONS = array(
-"Email" => "Email"
+"Email" => "Email",
+"Server address" => "Server Adress"
 );

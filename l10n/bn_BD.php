@@ -1,7 +1,4 @@
 <?php $TRANSLATIONS = array(
-"Mozilla Sync" => "মোজিলা সিংক সার্ভিস",
-"Please fill in an email address in your account settings" => "একাউন্ট সেটিংসে গিয়ে আপনার ই-মেইল ঠিকানাটি নির্ধারণ করুন",
 "Email" => "ই-মেইল",
-"Password" => "কূটশব্দ এবং যাচাইকরণ",
 "Server address" => "সার্ভার ঠিকানা"
 );
