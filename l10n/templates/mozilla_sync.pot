@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud mozilla_sync 6.0.0\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2013-11-13 16:39+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/noemail.php:2 templates/settings.php:2
+msgid "Mozilla Sync"
+msgstr ""
+
+#: templates/noemail.php:3
+msgid "Please set an email address in your account settings"
+msgstr ""
+
+#: templates/settings.php:5
+msgid "Email"
+msgstr ""
+
+#: templates/settings.php:9
+msgid "Password"
+msgstr ""
+
+#: templates/settings.php:10
+msgid "Use your ownCloud account password"
+msgstr ""
+
+#: templates/settings.php:13
+msgid "Server address"
+msgstr ""
+
+#: templates/settings.php:17
+msgid ""
+"Once set up, additional devices can be added via Mozilla's device pairing "
+"service or manually."
+msgstr ""
