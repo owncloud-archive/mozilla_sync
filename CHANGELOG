@@ -1,0 +1,10 @@
+v1.1: 2013-11-14
+    * Added working support for Firefox on Android
+    * ownCloud 6.0 compatible
+    * Added support for quota and size queries
+    * Added missing output formats
+    * Omit unnecessary fields in response
+    * Other bug fixes
+
+v1.0: 2013-03-16
+    * Initial version developed by Michal Jaskurzynski
