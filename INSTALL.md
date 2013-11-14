@@ -4,7 +4,10 @@ Installing and uninstalling Mozilla Sync
 Install:
 --------
 
-To install Mozilla Sync you can clone the latest version from the [GitHub repository](https://github.com/owncloud/mozilla_sync/) or download a [ZIP file of the master branch](https://github.com/owncloud/mozilla_sync/archive/master.zip)
+You can either install the stable release version or the development version:
+
+* Stable: [apps.owncloud.com](http://apps.owncloud.com/content/show.php?content=161793)
+* Development: Clone [GitHub repository](https://github.com/owncloud/mozilla_sync/) or download [ZIP file of the master branch](https://github.com/owncloud/mozilla_sync/archive/master.zip)
 
 Move the resulting ````mozilla_sync```` folder to your ownCloud's apps directory and enable it in the web interface's admin panel.
 
