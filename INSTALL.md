@@ -31,3 +31,14 @@ DELETE FROM oc_appconfig WHERE oc_appconfig.appid = 'mozilla_sync' AND oc_appcon
 
 Now you have completely removed Mozilla Sync and are free to do a clean reinstall of the app.
 
+
+Upgrading:
+----------
+
+If you want to upgrade the Mozilla Sync app you can just replace the ````apps/mozilla_sync/```` folder with a newer version.
+
+
+Reinstall:
+----------
+
+To reinstall the app you can first follow the **Uninstall** and then the **Install** sections.
