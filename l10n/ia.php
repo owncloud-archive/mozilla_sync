@@ -1,3 +1,4 @@
 <?php $TRANSLATIONS = array(
-"Email" => "E-posta"
+"Email" => "E-posta",
+"Password" => "Contrasigno"
 );

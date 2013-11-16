@@ -1,3 +1,4 @@
 <?php $TRANSLATIONS = array(
-"Email" => "Corrièl"
+"Email" => "Corrièl",
+"Password" => "Senhal"
 );

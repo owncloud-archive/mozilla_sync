@@ -1,3 +1,4 @@
 <?php $TRANSLATIONS = array(
-"Email" => "E-mail"
+"Email" => "E-mail",
+"Password" => "Lozinka"
 );

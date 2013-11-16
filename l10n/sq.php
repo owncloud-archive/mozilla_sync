@@ -1,3 +1,4 @@
 <?php $TRANSLATIONS = array(
-"Email" => "Email-i"
+"Email" => "Email-i",
+"Password" => "fjalëkalim"
 );

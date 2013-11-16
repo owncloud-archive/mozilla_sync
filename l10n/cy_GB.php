@@ -1,3 +1,4 @@
 <?php $TRANSLATIONS = array(
-"Email" => "E-bost"
+"Email" => "E-bost",
+"Password" => "Cyfrinair"
 );

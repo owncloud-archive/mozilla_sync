@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-11-13 10:57-0500\n"
-"PO-Revision-Date: 2013-11-13 15:57+0000\n"
+"POT-Creation-Date: 2013-11-15 23:01-0500\n"
+"PO-Revision-Date: 2013-11-13 16:10+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Bengali (Bangladesh) (http://www.transifex.com/projects/p/owncloud/language/bn_BD/)\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "ই-মেইল"
 
 #: templates/settings.php:9
 msgid "Password"
-msgstr ""
+msgstr "কূটশব্দ"
 
 #: templates/settings.php:10
 msgid "Use your ownCloud account password"
