@@ -1,3 +1,9 @@
+v1.1.1: 2013-11-17
+    * Added support for LDAP user backend (issue #23)
+    * Remove not-null constraint from ttl DB column
+    * Updated README and INSTALL files
+    * Updated translations
+
 v1.1: 2013-11-14
     * Added working support for Firefox on Android
     * ownCloud 6.0 compatible
