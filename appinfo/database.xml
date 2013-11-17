@@ -23,7 +23,7 @@
         <name>username</name>
         <type>text</type>
         <notnull>true</notnull>
-        <length>32</length>
+        <length>64</length>
       </field>
 
       <field>
