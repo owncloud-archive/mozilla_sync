@@ -81,7 +81,7 @@ class User
 			return false;
 		}
 
-		if(\OCP\User::checkPassword($userId, $password) == false) {
+		if(self::checkPassword($userId, $password) == false) {
 			return false;
 		}
 
@@ -146,7 +146,63 @@ class User
 			return false;
 		}
 
-		return \OCP\User::checkPassword($userId, $_SERVER['PHP_AUTH_PW']);
+		return self::checkPassword($userId, $_SERVER['PHP_AUTH_PW']);
+	}
+
+	/**
+	* @brief Checks the password of a user
+	* @param string $userId User ID of the user
+	* @param string $password Password of the user
+	* @return boolean True if the password is correct, false otherwise
+	*
+	* Checks the supplied password for the user. If the LDAP app is also
+	* active it tries to authenticate as well. For this to work the
+	* User Login Filter in the admin panel needs to be set to something
+	* like (|(uid=%uid)(mail=$uid)) .
+	*/
+	private static function checkPassword($userId, $password) {
+
+		if (\OCP\User::checkPassword($userId, $password) != false) {
+			return true;
+		}
+
+		// Check if the LDAP app is enabled
+		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*appconfig` WHERE `appid` = ? AND `configkey` = ? AND `configvalue` = ?');
+		$result = $query->execute(array('user_ldap', 'enabled', 'yes'));
+
+		if ((int) $result->numRows() === 1) {
+			// Convert user ID to email address
+			$email = self::userIdToEmail($userId);
+
+			if ($email == false) {
+				return false;
+			}
+
+			// Check password with email instead of user ID as internal
+			// Owncloud ID and LDAP user ID are likely not to match
+			return (\OCP\User::checkPassword($email, $password) != false);
+		}
+
+		return false;
+	}
+
+
+	/**
+	* @brief Find email address by Owncloud userid
+	*
+	* @param string $userId
+	*/
+	private static function userIdToEmail($userId) {
+		$query = \OCP\DB::prepare('SELECT `configvalue` FROM `*PREFIX*preferences` WHERE `userid` = ? AND `appid` = ? AND `configkey` = ?');
+		$result = $query->execute(array($userId, 'settings', 'email'));
+
+		$row = $result->fetchRow();
+		if ($row) {
+			return $row['configvalue'];
+		}
+		else {
+			return false;
+		}
 	}
 }
 
