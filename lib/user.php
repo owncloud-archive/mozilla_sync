@@ -81,7 +81,7 @@ class User
 			return false;
 		}
 
-		if(\OCP\User::checkPassword($userId, $password) == false) {
+		if(self::checkPassword($userId, $password) == false) {
 			return false;
 		}
 
@@ -146,7 +146,58 @@ class User
 			return false;
 		}
 
-		return \OCP\User::checkPassword($userId, $_SERVER['PHP_AUTH_PW']);
+		return self::checkPassword($userId, $_SERVER['PHP_AUTH_PW']);
+	}
+
+	/**
+	* @brief Checks the password of a user
+	* @param string $userId User ID of the user
+	* @param string $password Password of the user
+	* @return boolean True if the password is correct, false otherwise
+	*
+	* Checks the supplied password for the user. If the LDAP app is also
+	* active it tries to authenticate as well. For this to work the
+	* User Login Filter in the admin panel needs to be set to something
+	* like (|(uid=%uid)(mail=$uid)) .
+	*/
+	private static function checkPassword($userId, $password) {
+
+		if (\OCP\User::checkPassword($userId, $password) != false) {
+			return true;
+		}
+
+		// Check if the LDAP app is enabled
+		$ldap_enabled = \OCP\Config::getAppValue('user_ldap', 'enabled');
+		if ($ldap_enabled === 'yes') {
+			// Convert user ID to email address
+			$email = self::userIdToEmail($userId);
+
+			if ($email == false) {
+				return false;
+			}
+
+			// Check password with email instead of user ID as internal
+			// Owncloud ID and LDAP user ID are likely not to match
+			return (\OCP\User::checkPassword($email, $password) != false);
+		}
+
+		return false;
+	}
+
+
+	/**
+	* @brief Find email address by Owncloud user ID
+	*
+	* @param string $userId
+	*/
+	private static function userIdToEmail($userId) {
+		$email = \OCP\Config::getUserValue($userId, 'settings', 'email');
+
+		if ($email) {
+			return $email;
+		} else {
+			return false;
+		}
 	}
 }
 

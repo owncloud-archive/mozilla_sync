@@ -174,7 +174,7 @@ class UserService extends Service
 	}
 
 	/**
-	*  @brief Detete user
+	*  @brief Delete user
 	*
 	*  DELETE https://server/pathname/version/username
 	*
