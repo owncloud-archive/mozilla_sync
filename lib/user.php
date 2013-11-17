@@ -167,10 +167,8 @@ class User
 		}
 
 		// Check if the LDAP app is enabled
-		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*appconfig` WHERE `appid` = ? AND `configkey` = ? AND `configvalue` = ?');
-		$result = $query->execute(array('user_ldap', 'enabled', 'yes'));
-
-		if ((int) $result->numRows() === 1) {
+		$ldap_enabled = \OCP\Config::getAppValue('user_ldap', 'enabled');
+		if ($ldap_enabled === 'yes') {
 			// Convert user ID to email address
 			$email = self::userIdToEmail($userId);
 
@@ -188,19 +186,16 @@ class User
 
 
 	/**
-	* @brief Find email address by Owncloud userid
+	* @brief Find email address by Owncloud user ID
 	*
 	* @param string $userId
 	*/
 	private static function userIdToEmail($userId) {
-		$query = \OCP\DB::prepare('SELECT `configvalue` FROM `*PREFIX*preferences` WHERE `userid` = ? AND `appid` = ? AND `configkey` = ?');
-		$result = $query->execute(array($userId, 'settings', 'email'));
+		$email = \OCP\Config::getUserValue($userId, 'settings', 'email');
 
-		$row = $result->fetchRow();
-		if ($row) {
-			return $row['configvalue'];
-		}
-		else {
+		if ($email) {
+			return $email;
+		} else {
 			return false;
 		}
 	}
