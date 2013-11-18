@@ -9,7 +9,13 @@ You can either install the stable release version or the development version:
 * Stable: [apps.owncloud.com](http://apps.owncloud.com/content/show.php?content=161793)
 * Development: Clone [GitHub repository](https://github.com/owncloud/mozilla_sync/) or download [ZIP file of the master branch](https://github.com/owncloud/mozilla_sync/archive/master.zip)
 
-Move the resulting ````mozilla_sync```` folder to your ownCloud's apps directory and enable it in the web interface's admin panel.
+The installation procedure is as follows:
+
+1. Move the resulting ````mozilla_sync```` folder to your ownCloud's apps directory.
+2. Enable it in the web interface's admin panel.
+3. Set an email address for all users that want to use Mozilla Sync. Note: **Email addresses must be unique!**
+4. Configure Firefox with the settings displayed in the ownCloud user page.
+5. Additional clients can be added manually or with Mozilla's device pairing service.
 
 
 Uninstall:
