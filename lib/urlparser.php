@@ -38,6 +38,7 @@ class UrlParser {
 		// version, username
 		if( count($urlArray) < 2 ) {
 			$this->parseValidFlag = false;
+			Utils::writeLog("URL: Found only " . count($urlArray) . " arguments, but need at least 2.");
 			return;
 		}
 
@@ -46,7 +47,8 @@ class UrlParser {
 		if( ($this->version != '1.0') &&
 			($this->version != '1.1') &&
 			($this->version != '2.0') ) {
-			$parseValidFlag = false;
+			$this->parseValidFlag = false;
+			Utils::writeLog("URL: Illegal version " . $this->version . " found.");
 			return;
 		}
 

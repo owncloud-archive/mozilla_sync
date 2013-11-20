@@ -12,6 +12,20 @@ namespace OCA_mozilla_sync;
 
 class Utils
 {
+	/**
+	* @brief Writes debug output to the ownCloud log.
+	*
+	* @param string $output The string appended to ownCloud log.
+	* @param int $level Log level of debug output. Default is \OCP\Util::ERROR.
+	*/
+	public static function writeLog($output, $level = \OCP\Util::ERROR) {
+		// Prepend calling function to debug output
+		$caller = debug_backtrace()[1];
+		$output = $caller["class"] . "." . $caller["function"] . "():  " . $output;
+
+		\OCP\Util::writeLog("mozilla_sync", $output, $level);
+	}
+
 
 	const STATE_TEST            = 1;
 	const STATE_NORMAL          = 0;
@@ -83,20 +97,20 @@ class Utils
 	*/
 	public static function changeHttpStatus($statusCode) {
 
-	$message = '';
-	switch($statusCode) {
-		case 404: $message = 'Not Found'; break;
-		case 400: $message = 'Bad Request'; break;
-		case 500: $message = 'Internal Server Error'; break;
-		case 503: $message = 'Service Unavailable'; break;
-	}
+		$message = '';
+		switch($statusCode) {
+			case 404: $message = 'Not Found'; break;
+			case 400: $message = 'Bad Request'; break;
+			case 500: $message = 'Internal Server Error'; break;
+			case 503: $message = 'Service Unavailable'; break;
+		}
 
-	if(self::isNormalState()) {
-		header('HTTP/1.0 ' . $statusCode . ' ' . $message);
-	}
-	else{
-		self::$lastStatus = $statusCode;
-	}
+		if(self::isNormalState()) {
+			header('HTTP/1.0 ' . $statusCode . ' ' . $message);
+		}
+		else{
+			self::$lastStatus = $statusCode;
+		}
 	}
 
 	/**

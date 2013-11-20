@@ -31,6 +31,7 @@ class UserService extends Service
 		//
 		if(!$this->urlParser->isValid()) {
 			Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+			Utils::writeLog("URL: Failed to parse URL.");
 			return false;
 		}
 
@@ -45,7 +46,9 @@ class UserService extends Service
 				case 'GET': $this->findUser($syncUserHash); break;
 				case 'PUT': $this->createUser($syncUserHash); break;
 				case 'DELETE': $this->deleteUser($syncUserHash); break;
-				default: Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+				default:
+					Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+					Utils::writeLog("URL: Invalid HTTP method " . Utils::getRequestMethod() . " for user " . $syncUserHash . ".");
 			}
 		}
 		else if(($this->urlParser->commandCount() == 1) && (Utils::getRequestMethod() == 'POST')) {
@@ -60,6 +63,7 @@ class UserService extends Service
 		}
 		else{
 			Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+			Utils::writeLog("URL: Invalid URL for user " . $syncUserHash . ".");
 		}
 
 		return true;
@@ -141,24 +145,28 @@ class UserService extends Service
 		// JSON parse failure
 		if(!$inputData->isValid()) {
 			Utils::sendError(400, 6);
+			Utils::writeLog("Failed to parse JSON for user " . $syncUserHash . ".");
 			return true;
 		}
 
 		// No password
 		if(!$inputData->hasValue('password')) {
 			Utils::sendError(400, 7);
+			Utils::writeLog("Request for user " . $syncUserHash . " did not include a password.");
 			return true;
 		}
 
 		// No email
 		if(!$inputData->hasValue('email')) {
 			Utils::sendError(400, 12);
+			Utils::writeLog("Request for user " . $syncUserHash . " did not include an email.");
 			return true;
 		}
 
 		// User already exists
 		if(User::syncUserExists($syncUserHash)) {
 			Utils::sendError(400, 4);
+			Utils::writeLog("Failed to create user " . $syncUserHash . ". User already exists.");
 			return true;
 		}
 
@@ -168,6 +176,7 @@ class UserService extends Service
 		}
 		else{
 			Utils::sendError(400, 12);
+			Utils::writeLog("Failed to create user " . $syncUserHash . ".");
 		}
 
 		return true;
@@ -195,27 +204,32 @@ class UserService extends Service
 
 		if(User::syncUserExists($syncUserHash) == false) {
 			Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+			Utils::writeLog("Failed to delete user " . $syncUserHash . ". User does not exist.");
 			return true;
 		}
 
 		if(User::authenticateUser($syncUserHash) == false) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
+			Utils::writeLog("Authentication for deleting user " . $syncUserHash . " failed.");
 			return true;
 		}
 
 		$userId = User::userHashToId($syncUserHash);
 		if($userId == false) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
+			Utils::writeLog("Failed to convert user " . $syncUserHash . " to user ID.");
 			return true;
 		}
 
 		if(Storage::deleteStorage($userId) == false) {
 			Utils::changeHttpStatus(Utils::STATUS_MAINTENANCE);
+			Utils::writeLog("Failed to delete storage for user " . $userId . ".");
 			return true;
 		}
 
 		if(User::deleteUser($userId) == false) {
 			Utils::changeHttpStatus(Utils::STATUS_MAINTENANCE);
+			Utils::writeLog("Failed to delete user " . $userId . ".");
 			return true;
 		}
 
