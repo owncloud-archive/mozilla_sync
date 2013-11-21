@@ -35,6 +35,26 @@ class User
 	}
 
 	/**
+	* @brief Change owncloud user name to sync userid
+	*
+	* Table oc_mozilla_sync_users contain user mapping
+	*
+	* @param int $user
+	*/
+	public static function userNameToUserId($user) {
+		$query = \OCP\DB::prepare( 'SELECT `id` FROM `*PREFIX*mozilla_sync_users` WHERE `username` = ?');
+		$result = $query->execute(array($user));
+
+		$row=$result->fetchRow();
+		if($row) {
+			return (int) ($row['id']);
+		}
+		else{
+			return false;
+		}
+	}
+
+	/**
 	* @brief Change sync user hash to owncloud user name
 	*
 	* Table oc_mozilla_sync_users contain user mapping

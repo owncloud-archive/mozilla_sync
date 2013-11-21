@@ -272,6 +272,175 @@ class Storage
 
 		return $whereString;
 	}
+
+	/**
+	* @brief Gets the time of the last modification for the logged in user.
+	*
+	* @return string Last modification time formatted according to ISO 8601
+	*/
+	public static function getLastModifiedTime() {
+		$modifieds = self::getCollectionModifiedTimes();
+
+		if ($modifieds === false) {
+			return false;
+		}
+
+		$lastMod = false;
+
+		foreach ($modifieds as $modified) {
+			$curr = (int) (substr($modified, 0, -3));
+			if ($lastMod === false || $curr > $lastMod) {
+				$lastMod = $curr;
+			}
+		}
+
+		return date(DATE_ISO8601, $lastMod);
+	}
+
+	/**
+	* @brief Get the last modification times for all collections of a user.
+	*
+	* @param string $userId User ID whose collections are queried, currently logged in user by default.
+	* @return mixed Array of collection => modified.
+	*/
+	public static function getCollectionModifiedTimes($userId = NULL) {
+
+		// Get logged in user by default
+		if (is_null($userId)) {
+			$userId = User::userNameToUserId(\OCP\User::getUser());
+		}
+
+		if ($userId === false) {
+			return false;
+		}
+
+		$query = \OCP\DB::prepare( 'SELECT `name`,
+																		(SELECT max(`modified`) FROM `*PREFIX*mozilla_sync_wbo`
+																			WHERE `*PREFIX*mozilla_sync_wbo`.`collectionid` = `*PREFIX*mozilla_sync_collections`.`id`
+																		) AS `modified`
+															FROM `*PREFIX*mozilla_sync_collections` WHERE `userid` = ?');
+		$result = $query->execute( array($userId) );
+
+		if($result == false) {
+			return false;
+		}
+
+		$resultArray = array();
+
+		while (($row = $result->fetchRow())) {
+
+			// Skip empty collections
+			if($row['modified'] == null) {
+				continue;
+			}
+
+			// Cast returned values to the correct type
+			$row = StorageService::forceTypeCasting($row);
+
+			$key = $row['name'];
+			$value = $row['modified'];
+
+			$resultArray[$key] = $value;
+		}
+
+		return $resultArray;
+	}
+
+	/**
+	* @brief Get the total size of stored data for the logged in user.
+	*
+	* @return int Size of stored data in KB.
+	*/
+	public static function getSyncSize() {
+		$sizes = self::getCollectionSizes();
+
+		if ($sizes === false) {
+			return false;
+		}
+
+		$totalSize = 0;
+
+		foreach ($sizes as $size) {
+			$totalSize = $totalSize + ((int) $size);
+		}
+
+		return $totalSize;
+	}
+	
+	/**
+	* @brief Get the size of each collection for a user.
+	*
+	* @param string $userId The user ID whose collection sizes are returned, the logged in user by default.
+	* @return mixed Array of collection => size in KB for the specified user.
+	*/
+	public static function getCollectionSizes($userId = NULL) {
+
+		// Get logged in user by default
+		if (is_null($userId)) {
+			$userId = User::userNameToUserId(\OCP\User::getUser());
+		}
+
+		if ($userId === false) {
+			return false;
+		}
+
+		$query = \OCP\DB::prepare( 'SELECT name,
+									(SELECT SUM(CHAR_LENGTH(payload)) FROM *PREFIX*mozilla_sync_wbo
+									WHERE *PREFIX*mozilla_sync_wbo.collectionid = *PREFIX*mozilla_sync_collections.id
+									) as size
+									FROM *PREFIX*mozilla_sync_collections WHERE userid = ?');
+		$result = $query->execute( array($userId) );
+
+		if($result == false) {
+			return false;
+		}
+
+		$resultArray = array();
+
+		while (($row = $result->fetchRow())) {
+
+			// Skip empty collections
+			if($row['size'] == null) {
+				continue;
+			}
+
+			$key = $row['name'];
+			// Convert bytes to KB
+			$value = ((float) $row['size'])/1000.0;
+
+			$resultArray[$key] = $value;
+		}
+
+		return $resultArray;
+	}
+	
+	/**
+	* @brief Gets the number of sync clients for a user.
+	*
+	* @param string $userId The user ID whose number of clients are returned, the logged in user by default.
+	* @return int The number of clients associated with the specified user.
+	*/
+	public static function getNumClients($userId = NULL) {
+
+		// Get logged in user by default
+		if (is_null($userId)) {
+			$userId = User::userNameToUserId(\OCP\User::getUser());
+		}
+
+		if ($userId === false) {
+			return false;
+		}
+
+		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*mozilla_sync_wbo` WHERE `collectionid` = 
+									(SELECT `id` FROM `*PREFIX*mozilla_sync_collections` WHERE `name` = ? AND `userid` = ?)');
+		$result = $query->execute(array('clients', $userId));
+
+		if ($result === false) {
+			return false;
+		}
+	    
+		return ((int) $result->numRows());
+	}
 }
 
 /* vim: set ts=4 sw=4 tw=80 noet : */

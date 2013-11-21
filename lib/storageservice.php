@@ -144,36 +144,13 @@ class StorageService extends Service
 	*/
 	private function getInfoCollections($userId) {
 
-		$query = \OCP\DB::prepare( 'SELECT `name`,
-																		(SELECT max(`modified`) FROM `*PREFIX*mozilla_sync_wbo`
-																			WHERE `*PREFIX*mozilla_sync_wbo`.`collectionid` = `*PREFIX*mozilla_sync_collections`.`id`
-																		) AS `modified`
-															FROM `*PREFIX*mozilla_sync_collections` WHERE `userid` = ?');
-		$result = $query->execute( array($userId) );
+		$resultArray = Storage::getCollectionModifiedTimes($userId);
 
-		if($result == false) {
+		if ($resultArray === false) {
 			return false;
 		}
 
-		$resultArray = array();
-
-		while (($row = $result->fetchRow())) {
-
-			// Skip empty collections
-			if($row['modified'] == null) {
-				continue;
-			}
-
-			// Cast returned values to the correct type
-			$row = $this->forceTypeCasting($row);
-
-			$key = $row['name'];
-			$value = $row['modified'];
-
-			$resultArray[$key] = $value;
-		}
-
-		OutputData::write( $resultArray );
+		OutputData::write($resultArray);
 		return true;
 	}
 
@@ -201,35 +178,14 @@ class StorageService extends Service
 	*/
 	private function getInfoCollectionUsage($userId) {
 
-		$query = \OCP\DB::prepare( 'SELECT name,
-									(SELECT SUM(CHAR_LENGTH(payload)) FROM *PREFIX*mozilla_sync_wbo
-									WHERE *PREFIX*mozilla_sync_wbo.collectionid = *PREFIX*mozilla_sync_collections.id
-									) as size
-									FROM *PREFIX*mozilla_sync_collections WHERE userid = ?');
-		$result = $query->execute( array($userId) );
+		$resultArray = Storage::getCollectionUsage;
 
-		if($result == false) {
+		if ($resultArray === false) {
 			return false;
+		} else {
+			OutputData::write($resultArray);
+			return true;
 		}
-
-		$resultArray = array();
-
-		while (($row = $result->fetchRow())) {
-
-			// Skip empty collections
-			if($row['size'] == null) {
-				continue;
-			}
-
-			$key = $row['name'];
-			// Convert bytes to KB
-			$value = ((float) $row['size'])/1000.0;
-
-			$resultArray[$key] = $value;
-		}
-
-		OutputData::write( $resultArray );
-		return true;
 	}
 
 	/**
@@ -406,7 +362,7 @@ class StorageService extends Service
 
 			if(isset($modifiers['full'])) {
 				// Cast returned values to the correct type
-				$resultArray[] = $this->forceTypeCasting($row);
+				$resultArray[] = self::forceTypeCasting($row);
 			}
 			else{
 				$resultArray[] = $row['id'];
@@ -546,7 +502,7 @@ class StorageService extends Service
 		}
 
 		// Cast returned values to the correct type
-		$row = $this->forceTypeCasting($row);
+		$row = self::forceTypeCasting($row);
 
 		OutputData::write($row);
 		return true;
@@ -654,7 +610,7 @@ class StorageService extends Service
 	* @param array $row row returned from the database
 	* @return array $row row with explicitly casted types
 	*/
-	private function forceTypeCasting($row) {
+	public static function forceTypeCasting($row) {
 		// Return modified as float, not string
 		if (isset($row['modified'])) {
 			if (is_null($row['modified'])) {
