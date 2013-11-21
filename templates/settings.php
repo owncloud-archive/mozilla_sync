@@ -3,7 +3,10 @@
     <table class="nostyle">
       <tr>
         <td><?php p($l->t('Email'));?>&nbsp;&nbsp;&nbsp;</td>
-        <td><code><?php p($_['email']);?></code></td>
+        <td><code><?php p($_['email']);?></code>&nbsp;&nbsp;&nbsp;<?php
+            if (!OCA_mozilla_sync\User::userHasUniqueEmail()) {
+                ?><b><span style="color: red"><?php p($l->t('Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work.'));?></span></b><?php
+            }?></td>
       </tr>
       <tr>
         <td><?php p($l->t('Password'));?>&nbsp;&nbsp;&nbsp;</td>

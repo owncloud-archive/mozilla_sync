@@ -199,6 +199,38 @@ class User
 			return false;
 		}
 	}
+
+	/**
+	* @brief Check if the currently logged in user has a unique email address
+	*
+	* @param string $userId By default the currently logged in user is taken
+	* @return boolean True if the user's email is unique, false otherwise
+	*/
+	public static function userHasUniqueEmail($userId = NULL) {
+		// By default the user ID is the currently logged in user
+		if (is_null($userId)) {
+			$userId = \OCP\User::getUser();
+		}
+
+		// Return false if there is no user logged in
+		if ($userId === false) {
+			return false;
+		}
+
+		$email = self::userIdToEmail($userId);
+
+		// Return false if the user did not set an email address
+		if ($email === false) {
+			return false;
+		}
+
+		// Check for duplicate emails
+		$query = \OCP\DB::prepare( 'SELECT 1 FROM `*PREFIX*preferences` WHERE `appid` = ? AND `configkey` = ? AND `configvalue` = ?');
+		$result = $query->execute(array('settings', 'email', $email));
+
+		// Only return true if exactly one row matched for this email address
+		return ((int) $result->numRows()) === 1;
+	}
 }
 
 /* vim: set ts=4 sw=4 tw=80 noet : */
