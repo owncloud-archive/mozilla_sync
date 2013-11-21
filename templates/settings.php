@@ -1,5 +1,6 @@
 <fieldset class="personalblock">
 	<legend><?php p($l->t('Mozilla Sync')); ?></legend>
+    <p><label>Client Configuration</label>
     <table class="nostyle">
       <tr>
         <td><?php p($l->t('Email'));?>&nbsp;&nbsp;&nbsp;</td>
@@ -17,5 +18,5 @@
         <td><code><?php p($_['syncaddress']);?></code></td>
       </tr>
     </table>
-    <?php p($l->t("Once set up, additional devices can be added via Mozilla's device pairing service or manually."));?>
+    <i><?php p($l->t("Once set up, additional devices can be added via Mozilla's device pairing service or manually."));?></i></p>
 </fieldset>
