@@ -48,7 +48,7 @@ class Storage
 		$result = $query->execute( array(Utils::getMozillaTimestamp()) );
 
 		if($result == false) {
-			Utils::writeLog("DB: Could not delete old WBO.", \OCP\Util::INFO);
+			// Also returns false when no old WBO was found -> don't Utils::writeLog() as it would spam the log
 			return false;
 		}
 
