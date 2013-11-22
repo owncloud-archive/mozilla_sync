@@ -20,8 +20,6 @@ namespace OCA_mozilla_sync;
 *  - 'success'
 *  Or can be used to write json formated output. In this case argument of function write should be an array.
 *
-* This class has ability to test output. In normal mode output is written to browser.
-* When $outputFlag is set to ConstOutputBuffer, output is written to $outputBuffer.
 */
 class OutputData
 {
@@ -29,13 +27,6 @@ class OutputData
 	const NewlinesFormat        = 0;
 	const LengthFormat          = 1;
 	const JsonFormat            = 2;
-
-	// Send output back to client or save in buffer
-	const ConstOutputNormal     = 0;
-	const ConstOutputBuffer     = 1;
-
-	static public $outputFlag   = self::ConstOutputNormal;
-	static public $outputBuffer = '';
 
 	/**
 	* @brief Function for writing output.
@@ -152,13 +143,8 @@ class OutputData
 	* @param string $outputString The output string to be written.
 	*/
 	static private function writeOutput($outputString) {
-		if (self::$outputFlag === self::ConstOutputNormal) {
-			header('Content-Length: ' . strlen($outputString));
-			print $outputString;
-		}
-		else {
-			self::$outputBuffer .= $outputString;
-		}
+		header('Content-Length: ' . strlen($outputString));
+		print $outputString;
 	}
 }
 
