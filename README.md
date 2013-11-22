@@ -43,3 +43,4 @@ The Mozilla Sync API is documented on Mozilla's wiki:
 * [The Life of a Sync](http://docs.services.mozilla.com/sync/lifeofasync.html)
 * [Global Storage Version 5](http://docs.services.mozilla.com/sync/storageformat5.html)
 * [Storage API v1.1](http://docs.services.mozilla.com/storage/apis-1.1.html)
+* [User API v1.0](https://docs.services.mozilla.com/reg/apis.html)

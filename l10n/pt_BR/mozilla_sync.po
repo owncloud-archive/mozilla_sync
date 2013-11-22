@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Flávio Veras <flaviove@gmail.com>, 2013
 # sedir <philippi.sedir@gmail.com>, 2012
 # Rodrigo Tavares <rodrigost23@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-11-15 23:01-0500\n"
-"PO-Revision-Date: 2013-11-13 16:10+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"POT-Creation-Date: 2013-11-21 21:13-0500\n"
+"PO-Revision-Date: 2013-11-16 12:30+0000\n"
+"Last-Translator: Flávio Veras <flaviove@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/owncloud/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,11 +22,11 @@ msgstr ""
 
 #: templates/noemail.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
-msgstr ""
+msgstr "Sincronização Mozilla"
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings"
-msgstr ""
+msgstr "Por favor, defina um endereço de e-mail nas configurações da conta"
 
 #: templates/settings.php:5
 msgid "Email"
@@ -37,7 +38,7 @@ msgstr "Senha"
 
 #: templates/settings.php:10
 msgid "Use your ownCloud account password"
-msgstr ""
+msgstr "Use a senha da conta ownCloud"
 
 #: templates/settings.php:13
 msgid "Server address"
@@ -47,4 +48,4 @@ msgstr "Endereço do servidor"
 msgid ""
 "Once set up, additional devices can be added via Mozilla's device pairing "
 "service or manually."
-msgstr ""
+msgstr "Uma vez configurado, dispositivos adicionais podem ser adicionados através do serviço de emparelhamento do dispositivo do Mozilla ou manualmente."
