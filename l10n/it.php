@@ -5,5 +5,5 @@
 "Password" => "Password",
 "Use your ownCloud account password" => "Usa la tua password di ownCloud",
 "Server address" => "Indirizzo del server",
-"Once set up, additional devices can be added via Mozilla's device pairing service or manually." => "Dopo l'installazione iniziale puoi usare il servizio pairing di Mozilla o aggiungere altri instanze di Firefox manualmente."
+"Once set up, additional devices can be added via Mozilla's device pairing service or manually." => "Dopo l'installazione iniziale puoi usare il servizio di associazione di Mozilla o aggiungere altre instanze di Firefox manualmente."
 );
