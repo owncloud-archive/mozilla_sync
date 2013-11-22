@@ -33,6 +33,7 @@ class Storage
 		$result = $query->execute( array($userId, $collectionName) );
 
 		if($result == false) {
+			Utils::writeLog("DB: Could not create collection " . $collectionName . ".");
 			return false;
 		}
 
@@ -47,6 +48,7 @@ class Storage
 		$result = $query->execute( array(Utils::getMozillaTimestamp()) );
 
 		if($result == false) {
+			// Also returns false when no old WBO was found -> don't Utils::writeLog() as it would spam the log
 			return false;
 		}
 
@@ -90,6 +92,7 @@ class Storage
 		$result = $query->execute( array($collectionId, $wboId) );
 
 		if($result == false) {
+			Utils::writeLog("DB: Could not delete WBO " . $wboId . ".", \OCP\Util::INFO);
 			return false;
 		}
 
@@ -119,6 +122,7 @@ class Storage
 		$result = $query->execute($queryArgs);
 
 		if($result == false) {
+			Utils::writeLog("DB: Could not insert WBO for user " . $userId . " in collection " . $collectionId . ".");
 			return false;
 		}
 
@@ -145,6 +149,7 @@ class Storage
 		$result = $query->execute($queryArgs);
 
 		if($result == false) {
+			Utils::writeLog("DB: Could not update WBO for user " . $userId . " in collection " . $collectionId . ".");
 			return false;
 		}
 
@@ -162,6 +167,7 @@ class Storage
 		$result = $query->execute( array($userId) );
 
 		if($result == false) {
+			Utils::writeLog("DB: Could not delete storage for user " . $userId . ".");
 			return false;
 		}
 
@@ -170,6 +176,7 @@ class Storage
 		$result = $query->execute( array($userId) );
 
 		if($result == false) {
+			Utils::writeLog("DB: Could not delete collections for user " . $userId . ".");
 			return false;
 		}
 

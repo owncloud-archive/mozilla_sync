@@ -26,3 +26,6 @@ version=$(shell cat appinfo/info.xml | grep 'version>' | sed -e 's/<version>//' 
 
 dist:
 	git archive HEAD --format=zip --prefix=$(app_name)/ > $(package_name)-$(version).zip
+
+debug:
+	git archive HEAD --format=zip --prefix=$(app_name)/ > $(package_name)-$(version)-debug.zip
