@@ -4,6 +4,7 @@
 * ownCloud
 *
 * @author Michal Jaskurzynski
+* @author Oliver Gasser
 * @copyright 2012 Michal Jaskurzynski mjaskurzynski@gmail.com
 *
 */
@@ -24,10 +25,12 @@ namespace OCA_mozilla_sync;
 */
 class OutputData
 {
+	// Three different types of output formats
 	const NewlinesFormat        = 0;
 	const LengthFormat          = 1;
 	const JsonFormat            = 2;
 
+	// Send output back to client or save in buffer
 	const ConstOutputNormal     = 0;
 	const ConstOutputBuffer     = 1;
 
@@ -35,26 +38,25 @@ class OutputData
 	static public $outputBuffer = '';
 
 	/**
-	* @brief Function for writing output
+	* @brief Function for writing output.
 	*
-	* Srray will be encoded to json format and written,
-	* other type of arguments will be simple written to browser,
+	* Arrays will be encoded to JSON or other formats depending on the
+	* Content-Type header sent by the client.
 	*
-	* @param any $output
+	* @param any $output The output sent back to the client.
+	* @param number $modifiedTime Modified time which will be sent back to the
+	* client as a HTTP header. By default the current time is sent.
 	*/
-	static public function write($output, $modifiedTime=null) {
+	static public function write($output, $modifiedTime = null) {
 
-		if($modifiedTime == null) {
-			$modifiedTime = Utils::getMozillaTimestamp();
-		}
+		// If no modified time is set get a timestamp now, then send the header
+		Utils::sendMozillaTimestampHeader($modifiedTime);
 
-		header('X-Weave-Timestamp: ' . $modifiedTime);
-
-		// write simple output
-		if(gettype($output) != 'array') {
+		// Write simple output
+		if (gettype($output) != 'array') {
 			self::writeOutput($output);
 		}
-		// write json encoded output
+		// Write encoded output
 		else {
 			switch(OutputData::getOutputFormat()) {
 				case self::NewlinesFormat:
@@ -68,33 +70,52 @@ class OutputData
 	}
 
 	/**
-	* @brief Get output format
+	* @brief Get output format.
 	*
 	*  Two alternate output formats are available for multiple record GET requests.
 	*  They are triggered by the presence of the appropriate format in the
 	*  Accept header (with application/whoisi taking precedence):
 	*
 	*  - application/whoisi:     each record consists of a 32-bit integer,
-	*                            defining the length of the record, followed by the json record for a WBO
+	*                            defining the length of the record, followed by
+	*							 the json record for a WBO
 	*  - application/newlines:   each record is a separate json object on its own line.
 	*                            Newlines in the body of the json object are replaced by ‘u000a’
+	*
+	* @return int Returns the int representing NewlinesFormat, LengthFormat or
+	* JsonFormat.
 	*/
 	static private function getOutputFormat() {
-		if( isset($_SERVER['HTTP_ACCEPT']) && stristr($_SERVER['HTTP_ACCEPT'], 'application/newlines') ) {
+		if (isset($_SERVER['HTTP_ACCEPT']) &&
+				stristr($_SERVER['HTTP_ACCEPT'], 'application/newlines')) {
 			return self::NewlinesFormat;
-		}
-		else if( isset($_SERVER['HTTP_ACCEPT']) && stristr($_SERVER['HTTP_ACCEPT'], 'application/whoisi') ) {
+		} else if (isset($_SERVER['HTTP_ACCEPT']) &&
+				stristr($_SERVER['HTTP_ACCEPT'], 'application/whoisi')) {
 			return self::LengthFormat;
+		} else {
+			// JSON format is the default
+			return self::JsonFormat;
 		}
-		return self::JsonFormat;
 	}
 
+	/**
+	* @brief Write output in JSON format.
+	*
+	* @param mixed $outputArray The array that will be written in JSON format.
+	*/
 	static private function writeJsonFormat($outputArray) {
 		header('Content-Type: application/json');
 
 		self::writeOutput(json_encode($outputArray));
 	}
 
+	/**
+	* @brief Write output in Newlines format.
+	*
+	* @param mixed $outputArray The array that will be written in Newlines
+	* format.
+	*
+	*/
 	static private function writeNewlinesFormat($outputArray) {
 		header('Content-Type: application/newlines');
 
@@ -106,6 +127,11 @@ class OutputData
 		self::writeOutput($output);
 	}
 
+	/**
+	* @brief Write output in Length format.
+	*
+	* @param mixed $outputArray The array that will be written in Length format.
+	*/
 	static private function writeLengthFormat($outputArray) {
 		header('Content-Type: application/whoisi');
 
@@ -120,12 +146,17 @@ class OutputData
 		self::writeOutput($output);
 	}
 
+	/**
+	* @brief Writes the previously converted output.
+	*
+	* @param string $outputString The output string to be written.
+	*/
 	static private function writeOutput($outputString) {
-		if(self::$outputFlag == self::ConstOutputNormal) {
+		if (self::$outputFlag === self::ConstOutputNormal) {
 			header('Content-Length: ' . strlen($outputString));
 			print $outputString;
 		}
-		else{
+		else {
 			self::$outputBuffer .= $outputString;
 		}
 	}

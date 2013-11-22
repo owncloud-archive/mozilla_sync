@@ -136,8 +136,11 @@ class Utils
 	/**
 	* @brief Generate Mozilla sync timestamp for time synchronization
 	*/
-	public static function sendMozillaTimestampHeader() {
-		header('X-Weave-Timestamp: ' . self::getMozillaTimestamp());
+	public static function sendMozillaTimestampHeader($timestamp = null) {
+		if (is_null($timestamp)) {
+			$timestamp = self::getMozillaTimestamp();
+		}
+		header('X-Weave-Timestamp: ' . $timestamp);
 	}
 	/**
 	* @brief Get current time in Mozilla sync format
