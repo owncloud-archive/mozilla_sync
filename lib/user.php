@@ -30,6 +30,7 @@ class User
 			return $row['userid'];
 		}
 		else{
+			Utils::writeLog("DB: Could not convert email address " . $email . " to user ID. Make sure that emails are unique!");
 			return false;
 		}
 	}
@@ -70,6 +71,7 @@ class User
 			return $row['username'];
 		}
 		else{
+			Utils::writeLog("DB: Could not convert user hash " . $userHash . " to user name.");
 			return false;
 		}
 	}
@@ -83,6 +85,7 @@ class User
 			return $row['id'];
 		}
 		else{
+			Utils::writeLog("DB: Could not convert user hash " . $userHash . " to user ID.");
 			return false;
 		}
 	}
@@ -102,6 +105,7 @@ class User
 		}
 
 		if(self::checkPassword($userId, $password) == false) {
+			Utils::writeLog("Password for user ID " . $userId . " did not match.");
 			return false;
 		}
 
@@ -109,6 +113,7 @@ class User
 		$result = $query->execute( array($userId, $syncUserHash) );
 
 		if($result == false) {
+			Utils::writeLog("DB: Could not create user " . $userId . " with user hash " . $syncUserHash . ".");
 			return false;
 		}
 
@@ -126,6 +131,7 @@ class User
 		$result = $query->execute( array($userId) );
 
 		if($result == false) {
+			Utils::writeLog("DB: Could not delete user " . $userId . ".");
 			return false;
 		}
 
@@ -154,10 +160,12 @@ class User
 	public static function authenticateUser($userHash) {
 
 		if(!isset($_SERVER['PHP_AUTH_USER'])) {
+			Utils::writeLog("No HTTP authentication header sent.");
 			return false;
 		}
 		// user name parameter and authentication user name doen't match
 		if($userHash != $_SERVER['PHP_AUTH_USER']) {
+			Utils::writeLog("User name parameter " . $userHash . " and HTTP authentication header " . $_SERVER['PHP_AUTH_USER'] . " do not match.");
 			return false;
 		}
 
@@ -198,8 +206,14 @@ class User
 
 			// Check password with email instead of user ID as internal
 			// Owncloud ID and LDAP user ID are likely not to match
-			return (\OCP\User::checkPassword($email, $password) != false);
+			$res = (\OCP\User::checkPassword($email, $password) != false);
+			if ($res === false) {
+				Utils::writeLog("LDAP password did not match for user " . $userId . " with email address " . $email . ".");
+			}
+			return $res;
 		}
+
+		Utils::writeLog("Password did not match for user " . $userId . ".");
 
 		return false;
 	}
@@ -216,6 +230,7 @@ class User
 		if ($email) {
 			return $email;
 		} else {
+			Utils::writeLog("Could not convert user ID " . $userId . " to email address. Make sure that emails are unique!");
 			return false;
 		}
 	}

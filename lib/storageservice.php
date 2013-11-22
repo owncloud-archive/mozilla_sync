@@ -30,6 +30,7 @@ class StorageService extends Service
 		//
 		if(!$this->urlParser->isValid()) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
+			Utils::writeLog("URL: Invalid URL.");
 			return false;
 		}
 
@@ -37,12 +38,14 @@ class StorageService extends Service
 
 		if(User::authenticateUser($syncUserHash) == false) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
+			Utils::writeLog("Could not authenticate user " . $syncUserHash . ".");
 			return false;
 		}
 
 		$userId = User::userHashToId($syncUserHash);
 		if($userId == false) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
+			Utils::writeLog("Could not convert user " . $syncUserHash . " to user ID.");
 			return false;
 		}
 
@@ -58,6 +61,7 @@ class StorageService extends Service
 
 			if(Utils::getRequestMethod() != 'GET') {
 				Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+				Utils::writeLog("URL: Invalid HTTP method " . Utils::getRequestMethod() . " for info.");
 				return false;
 			}
 			switch($this->urlParser->getCommand(1)) {
@@ -65,7 +69,9 @@ class StorageService extends Service
 				case 'collection_usage': $this->getInfoCollectionUsage($userId); break;
 				case 'collection_counts': $this->getInfoCollectionCounts($userId); break;
 				case 'quota': $this->getInfoQuota($userId); break;
-				default: Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+				default:
+					Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+					Utils::writeLog("URL: Invalid command " . $this->urlParser->getCommand(1) . " for info.");
 			}
 
 		}
@@ -75,7 +81,9 @@ class StorageService extends Service
 
 			switch(Utils::getRequestMethod()) {
 				case 'DELETE': $this->deleteStorage($userId); break;
-				default: Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+				default:
+					Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+					Utils::writeLog("URL: Invalid request method " . Utils::getRequestMethod() . " for storage.");
 			}
 
 		}
@@ -92,7 +100,9 @@ class StorageService extends Service
 				case 'GET': $this->getCollection($userId, $collectionId, $modifiers); break;
 				case 'POST': $this->postCollection($userId, $collectionId); break;
 				case 'DELETE': $this->deleteCollection($userId, $collectionId, $modifiers); break;
-				default: Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+				default:
+					Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+					Utils::writeLog("URL: Invalid request method" . Utils::getRequestMethod() . " for collection.");
 			}
 
 		}
@@ -109,12 +119,15 @@ class StorageService extends Service
 				case 'GET': $this->getWBO($userId, $collectionId, $wboId); break;
 				case 'PUT': $this->putWBO($userId, $collectionId, $wboId); break;
 				case 'DELETE': $this->deleteWBO($userId, $collectionId, $wboId); break;
-				default: Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+				default:
+					Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+					Utils::writeLog("URL: Invalid request method" . Utils::getRequestMethod() . " for WBO.");
 			}
 
 		}
 		else{
 			Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+			Utils::writeLog("URL: Invalid number of commands: " . ((string) $this->urlParser->commandCount()) . ".");
 		}
 
 		return true;
@@ -178,7 +191,7 @@ class StorageService extends Service
 	*/
 	private function getInfoCollectionUsage($userId) {
 
-		$resultArray = Storage::getCollectionUsage;
+		$resultArray = Storage::getCollectionSizes($userId);
 
 		if ($resultArray === false) {
 			return false;
@@ -220,6 +233,7 @@ class StorageService extends Service
 		$result = $query->execute( array($userId) );
 
 		if($result == false) {
+			Utils::writeLog("DB: Could not get info collection counts for user " . $userId . ".");
 			return false;
 		}
 
@@ -270,6 +284,7 @@ class StorageService extends Service
 		$result = $query->execute( array($userId) );
 
 		if($result == false || ((int) $result->numRows()) !== 1) {
+			Utils::writeLog("DB: Could not get info quota for user " . $userId . ".");
 			return false;
 		}
 
@@ -352,6 +367,7 @@ class StorageService extends Service
 		$result = $query->execute( $queryArgs );
 
 		if($result == false) {
+			Utils::writeLog("DB: Could not get collection " . $collectionId . " for user " . $userId . ".");
 			return false;
 		}
 
@@ -398,6 +414,7 @@ class StorageService extends Service
 		if( (!$inputData->isValid()) &&
 				(count($inputData->getInputArray()) > 0)) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
+			Utils::writeLog("URL: Invalid data for posting collection " . $collectionId . " for user " . $userId . ".");
 			return false;
 		}
 
@@ -418,6 +435,7 @@ class StorageService extends Service
 			}
 			else{
 				$failedArray[] = $inputData[$i]['id'];
+				Utils::writeLog("DB: Failed to post collection " . $collectionId . " for user " . $userId . ".", \OCP\Util::WARN);
 			}
 		}
 
@@ -455,6 +473,7 @@ class StorageService extends Service
 		$result = $query->execute( $queryArgs );
 
 		if($result == false) {
+			Utils::writeLog("DB: Failed to delete WBO for collection " . $collectionId . " for user " . $userId . ".");
 			return false;
 		}
 
@@ -468,6 +487,7 @@ class StorageService extends Service
 			$result = $query->execute( array($collectionId) );
 
 			if($result == false) {
+				Utils::writeLog("DB: Failed to delete collection " . $collectionId . " for user " . $userId . ".");
 				return false;
 			}
 		}
@@ -492,12 +512,14 @@ class StorageService extends Service
 		$result = $query->execute( array($collectionId, $wboId) );
 
 		if($result == false) {
+			Utils::writeLog("DB: Failed to get WBO " . $wboId . " of collection " . $collectionId . " for user " . $userId . ".");
 			return false;
 		}
 
 		$row=$result->fetchRow();
 		if($row == false) {
 			Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+			Utils::writeLog("DB: Could not find requested WBO " . $wboId . " of collection " . $collectionId . " for user " . $userId . ".", \OCP\Util::WARN);
 			return true;
 		}
 
@@ -526,6 +548,7 @@ class StorageService extends Service
 		if( (!$inputData->isValid()) &&
 				(count($inputData->getInputArray()) == 1)) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
+			Utils::writeLog("URL: Invalid input data for putting WBO " . $wboId . " of collection " . $collectionId . " for user " . $userId . ".");
 			return false;
 		}
 
@@ -541,6 +564,7 @@ class StorageService extends Service
 			$inputData->getInputArray());
 
 		if($result == false) {
+			Utils::writeLog("Failed to save WBO " . $wboId . " of collection " . $collectionId . " for user " . $userId . ".");
 			return false;
 		}
 
@@ -563,6 +587,7 @@ class StorageService extends Service
 		$result = Storage::deleteWBO($userId, $collectionId, $wboId);
 
 		if($result == false) {
+			Utils::writeLog("Failed to delete WBO " . $wboId . " of collection " . $collectionId . " for user " . $userId . ".");
 			return false;
 		}
 
@@ -585,12 +610,14 @@ class StorageService extends Service
 	private function deleteStorage($userId) {
 
 		if(!isset($_SERVER['HTTP_X_CONFIRM_DELETE'])) {
+			Utils::writeLog("Did not send X_CONFIRM_DELETE header when trying to delete all records for user " . $userId . ".");
 			return false;
 		}
 
 		$result = Storage::deleteStorage($userId);
 
 		if($result == false) {
+			Utils::writeLog("Failed to delete all records for user " . $userId . ".");
 			return false;
 		}
 
