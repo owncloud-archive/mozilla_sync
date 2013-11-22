@@ -136,7 +136,7 @@ class Utils
 	/**
 	* @brief Generate Mozilla sync timestamp for time synchronization
 	*/
-	public static function generateMozillaTimestamp() {
+	public static function sendMozillaTimestampHeader() {
 		header('X-Weave-Timestamp: ' . self::getMozillaTimestamp());
 	}
 	/**
