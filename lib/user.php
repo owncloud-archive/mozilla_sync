@@ -234,8 +234,7 @@ class User
 		}
 
 		// Check if the LDAP app is enabled
-		$ldap_enabled = \OCP\Config::getAppValue('user_ldap', 'enabled');
-		if ($ldap_enabled === 'yes') {
+		if (\OCP\App::isEnabled('user_ldap')) {
 			// Convert user name to email address
 			$email = self::userNameToEmail($userName);
 
