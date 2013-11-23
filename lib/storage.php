@@ -4,6 +4,7 @@
 * ownCloud
 *
 * @author Michal Jaskurzynski
+* @author Oliver Gasser
 * @copyright 2012 Michal Jaskurzynski mjaskurzynski@gmail.com
 *
 */
@@ -13,26 +14,32 @@ namespace OCA_mozilla_sync;
 class Storage
 {
 	/**
-	* @brief Get index of collection, if collection doesn't exist it will be created
+	* @brief Get index of collection, if collection doesn't exist it will be
+	* created.
 	*
-	* @param string $collectionName
+	* @param string $userId The user that the collection is belonging to.
+	* @param string $collectionName The name of the collection.
 	*/
 	static public function collectionNameToIndex($userId, $collectionName) {
-		$query = \OCP\DB::prepare( 'SELECT `id` FROM `*PREFIX*mozilla_sync_collections` WHERE `userid`=? AND `name`=?');
-		$result = $query->execute( array($userId, $collectionName) );
+		$query = \OCP\DB::prepare('SELECT `id` FROM
+			`*PREFIX*mozilla_sync_collections` WHERE `userid` = ? AND
+			`name` = ?');
+		$result = $query->execute(array($userId, $collectionName));
 
-		$row=$result->fetchRow();
-		if($row) {
+		// Collection found, return its ID
+		$row = $result->fetchRow();
+		if ($row) {
 			return $row['id'];
 		}
 
-		//
-		// No collection found
-		//
-		$query = \OCP\DB::prepare( 'INSERT INTO `*PREFIX*mozilla_sync_collections` (`userid`, `name`) VALUES (?,?)' );
-		$result = $query->execute( array($userId, $collectionName) );
+		// No collection found, create new collection
+		$query = \OCP\DB::prepare('INSERT INTO
+			`*PREFIX*mozilla_sync_collections` (`userid`, `name`) VALUES
+			(?, ?)');
+		$result = $query->execute( array($userId, $collectionName));
 
-		if($result == false) {
+		// Creation of collection failed
+		if ($result == false) {
 			Utils::writeLog("DB: Could not create collection " . $collectionName . ".");
 			return false;
 		}
@@ -41,13 +48,16 @@ class Storage
 	}
 
 	/**
-	* @brief Delete old wbo
+	* @brief Delete old WBO.
+	*
+	* @return bool True when old WBO were deleted, false otherwise.
 	*/
 	static public function deleteOldWbo() {
-		$query = \OCP\DB::prepare( 'DELETE FROM `*PREFIX*mozilla_sync_wbo` WHERE `ttl` > 0 AND (`modified` + `ttl`) < CAST( ? AS DECIMAL(15,2))' );
-		$result = $query->execute( array(Utils::getMozillaTimestamp()) );
+		$query = \OCP\DB::prepare('DELETE FROM `*PREFIX*mozilla_sync_wbo` WHERE
+			`ttl` > 0 AND (`modified` + `ttl`) < CAST(? AS DECIMAL(15,2))');
+		$result = $query->execute(array(Utils::getMozillaTimestamp()));
 
-		if($result == false) {
+		if ($result == false) {
 			// Also returns false when no old WBO was found -> don't Utils::writeLog() as it would spam the log
 			return false;
 		}
@@ -56,42 +66,47 @@ class Storage
 	}
 
 	/**
-	* @brief Save Weave Basic Object (update previous one)
+	* @brief Store new Weave Basic Object or update previous one.
 	*
-	* @param int $collectionId
-	* @param float $modifiedTime
-	* @param array $wboArray
+	* @param string $userId The user whose WBO is updated.
+	* @param int $collectionId The collection ID whose WBO is updated.
+	* @param float $modifiedTime The modification time that will be saved for
+	* the updated WBO.
+	* @param array $wboArray WBO which will be updated. Passed as JSON array.
+	* @return boolean True on success, false otherwise.
 	*/
 	static public function saveWBO($userId, $modifiedTime, $collectionId, $wboArray) {
-		if(!array_key_exists('id', $wboArray)) {
+		if (!array_key_exists('id', $wboArray)) {
+			Utils::writeLog("Failed to save WBO as no ID was present.");
 			return false;
 		}
 
-		$query = \OCP\DB::prepare( 'SELECT 1 FROM `*PREFIX*mozilla_sync_wbo` WHERE `collectionid` = ? AND `name` = ?' );
-		$result = $query->execute( array($collectionId, $wboArray['id']) );
+		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*mozilla_sync_wbo`
+			WHERE `collectionid` = ? AND `name` = ?');
+		$result = $query->execute(array($collectionId, $wboArray['id']));
 
-		// No wbo found, add new wbo
-		if($result->fetchRow() == false) {
+		// No WBO found, add a new one
+		if ($result->fetchRow() == false) {
 			return self::insertWBO($userId, $modifiedTime, $collectionId, $wboArray);
-		}
-		else{
+		} else {
 			return self::updateWBO($userId, $modifiedTime, $collectionId, $wboArray);
 		}
 	}
 
 	/**
-	* @brief Delete Wbo
+	* @brief Delete a WBO.
 	*
-	* @param integer $userId
-	* @param integer $collectionId
-	* @param integer $wboId
-	* @return boolean
+	* @param integer $userId User ID whose WBO will be deleted.
+	* @param integer $collectionId Collection ID whose WBO will be deleted.
+	* @param integer $wboId WBO's ID which will be deleted.
+	* @return boolean True on success, false otherwise.
 	*/
 	static public function deleteWBO($userId, $collectionId, $wboId) {
-		$query = \OCP\DB::prepare( 'DELETE FROM `*PREFIX*mozilla_sync_wbo` WHERE `collectionid`=? AND `name`=?' );
-		$result = $query->execute( array($collectionId, $wboId) );
+		$query = \OCP\DB::prepare('DELETE FROM `*PREFIX*mozilla_sync_wbo`
+			WHERE `collectionid` = ? AND `name` = ?');
+		$result = $query->execute(array($collectionId, $wboId));
 
-		if($result == false) {
+		if ($result == false) {
 			Utils::writeLog("DB: Could not delete WBO " . $wboId . ".", \OCP\Util::INFO);
 			return false;
 		}
@@ -99,17 +114,27 @@ class Storage
 		return true;
 	}
 
+	/**
+	* @brief Inserts a new WBO into the database.
+	*
+	* @param integer $userId User ID whose WBO will be inserted.
+	* @param integer $collectionId Collection ID whose WBO will be inserted.
+	* @param integer $wboId WBO's ID which will be inserted.
+	* @param array $wboArray WBO as JSON array which will be inserted into the
+	* database.
+	* @return True on success, false otherwise.
+	*/
 	static private function insertWBO($userId, $modifiedTime, $collectionId, $wboArray) {
 
-		$queryString = 'INSERT INTO `*PREFIX*mozilla_sync_wbo`(`collectionid`, `name`, `modified`, `payload`';
+		$queryString = 'INSERT INTO `*PREFIX*mozilla_sync_wbo` (`collectionid`, `name`, `modified`, `payload`';
 		$queryArgs = array($collectionId, $wboArray['id'], $modifiedTime, $wboArray['payload']);
 
 		$valuesString = 'VALUES (?,?,?,?';
 
+		// Add values from array to insert query statement
 		$wboArgs = array('`sortindex`', '`ttl`', '`parentid`', '`predecessorid`');
-		foreach($wboArgs as $value)
-		{
-			if(array_key_exists($value, $wboArray)) {
+		foreach ($wboArgs as $value)	{
+			if (array_key_exists($value, $wboArray)) {
 				$queryString .= ', ' .$value;
 				$queryArgs[] = $wboArray[$value];
 				$valuesString .= ',?';
@@ -121,7 +146,7 @@ class Storage
 		$query = \OCP\DB::prepare($queryString);
 		$result = $query->execute($queryArgs);
 
-		if($result == false) {
+		if ($result == false) {
 			Utils::writeLog("DB: Could not insert WBO for user " . $userId . " in collection " . $collectionId . ".");
 			return false;
 		}
@@ -129,26 +154,36 @@ class Storage
 		return true;
 	}
 
+	/**
+	* @brief Updates an already existing WBO.
+	*
+	* @param integer $userId User ID whose WBO will be updated.
+	* @param number $modifiedTime Updated last modification time.
+	* @param integer $collectionId Collection ID whose WBO will be updated.
+	* @param array $wboArray WBO as JSON array which will be updated in the
+	* database.
+	* @return True on success, false otherwise.
+	*/
 	static private function updateWBO($userId, $modifiedTime, $collectionId, $wboArray) {
 
-		$queryString= 'UPDATE `*PREFIX*mozilla_sync_wbo` SET `modified`=?';
+		$queryString= 'UPDATE `*PREFIX*mozilla_sync_wbo` SET `modified` = ?';
 		$queryArgs = array($modifiedTime);
 
+		// Add values from array to update query statement
 		$wboArgs = array('sortindex', 'ttl', 'parentid', 'predecessorid', 'payload');
-		foreach($wboArgs as $value)
-		{
-			if(array_key_exists($value, $wboArray)) {
+		foreach ($wboArgs as $value) {
+			if (array_key_exists($value, $wboArray)) {
 				$queryString .= ', ' .$value. '=?';
 				$queryArgs[] = $wboArray[$value];
 			}
 		}
-		$queryString .= ' WHERE `collectionid`=? AND `name`=?';
+		$queryString .= ' WHERE `collectionid` = ? AND `name` = ?';
 		array_push($queryArgs, $collectionId, $wboArray['id']);
 
 		$query = \OCP\DB::prepare($queryString);
 		$result = $query->execute($queryArgs);
 
-		if($result == false) {
+		if ($result == false) {
 			Utils::writeLog("DB: Could not update WBO for user " . $userId . " in collection " . $collectionId . ".");
 			return false;
 		}
@@ -157,25 +192,29 @@ class Storage
 	}
 
 	/**
-	* @brief Delete user storage
+	* @brief Delete complete storage for a user.
 	*
-	* @param integer $userId
-	* @return boolean
+	* @param integer $userId The user's ID whose storage will be deleted.
+	* @return boolean True on success, false otherwise.
 	*/
 	static public function deleteStorage($userId) {
-		$query = \OCP\DB::prepare( 'DELETE FROM `*PREFIX*mozilla_sync_wbo` WHERE `collectionid` IN (SELECT `id` FROM `*PREFIX*mozilla_sync_collections` WHERE `userid` = ?)' );
-		$result = $query->execute( array($userId) );
+		// Delete all WBO for this user
+		$query = \OCP\DB::prepare('DELETE FROM `*PREFIX*mozilla_sync_wbo` WHERE
+			`collectionid` IN (SELECT `id` FROM `*PREFIX*mozilla_sync_collections`
+			WHERE `userid` = ?)');
+		$result = $query->execute(array($userId));
 
-		if($result == false) {
+		if ($result == false) {
 			Utils::writeLog("DB: Could not delete storage for user " . $userId . ".");
 			return false;
 		}
 
+		// Delete all collections for this user
+		$query = \OCP\DB::prepare('DELETE FROM `*PREFIX*mozilla_sync_collections`
+			WHERE `userid` = ?');
+		$result = $query->execute(array($userId));
 
-		$query = \OCP\DB::prepare( 'DELETE FROM `*PREFIX*mozilla_sync_collections` WHERE `userid` = ?' );
-		$result = $query->execute( array($userId) );
-
-		if($result == false) {
+		if ($result == false) {
 			Utils::writeLog("DB: Could not delete collections for user " . $userId . ".");
 			return false;
 		}
@@ -184,96 +223,85 @@ class Storage
 	}
 
 	/**
-	* @brief Convert modifiers array to sql string
+	* @brief Convert modifiers array to SQL string, query arguments, limit and
+	* offset.
 	*
+	* @param array &$modifiers Array containing the modifiers for the SQL
+	* statement.
+	* @param array &$queryArgs Array with the query arguments.
+	* @param int &$limit The number of elements which will be retrieved.
+	* @param int &$offset Elements starting from this offset will be retrieved.
+	* @return string Returns the WHERE SQL string.
 	*/
 	static public function modifiersToString(&$modifiers, &$queryArgs, &$limit, &$offset) {
 		$whereString = '';
 
-		//
-		// ids
-		//
-		if(isset($modifiers['ids'])) {
-
-			if(gettype($modifiers['ids']) == 'array') {
+		// IDs
+		if (isset($modifiers['ids'])) {
+			if (gettype($modifiers['ids']) == 'array') {
 				$first = true;
 				$whereString .= ' AND (';
-				foreach($modifiers['ids'] as $value) {
-					if($first) {
+				foreach ($modifiers['ids'] as $value) {
+					if ($first) {
 						$first = false;
-					}
-					else{
+					} else {
 						$whereString .= ' OR ';
 					}
 					$whereString .= '`name` = ?';
 					$queryArgs[] = $value;
 				}
 				$whereString .= ')';
-			}
-			else{
+			} else {
 				$whereString .= ' AND `name` = ?';
 				$queryArgs[] = $modifiers['ids'];
 			}
 		}
 
-		//
-		// predecessorid
-		//
-		if(isset($modifiers['predecessorid'])) {
+		// Predecessor ID
+		if (isset($modifiers['predecessorid'])) {
 			$whereString .= ' AND `predecessorid` = ?';
 			$queryArgs[] = $modifiers['predecessorid'];
 		}
 
-		//
-		// parentid
-		//
-		if(isset($modifiers['parentid'])) {
+		// Parent ID
+		if (isset($modifiers['parentid'])) {
 			$whereString .= ' AND `parentid` = ?';
 			$queryArgs[] = $modifiers['parentid'];
 		}
 
-		//
-		// time modifiers
-		//
-		if(isset($modifiers['older'])) {
+		// Time modifiers
+		if (isset($modifiers['older'])) {
 			$whereString .= ' AND `modified` <= CAST( ? AS DECIMAL(15,2))';
 			$queryArgs[] = $modifiers['older'];
-		}
-		else if(isset($modifiers['newer'])) {
+		} else if (isset($modifiers['newer'])) {
 			$whereString .= ' AND `modified` >= CAST( ? AS DECIMAL(15,2))';
 			$queryArgs[] = $modifiers['newer'];
-		}
-		else if(isset($modifiers['index_above'])) {
+		} else if (isset($modifiers['index_above'])) {
 			$whereString .= ' AND `sortindex` >= ?';
 			$queryArgs[] = $modifiers['index_above'];
-		}
-		else if(isset($modifiers['index_below'])) {
+		} else if (isset($modifiers['index_below'])) {
 			$whereString .= ' AND `sortindex` <= ?';
 			$queryArgs[] = $modifiers['index_below'];
 		}
 
-		//
-		// sort
-		//
-		if(isset($modifiers['sort'])) {
-			if($modifiers['sort'] == 'oldest') {
+		// Sort
+		if (isset($modifiers['sort'])) {
+			if ($modifiers['sort'] == 'oldest') {
 				$whereString .= ' ORDER BY `modified` ASC';
-			}
-			else if($modifiers['sort'] == 'newest') {
+			} else if ($modifiers['sort'] == 'newest') {
 				$whereString .= ' ORDER BY `modified` DESC';
-			}
-			else if($modifiers['sort'] == 'index') {
+			} else if ($modifiers['sort'] == 'index') {
 				$whereString .= ' ORDER BY `sortindex` DESC';
 			}
 		}
 
-		//
-		// limit and offset
-		//
-		if(isset($modifiers['limit'])) {
+		// Limit
+		if (isset($modifiers['limit'])) {
 			$limit = intval($modifiers['limit']);
 		}
-		if(isset($modifiers['offset'])) {
+
+		// Offset
+		if (isset($modifiers['offset'])) {
 			$offset = intval($modifiers['offset']);
 		}
 
@@ -283,15 +311,17 @@ class Storage
 	/**
 	* @brief Gets the time of the last modification for the logged in user.
 	*
-	* @return string Last modification time formatted according to ISO 8601
+	* @return string Last modification time formatted according to ISO 8601.
 	*/
 	public static function getLastModifiedTime() {
+		// Get collections with all modification times
 		$modifieds = self::getCollectionModifiedTimes();
 
 		if ($modifieds === false) {
 			return false;
 		}
 
+		// Iterate through collections to find last modified record
 		$lastMod = false;
 
 		foreach ($modifieds as $modified) {
@@ -311,24 +341,24 @@ class Storage
 	* @return mixed Array of collection => modified.
 	*/
 	public static function getCollectionModifiedTimes($userId = NULL) {
-
 		// Get logged in user by default
 		if (is_null($userId)) {
 			$userId = User::userNameToUserId(\OCP\User::getUser());
 		}
 
 		if ($userId === false) {
+			Utils::writeLog("Failed to get user ID before getting the collection modified times.");
 			return false;
 		}
 
-		$query = \OCP\DB::prepare( 'SELECT `name`,
-																		(SELECT max(`modified`) FROM `*PREFIX*mozilla_sync_wbo`
-																			WHERE `*PREFIX*mozilla_sync_wbo`.`collectionid` = `*PREFIX*mozilla_sync_collections`.`id`
-																		) AS `modified`
-															FROM `*PREFIX*mozilla_sync_collections` WHERE `userid` = ?');
+		$query = \OCP\DB::prepare('SELECT `name`, (SELECT max(`modified`) FROM
+			`*PREFIX*mozilla_sync_wbo` WHERE
+			`*PREFIX*mozilla_sync_wbo`.`collectionid` =
+			`*PREFIX*mozilla_sync_collections`.`id`) AS `modified` FROM
+			`*PREFIX*mozilla_sync_collections` WHERE `userid` = ?');
 		$result = $query->execute( array($userId) );
 
-		if($result == false) {
+		if ($result == false) {
 			Utils::writeLog("DB: Could not get info collections for user " . $userId . ".");
 			return false;
 		}
@@ -360,12 +390,14 @@ class Storage
 	* @return int Size of stored data in KB.
 	*/
 	public static function getSyncSize() {
+		// Get all collections with their sizes
 		$sizes = self::getCollectionSizes();
 
 		if ($sizes === false) {
 			return false;
 		}
 
+		// Iterate through collections and add sizes
 		$totalSize = 0;
 
 		foreach ($sizes as $size) {
@@ -374,11 +406,12 @@ class Storage
 
 		return $totalSize;
 	}
-	
+
 	/**
 	* @brief Get the size of each collection for a user.
 	*
-	* @param string $userId The user ID whose collection sizes are returned, the logged in user by default.
+	* @param string $userId The user ID whose collection sizes are returned,
+	* the logged in user by default.
 	* @return mixed Array of collection => size in KB for the specified user.
 	*/
 	public static function getCollectionSizes($userId = NULL) {
@@ -389,15 +422,16 @@ class Storage
 		}
 
 		if ($userId === false) {
+			Utils::writeLog("Failed to get user ID before getting the collection sizes.");
 			return false;
 		}
 
-		$query = \OCP\DB::prepare( 'SELECT name,
-									(SELECT SUM(CHAR_LENGTH(payload)) FROM *PREFIX*mozilla_sync_wbo
-									WHERE *PREFIX*mozilla_sync_wbo.collectionid = *PREFIX*mozilla_sync_collections.id
-									) as size
-									FROM *PREFIX*mozilla_sync_collections WHERE userid = ?');
-		$result = $query->execute( array($userId) );
+		$query = \OCP\DB::prepare('SELECT name, (SELECT SUM(CHAR_LENGTH(payload))
+			FROM *PREFIX*mozilla_sync_wbo WHERE
+			*PREFIX*mozilla_sync_wbo.collectionid =
+			*PREFIX*mozilla_sync_collections.id) as size FROM
+			*PREFIX*mozilla_sync_collections WHERE userid = ?');
+		$result = $query->execute(array($userId));
 
 		if($result == false) {
 			Utils::writeLog("DB: Could not get info collection usage for user " . $userId . ".");
@@ -422,7 +456,7 @@ class Storage
 
 		return $resultArray;
 	}
-	
+
 	/**
 	* @brief Gets the number of sync clients for a user.
 	*
@@ -437,17 +471,20 @@ class Storage
 		}
 
 		if ($userId === false) {
+			Utils::writeLog("Failed to get user ID before getting the number of clients.");
 			return false;
 		}
 
-		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*mozilla_sync_wbo` WHERE `collectionid` = 
-									(SELECT `id` FROM `*PREFIX*mozilla_sync_collections` WHERE `name` = ? AND `userid` = ?)');
+		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*mozilla_sync_wbo`
+			WHERE `collectionid` = (SELECT `id` FROM
+			`*PREFIX*mozilla_sync_collections` WHERE `name` = ? AND `userid` = ?)');
 		$result = $query->execute(array('clients', $userId));
 
 		if ($result === false) {
+			Utils::writeLog("DB: Could not get number of clients for user " . $userId . ".");
 			return false;
 		}
-	    
+
 		return ((int) $result->numRows());
 	}
 }
