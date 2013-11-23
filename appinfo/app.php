@@ -19,6 +19,10 @@ OC::$CLASSPATH['OCA\mozilla_sync\Service'] = 'mozilla_sync/lib/service.php';
 OC::$CLASSPATH['OCA\mozilla_sync\StorageService'] = 'mozilla_sync/lib/storageservice.php';
 OC::$CLASSPATH['OCA\mozilla_sync\UserService'] = 'mozilla_sync/lib/userservice.php';
 
-OCP\App::registerPersonal('mozilla_sync', 'settings');
+// Register Mozilla Sync for personal page
+\OCP\App::registerPersonal('mozilla_sync', 'settings');
+
+// Register Mozilla Sync for the admin page
+\OCP\App::registerAdmin('mozilla_sync', 'admin');
 
 /* vim: set ts=4 sw=4 tw=80 noet : */
