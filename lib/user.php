@@ -315,16 +315,21 @@ class User
 	/**
 	* @brief Checks whether a user is allowed to use the Mozilla Sync service.
 	*
-	* @param string $userName The user's user name.
+	* @param string $userName The user's user name. Defaults to the currently logged in user.
 	* @return bool True if the user is allowed to use Mozilla Sync, false
 	*	otherwise.
 	*/
-	private static function checkUserIsAllowed($userName) {
+	public static function checkUserIsAllowed($userName = null) {
 		$authorizedGroup = self::getAuthorizedGroup();
 
 		// First check if group restriction is enabled
 		if ($authorizedGroup === false) {
 			return true;
+		}
+
+		// By default the user name is the currently logged in user
+		if (is_null($userName)) {
+			$userName = \OCP\User::getUser();
 		}
 
 		// Check if user is member of allowed group
