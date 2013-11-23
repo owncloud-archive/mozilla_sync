@@ -39,7 +39,7 @@ class UserService extends Service
 		// Map request to functions
 		if($this->urlParser->commandCount() === 0) {
 
-			$syncHash = $this->urlParser->getUserName();
+			$syncHash = $this->urlParser->getSyncHash();
 
 			switch (Utils::getRequestMethod()) {
 				case 'GET': $this->findUser($syncHash); break;
@@ -52,7 +52,7 @@ class UserService extends Service
 		} else if (($this->urlParser->commandCount() === 1) &&
 			(Utils::getRequestMethod() === 'POST')) {
 
-			$syncHash = $this->urlParser->getUserName();
+			$syncHash = $this->urlParser->getSyncHash();
 			$password = $this->urlParser->getCommand(0);
 
 			$this->changePassword($syncHash, $password);

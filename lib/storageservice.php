@@ -35,19 +35,19 @@ class StorageService extends Service
 			return false;
 		}
 
-		// Get user name and authenticate user
-		$syncUserHash = $this->urlParser->getUserName();
-		if (User::authenticateUser($syncUserHash) === false) {
+		// Get Mozilla Sync user hash and authenticate user
+		$syncHash = $this->urlParser->getSyncHash();
+		if (User::authenticateUser($syncHash) === false) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
-			Utils::writeLog("Could not authenticate user " . $syncUserHash . ".");
+			Utils::writeLog("Could not authenticate user " . $syncHash . ".");
 			return false;
 		}
 
-		// Convert user hash to user ID
-		$userId = User::syncHashToSyncId($syncUserHash);
+		// Convert Sync hash to user ID
+		$userId = User::syncHashToSyncId($syncHash);
 		if ($userId == false) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
-			Utils::writeLog("Could not convert user " . $syncUserHash . " to user ID.");
+			Utils::writeLog("Could not convert user " . $syncHash . " to user ID.");
 			return false;
 		}
 

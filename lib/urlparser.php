@@ -52,8 +52,8 @@ class UrlParser {
 			return;
 		}
 
-		// Parse username
-		$this->userHash = array_shift($urlArray);
+		// Parse sync hash
+		$this->syncHash = array_shift($urlArray);
 
 		// Parse commands
 		$this->commandsArray = $urlArray;
@@ -78,12 +78,12 @@ class UrlParser {
 	}
 
 	/**
-	* @brief Return username from the URL
+	* @brief Return Mozilla Sync user hash from the URL.
 	*
-	* @return string Username from the URL.
+	* @return string Sync hash from the URL.
 	*/
-	public function getUserHash() {
-		return $this->userHash;
+	public function getSyncHash() {
+		return $this->syncHash;
 	}
 
 	/**
@@ -182,9 +182,9 @@ class UrlParser {
 	private $version;
 
 	/**
-	* User name hash
+	* Mozilla Sync user hash
 	*/
-	private $userHash;
+	private $syncHash;
 
 	/**
 	* Further commands array
