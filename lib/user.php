@@ -339,7 +339,7 @@ class User
 
 		// User is not allowed to use Mozilla Sync
 		Utils::writeLog("User " . $userName . " is not part of the " .
-			$authorizedGroup . "group and thus is not allowed to use Mozilla Sync.");
+			$authorizedGroup . " group and thus is not allowed to use Mozilla Sync.");
 		return false;
 	}
 
@@ -392,6 +392,24 @@ class User
 	*/
 	public static function setAuthorizedGroup($group = null) {
 		\OCP\Config::setAppValue('mozilla_sync', 'authorized_group', $group);
+	}
+
+	/**
+	* @brief Gets all ownCloud groups.
+	*
+	* @return Array containing all ownCloud groups.
+	*/
+	public static function getAllGroups() {
+		$query = \OCP\DB::prepare('SELECT `gid` FROM `*PREFIX*groups`');
+		$result = $query->execute();
+
+		// Collect all groups in this array
+		$groups = array();
+
+		while ($row = $result->fetchRow()) {
+		    $groups[] = $row['gid'];
+		}
+		return $groups;
 	}
 }
 

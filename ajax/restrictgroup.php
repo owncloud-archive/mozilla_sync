@@ -8,7 +8,7 @@
 *
 */
 
-// Check if this file is called by admin user, otherwise send JSON error 
+// Check if this file is called by admin user, otherwise send JSON error
 \OCP\JSON::checkAdminUser();
 
 // Check if valid requesttoken was sent
@@ -17,7 +17,7 @@
 // Get input and set correct setting
 $restrictGroup = filter_var($_POST['restrictgroup'], FILTER_VALIDATE_BOOLEAN);
 if ($restrictGroup === true) {
-    $group = 'mozilla_sync';
+    $group = filter_var($_POST['groupselect'], FILTER_SANITIZE_STRING);
 } else {
     $group = null;
 }
