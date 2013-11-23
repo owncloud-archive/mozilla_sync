@@ -3,8 +3,8 @@
 // Check if user is admin, redirect to home if not
 \OCP\User::checkAdminUser();
 
-// Adds a javascript file
-//\OCP\Util::addScript( "apptemplate", "admin" );
+// Load JavaScript file
+\OCP\Util::addScript("mozilla_sync", "admin");
 
 // Assign admin template
 $tmpl = new \OCP\Template('mozilla_sync', 'admin');
@@ -12,4 +12,6 @@ $tmpl = new \OCP\Template('mozilla_sync', 'admin');
 $tmpl->assign('mozillaSyncRestrictGroupEnabled', \OCA\mozilla_sync\User::getAuthorizedGroup());
 
 return $tmpl->fetchPage();
+
+/* vim: set ts=4 sw=4 tw=80 noet : */
 

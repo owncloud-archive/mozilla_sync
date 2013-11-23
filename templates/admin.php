@@ -1,5 +1,5 @@
 <fieldset class="personalblock" id="mozilla_sync">
-    <h2><?php p($l->t('Mozilla Sync')); ?></h2>
+    <label><?php p($l->t('Mozilla Sync')); ?></label>
     <table>
         <tr>
             <td id="enable">
