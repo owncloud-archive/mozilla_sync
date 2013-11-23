@@ -53,7 +53,7 @@ class UrlParser {
 		}
 
 		// Parse username
-		$this->username = array_shift($urlArray);
+		$this->userHash = array_shift($urlArray);
 
 		// Parse commands
 		$this->commandsArray = $urlArray;
@@ -82,8 +82,8 @@ class UrlParser {
 	*
 	* @return string Username from the URL.
 	*/
-	public function getUserName() {
-		return $this->username;
+	public function getUserHash() {
+		return $this->userHash;
 	}
 
 	/**
@@ -184,7 +184,7 @@ class UrlParser {
 	/**
 	* User name hash
 	*/
-	private $username;
+	private $userHash;
 
 	/**
 	* Further commands array
