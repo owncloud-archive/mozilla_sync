@@ -9,7 +9,7 @@
 *
 */
 
-namespace OCA_mozilla_sync;
+namespace OCA\mozilla_sync;
 
 /**
 * @brief Implementation of Mozilla Sync User Service.
