@@ -16,13 +16,16 @@ The installation procedure is as follows:
 2. Enable it in the web interface's admin panel.
 3. Set an email address for all users that want to use Mozilla Sync. Note: **Email addresses must be unique!**
 
-### Sync installation (first time)
+### Sync installation on desktop Firefox
 
-1. Start the sync configuration process ether via the 
+1. Start the sync configuration process 
+..* via the *settings* > *Sync* > *Set Up Firefox Sync*
+...<a href="" target="_blank"><img src="docs/imgs/SetUpSyncSettings.png"/></a>
 
-### Sync installation (later)
+..* or via *Tools* > *Set Up Sync...*
+...<a href="" target="_blank"><img src="docs/imgs/SetUpSyncTools.png"/></a>
 
-1. Additional clients can be added manually or with Mozilla's device pairing service.
+2. Additional clients can be added manually or with Mozilla's device pairing service.
 
 
 Uninstall
