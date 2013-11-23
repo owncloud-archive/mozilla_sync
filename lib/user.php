@@ -9,7 +9,7 @@
 *
 */
 
-namespace OCA_mozilla_sync;
+namespace OCA\mozilla_sync;
 
 /**
 * @brief This class provides all methods for Mozilla Sync user management.

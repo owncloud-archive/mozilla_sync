@@ -9,7 +9,7 @@
 *
 */
 
-namespace OCA_mozilla_sync;
+namespace OCA\mozilla_sync;
 
 class Storage
 {
