@@ -44,7 +44,7 @@ class StorageService extends Service
 		}
 
 		// Convert user hash to user ID
-		$userId = User::userHashToId($syncUserHash);
+		$userId = User::syncHashToSyncId($syncUserHash);
 		if ($userId == false) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
 			Utils::writeLog("Could not convert user " . $syncUserHash . " to user ID.");

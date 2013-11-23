@@ -214,7 +214,7 @@ class UserService extends Service
 			return true;
 		}
 
-		$userId = User::userHashToId($syncUserHash);
+		$userId = User::syncHashToSyncId($syncUserHash);
 		if($userId == false) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
 			Utils::writeLog("Failed to convert user " . $syncUserHash . " to user ID.");
