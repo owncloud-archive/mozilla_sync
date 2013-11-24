@@ -1,13 +1,26 @@
 Mozilla Sync app
 ================
 
-Description:
-------------
 Simple ownCloud app integrating the Mozilla Sync API.
 It allows users to synchronize Firefox data (e.g. bookmarks, passwords, history,...) using their ownCloud server.
 
-Firefox on Android:
--------------------
+### Content
+1. <a href="#installation">Installation</a>
+2. <a href="#helpful-hints">Helpful hints</a>
+    1. <a href="#firefox-on-android">Firefox on Android</a>
+    2. <a href="#ldap">LDAP</a>
+3. <a href="#maintainers">Maintainers</a>
+4. <a href="#api">API</a>
+
+Installation
+------------
+For install, re-/uninstall and upgrade instruction look at [Changing your Mozilla Sync installation](INSTALL.md).
+
+Helpful hints
+-------------
+
+### Firefox on Android
+
 Firefox on Android uses the ````RC4-SHA```` SSL cipher suite.
 This must be enabled on your server in order for synchronization to work with Firefox on your smartphone or tablet.
 
@@ -27,17 +40,16 @@ Additionally, if you are using a self-signed SSL certificate you need to import 
 *Settings → Security → Install from storage*. Note that Android will only import self-signed certificates with the CA bit set.
 The import was successful when you see your certificate in *Settings → Security → Trusted credentials*.
 
-LDAP:
------
+### LDAP
 If you want to use Mozilla Sync with an LDAP backend, make sure that you enable email login. To do this set the LDAP user login filter in your admin panel to e.g. ```(|(uid=%uid)(mail=%uid))```.
 
-Maintainers:
-------------
+Maintainers
+-----------
 Mozilla Sync is currently maintained by [@ogasser](https://github.com/ogasser).
 It was originally developed and maintained by Michal Jaskurzynski ([@jaskoola](https://github.com/jaskoola)).
 
-API:
-----
+API
+---
 The Mozilla Sync API is documented on Mozilla's wiki:
 * [Sync Client Documentation](http://docs.services.mozilla.com/sync/index.html)
 * [The Life of a Sync](http://docs.services.mozilla.com/sync/lifeofasync.html)
