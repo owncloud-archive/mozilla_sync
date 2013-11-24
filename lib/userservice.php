@@ -4,14 +4,15 @@
 * ownCloud
 *
 * @author Michal Jaskurzynski
+* @author Oliver Gasser
 * @copyright 2012 Michal Jaskurzynski mjaskurzynski@gmail.com
 *
 */
 
-namespace OCA_mozilla_sync;
+namespace OCA\mozilla_sync;
 
 /**
-* @brief implementation of Mozilla Sync User Service
+* @brief Implementation of Mozilla Sync User Service.
 *
 */
 class UserService extends Service
@@ -22,51 +23,51 @@ class UserService extends Service
 	}
 
 	/**
-	* @brief Run service
+	* @brief Run user service.
+	*
+	* @return True on successful command parsing, false otherwise.
 	*/
 	public function run() {
 
-		//
-		// Check if given url is valid
-		//
-		if(!$this->urlParser->isValid()) {
+		// Check if the given URL is valid
+		if (!$this->urlParser->isValid()) {
 			Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+			Utils::writeLog("URL: Failed to parse URL.");
 			return false;
 		}
 
-		//
 		// Map request to functions
-		//
-		if($this->urlParser->commandCount() == 0) {
+		if($this->urlParser->commandCount() === 0) {
 
-			$syncUserHash = $this->urlParser->getUserName();
+			$syncHash = $this->urlParser->getSyncHash();
 
-			switch(Utils::getRequestMethod()) {
-				case 'GET': $this->findUser($syncUserHash); break;
-				case 'PUT': $this->createUser($syncUserHash); break;
-				case 'DELETE': $this->deleteUser($syncUserHash); break;
-				default: Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+			switch (Utils::getRequestMethod()) {
+				case 'GET': $this->findUser($syncHash); break;
+				case 'PUT': $this->createUser($syncHash); break;
+				case 'DELETE': $this->deleteUser($syncHash); break;
+				default:
+					Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+					Utils::writeLog("URL: Invalid HTTP method " . Utils::getRequestMethod() . " for user " . $syncHash . ".");
 			}
-		}
-		else if(($this->urlParser->commandCount() == 1) && (Utils::getRequestMethod() == 'POST')) {
+		} else if (($this->urlParser->commandCount() === 1) &&
+			(Utils::getRequestMethod() === 'POST')) {
 
-			$syncUserHash = $this->urlParser->getUserName();
+			$syncHash = $this->urlParser->getSyncHash();
 			$password = $this->urlParser->getCommand(0);
 
-			$this->changePassword($syncUserHash, $password);
-		}
-		else if($this->urlParser->commandMatch('/node\/weave/')) {
+			$this->changePassword($syncHash, $password);
+		} else if ($this->urlParser->commandMatch('/node\/weave/')) {
 			$this->getSyncServer();
-		}
-		else{
+		} else {
 			Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
+			Utils::writeLog("URL: Invalid URL.");
 		}
 
 		return true;
 	}
 
 	/**
-	*  @brief Method for checking if user already exists
+	*  @brief Checking if Mozilla Sync user already exists.
 	*
 	*  GET https://server/pathname/version/username
 	*
@@ -75,38 +76,39 @@ class UserService extends Service
 	*  Possible errors:
 	*    503: there was an error getting the information
 	*
-	*  @param string $userName
+	* @param string $syncHash The Mozilla Sync user hash to be checked for
+	*	existence.
+	* @return bool True if user exists, false otherwise.
 	*/
-	private function findUser($syncUserHash) {
-		if(User::syncUserExists($syncUserHash)) {
+	private function findUser($syncHash) {
+		if (User::syncUserExists($syncHash)) {
 			OutputData::write('1');
-		}
-		else{
+			return true;
+		} else {
 			OutputData::write('0');
+			return false;
 		}
-		return true;
 	}
 
 	/**
-	*  @brief Generate storage api server address respond
+	*  @brief Send storage API server address back to the client.
 	*
 	*  GET https://server/pathname/version/username/node/weave
 	*
-	*  Returns the Weave (aka Sync) Node that the client is located on. Sync-specific calls should be directed to that node.
-	*  Return value: the node URL, an unadorned (not JSON) string.
-	*  node may be ‘null’ if no node can be assigned at this time, probably due to sign up throttling.
+	*  Sends the Weave (aka Sync) Node that the client is located on. Sync-specific calls should be directed to that node.
+	*  The node URL is sent as an unadorned (not JSON) string. It may be ‘null’ if no node can be assigned at this time, probably due to sign up throttling.
 	*
 	*  Possible errors:
 	*    503: there was an error getting a node | empty body
 	*    404: user not found | empty body
+	*
 	*/
 	private function getSyncServer() {
 		OutputData::write(Utils::getServerAddress());
-		return true;
 	}
 
 	/**
-	*  @brief Create new user
+	*  @brief Create a new Mozilla Sync user.
 	*
 	*  PUT https://server/pathname/version/username
 	*
@@ -132,49 +134,48 @@ class UserService extends Service
 	*    400: 9 (Requested password not strong enough)
 	*    400: 2 (Incorrect or missing captcha)
 	*
-	*  @param string $userName
+	*  @param string $userHash Mozilla Sync user hash for the user to be
+	*	created.
 	*/
-	private function createUser($syncUserHash) {
+	private function createUser($syncHash) {
 
 		$inputData = $this->getInputData();
 
 		// JSON parse failure
-		if(!$inputData->isValid()) {
+		if (!$inputData->isValid()) {
 			Utils::sendError(400, 6);
-			return true;
+			Utils::writeLog("Failed to parse JSON for user " . $syncHash . ".");
 		}
 
-		// No password
-		if(!$inputData->hasValue('password')) {
+		// No password sent
+		if (!$inputData->hasValue('password')) {
 			Utils::sendError(400, 7);
-			return true;
+			Utils::writeLog("Request for user " . $syncHash . " did not include a password.");
 		}
 
-		// No email
-		if(!$inputData->hasValue('email')) {
+		// No email sent
+		if (!$inputData->hasValue('email')) {
 			Utils::sendError(400, 12);
-			return true;
+			Utils::writeLog("Request for user " . $syncHash . " did not include an email.");
 		}
 
 		// User already exists
-		if(User::syncUserExists($syncUserHash)) {
+		if (User::syncUserExists($syncHash)) {
 			Utils::sendError(400, 4);
-			return true;
+			Utils::writeLog("Failed to create user " . $syncHash . ". User already exists.");
 		}
 
-		// Create user
-		if(User::createUser($syncUserHash, $inputData->getValue('password'), $inputData->getValue('email'))) {
-			OutputData::write(strtolower($syncUserHash));
-		}
-		else{
+		// Create a new user
+		if (User::createUser($syncHash, $inputData->getValue('password'), $inputData->getValue('email'))) {
+			OutputData::write(strtolower($syncHash));
+		} else{
 			Utils::sendError(400, 12);
+			Utils::writeLog("Failed to create user " . $syncHash . ".");
 		}
-
-		return true;
 	}
 
 	/**
-	*  @brief Delete user
+	*  @brief Delete a Mozilla Sync user.
 	*
 	*  DELETE https://server/pathname/version/username
 	*
@@ -189,42 +190,43 @@ class UserService extends Service
 	*    404: the user does not exist in the database
 	*    401: authentication failed
 	*
-	*  @param string $userName
+	*  @param string $syncHash Mozilla Sync user hash of the user to be deleted.
 	*/
-	private function deleteUser($syncUserHash) {
+	private function deleteUser($syncHash) {
 
-		if(User::syncUserExists($syncUserHash) == false) {
+		if (User::syncUserExists($syncHash) === false) {
 			Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
-			return true;
+			Utils::writeLog("Failed to delete user " . $syncHash . ". User does not exist.");
 		}
 
-		if(User::authenticateUser($syncUserHash) == false) {
+		if (User::authenticateUser($syncHash) === false) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
-			return true;
+			Utils::writeLog("Authentication for deleting user " . $syncHash . " failed.");
 		}
 
-		$userId = User::userHashToId($syncUserHash);
-		if($userId == false) {
+		$userId = User::syncHashToSyncId($syncHash);
+		if ($userId === false) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
-			return true;
+			Utils::writeLog("Failed to convert user " . $syncHash . " to user ID.");
 		}
 
-		if(Storage::deleteStorage($userId) == false) {
+		if (Storage::deleteStorage($userId) === false) {
 			Utils::changeHttpStatus(Utils::STATUS_MAINTENANCE);
-			return true;
+			Utils::writeLog("Failed to delete storage for user " . $userId . ".");
 		}
 
-		if(User::deleteUser($userId) == false) {
+		if (User::deleteUser($userId) === false) {
 			Utils::changeHttpStatus(Utils::STATUS_MAINTENANCE);
-			return true;
+			Utils::writeLog("Failed to delete user " . $userId . ".");
 		}
 
 		OutputData::write('0');
-		return true;
 	}
 
 	/**
-	*  @brief Change password
+	*  @brief Change Mozilla Sync password.
+	*
+	* CANNOT BE IMPLEMENTED! PASSWORD NEEDS TO BE CHANGED INSIDE OWNCLOUD!
 	*
 	*  POST https://server/pathname/version/username/password
 	*
@@ -244,10 +246,14 @@ class UserService extends Service
 	*    404: the user does not exists in the database
 	*    503: there was an error updating the password
 	*    401: authentication failed
+	*
+	* @param string $syncHash The Mozilla Sync user hash of the user that wants
+	*	to change the password.
+	* @param string $password The password.
 	*/
-	private function changePassword($syncUserHash, $password) {
-		OutputData::write('success');
-		return true;
+	private function changePassword($syncHash, $password) {
+		Utils::writeLog("Changing password failed! To change your password for Mozilla Sync, please use ownCloud's password changing function.");
+		// OutputData::write('success');
 	}
 }
 

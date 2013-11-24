@@ -4,91 +4,144 @@
 * ownCloud
 *
 * @author Michal Jaskurzynski
+* @author Oliver Gasser
 * @copyright 2012 Michal Jaskurzynski mjaskurzynski@gmail.com
 *
 */
 
-namespace OCA_mozilla_sync;
+namespace OCA\mozilla_sync;
 
 /**
-* @brief This class provides all methods for mozilla sync service user management.
+* @brief This class provides all methods for Mozilla Sync user management.
+*
+* Terminology:
+*	- Sync ID: Mozilla Sync user ID, unique integer. Stored in
+*		oc_mozilla_sync_users.
+*	- Sync hash: Mozilla Sync hashed email address, unique string. Stored in
+*		oc_mozilla_sync_users.
+*	- User name: ownCloud user name, unique string. Stored in oc_users and also
+*		oc_mozilla_sync_users and oc_preferences.
+*	- Email address: ownCloud email address, string. Must be unique for Mozilla
+*		Sync to work. Stored in oc_preferences.
 */
 class User
 {
 
 	/**
-	* @brief Find owncloud userid by email address
+	* @brief Convert email address to ownCloud user name.
 	*
-	* @param string $email
+	* @param string $email Email address whose user name will be returned.
+	* @return mixed User name on success, false otherwise.
 	*/
-	public static function emailToUserId($email) {
-		$query = \OCP\DB::prepare( 'SELECT `userid` FROM `*PREFIX*preferences` WHERE `appid` = ? AND `configkey` = ? AND `configvalue` = ?');
-		$result = $query->execute( array('settings', 'email', $email) );
+	public static function emailToUserName($email) {
+		$query = \OCP\DB::prepare('SELECT `userid` FROM `*PREFIX*preferences`
+			WHERE `appid` = ? AND `configkey` = ? AND `configvalue` = ?');
+		$result = $query->execute(array('settings', 'email', $email));
 
-		$row=$result->fetchRow();
-		if($row) {
+		$row = $result->fetchRow();
+		if ($row) {
 			return $row['userid'];
-		}
-		else{
+		} else {
+			Utils::writeLog("DB: Could not convert email address " . $email . " to user name. Make sure that emails are unique!");
 			return false;
 		}
 	}
 
 	/**
-	* @brief Change sync user hash to owncloud user name
+	* @brief Convert ownCloud user name to Mozilla Sync user ID.
 	*
-	* Table oc_mozilla_sync_users contain user mapping
+	* Table oc_mozilla_sync_users contains user mapping.
 	*
-	* @param string $userHash
+	* @param string $userName ownCloud user name to be converted to Sync ID.
+	* @return mixed Mozilla Sync user ID on success, false otherwise.
 	*/
-	public static function userHashToUserName($userHash) {
-		$query = \OCP\DB::prepare( 'SELECT `username` FROM `*PREFIX*mozilla_sync_users` WHERE `sync_user` = ?');
-		$result = $query->execute( array($userHash) );
+	public static function userNameToUserId($userName) {
+		$query = \OCP\DB::prepare('SELECT `id` FROM
+			`*PREFIX*mozilla_sync_users` WHERE `username` = ?');
+		$result = $query->execute(array($userName));
 
-		$row=$result->fetchRow();
-		if($row) {
+		$row = $result->fetchRow();
+		if ($row) {
+			return (int) ($row['id']);
+		} else {
+			Utils::writeLog("DB: Could not convert user name to Sync ID.");
+			return false;
+		}
+	}
+
+	/**
+	* @brief Convert Mozilla Sync user hash to ownCloud user name.
+	*
+	* Table oc_mozilla_sync_users contains user mapping.
+	*
+	* @param string $syncHash Mozilla Sync user hash to be converted to ownCloud
+	*	user name.
+	* @return mixed Sync hash on success, false otherwise.
+	*/
+	public static function syncHashToUserName($syncHash) {
+		$query = \OCP\DB::prepare('SELECT `username` FROM
+			`*PREFIX*mozilla_sync_users` WHERE `sync_user` = ?');
+		$result = $query->execute(array($syncHash));
+
+		$row = $result->fetchRow();
+		if ($row) {
 			return $row['username'];
-		}
-		else{
+		} else {
+			Utils::writeLog("DB: Could not convert Sync hash " . $syncHash . " to user name.");
 			return false;
 		}
 	}
 
-	public static function userHashToId($userHash) {
-		$query = \OCP\DB::prepare( 'SELECT `id` FROM `*PREFIX*mozilla_sync_users` WHERE `sync_user` = ?');
-		$result = $query->execute( array($userHash) );
+	/**
+	* @brief Convert Mozilla Sync user hash to Mozilla Sync user ID.
+	*
+	* @param string $syncHash Mozilla Sync user hash to be converted to Mozilla
+	*	Sync user ID.
+	* @return mixed Sync user ID on success, false otherwise.
+	*/
+	public static function syncHashToSyncId($syncHash) {
+		$query = \OCP\DB::prepare('SELECT `id` FROM
+			`*PREFIX*mozilla_sync_users` WHERE `sync_user` = ?');
+		$result = $query->execute(array($syncHash));
 
-		$row=$result->fetchRow();
-		if($row) {
+		$row = $result->fetchRow();
+		if ($row) {
 			return $row['id'];
-		}
-		else{
+		} else {
+			Utils::writeLog("DB: Could not convert Sync hash " . $userHash . " to Sync ID.");
 			return false;
 		}
 	}
 
 	/**
-	* @brief Create a new user
+	* @brief Create a new Mozilla Sync user.
 	*
-	* @param string $syncUserHash The username of the user to create
-	* @param string $password The password of the new user
-	* @returns boolean
+	* @param string $syncHash The Mozilla Sync user hash of the new user.
+	* @param string $password The password of the new user.
+	* @param string $email The email address of the new user.
+	* @return bool True on success, false otherwise.
 	*/
-	public static function createUser($syncUserHash, $password, $email) {
+	public static function createUser($syncHash, $password, $email) {
 
-		$userId = self::emailToUserId($email);
-		if($userId == false) {
+		// Convert email address to user name
+		$userName = self::emailToUserName($email);
+		if ($userName === false) {
+			Utils::writeLog("Could not convert email address to user name.");
 			return false;
 		}
 
-		if(self::checkPassword($userId, $password) == false) {
+		// Verify that the provided password matches the one stored in the ownCloud database
+		if (self::checkPassword($userName, $password) === false) {
+			Utils::writeLog("Password for user " . $userName . " did not match.");
 			return false;
 		}
 
-		$query = \OCP\DB::prepare( 'INSERT INTO `*PREFIX*mozilla_sync_users` (`username`, `sync_user`) VALUES (?,?)' );
-		$result = $query->execute( array($userId, $syncUserHash) );
+		$query = \OCP\DB::prepare('INSERT INTO `*PREFIX*mozilla_sync_users`
+			(`username`, `sync_user`) VALUES (?, ?)' );
+		$result = $query->execute(array($userName, $syncHash));
 
 		if($result == false) {
+			Utils::writeLog("DB: Could not create user " . $userName . " with Sync hash " . $syncHash . ".");
 			return false;
 		}
 
@@ -96,16 +149,18 @@ class User
 	}
 
 	/**
-	* @biref Delete user
+	* @brief Delete Mozilla Sync user.
 	*
-	* @param integer $userId
-	* @return boolean true if success
+	* @param integer $syncId Mozilla Sync user ID of the user to be deleted.
+	* @return bool True on success, false otherwise.
 	*/
-	public static function deleteUser($userId) {
-		$query = \OCP\DB::prepare( 'DELETE FROM `*PREFIX*mozilla_sync_users` WHERE `id` = ?');
-		$result = $query->execute( array($userId) );
+	public static function deleteUser($syncId) {
+		$query = \OCP\DB::prepare('DELETE FROM `*PREFIX*mozilla_sync_users`
+			WHERE `id` = ?');
+		$result = $query->execute(array($syncId));
 
-		if($result == false) {
+		if ($result == false) {
+			Utils::writeLog("DB: Could not delete user with Sync ID " . $syncId . ".");
 			return false;
 		}
 
@@ -113,91 +168,248 @@ class User
 	}
 
 	/**
-	* @brief Check if user has sync account
+	* @brief Check if there is already a Mozilla Sync account for this Mozilla
+	*	Sync user hash.
 	*
-	* @param string $userHash The sync hash of the user to check
-	* @returns boolean
+	* @param string $syncHash The Mozilla Sync user hash to be checked.
+	* @return bool True if the user exists, false otherwise.
 	*/
-	public static function syncUserExists($userHash) {
-		$query = \OCP\DB::prepare( 'SELECT 1 FROM `*PREFIX*mozilla_sync_users` WHERE `sync_user` = ?');
-		$result = $query->execute( array($userHash) );
+	public static function syncUserExists($syncHash) {
+		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*mozilla_sync_users`
+			WHERE `sync_user` = ?');
+		$result = $query->execute(array($syncHash));
 
-		return ((int) $result->numRows()) === 1;
+		return (((int) $result->numRows()) === 1);
 	}
 
 	/**
-	* @brief Authenticate user by HTTP Basic Authorization user and password
+	* @brief Authenticate user by HTTP Basic Authentication with user name and
+	*	password.
 	*
-	* @param string $userHash User hash parameter specified by Url parameter
-	* @return boolean
+	* @param string $syncHash Mozilla Sync user hash parameter extracted from
+	*	the URL.
+	* @return bool True on authentication success, false otherwise.
 	*/
-	public static function authenticateUser($userHash) {
+	public static function authenticateUser($syncHash) {
 
-		if(!isset($_SERVER['PHP_AUTH_USER'])) {
-			return false;
-		}
-		// user name parameter and authentication user name doen't match
-		if($userHash != $_SERVER['PHP_AUTH_USER']) {
+		if (!isset($_SERVER['PHP_AUTH_USER'])) {
+			Utils::writeLog("No HTTP authentication header sent.");
 			return false;
 		}
 
-		$userId = self::userHashToUserName($userHash);
-		if($userId == false) {
+		// Sync hash URL parameter and HTTP Authentication header user name do not match
+		if ($syncHash != $_SERVER['PHP_AUTH_USER']) {
+			Utils::writeLog("Sync hash URL parameter " . $syncHash . " and HTTP Authentication header " . $_SERVER['PHP_AUTH_USER'] . " do not match.");
 			return false;
 		}
 
-		return self::checkPassword($userId, $_SERVER['PHP_AUTH_PW']);
+		// Get user name corresponding to Sync hash
+		$userName = self::syncHashToUserName($syncHash);
+		if ($userName === false) {
+			return false;
+		}
+
+		// Check the password in the ownCloud database
+		return self::checkPassword($userName, $_SERVER['PHP_AUTH_PW']);
 	}
 
 	/**
-	* @brief Checks the password of a user
-	* @param string $userId User ID of the user
-	* @param string $password Password of the user
-	* @return boolean True if the password is correct, false otherwise
+	* @brief Checks the password of a user. Additionally verifies whether user
+	*	is member of group that is allowed to use Mozilla Sync.
 	*
 	* Checks the supplied password for the user. If the LDAP app is also
-	* active it tries to authenticate as well. For this to work the
+	* active it tries to authenticate against it as well. For this to work the
 	* User Login Filter in the admin panel needs to be set to something
 	* like (|(uid=%uid)(mail=$uid)) .
+	*
+	* @param string $userName ownCloud user name whose password will be checked.
+	* @param string $password ownCloud password.
+	* @return bool True if the password is correct, false otherwise.
+	*
 	*/
-	private static function checkPassword($userId, $password) {
+	private static function checkPassword($userName, $password) {
 
-		if (\OCP\User::checkPassword($userId, $password) != false) {
+		// Check if user is allowed to use Mozilla Sync
+		if (self::checkUserIsAllowed($userName) === false) {
+			return false;
+		}
+
+		// Check password normally
+		if (\OCP\User::checkPassword($userName, $password) != false) {
 			return true;
 		}
 
 		// Check if the LDAP app is enabled
-		$ldap_enabled = \OCP\Config::getAppValue('user_ldap', 'enabled');
-		if ($ldap_enabled === 'yes') {
-			// Convert user ID to email address
-			$email = self::userIdToEmail($userId);
+		if (\OCP\App::isEnabled('user_ldap')) {
+			// Convert user name to email address
+			$email = self::userNameToEmail($userName);
 
-			if ($email == false) {
+			if ($email === false) {
 				return false;
 			}
 
-			// Check password with email instead of user ID as internal
-			// Owncloud ID and LDAP user ID are likely not to match
-			return (\OCP\User::checkPassword($email, $password) != false);
+			// Check password with email instead of user name as internal
+			// ownCloud user name and LDAP user ID are likely not to match
+			$res = (\OCP\User::checkPassword($email, $password) != false);
+			if ($res === false) {
+				Utils::writeLog("LDAP password did not match for user " . $userName . " with email address " . $email . ".");
+			}
+			return $res;
 		}
 
+		Utils::writeLog("Password did not match for user " . $userName . ".");
 		return false;
 	}
 
 
 	/**
-	* @brief Find email address by Owncloud user ID
+	* @brief Convert ownCloud user name to email address.
 	*
-	* @param string $userId
+	* @param string $userName User name to be converted to email address.
+	* @return mixed Email address on success, false otherwise.
 	*/
-	private static function userIdToEmail($userId) {
-		$email = \OCP\Config::getUserValue($userId, 'settings', 'email');
+	private static function userNameToEmail($userName) {
+		$email = \OCP\Config::getUserValue($userName, 'settings', 'email');
 
 		if ($email) {
 			return $email;
 		} else {
+			Utils::writeLog("Could not convert user name " . $userName . " to email address. Make sure that emails are unique!");
 			return false;
 		}
+	}
+
+	/**
+	* @brief Check if the currently logged in user has a unique email address.
+	*
+	* @param string $userName User name checking for duplicate email addresses.
+	*	By default the currently logged in user.
+	* @return bool True if the user's email is unique, false otherwise.
+	*/
+	public static function userHasUniqueEmail($userName = null) {
+		// By default the user name is the currently logged in user
+		if (is_null($userName)) {
+			$userName = \OCP\User::getUser();
+		}
+
+		// Return false if there is no user logged in
+		if ($userName === false) {
+			return false;
+		}
+
+		$email = self::userNameToEmail($userName);
+
+		// Return false if the user did not set an email address
+		if ($email === false) {
+			return false;
+		}
+
+		// Check for duplicate emails
+		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*preferences` WHERE `appid` = ? AND `configkey` = ? AND `configvalue` = ?');
+		$result = $query->execute(array('settings', 'email', $email));
+
+		// Only return true if exactly one row matched for this email address
+		return ((int) $result->numRows()) === 1;
+	}
+
+	/**
+	* @brief Checks whether a user is allowed to use the Mozilla Sync service.
+	*
+	* @param string $userName The user's user name. Defaults to the currently logged in user.
+	* @return bool True if the user is allowed to use Mozilla Sync, false
+	*	otherwise.
+	*/
+	public static function checkUserIsAllowed($userName = null) {
+		$authorizedGroup = self::getAuthorizedGroup();
+
+		// First check if group restriction is enabled
+		if ($authorizedGroup === false) {
+			return true;
+		}
+
+		// By default the user name is the currently logged in user
+		if (is_null($userName)) {
+			$userName = \OCP\User::getUser();
+		}
+
+		// Check if user is member of allowed group
+		if (self::checkGroupMembership($userName, $authorizedGroup) === true) {
+			return true;
+		}
+
+		// User is not allowed to use Mozilla Sync
+		Utils::writeLog("User " . $userName . " is not part of the " .
+			$authorizedGroup . " group and thus is not allowed to use Mozilla Sync.");
+		return false;
+	}
+
+	/**
+	* @brief Checks whether a user is a member of the specified group.
+	*
+	* @param string $userName The ownCloud user name of the user to be checked
+	*	for group membership.
+	* @param string $groupName The group name to be checked.
+	* @return bool True if user is in group, false otherwise.
+	*/
+	private static function checkGroupMembership($userName, $groupName) {
+		// Check if user is member of group
+		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*group_user` WHERE
+			`uid` = ? AND `gid` = ?');
+		$result = $query->execute(array($userName, $groupName));
+
+		// Only return true if exactly one row matched for this email address
+		return ((int) $result->numRows()) === 1;
+	}
+
+	/**
+	* @brief Gets the group that is authorized to utilize the Mozilla Sync
+	*	service.
+	*
+	* It is possible to restrict the usage of Mozilla Sync to users who are
+	* members of a certain group. This feature is disabled by default but can be
+	* enabled on the admin page.
+	*
+	* @return mixed The group name or false if everyone can use Mozilla Sync.
+	*/
+	public static function getAuthorizedGroup() {
+		$group = \OCP\Config::getAppValue('mozilla_sync', 'authorized_group');
+		if (is_null($group)) {
+			return false;
+		} else {
+			return $group;
+		}
+	}
+
+	/**
+	* @brief Sets the group that is authorized to utilize the Mozilla Sync
+	*	service.
+	*
+	* It is possible to restrict the usage of Mozilla Sync to users who are
+	* members of a certain group. This feature is disabled by default but can be
+	* enabled on the admin page.
+	*
+	* @param mixed $group The group name or null if everyone can use Mozilla Sync.
+	*/
+	public static function setAuthorizedGroup($group = null) {
+		\OCP\Config::setAppValue('mozilla_sync', 'authorized_group', $group);
+	}
+
+	/**
+	* @brief Gets all ownCloud groups.
+	*
+	* @return Array containing all ownCloud groups.
+	*/
+	public static function getAllGroups() {
+		$query = \OCP\DB::prepare('SELECT `gid` FROM `*PREFIX*groups`');
+		$result = $query->execute();
+
+		// Collect all groups in this array
+		$groups = array();
+
+		while ($row = $result->fetchRow()) {
+		    $groups[] = $row['gid'];
+		}
+		return $groups;
 	}
 }
 

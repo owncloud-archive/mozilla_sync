@@ -8,7 +8,7 @@
 *
 */
 
-namespace OCA_mozilla_sync;
+namespace OCA\mozilla_sync;
 
 /**
 * Base class for user and storage service
