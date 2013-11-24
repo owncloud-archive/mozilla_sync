@@ -1,6 +1,16 @@
 Changing your Mozilla Sync installation
 =======================================
 
+### Content
+1. <a href="#install">Install</a>
+    1. <a href="#app-installation">App installation</a>
+    2. <a href="#sync-installation-on-desktop-firefox">Sync installation on desktop Firefox</a>
+    3. <a href="#add-sync-devices">Add sync devices</a>
+    4. <a href="#troubleshooting">Troubleshooting</a>
+2. <a href="#uninstall">Uninstall</a>
+3. <a href="#reinstall">Reinstall</a>
+4. <a href="#ppgrade">Upgrade</a>
+
 Install
 -------
 
@@ -20,10 +30,10 @@ The installation procedure is as follows:
 
 1. Start the sync configuration process
 
-    via the *settings* > *Sync* > *Set Up Firefox Sync*
+    via the *settings* > *Sync* > *Set Up Firefox Sync*<br/>
     <a href="" target="_blank"><img src="docs/imgs/SetUpSyncSettings.png"/></a>
     
-    or via *Tools* > *Set Up Sync...*
+    or via *Tools* > *Set Up Sync...*<br/>
     <a href="" target="_blank"><img src="docs/imgs/SetUpSyncTools.png"/></a>
     
 2. A new window opens where you see this:
