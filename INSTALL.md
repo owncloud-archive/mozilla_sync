@@ -19,19 +19,31 @@ The installation procedure is as follows:
 ### Sync installation on desktop Firefox
 
 1. Start the sync configuration process
-   >
-   > via the *settings* > *Sync* > *Set Up Firefox Sync*
-   > <a href="" target="_blank"><img src="docs/imgs/SetUpSyncSettings.png"/></a>
-   >
-   > or via *Tools* > *Set Up Sync...*
-   > <a href="" target="_blank"><img src="docs/imgs/SetUpSyncTools.png"/></a>
-   >
-2. A new window opens where you see the content like the one in the next picture. You choose "Create a New Account".
-   > <a href="" target="_blank"><img src="docs/imgs/SetUpSyncStart.png"/></a>
-3. In the next form you have to type in your personal data. First, you should choose "Use a custom server..." and type in the URL given in the personal settings of your owncloud account (something like ```http(s)://<owncloud-server>/remote.php/mozilla_sync/```). Then you add the email address and password of your owncloud account.
-   > <a href="" target="_blank"><img src="docs/imgs/SetUpSyncAccountDetails.png"/></a>
-4. The button "Sync Options" switchs to the options dialog. Here you choose a name for the device you want to sync and choose which data should be synced.
-   > <a href="" target="_blank"><img src="docs/imgs/SetUpSyncOptions.png"/></a>
+
+    via the *settings* > *Sync* > *Set Up Firefox Sync*
+    <a href="" target="_blank"><img src="docs/imgs/SetUpSyncSettings.png"/></a>
+    
+    or via *Tools* > *Set Up Sync...*
+    <a href="" target="_blank"><img src="docs/imgs/SetUpSyncTools.png"/></a>
+    
+2. A new window opens where you see this:
+
+    <a href="" target="_blank"><img src="docs/imgs/SetUpSyncStart.png"/></a>
+    
+    You choose "Create a New Account".
+    
+3. In the next form you have to type in your personal data.
+
+    <a href="" target="_blank"><img src="docs/imgs/SetUpSyncAccountDetails.png"/></a>
+    
+    First, you should choose "Use a custom server..." and type in the URL given in the personal settings of your owncloud account (something like ```http(s)://<owncloud-server>/remote.php/mozilla_sync/```). Then you add the email address and password of your owncloud account.
+    
+4. With the button "Sync Options" the dialog switchs to the options.
+
+    <a href="" target="_blank"><img src="docs/imgs/SetUpSyncOptions.png"/></a>
+    
+    Here you choose a name for the device you want to sync and choose which data should be synced.
+    
 5. After finishing the "Account Details" dialog and everything was okay, you see a new tab telling you that the setup is completed and that Firefox is syncing now (which you could see at the progress bar).
 
 ### Add sync devices
