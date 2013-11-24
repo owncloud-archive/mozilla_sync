@@ -28,6 +28,8 @@ The installation procedure is as follows:
 
 ### Sync installation on desktop Firefox
 
+To init the sync of bookmarks, etc. you have to create an account with a desktop installation of Firefox. If you want to sync other devices (e.q. smart phones) do the following installation steps and than pair your device.
+
 1. Start the sync configuration process
 
     via the *settings* > *Sync* > *Set Up Firefox Sync*<br/>
