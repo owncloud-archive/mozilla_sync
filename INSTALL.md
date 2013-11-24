@@ -18,32 +18,48 @@ The installation procedure is as follows:
 
 ### Sync installation on desktop Firefox
 
-1. Start the sync configuration process 
-..* via the *settings* > *Sync* > *Set Up Firefox Sync*
-...<a href="" target="_blank"><img src="docs/imgs/SetUpSyncSettings.png"/></a>
+1. Start the sync configuration process
+   >
+   > via the *settings* > *Sync* > *Set Up Firefox Sync*
+   > <a href="" target="_blank"><img src="docs/imgs/SetUpSyncSettings.png"/></a>
+   >
+   > or via *Tools* > *Set Up Sync...*
+   > <a href="" target="_blank"><img src="docs/imgs/SetUpSyncTools.png"/></a>
+   >
+2. A new window opens where you see the content like the one in the next picture. You choose "Create a New Account".
+   > <a href="" target="_blank"><img src="docs/imgs/SetUpSyncStart.png"/></a>
+3. In the next form you have to type in your personal data. First, you should choose "Use a custom server..." and type in the URL given in the personal settings of your owncloud account (something like ```http(s)://<owncloud-server>/remote.php/mozilla_sync/```). Then you add the email address and password of your owncloud account.
+   > <a href="" target="_blank"><img src="docs/imgs/SetUpSyncAccountDetails.png"/></a>
+4. The button "Sync Options" switchs to the options dialog. Here you choose a name for the device you want to sync and choose which data should be synced.
+   > <a href="" target="_blank"><img src="docs/imgs/SetUpSyncOptions.png"/></a>
+5. After finishing the "Account Details" dialog and everything was okay, you see a new tab telling you that the setup is completed and that Firefox is syncing now (which you could see at the progress bar).
 
-..* or via *Tools* > *Set Up Sync...*
-...<a href="" target="_blank"><img src="docs/imgs/SetUpSyncTools.png"/></a>
+### Add sync devices
+Additional clients can be added manually or with Mozilla's device pairing service. More informations about that you find read at <a href="http://mzl.la/KpeZJw">mozilla support: How do I set up Firefox Sync?</a>.
 
-2. Additional clients can be added manually or with Mozilla's device pairing service.
+### Troubleshooting
+Tips and tricks helping you with Firefox sync could be found at <a href="http://mzl.la/MHqQXd">mozilla support: Firefox Sync troubleshooting and tips</a>.
 
 
 Uninstall
 ---------
 
-To completely uninstall Mozilla Sync, *deactivate/uninstall* it in your ownCloud's admin panel. Then, drop the following tables in your database:
-* ````oc_mozilla_sync_collections````
-* ````oc_mozilla_sync_users````
-* ````oc_mozilla_sync_wbo````
+To completely uninstall Mozilla Sync, *deactivate/uninstall* it in your ownCloud's admin panel (**attention!** this will delete the ```mozilla_sync``` directory, so maybe make a backup first).
 
-Finally, delete all four entries related to the app from the ````oc_appconfig```` table by executing the following SQL statement:
+Then, drop the following tables in your database:
 
-````
+* ```oc_mozilla_sync_collections```
+* ```oc_mozilla_sync_users```
+* ```oc_mozilla_sync_wbo```
+
+Finally, delete all four entries related to the app from the ```oc_appconfig``` table by executing the following SQL statement:
+
+```
 DELETE FROM oc_appconfig WHERE oc_appconfig.appid = 'mozilla_sync' AND oc_appconfig.configkey = 'types';
 DELETE FROM oc_appconfig WHERE oc_appconfig.appid = 'core' AND oc_appconfig.configkey = 'remote_mozilla_sync';
 DELETE FROM oc_appconfig WHERE oc_appconfig.appid = 'mozilla_sync' AND oc_appconfig.configkey = 'installed_version';
 DELETE FROM oc_appconfig WHERE oc_appconfig.appid = 'mozilla_sync' AND oc_appconfig.configkey = 'enabled';
-````
+```
 
 Now you have completely removed Mozilla Sync and are free to do a clean reinstall of the app.
 
@@ -55,4 +71,4 @@ To reinstall the app you can first follow the **Uninstall** and then the **Insta
 Upgrade
 -------
 
-If you want to upgrade the Mozilla Sync app you can just replace the ````apps/mozilla_sync/```` folder with a newer version.
+If you want to upgrade the Mozilla Sync app you can just replace the ```apps/mozilla_sync/``` folder with a newer version.
