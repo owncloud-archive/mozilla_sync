@@ -293,25 +293,14 @@ class StorageService extends Service
 	* @return bool True on success, false otherwise.
 	*/
 	private function getInfoQuota($userId) {
+		$size = User::getUserQuota($userId);
 
-		// Sum up character size of all WBO
-		$query = \OCP\DB::prepare('SELECT SUM(CHAR_LENGTH(`payload`)) as `size`
-			FROM `*PREFIX*mozilla_sync_wbo` JOIN
-			`*PREFIX*mozilla_sync_collections` ON
-			`*PREFIX*mozilla_sync_wbo`.`collectionid` =
-			`*PREFIX*mozilla_sync_collections`.`id` WHERE `userid` = ?');
-		$result = $query->execute( array($userId) );
-
-		if($result == false || ((int) $result->numRows()) !== 1) {
-			Utils::writeLog("DB: Could not get info quota for user " . $userId . ".");
-			return false;
-		}
-
-		$row = $result->fetchRow();
-		$size = ((float) ($row['size']))/1000.0;
-
-		// Currently it is not possible to set a quota -> return null
-		OutputData::write(array($size, null));
+                $limit = User::getQuotaLimit();
+                if($limit === 0) {
+                    $limit = null;
+                }
+		
+		OutputData::write(array($size, $limit));
 		return true;
 	}
 
@@ -437,6 +426,17 @@ class StorageService extends Service
 			Utils::writeLog("URL: Invalid data for posting collection " . $collectionId . " for user " . $userId . ".");
 			return false;
 		}
+                
+                // Check if user has free space on limit
+                $limit = User::getQuotaLimit();
+		$quota = User::getUserQuota($userId);
+                //ToDo: calculate size of input data and reacte on that
+                if ($limit != 0 && $quota >= $limit) {
+                        //Utils::writeLog("Quota to high");
+                        Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
+                        Utils::sendError(Utils::STATUS_INVALID_DATA, 14);
+                        return false;
+                }
 
 		// Get current time to be stored in DB and returned as header
 		$modifiedTime = Utils::getMozillaTimestamp();
@@ -576,6 +576,17 @@ class StorageService extends Service
 			Utils::writeLog("URL: Invalid input data for putting WBO " . $wboId . " of collection " . $collectionId . " for user " . $userId . ".");
 			return false;
 		}
+                
+                // Check if user has free space on limit
+                $limit = User::getQuotaLimit();
+		$quota = User::getUserQuota($userId);
+                //ToDo: calculate size of input data and reacte on that
+                if ($limit != 0 && $quota >= $limit) {
+                        //Utils::writeLog("Quota to high");
+                        Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
+                        Utils::sendError(Utils::STATUS_INVALID_DATA, 14);
+                        return false;
+                }
 
 		// Get time to be updated in database and sent as header
 		if (isset($inputData['modified'])) {

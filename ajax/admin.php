@@ -14,7 +14,7 @@
 // Check if valid requesttoken was sent
 \OCP\JSON::callCheck();
 
-// Get input and set correct setting
+// Get inputs and set correct settings
 $restrictGroup = filter_var($_POST['restrictgroup'], FILTER_VALIDATE_BOOLEAN);
 if ($restrictGroup === true) {
     $group = filter_var($_POST['groupselect'], FILTER_SANITIZE_STRING);
@@ -22,8 +22,14 @@ if ($restrictGroup === true) {
     $group = null;
 }
 
-// Update settings value
+$limit = filter_var($_POST['quotalimit'], FILTER_VALIDATE_INT);
+if ($limit === false) {
+    $limit = 0;
+}
+
+// Update settings values
 \OCA\mozilla_sync\User::setAuthorizedGroup($group);
+\OCA\mozilla_sync\User::setQuotaLimit($limit);
 
 // Send success message
 \OCP\JSON::success();

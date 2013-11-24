@@ -21,5 +21,17 @@
         </tr>
     </table>
     <em><?php p($l->t("When activated, only members of this group can access Mozilla Sync."));?></em>
+    <table class="nostyle">
+        <tr>
+            <td id="enable">
+                <label for="quotalimit"><?php p($l->t("Quota limit")); ?></label>
+            </td>
+            <td id="quotalimit">
+                <input type="text" id="quotalimitinput" name="quotalimit" data-placeholder="<?php p($l->t('QuotaLimit'))?>"
+                    value="<?php p($_['mozillaSyncQuotaLimit']); ?>"> kB
+            </td>
+        </tr>
+    </table>
+    <em><?php p($l->t("When limit is zero, limitation is deactivated."));?></em>
 </fieldset>
 
