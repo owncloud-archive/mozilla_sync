@@ -1,15 +1,15 @@
 <?php
 
 // Determines which template will be shown on the personal page
-
 $tmpl = null;
 
-$email = OCP\Config::getUserValue(OCP\User::getUser(), 'settings', 'email');
+$email = \OCP\Config::getUserValue(OCP\User::getUser(), 'settings', 'email');
+
 // No email address set
-if ($email === null) {
-  $tmpl = new OCP\Template( 'mozilla_sync', 'noemail');
+if (is_null($email)) {
+  $tmpl = new \OCP\Template('mozilla_sync', 'noemail');
 } else {
-  $tmpl = new OCP\Template( 'mozilla_sync', 'settings');
+  $tmpl = new \OCP\Template('mozilla_sync', 'settings');
   $tmpl->assign('email', $email);
   $tmpl->assign('syncaddress', OCA\mozilla_sync\Utils::getServerAddress());
 }

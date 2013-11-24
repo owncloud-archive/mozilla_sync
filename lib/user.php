@@ -214,7 +214,8 @@ class User
 	}
 
 	/**
-	* @brief Checks the password of a user.
+	* @brief Checks the password of a user. Additionally verifies whether user
+	*	is member of group that is allowed to use Mozilla Sync.
 	*
 	* Checks the supplied password for the user. If the LDAP app is also
 	* active it tries to authenticate against it as well. For this to work the
@@ -227,6 +228,11 @@ class User
 	*
 	*/
 	private static function checkPassword($userName, $password) {
+
+		// Check if user is allowed to use Mozilla Sync
+		if (self::checkUserIsAllowed($userName) === false) {
+			return false;
+		}
 
 		// Check password normally
 		if (\OCP\User::checkPassword($userName, $password) != false) {
@@ -304,6 +310,106 @@ class User
 
 		// Only return true if exactly one row matched for this email address
 		return ((int) $result->numRows()) === 1;
+	}
+
+	/**
+	* @brief Checks whether a user is allowed to use the Mozilla Sync service.
+	*
+	* @param string $userName The user's user name. Defaults to the currently logged in user.
+	* @return bool True if the user is allowed to use Mozilla Sync, false
+	*	otherwise.
+	*/
+	public static function checkUserIsAllowed($userName = null) {
+		$authorizedGroup = self::getAuthorizedGroup();
+
+		// First check if group restriction is enabled
+		if ($authorizedGroup === false) {
+			return true;
+		}
+
+		// By default the user name is the currently logged in user
+		if (is_null($userName)) {
+			$userName = \OCP\User::getUser();
+		}
+
+		// Check if user is member of allowed group
+		if (self::checkGroupMembership($userName, $authorizedGroup) === true) {
+			return true;
+		}
+
+		// User is not allowed to use Mozilla Sync
+		Utils::writeLog("User " . $userName . " is not part of the " .
+			$authorizedGroup . " group and thus is not allowed to use Mozilla Sync.");
+		return false;
+	}
+
+	/**
+	* @brief Checks whether a user is a member of the specified group.
+	*
+	* @param string $userName The ownCloud user name of the user to be checked
+	*	for group membership.
+	* @param string $groupName The group name to be checked.
+	* @return bool True if user is in group, false otherwise.
+	*/
+	private static function checkGroupMembership($userName, $groupName) {
+		// Check if user is member of group
+		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*group_user` WHERE
+			`uid` = ? AND `gid` = ?');
+		$result = $query->execute(array($userName, $groupName));
+
+		// Only return true if exactly one row matched for this email address
+		return ((int) $result->numRows()) === 1;
+	}
+
+	/**
+	* @brief Gets the group that is authorized to utilize the Mozilla Sync
+	*	service.
+	*
+	* It is possible to restrict the usage of Mozilla Sync to users who are
+	* members of a certain group. This feature is disabled by default but can be
+	* enabled on the admin page.
+	*
+	* @return mixed The group name or false if everyone can use Mozilla Sync.
+	*/
+	public static function getAuthorizedGroup() {
+		$group = \OCP\Config::getAppValue('mozilla_sync', 'authorized_group');
+		if (is_null($group)) {
+			return false;
+		} else {
+			return $group;
+		}
+	}
+
+	/**
+	* @brief Sets the group that is authorized to utilize the Mozilla Sync
+	*	service.
+	*
+	* It is possible to restrict the usage of Mozilla Sync to users who are
+	* members of a certain group. This feature is disabled by default but can be
+	* enabled on the admin page.
+	*
+	* @param mixed $group The group name or null if everyone can use Mozilla Sync.
+	*/
+	public static function setAuthorizedGroup($group = null) {
+		\OCP\Config::setAppValue('mozilla_sync', 'authorized_group', $group);
+	}
+
+	/**
+	* @brief Gets all ownCloud groups.
+	*
+	* @return Array containing all ownCloud groups.
+	*/
+	public static function getAllGroups() {
+		$query = \OCP\DB::prepare('SELECT `gid` FROM `*PREFIX*groups`');
+		$result = $query->execute();
+
+		// Collect all groups in this array
+		$groups = array();
+
+		while ($row = $result->fetchRow()) {
+		    $groups[] = $row['gid'];
+		}
+		return $groups;
 	}
 }
 
