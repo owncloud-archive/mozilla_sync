@@ -13,7 +13,7 @@
       <tr>
         <td><?php p($l->t('Email'));?>&nbsp;&nbsp;&nbsp;</td>
         <td><code><?php p($_['email']);?></code>&nbsp;&nbsp;&nbsp;<?php
-            if (!OCA\mozilla_sync\User::userHasUniqueEmail()) {
+            if (!\OCA\mozilla_sync\User::userHasUniqueEmail()) {
                 ?><b><span style="color: red"><?php p($l->t('Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work.'));?></span></b><?php
             }?></td>
       </tr>
@@ -27,28 +27,32 @@
       </tr>
     </table>
     <i><?php
-        $lastMod = \OCA\mozilla_sync\Storage::getLastModifiedTime();
-        if ($lastMod === false) {
+        // Verify whether a Sync account was already created
+        $noSync = false;
+        if (!\OCA\mozilla_sync\User::hasSyncAccount()) {
+            $noSync = true;
+        } else {
+            $lastMod = \OCA\mozilla_sync\Storage::getLastModifiedTime();
+        }
+        // Display if no account was created or no data was uploaded yet
+        if ($noSync || $lastMod === false) {
             p($l->t("To set up Mozilla Sync create a new Sync account in Firefox."));
         } else {
             p($l->t("Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually."));
         }
         ?></i>
-    </p>
-
+    </p><?php
+    // Show Sync Status only if Sync account was created
+    if (!$noSync && $lastMod !== false) {
+        ?>
+    
     <br>
 
     <p><label>Sync Status</label>
     <table class="nostyle">
       <tr>
         <td><?php p($l->t('Last sync'));?>&nbsp;&nbsp;&nbsp;</td>
-        <td><?php
-            if ($lastMod === false) {
-                p($l->t('No successful sync yet.'));
-            } else {
-                p($lastMod);
-            }
-            ?></td>
+        <td><?php p($lastMod); ?></td>
       </tr>
       <tr>
         <td><?php p($l->t('Size of stored data'));?>&nbsp;&nbsp;&nbsp;</td>
@@ -67,4 +71,5 @@
       </tr>
     </table>
     </p>
+    <?php } ?>
 </fieldset>
