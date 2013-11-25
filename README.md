@@ -43,6 +43,8 @@ The import was successful when you see your certificate in *Settings → Securit
 ### LDAP
 If you want to use Mozilla Sync with an LDAP backend, make sure that you enable email login. To do this set the LDAP user login filter in your admin panel to e.g. ```(|(uid=%uid)(mail=%uid))```.
 
+Furthermore, you need to set the special attribute ```Email``` in your LDAP configuration. See the [ownCloud manual](http://doc.owncloud.org/server/5.0/admin_manual/configuration/auth_ldap.html#special-attributes) for more information.
+
 Maintainers
 -----------
 Mozilla Sync is currently maintained by [@ogasser](https://github.com/ogasser).
