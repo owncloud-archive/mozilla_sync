@@ -258,7 +258,7 @@ class StorageService extends Service
 		while (($row = $result->fetchRow())) {
 
 			// Skip empty collections
-			if($row['counts'] == null) {
+			if ($row['counts'] == null) {
 				continue;
 			}
 
@@ -302,7 +302,7 @@ class StorageService extends Service
 			`*PREFIX*mozilla_sync_collections`.`id` WHERE `userid` = ?');
 		$result = $query->execute( array($userId) );
 
-		if($result == false || ((int) $result->numRows()) !== 1) {
+		if ($result == false || ((int) $result->numRows()) !== 1) {
 			Utils::writeLog("DB: Could not get info quota for user " . $userId . ".");
 			return false;
 		}
@@ -447,7 +447,7 @@ class StorageService extends Service
 		$failedArray = array();
 
 		// Iterate through input array and store all WBO in the database
-		for($i = 0; $i < count($inputData->getInputArray()); $i++) {
+		for ($i = 0; $i < count($inputData->getInputArray()); $i++) {
 			$result = Storage::saveWBO($userId, $modifiedTime, $collectionId,
 				$inputData[$i]);
 			if ($result === true) {
@@ -503,7 +503,7 @@ class StorageService extends Service
 		$result = $query->execute(array($collectionId));
 
 		// No WBO found, delete entire collection
-		if($result->fetchRow() == false) {
+		if ($result->fetchRow() == false) {
 			$query = \OCP\DB::prepare('DELETE FROM
 			`*PREFIX*mozilla_sync_collections` WHERE `id` = ?');
 			$result = $query->execute(array($collectionId));
@@ -610,7 +610,7 @@ class StorageService extends Service
 
 		$result = Storage::deleteWBO($userId, $collectionId, $wboId);
 
-		if($result == false) {
+		if ($result == false) {
 			Utils::writeLog("Failed to delete WBO " . $wboId . " of collection " . $collectionId . " for user " . $userId . ".");
 			return false;
 		}
@@ -633,14 +633,14 @@ class StorageService extends Service
 	*/
 	private function deleteStorage($userId) {
 		// Only continue if X-Confirm-Delete header is set
-		if(!isset($_SERVER['HTTP_X_CONFIRM_DELETE'])) {
+		if (!isset($_SERVER['HTTP_X_CONFIRM_DELETE'])) {
 			Utils::writeLog("Did not send X_CONFIRM_DELETE header when trying to delete all records for user " . $userId . ".");
 			return false;
 		}
 
 		$result = Storage::deleteStorage($userId);
 
-		if($result == false) {
+		if ($result == false) {
 			Utils::writeLog("Failed to delete all records for user " . $userId . ".");
 			return false;
 		}

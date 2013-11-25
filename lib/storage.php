@@ -368,7 +368,7 @@ class Storage
 		while (($row = $result->fetchRow())) {
 
 			// Skip empty collections
-			if($row['modified'] == null) {
+			if ($row['modified'] == null) {
 				continue;
 			}
 
@@ -433,7 +433,7 @@ class Storage
 			*PREFIX*mozilla_sync_collections WHERE userid = ?');
 		$result = $query->execute(array($userId));
 
-		if($result == false) {
+		if ($result == false) {
 			Utils::writeLog("DB: Could not get info collection usage for user " . $userId . ".");
 			return false;
 		}
@@ -443,7 +443,7 @@ class Storage
 		while (($row = $result->fetchRow())) {
 
 			// Skip empty collections
-			if($row['size'] == null) {
+			if ($row['size'] == null) {
 				continue;
 			}
 

@@ -37,7 +37,7 @@ class UserService extends Service
 		}
 
 		// Map request to functions
-		if($this->urlParser->commandCount() === 0) {
+		if ($this->urlParser->commandCount() === 0) {
 
 			$syncHash = $this->urlParser->getSyncHash();
 
@@ -168,7 +168,7 @@ class UserService extends Service
 		// Create a new user
 		if (User::createUser($syncHash, $inputData->getValue('password'), $inputData->getValue('email'))) {
 			OutputData::write(strtolower($syncHash));
-		} else{
+		} else {
 			Utils::sendError(400, 12);
 			Utils::writeLog("Failed to create user " . $syncHash . ".");
 		}

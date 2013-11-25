@@ -13,7 +13,7 @@
             </td>
             <td id="group">
                 <select id="groupselect" name="group" data-placeholder="<?php p($l->t('Group'))?>">
-                    <?php foreach(\OCA\mozilla_sync\User::getAllGroups() as $group): ?>
+                    <?php foreach (\OCA\mozilla_sync\User::getAllGroups() as $group): ?>
                         <option value="<?php p($group);?>"><?php p($group);?></option>
                     <?php endforeach;?>
                 </select>

@@ -140,7 +140,7 @@ class User
 			(`username`, `sync_user`) VALUES (?, ?)' );
 		$result = $query->execute(array($userName, $syncHash));
 
-		if($result == false) {
+		if ($result == false) {
 			Utils::writeLog("DB: Could not create user " . $userName . " with Sync hash " . $syncHash . ".");
 			return false;
 		}

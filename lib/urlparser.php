@@ -36,7 +36,7 @@ class UrlParser {
 		$urlArray = explode('/', $url);
 
 		// There should be at least 2 arguments: version, username
-		if(count($urlArray) < 2) {
+		if (count($urlArray) < 2) {
 			$this->parseValidFlag = false;
 			Utils::writeLog("URL: Found only " . count($urlArray) . " arguments, but need at least 2.");
 			return;
@@ -44,9 +44,9 @@ class UrlParser {
 
 		// Parse version
 		$this->version = array_shift($urlArray);
-		if( ($this->version != '1.0') &&
+		if (($this->version != '1.0') &&
 			($this->version != '1.1') &&
-			($this->version != '2.0') ) {
+			($this->version != '2.0')) {
 			$this->parseValidFlag = false;
 			Utils::writeLog("URL: Illegal version " . $this->version . " found.");
 			return;
@@ -122,7 +122,7 @@ class UrlParser {
 		$modifiersArray = explode('&', $commandArray[1]);
 		foreach ($modifiersArray as $value) {
 			$tmpArray = explode('=', $value);
-			if(count($tmpArray) != 2) {
+			if (count($tmpArray) != 2) {
 				continue;
 			}
 
