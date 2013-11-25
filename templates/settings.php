@@ -65,6 +65,9 @@
         <td><?php p($l->t('Number of synced devices'));?>&nbsp;&nbsp;&nbsp;</td>
         <td><code><?php p(\OCA\mozilla_sync\Storage::getNumClients()); ?></code></td>
       </tr>
+      <tr>
+          <td><button type="button" id="deletestorage" <?php if($size === false) { print_unescaped('disabled'); }?>>Delete storage</button></td>
+      </tr>
     </table>
     </p>
 </fieldset>
