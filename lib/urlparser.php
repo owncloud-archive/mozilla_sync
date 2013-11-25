@@ -44,7 +44,11 @@ class UrlParser {
 
 		// Parse version
 		$this->version = array_shift($urlArray);
-		if (($this->version != '1.0') &&
+		// Ignore CAPTCHA request
+		if ($this->version === 'misc') {
+			$this->parseValidFlag = false;
+			return;
+		} else if (($this->version != '1.0') &&
 			($this->version != '1.1') &&
 			($this->version != '2.0')) {
 			$this->parseValidFlag = false;
