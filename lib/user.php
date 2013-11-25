@@ -411,6 +411,28 @@ class User
 		}
 		return $groups;
 	}
+	
+	/**
+	* @brief Check if an ownCloud user has an associated Mozilla Sync account.
+	*
+	* Table oc_mozilla_sync_users contains user mapping.
+	*
+	* @param string $userName ownCloud user name to be checked for Sync account.
+	* @return mixed True if Sync account is present, false otherwise.
+	*/
+	public static function hasSyncAccount($userName = null) {
+		// By default the user name is the currently logged in user
+		if (is_null($userName)) {
+			$userName = \OCP\User::getUser();
+		}
+
+		$query = \OCP\DB::prepare('SELECT 1 FROM
+			`*PREFIX*mozilla_sync_users` WHERE `username` = ?');
+		$result = $query->execute(array($userName));
+
+		// Only return true if exactly one row matched for this user name
+		return ((int) $result->numRows()) === 1;
+	}
 }
 
 /* vim: set ts=4 sw=4 tw=80 noet : */
