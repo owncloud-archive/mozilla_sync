@@ -27,7 +27,7 @@
                 <label for="syncquota"><?php p($l->t("Sync quota")); ?></label>
             </td>
             <td id="syncquota">
-                <input type="text" id="syncquotainput" name="syncquota" data-placeholder="<?php p($l->t('SyncQuota'))?>"
+                <input type="text" id="syncquotainput" name="syncquota" data-placeholder="<?php p($l->t('Sync quota'))?>"
                     value="<?php p($_['mozillaSyncQuota']); ?>"> kB
             </td>
         </tr>

@@ -293,9 +293,9 @@ class StorageService extends Service
 	* @return bool True on success, false otherwise.
 	*/
 	private function getInfoQuota($userId) {
-        $size = User::getUserQuota($userId);
+        $size = User::getUserUsage($userId);
 
-        $limit = User::getQuotaLimit();
+        $limit = User::getQuota();
         if($limit === 0) {
             $limit = null;
         }
@@ -305,17 +305,23 @@ class StorageService extends Service
 	}
     
     /**
-	* @brief Checks if user has free space.
-	*
+    * @brief Checks if user has free space according his usage and the qouta.
+    *
+    * It is possible to restrict the quota of Mozilla Sync to a limit. A zero 
+    * limit results in no restriction. The value is zero by default but can be
+    * set on the admin page.
     * 
     * @param integer $userId
     * @return boolean
     */
     private function checkUserQuota($userId, $size=0) {
-        $limit = User::getQuota();
-        $quota = User::getUserUsage($userId);
+        $quota = User::getQuota();
+        $usage = User::getUserUsage($userId);
         
-        if ($limit != 0 && ($quota + $size) >= $limit) {
+        if ($quota != 0 && ($usage + $size) >= $quota) {
+            Utils::writeLog("User ".$userId." reached the sync quota: usage "
+                    .$usage.", size of additional data ".$size.", quota "
+                    .$quota);
             Utils::sendError(Utils::STATUS_INVALID_DATA, 14);
             return false;
         }
@@ -435,7 +441,7 @@ class StorageService extends Service
 	* @param integer $collectionId The collection this WBO belongs to.
 	* @return bool True on success, false otherwise.
 	*/
-	private function postCollection($userId, $collectionId) {
+    private function postCollection($userId, $collectionId) {
         // Get and verify input data
         $inputData = $this->getInputData();
         if ((!$inputData->isValid()) &&

@@ -449,12 +449,7 @@ class User
 	* @return integer the quota limit
 	*/
 	public static function getQuota() {
-        $limit = \OCP\Config::getAppValue('mozilla_sync', 'quota_limit');
-        if (is_null($limit)) {
-            return 0;
-        } else {
-            return $limit;
-        }
+        return (int)\OCP\Config::getAppValue('mozilla_sync', 'quota_limit', '0');
 	}
         
     /**
