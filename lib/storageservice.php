@@ -452,7 +452,7 @@ class StorageService extends Service
         }
 
         // Check if user has free space on limit
-        $size = strlen(serialize($inputData)); // approximate the input data size
+        $size = ((float) strlen(serialize($inputData))/1000.0); // approximate the input data size
         if(!$this->checkUserQuota($userId, $size)) {
             return false;
         }
@@ -597,7 +597,7 @@ class StorageService extends Service
 		}
                 
         // Check if user has free space on limit
-        $size = strlen(serialize($inputData)); // approximate the input data size
+        $size = ((float) strlen(serialize($inputData))/1000.0); // approximate the input data size
         if(!$this->checkUserQuota($userId, $size)) {
             return false;
         }
