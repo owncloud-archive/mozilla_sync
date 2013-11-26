@@ -412,62 +412,62 @@ class User
 		return $groups;
 	}
         
-        /**
+    /**
 	* @brief Gets the quota for the given user.
 	*
-        * It is possible to restrict the quota of Mozilla Sync to a limit. A zero 
-        * limit results in no restriction. The value is zero by default but can be
-        * set on the admin page. 
+    * It is possible to restrict the quota of Mozilla Sync to a limit. A zero 
+    * limit results in no restriction. The value is zero by default but can be
+    * set on the admin page. 
 	*
 	* @return float the quota limit
 	*/
-        public static function getUserQuota($userId) {
-            // Sum up character size of all WBO
-            $query = \OCP\DB::prepare('SELECT SUM(CHAR_LENGTH(`payload`)) as `size`
-                    FROM `*PREFIX*mozilla_sync_wbo` JOIN
-                    `*PREFIX*mozilla_sync_collections` ON
-                    `*PREFIX*mozilla_sync_wbo`.`collectionid` =
-                    `*PREFIX*mozilla_sync_collections`.`id` WHERE `userid` = ?');
-            $result = $query->execute( array($userId) );
+    public static function getUserUsage($userId) {
+        // Sum up character size of all WBO
+        $query = \OCP\DB::prepare('SELECT SUM(CHAR_LENGTH(`payload`)) as `size`
+                FROM `*PREFIX*mozilla_sync_wbo` JOIN
+                `*PREFIX*mozilla_sync_collections` ON
+                `*PREFIX*mozilla_sync_wbo`.`collectionid` =
+                `*PREFIX*mozilla_sync_collections`.`id` WHERE `userid` = ?');
+        $result = $query->execute( array($userId) );
 
-            if($result == false || ((int) $result->numRows()) !== 1) {
-                    Utils::writeLog("DB: Could not get info quota for user " . $userId . ".");
-                    return false;
-            }
-
-            $row = $result->fetchRow();
-            return ((float) ($row['size']))/1000.0;
+        if($result == false || ((int) $result->numRows()) !== 1) {
+            Utils::writeLog("DB: Could not get info quota for user " . $userId . ".");
+            return false;
         }
+
+        $row = $result->fetchRow();
+        return ((float) ($row['size']))/1000.0;
+    }
         
-        /**
+    /**
 	* @brief Gets the quota limit for all sync accounts.
 	*
-        * It is possible to restrict the quota of Mozilla Sync to a limit. A zero 
-        * limit results in no restriction. The value is zero by default but can be
-        * set on the admin page. 
+    * It is possible to restrict the quota of Mozilla Sync to a limit. A zero 
+    * limit results in no restriction. The value is zero by default but can be
+    * set on the admin page. 
 	*
 	* @return integer the quota limit
 	*/
-	public static function getQuotaLimit() {
-            $limit = \OCP\Config::getAppValue('mozilla_sync', 'quota_limit');
-            if (is_null($limit)) {
-                return 0;
-            } else {
-                return $limit;
-            }
+	public static function getQuota() {
+        $limit = \OCP\Config::getAppValue('mozilla_sync', 'quota_limit');
+        if (is_null($limit)) {
+            return 0;
+        } else {
+            return $limit;
+        }
 	}
         
-        /**
+    /**
 	* @brief Sets the quota limit for all sync accounts.
 	*
 	* It is possible to restrict the quota of Mozilla Sync to a limit. A zero 
-        * limit results in no restriction. The value is zero by default but can be
-        * set on the admin page. 
+    * limit results in no restriction. The value is zero by default but can be
+    * set on the admin page. 
 	*
 	* @param integer the quota limit or zero (no limitation active)
 	*/
-	public static function setQuotaLimit($limit = 0) {
-            \OCP\Config::setAppValue('mozilla_sync', 'quota_limit', $limit);
+	public static function setQuota($limit = 0) {
+        \OCP\Config::setAppValue('mozilla_sync', 'quota_limit', $limit);
 	}
 }
 

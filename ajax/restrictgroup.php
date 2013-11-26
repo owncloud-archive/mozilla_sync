@@ -22,14 +22,8 @@ if ($restrictGroup === true) {
     $group = null;
 }
 
-$limit = filter_var($_POST['quotalimit'], FILTER_VALIDATE_INT);
-if ($limit === false) {
-    $limit = 0;
-}
-
 // Update settings values
 \OCA\mozilla_sync\User::setAuthorizedGroup($group);
-\OCA\mozilla_sync\User::setQuotaLimit($limit);
 
 // Send success message
 \OCP\JSON::success();

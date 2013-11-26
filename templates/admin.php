@@ -23,12 +23,12 @@
     <em><?php p($l->t("When activated, only members of this group can access Mozilla Sync."));?></em>
     <table class="nostyle">
         <tr>
-            <td id="enable">
-                <label for="quotalimit"><?php p($l->t("Quota limit")); ?></label>
+            <td>
+                <label for="syncquota"><?php p($l->t("Sync quota")); ?></label>
             </td>
-            <td id="quotalimit">
-                <input type="text" id="quotalimitinput" name="quotalimit" data-placeholder="<?php p($l->t('QuotaLimit'))?>"
-                    value="<?php p($_['mozillaSyncQuotaLimit']); ?>"> kB
+            <td id="syncquota">
+                <input type="text" id="syncquotainput" name="syncquota" data-placeholder="<?php p($l->t('SyncQuota'))?>"
+                    value="<?php p($_['mozillaSyncQuota']); ?>"> kB
             </td>
         </tr>
     </table>
