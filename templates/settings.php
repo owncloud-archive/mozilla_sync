@@ -40,34 +40,39 @@
 
     <p><label>Sync Status</label>
     <table class="nostyle">
-      <tr>
-        <td><?php p($l->t('Last sync'));?>&nbsp;&nbsp;&nbsp;</td>
-        <td><?php
-            if ($lastMod === false) {
-                p($l->t('No successful sync yet.'));
-            } else {
-                p($lastMod);
-            }
-            ?></td>
-      </tr>
-      <tr>
-        <td><?php p($l->t('Size of stored data'));?>&nbsp;&nbsp;&nbsp;</td>
-        <td><?php
-            $size = \OCA\mozilla_sync\Storage::getSyncSize();
-            if ($size === false) {
-                p($l->t('No data stored yet.'));
-            } else {
-                p($size . " KB");
-            }
-            ?></td>
-      </tr>
-      <tr>
-        <td><?php p($l->t('Number of synced devices'));?>&nbsp;&nbsp;&nbsp;</td>
-        <td><code><?php p(\OCA\mozilla_sync\Storage::getNumClients()); ?></code></td>
-      </tr>
-      <tr>
-          <td><button type="button" id="deletestorage" <?php if($size === false) { print_unescaped('disabled'); }?>>Delete storage</button></td>
-      </tr>
+        <tr>
+            <td><?php p($l->t('Last sync'));?>&nbsp;&nbsp;&nbsp;</td>
+            <td><?php
+                if ($lastMod === false) {
+                    p($l->t('No successful sync yet.'));
+                } else {
+                    p($lastMod);
+                }
+                ?></td>
+        </tr>
+        <tr>
+            <td><?php p($l->t('Size of stored data'));?>&nbsp;&nbsp;&nbsp;</td>
+            <td><?php
+                $size = \OCA\mozilla_sync\Storage::getSyncSize();
+                if ($size === false) {
+                    p($l->t('No data stored yet.'));
+                } else {
+                    p($size . " KB");
+                }
+                ?></td>
+        </tr>
+        <tr>
+            <td><?php p($l->t('Number of synced devices'));?>&nbsp;&nbsp;&nbsp;</td>
+            <td><code><?php p(\OCA\mozilla_sync\Storage::getNumClients()); ?></code></td>
+        </tr>
     </table>
+    <button type="button" id="deletestorage"
+        <?php if($size === false) { print_unescaped('disabled'); }?>>
+        <?php p($l->t('Delete storage')); ?>
+    </button>
+    <?php if($size !== false): ?>
+    <em><?php p($l->t('Attention! This may result in conflicts with your '
+            . 'Firefox Sync configuration.')); ?></em>
+    <?php endif ?>
     </p>
 </fieldset>
