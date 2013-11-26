@@ -293,16 +293,40 @@ class StorageService extends Service
 	* @return bool True on success, false otherwise.
 	*/
 	private function getInfoQuota($userId) {
-		$size = User::getUserQuota($userId);
+        $size = User::getUserUsage($userId);
 
-                $limit = User::getQuotaLimit();
-                if($limit === 0) {
-                    $limit = null;
-                }
-		
-		OutputData::write(array($size, $limit));
-		return true;
+        $limit = User::getQuota();
+        if($limit === 0) {
+            $limit = null;
+        }
+
+        OutputData::write(array($size, $limit));
+        return true;
 	}
+    
+    /**
+    * @brief Checks if user has free space according his usage and the qouta.
+    *
+    * It is possible to restrict the quota of Mozilla Sync to a limit. A zero 
+    * limit results in no restriction. The value is zero by default but can be
+    * set on the admin page.
+    * 
+    * @param integer $userId
+    * @return boolean
+    */
+    private function checkUserQuota($userId, $size=0) {
+        $quota = User::getQuota();
+        $usage = User::getUserUsage($userId);
+        
+        if ($quota != 0 && ($usage + $size) >= $quota) {
+            Utils::writeLog("User ".$userId." reached the sync quota: usage "
+                    .$usage.", size of additional data ".$size.", quota "
+                    .$quota);
+            Utils::sendError(Utils::STATUS_INVALID_DATA, 14);
+            return false;
+        }
+        return true;
+    }
 
 	/**
 	* @brief Returns a list of the WBO IDs contained in a collection.
@@ -417,54 +441,49 @@ class StorageService extends Service
 	* @param integer $collectionId The collection this WBO belongs to.
 	* @return bool True on success, false otherwise.
 	*/
-	private function postCollection($userId, $collectionId) {
-		// Get and verify input data
-		$inputData = $this->getInputData();
-		if ((!$inputData->isValid()) &&
-				(count($inputData->getInputArray()) > 0)) {
-			Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
-			Utils::writeLog("URL: Invalid data for posting collection " . $collectionId . " for user " . $userId . ".");
-			return false;
-		}
-                
-                // Check if user has free space on limit
-                $limit = User::getQuotaLimit();
-		$quota = User::getUserQuota($userId);
-                //ToDo: calculate size of input data and reacte on that
-                if ($limit != 0 && $quota >= $limit) {
-                        //Utils::writeLog("Quota to high");
-                        Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
-                        Utils::sendError(Utils::STATUS_INVALID_DATA, 14);
-                        return false;
-                }
+    private function postCollection($userId, $collectionId) {
+        // Get and verify input data
+        $inputData = $this->getInputData();
+        if ((!$inputData->isValid()) &&
+                        (count($inputData->getInputArray()) > 0)) {
+            Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
+            Utils::writeLog("URL: Invalid data for posting collection " . $collectionId . " for user " . $userId . ".");
+            return false;
+        }
 
-		// Get current time to be stored in DB and returned as header
-		$modifiedTime = Utils::getMozillaTimestamp();
+        // Check if user has free space on limit
+        $size = strlen(serialize($inputData)); // approximate the input data size
+        if(!$this->checkUserQuota($userId, $size)) {
+            return false;
+        }
 
-		$resultArray["modified"] = $modifiedTime;
+        // Get current time to be stored in DB and returned as header
+        $modifiedTime = Utils::getMozillaTimestamp();
 
-		$successArray = array();
-		$failedArray = array();
+        $resultArray["modified"] = $modifiedTime;
 
-		// Iterate through input array and store all WBO in the database
-		for($i = 0; $i < count($inputData->getInputArray()); $i++) {
-			$result = Storage::saveWBO($userId, $modifiedTime, $collectionId,
-				$inputData[$i]);
-			if ($result === true) {
-				$successArray[] = $inputData[$i]['id'];
-			} else {
-				$failedArray[] = $inputData[$i]['id'];
-				Utils::writeLog("DB: Failed to post collection " . $collectionId . " for user " . $userId . ".", \OCP\Util::WARN);
-			}
-		}
+        $successArray = array();
+        $failedArray = array();
 
-		$resultArray["success"] = $successArray;
-		// The failed field is a hash containing arrays
-		$resultArray["failed"] = (object) $failedArray;
+        // Iterate through input array and store all WBO in the database
+        for($i = 0; $i < count($inputData->getInputArray()); $i++) {
+            $result = Storage::saveWBO($userId, $modifiedTime, $collectionId,
+                $inputData[$i]);
+            if ($result === true) {
+                $successArray[] = $inputData[$i]['id'];
+            } else {
+                    $failedArray[] = $inputData[$i]['id'];
+                Utils::writeLog("DB: Failed to post collection " . $collectionId . " for user " . $userId . ".", \OCP\Util::WARN);
+            }
+        }
 
-		// Return modification time in X-Weave-Timestamp header
-		OutputData::write($resultArray, $modifiedTime);
-		return true;
+        $resultArray["success"] = $successArray;
+        // The failed field is a hash containing arrays
+        $resultArray["failed"] = (object) $failedArray;
+
+        // Return modification time in X-Weave-Timestamp header
+        OutputData::write($resultArray, $modifiedTime);
+        return true;
 	}
 
 	/**
@@ -577,16 +596,11 @@ class StorageService extends Service
 			return false;
 		}
                 
-                // Check if user has free space on limit
-                $limit = User::getQuotaLimit();
-		$quota = User::getUserQuota($userId);
-                //ToDo: calculate size of input data and reacte on that
-                if ($limit != 0 && $quota >= $limit) {
-                        //Utils::writeLog("Quota to high");
-                        Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
-                        Utils::sendError(Utils::STATUS_INVALID_DATA, 14);
-                        return false;
-                }
+        // Check if user has free space on limit
+        $size = strlen(serialize($inputData)); // approximate the input data size
+        if(!$this->checkUserQuota($userId, $size)) {
+            return false;
+        }
 
 		// Get time to be updated in database and sent as header
 		if (isset($inputData['modified'])) {
