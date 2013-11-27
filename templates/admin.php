@@ -21,5 +21,17 @@
         </tr>
     </table>
     <em><?php p($l->t("When activated, only members of this group can access Mozilla Sync."));?></em>
+    <table class="nostyle">
+        <tr>
+            <td>
+                <label for="syncquota"><?php p($l->t("Sync quota")); ?></label>
+            </td>
+            <td id="syncquota">
+                <input type="text" id="syncquotainput" name="syncquota" data-placeholder="<?php p($l->t('Sync quota'))?>"
+                    value="<?php p($_['mozillaSyncQuota']); ?>"> kB
+            </td>
+        </tr>
+    </table>
+    <em><?php p($l->t("To deactivate the quota set it to zero."));?></em>
 </fieldset>
 

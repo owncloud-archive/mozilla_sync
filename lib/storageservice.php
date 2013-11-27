@@ -293,25 +293,38 @@ class StorageService extends Service
 	* @return bool True on success, false otherwise.
 	*/
 	private function getInfoQuota($userId) {
+		$size = User::getUserUsage($userId);
 
-		// Sum up character size of all WBO
-		$query = \OCP\DB::prepare('SELECT SUM(CHAR_LENGTH(`payload`)) as `size`
-			FROM `*PREFIX*mozilla_sync_wbo` JOIN
-			`*PREFIX*mozilla_sync_collections` ON
-			`*PREFIX*mozilla_sync_wbo`.`collectionid` =
-			`*PREFIX*mozilla_sync_collections`.`id` WHERE `userid` = ?');
-		$result = $query->execute( array($userId) );
-
-		if ($result == false || ((int) $result->numRows()) !== 1) {
-			Utils::writeLog("DB: Could not get info quota for user " . $userId . ".");
-			return false;
+		$limit = User::getQuota();
+		if ($limit === 0) {
+			$limit = null;
 		}
 
-		$row = $result->fetchRow();
-		$size = ((float) ($row['size']))/1000.0;
+		OutputData::write(array($size, $limit));
+		return true;
+	}
 
-		// Currently it is not possible to set a quota -> return null
-		OutputData::write(array($size, null));
+	/**
+	* @brief Checks if user has free space according his usage and the qouta.
+	*
+	* It is possible to restrict the quota of Mozilla Sync to a limit. A zero
+	* limit results in no restriction. The value is zero by default but can be
+	* set on the admin page.
+	*
+	* @param integer $userId The user ID whose quota will be checked.
+	* @return boolean True if the user is below the quota, false otherwise.
+	*/
+	private function checkUserQuota($userId, $size=0) {
+		$quota = User::getQuota();
+		$usage = User::getUserUsage($userId);
+
+		if ($quota != 0 && ($usage + $size) >= $quota) {
+			Utils::writeLog("User " . $userId . " reached the sync quota: usage "
+					. $usage. ", size of additional data " . $size . ", quota "
+					. $quota . ".");
+			Utils::sendError(Utils::STATUS_INVALID_DATA, 14);
+			return false;
+		}
 		return true;
 	}
 
@@ -432,9 +445,15 @@ class StorageService extends Service
 		// Get and verify input data
 		$inputData = $this->getInputData();
 		if ((!$inputData->isValid()) &&
-				(count($inputData->getInputArray()) > 0)) {
+						(count($inputData->getInputArray()) > 0)) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
 			Utils::writeLog("URL: Invalid data for posting collection " . $collectionId . " for user " . $userId . ".");
+			return false;
+		}
+
+		// Check if user has free space available
+		$size = ((float) strlen(serialize($inputData))/1000.0); // approximate the input data size
+		if(!$this->checkUserQuota($userId, $size)) {
 			return false;
 		}
 
@@ -574,6 +593,12 @@ class StorageService extends Service
 				(count($inputData->getInputArray()) == 1)) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
 			Utils::writeLog("URL: Invalid input data for putting WBO " . $wboId . " of collection " . $collectionId . " for user " . $userId . ".");
+			return false;
+		}
+
+		// Check if user has free space available
+		$size = ((float) strlen(serialize($inputData))/1000.0); // approximate the input data size
+		if(!$this->checkUserQuota($userId, $size)) {
 			return false;
 		}
 

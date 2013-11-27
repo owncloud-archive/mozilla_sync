@@ -14,7 +14,7 @@
 // Check if valid requesttoken was sent
 \OCP\JSON::callCheck();
 
-// Get input and set correct setting
+// Get inputs and set correct settings
 $restrictGroup = filter_var($_POST['restrictgroup'], FILTER_VALIDATE_BOOLEAN);
 if ($restrictGroup === true) {
     $group = filter_var($_POST['groupselect'], FILTER_SANITIZE_STRING);

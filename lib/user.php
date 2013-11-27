@@ -411,7 +411,7 @@ class User
 		}
 		return $groups;
 	}
-	
+
 	/**
 	* @brief Check if an ownCloud user has an associated Mozilla Sync account.
 	*
@@ -432,6 +432,61 @@ class User
 
 		// Only return true if exactly one row matched for this user name
 		return ((int) $result->numRows()) === 1;
+	}
+
+	/**
+	* @brief Gets the usage for the given user.
+	*
+	* It is possible to restrict the quota of Mozilla Sync to a limit. A zero
+	* limit results in no restriction. The value is zero by default but can be
+	* set on the admin page.
+	*
+	* @param string $userId The user whose usage will be returned.
+	* @return float The usage in kB.
+	*/
+	public static function getUserUsage($userId) {
+		// Sum up character size of all WBO
+		$query = \OCP\DB::prepare('SELECT SUM(CHAR_LENGTH(`payload`)) as `size`
+				FROM `*PREFIX*mozilla_sync_wbo` JOIN
+				`*PREFIX*mozilla_sync_collections` ON
+				`*PREFIX*mozilla_sync_wbo`.`collectionid` =
+				`*PREFIX*mozilla_sync_collections`.`id` WHERE `userid` = ?');
+		$result = $query->execute(array($userId));
+
+		if($result == false || ((int) $result->numRows()) !== 1) {
+			Utils::writeLog("DB: Could not get info quota for user " . $userId . ".");
+			return false;
+		}
+
+		$row = $result->fetchRow();
+		return ((float) ($row['size']))/1000.0;
+	}
+
+	/**
+	* @brief Gets the quota for all Sync accounts.
+	*
+	* It is possible to restrict the quota of Mozilla Sync to a limit. A zero
+	* limit results in no restriction. The value is zero by default but can be
+	* set on the admin page.
+	*
+	* @return integer The quota in kB or 0 if not quota is set.
+	*/
+	public static function getQuota() {
+		return ((int) \OCP\Config::getAppValue('mozilla_sync', 'quota_limit', '0'));
+	}
+
+	/**
+	* @brief Sets the quota for all sync accounts.
+	*
+	* It is possible to restrict the quota of Mozilla Sync to a limit. A zero
+	* limit results in no restriction. The value is zero by default but can be
+	* set on the admin page.
+	*
+	* @param integer $quota The quota to be set in kB or zero if quota is to be
+	*	deactivated.
+	*/
+	public static function setQuota($quota = 0) {
+		\OCP\Config::setAppValue('mozilla_sync', 'quota_limit', $quota);
 	}
 }
 
