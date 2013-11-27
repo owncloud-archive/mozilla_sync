@@ -322,43 +322,43 @@ class StorageService extends Service
 	*
 	* This request has additional optional parameters:
 	*
-	* ids:             returns the ids for objects in the collection that are in the provided comma-separated list.
+	* ids:			   returns the ids for objects in the collection that are in the provided comma-separated list.
 	*
-	* full:            if defined, returns the full WBO, rather than just the id.
+	* full:			   if defined, returns the full WBO, rather than just the id.
 	*
 	*
 	* predecessorid:   returns the ids for objects in the collection that are directly preceded by the id given.
-	*                  Usually only returns one result.
+	*				   Usually only returns one result.
 	*
-	* parentid:        returns the ids for objects in the collection that are the children of the parent id given.
-	*
-	*
-	* older:           returns only ids for objects in the collection that have been last modified before the date given.
-	*
-	* newer:           returns only ids for objects in the collection that have been last modified since the date given.
-	*
-	* index_above:     if defined, only returns items with a higher sortindex than the value specified.
-	*
-	* index_below:     if defined, only returns items with a lower sortindex than the value specified.
+	* parentid:		   returns the ids for objects in the collection that are the children of the parent id given.
 	*
 	*
-	* limit:           sets the maximum number of ids that will be returned.
+	* older:		   returns only ids for objects in the collection that have been last modified before the date given.
 	*
-	* offset:          skips the first n ids. For use with the limit parameter (required) to paginate through a result set.
+	* newer:		   returns only ids for objects in the collection that have been last modified since the date given.
 	*
-	* sort:            sorts the output.
-	*                     ‘oldest’ - Orders by modification date (oldest first)
-	*                     ‘newest’ - Orders by modification date (newest first)
-	*                     ‘index’ - Orders by the sortindex descending (highest weight first)
+	* index_above:	   if defined, only returns items with a higher sortindex than the value specified.
+	*
+	* index_below:	   if defined, only returns items with a lower sortindex than the value specified.
+	*
+	*
+	* limit:		   sets the maximum number of ids that will be returned.
+	*
+	* offset:		   skips the first n ids. For use with the limit parameter (required) to paginate through a result set.
+	*
+	* sort:			   sorts the output.
+	*					  ‘oldest’ - Orders by modification date (oldest first)
+	*					  ‘newest’ - Orders by modification date (newest first)
+	*					  ‘index’ - Orders by the sortindex descending (highest weight first)
 	*
 	* WARNING!!
 	*
 	* In full record mode, data are send in separate arrays, for example:
-	*    {"id":"test1","modified":1234}
-	*    {"id":"test2","modified":12345}
+	*	 {"id":"test1","modified":1234}
+	*	 {"id":"test2","modified":12345}
 	*
 	* In id only mode, identificators are send in one array, for example:
-	*    ["qqweeqw","testid","nexttestid"]
+	*	 ["qqweeqw","testid","nexttestid"]
 	*
 	* @param integer $userId The user ID whose collection will be fetched.
 	* @param integer $collectionId The ID of the collection to be fetched.
@@ -422,7 +422,7 @@ class StorageService extends Service
 	* effectively doing a series of atomic PUTs with the same timestamp.
 	*
 	* example response:
-	*   {"failed": {}, "modified": 1341650217.16, "success": ["VQYhVASVcpVI"]}
+	*	{"failed": {}, "modified": 1341650217.16, "success": ["VQYhVASVcpVI"]}
 	*
 	* @param integer $userId The user ID whose WBO will be saved.
 	* @param integer $collectionId The collection this WBO belongs to.

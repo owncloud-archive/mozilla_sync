@@ -407,7 +407,7 @@ class User
 		$groups = array();
 
 		while ($row = $result->fetchRow()) {
-		    $groups[] = $row['gid'];
+			$groups[] = $row['gid'];
 		}
 		return $groups;
 	}
