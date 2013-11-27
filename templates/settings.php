@@ -61,7 +61,7 @@
             if ($size === false) {
                 p($l->t('No data stored yet.'));
             } else {
-                p($size . " KB");
+                p($size . " kB");
             }
             ?></td>
       </tr>
