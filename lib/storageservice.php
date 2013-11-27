@@ -293,40 +293,40 @@ class StorageService extends Service
 	* @return bool True on success, false otherwise.
 	*/
 	private function getInfoQuota($userId) {
-        $size = User::getUserUsage($userId);
+		$size = User::getUserUsage($userId);
 
-        $limit = User::getQuota();
-        if($limit === 0) {
-            $limit = null;
-        }
+		$limit = User::getQuota();
+		if ($limit === 0) {
+			$limit = null;
+		}
 
-        OutputData::write(array($size, $limit));
-        return true;
+		OutputData::write(array($size, $limit));
+		return true;
 	}
-    
-    /**
-    * @brief Checks if user has free space according his usage and the qouta.
-    *
-    * It is possible to restrict the quota of Mozilla Sync to a limit. A zero 
-    * limit results in no restriction. The value is zero by default but can be
-    * set on the admin page.
-    * 
-    * @param integer $userId
-    * @return boolean
-    */
-    private function checkUserQuota($userId, $size=0) {
-        $quota = User::getQuota();
-        $usage = User::getUserUsage($userId);
-        
-        if ($quota != 0 && ($usage + $size) >= $quota) {
-            Utils::writeLog("User ".$userId." reached the sync quota: usage "
-                    .$usage.", size of additional data ".$size.", quota "
-                    .$quota);
-            Utils::sendError(Utils::STATUS_INVALID_DATA, 14);
-            return false;
-        }
-        return true;
-    }
+
+	/**
+	* @brief Checks if user has free space according his usage and the qouta.
+	*
+	* It is possible to restrict the quota of Mozilla Sync to a limit. A zero
+	* limit results in no restriction. The value is zero by default but can be
+	* set on the admin page.
+	*
+	* @param integer $userId The user ID whose quota will be checked.
+	* @return boolean True if the user is below the quota, false otherwise.
+	*/
+	private function checkUserQuota($userId, $size=0) {
+		$quota = User::getQuota();
+		$usage = User::getUserUsage($userId);
+
+		if ($quota != 0 && ($usage + $size) >= $quota) {
+			Utils::writeLog("User " . $userId . " reached the sync quota: usage "
+					. $usage. ", size of additional data " . $size . ", quota "
+					. $quota . ".");
+			Utils::sendError(Utils::STATUS_INVALID_DATA, 14);
+			return false;
+		}
+		return true;
+	}
 
 	/**
 	* @brief Returns a list of the WBO IDs contained in a collection.
@@ -335,43 +335,43 @@ class StorageService extends Service
 	*
 	* This request has additional optional parameters:
 	*
-	* ids:             returns the ids for objects in the collection that are in the provided comma-separated list.
+	* ids:			   returns the ids for objects in the collection that are in the provided comma-separated list.
 	*
-	* full:            if defined, returns the full WBO, rather than just the id.
+	* full:			   if defined, returns the full WBO, rather than just the id.
 	*
 	*
 	* predecessorid:   returns the ids for objects in the collection that are directly preceded by the id given.
-	*                  Usually only returns one result.
+	*				   Usually only returns one result.
 	*
-	* parentid:        returns the ids for objects in the collection that are the children of the parent id given.
-	*
-	*
-	* older:           returns only ids for objects in the collection that have been last modified before the date given.
-	*
-	* newer:           returns only ids for objects in the collection that have been last modified since the date given.
-	*
-	* index_above:     if defined, only returns items with a higher sortindex than the value specified.
-	*
-	* index_below:     if defined, only returns items with a lower sortindex than the value specified.
+	* parentid:		   returns the ids for objects in the collection that are the children of the parent id given.
 	*
 	*
-	* limit:           sets the maximum number of ids that will be returned.
+	* older:		   returns only ids for objects in the collection that have been last modified before the date given.
 	*
-	* offset:          skips the first n ids. For use with the limit parameter (required) to paginate through a result set.
+	* newer:		   returns only ids for objects in the collection that have been last modified since the date given.
 	*
-	* sort:            sorts the output.
-	*                     ‘oldest’ - Orders by modification date (oldest first)
-	*                     ‘newest’ - Orders by modification date (newest first)
-	*                     ‘index’ - Orders by the sortindex descending (highest weight first)
+	* index_above:	   if defined, only returns items with a higher sortindex than the value specified.
+	*
+	* index_below:	   if defined, only returns items with a lower sortindex than the value specified.
+	*
+	*
+	* limit:		   sets the maximum number of ids that will be returned.
+	*
+	* offset:		   skips the first n ids. For use with the limit parameter (required) to paginate through a result set.
+	*
+	* sort:			   sorts the output.
+	*					  ‘oldest’ - Orders by modification date (oldest first)
+	*					  ‘newest’ - Orders by modification date (newest first)
+	*					  ‘index’ - Orders by the sortindex descending (highest weight first)
 	*
 	* WARNING!!
 	*
 	* In full record mode, data are send in separate arrays, for example:
-	*    {"id":"test1","modified":1234}
-	*    {"id":"test2","modified":12345}
+	*	 {"id":"test1","modified":1234}
+	*	 {"id":"test2","modified":12345}
 	*
 	* In id only mode, identificators are send in one array, for example:
-	*    ["qqweeqw","testid","nexttestid"]
+	*	 ["qqweeqw","testid","nexttestid"]
 	*
 	* @param integer $userId The user ID whose collection will be fetched.
 	* @param integer $collectionId The ID of the collection to be fetched.
@@ -435,55 +435,55 @@ class StorageService extends Service
 	* effectively doing a series of atomic PUTs with the same timestamp.
 	*
 	* example response:
-	*   {"failed": {}, "modified": 1341650217.16, "success": ["VQYhVASVcpVI"]}
+	*	{"failed": {}, "modified": 1341650217.16, "success": ["VQYhVASVcpVI"]}
 	*
 	* @param integer $userId The user ID whose WBO will be saved.
 	* @param integer $collectionId The collection this WBO belongs to.
 	* @return bool True on success, false otherwise.
 	*/
-    private function postCollection($userId, $collectionId) {
-        // Get and verify input data
-        $inputData = $this->getInputData();
-        if ((!$inputData->isValid()) &&
-                        (count($inputData->getInputArray()) > 0)) {
-            Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
-            Utils::writeLog("URL: Invalid data for posting collection " . $collectionId . " for user " . $userId . ".");
-            return false;
-        }
+	private function postCollection($userId, $collectionId) {
+		// Get and verify input data
+		$inputData = $this->getInputData();
+		if ((!$inputData->isValid()) &&
+						(count($inputData->getInputArray()) > 0)) {
+			Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
+			Utils::writeLog("URL: Invalid data for posting collection " . $collectionId . " for user " . $userId . ".");
+			return false;
+		}
 
-        // Check if user has free space on limit
-        $size = ((float) strlen(serialize($inputData))/1000.0); // approximate the input data size
-        if(!$this->checkUserQuota($userId, $size)) {
-            return false;
-        }
+		// Check if user has free space available
+		$size = ((float) strlen(serialize($inputData))/1000.0); // approximate the input data size
+		if(!$this->checkUserQuota($userId, $size)) {
+			return false;
+		}
 
-        // Get current time to be stored in DB and returned as header
-        $modifiedTime = Utils::getMozillaTimestamp();
+		// Get current time to be stored in DB and returned as header
+		$modifiedTime = Utils::getMozillaTimestamp();
 
-        $resultArray["modified"] = $modifiedTime;
+		$resultArray["modified"] = $modifiedTime;
 
-        $successArray = array();
-        $failedArray = array();
+		$successArray = array();
+		$failedArray = array();
 
-        // Iterate through input array and store all WBO in the database
-        for($i = 0; $i < count($inputData->getInputArray()); $i++) {
-            $result = Storage::saveWBO($userId, $modifiedTime, $collectionId,
-                $inputData[$i]);
-            if ($result === true) {
-                $successArray[] = $inputData[$i]['id'];
-            } else {
-                    $failedArray[] = $inputData[$i]['id'];
-                Utils::writeLog("DB: Failed to post collection " . $collectionId . " for user " . $userId . ".", \OCP\Util::WARN);
-            }
-        }
+		// Iterate through input array and store all WBO in the database
+		for($i = 0; $i < count($inputData->getInputArray()); $i++) {
+			$result = Storage::saveWBO($userId, $modifiedTime, $collectionId,
+				$inputData[$i]);
+			if ($result === true) {
+				$successArray[] = $inputData[$i]['id'];
+			} else {
+				$failedArray[] = $inputData[$i]['id'];
+				Utils::writeLog("DB: Failed to post collection " . $collectionId . " for user " . $userId . ".", \OCP\Util::WARN);
+			}
+		}
 
-        $resultArray["success"] = $successArray;
-        // The failed field is a hash containing arrays
-        $resultArray["failed"] = (object) $failedArray;
+		$resultArray["success"] = $successArray;
+		// The failed field is a hash containing arrays
+		$resultArray["failed"] = (object) $failedArray;
 
-        // Return modification time in X-Weave-Timestamp header
-        OutputData::write($resultArray, $modifiedTime);
-        return true;
+		// Return modification time in X-Weave-Timestamp header
+		OutputData::write($resultArray, $modifiedTime);
+		return true;
 	}
 
 	/**
@@ -595,12 +595,12 @@ class StorageService extends Service
 			Utils::writeLog("URL: Invalid input data for putting WBO " . $wboId . " of collection " . $collectionId . " for user " . $userId . ".");
 			return false;
 		}
-                
-        // Check if user has free space on limit
-        $size = ((float) strlen(serialize($inputData))/1000.0); // approximate the input data size
-        if(!$this->checkUserQuota($userId, $size)) {
-            return false;
-        }
+
+		// Check if user has free space available
+		$size = ((float) strlen(serialize($inputData))/1000.0); // approximate the input data size
+		if(!$this->checkUserQuota($userId, $size)) {
+			return false;
+		}
 
 		// Get time to be updated in database and sent as header
 		if (isset($inputData['modified'])) {

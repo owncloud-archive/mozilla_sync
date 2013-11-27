@@ -15,15 +15,14 @@
 \OCP\JSON::callCheck();
 
 // Load translations
-$l=OC_L10N::get('core');
+$l = OC_L10N::get('core');
 
 // Get inputs and set correct settings
 $quota = filter_var($_POST['quota'], FILTER_VALIDATE_INT);
 if ($quota === false) {
     // Send error message
     \OCP\JSON::error(array( "data" => array( "message" => $l->t("Invalid input") )));
-}
-else {
+} else {
     // Update settings values
     \OCA\mozilla_sync\User::setQuota($quota);
 

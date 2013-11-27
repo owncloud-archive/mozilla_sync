@@ -22,7 +22,7 @@ if ($restrictGroup === true) {
     $group = null;
 }
 
-// Update settings values
+// Update settings value
 \OCA\mozilla_sync\User::setAuthorizedGroup($group);
 
 // Send success message

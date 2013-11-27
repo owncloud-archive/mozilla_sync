@@ -32,6 +32,6 @@
             </td>
         </tr>
     </table>
-    <em><?php p($l->t("When limit is zero, limitation is deactivated."));?></em>
+    <em><?php p($l->t("To deactivate the quota set it to zero."));?></em>
 </fieldset>
 
