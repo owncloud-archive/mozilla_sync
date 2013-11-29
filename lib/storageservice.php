@@ -43,11 +43,11 @@ class StorageService extends Service
 			return false;
 		}
 
-		// Convert Sync hash to user ID
-		$userId = User::syncHashToSyncId($syncHash);
-		if ($userId == false) {
+		// Convert Sync hash to Sync ID
+		$syncId = User::syncHashToSyncId($syncHash);
+		if ($syncId == false) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
-			Utils::writeLog("Could not convert user " . $syncHash . " to user ID.");
+			Utils::writeLog("Could not convert user " . $syncHash . " to Sync ID.");
 			return false;
 		}
 
@@ -67,10 +67,10 @@ class StorageService extends Service
 			}
 
 			switch ($this->urlParser->getCommand(1)) {
-				case 'collections': $this->getInfoCollections($userId); break;
-				case 'collection_usage': $this->getInfoCollectionUsage($userId); break;
-				case 'collection_counts': $this->getInfoCollectionCounts($userId); break;
-				case 'quota': $this->getInfoQuota($userId); break;
+				case 'collections': $this->getInfoCollections($syncId); break;
+				case 'collection_usage': $this->getInfoCollectionUsage($syncId); break;
+				case 'collection_counts': $this->getInfoCollectionCounts($syncId); break;
+				case 'quota': $this->getInfoQuota($syncId); break;
 				default:
 					Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
 					Utils::writeLog("URL: Invalid command " . $this->urlParser->getCommand(1) . " for info.");
@@ -83,7 +83,7 @@ class StorageService extends Service
 				($this->urlParser->getCommand(0) == 'storage')) {
 
 			switch (Utils::getRequestMethod()) {
-				case 'DELETE': $this->deleteStorage($userId); break;
+				case 'DELETE': $this->deleteStorage($syncId); break;
 				default:
 					Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
 					Utils::writeLog("URL: Invalid request method " . Utils::getRequestMethod() . " for storage.");
@@ -98,12 +98,12 @@ class StorageService extends Service
 			$collectionName = $this->urlParser->getCommand(1);
 			$modifiers = $this->urlParser->getCommandModifiers(1);
 
-			$collectionId = Storage::collectionNameToIndex($userId, $collectionName);
+			$collectionId = Storage::collectionNameToIndex($syncId, $collectionName);
 
 			switch (Utils::getRequestMethod()) {
-				case 'GET': $this->getCollection($userId, $collectionId, $modifiers); break;
-				case 'POST': $this->postCollection($userId, $collectionId); break;
-				case 'DELETE': $this->deleteCollection($userId, $collectionId, $modifiers); break;
+				case 'GET': $this->getCollection($syncId, $collectionId, $modifiers); break;
+				case 'POST': $this->postCollection($syncId, $collectionId); break;
+				case 'DELETE': $this->deleteCollection($syncId, $collectionId, $modifiers); break;
 				default:
 					Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
 					Utils::writeLog("URL: Invalid request method" . Utils::getRequestMethod() . " for collection.");
@@ -118,12 +118,12 @@ class StorageService extends Service
 			$collectionName = $this->urlParser->getCommand(1);
 			$wboId = $this->urlParser->getCommand(2);
 
-			$collectionId = Storage::collectionNameToIndex($userId, $collectionName);
+			$collectionId = Storage::collectionNameToIndex($syncId, $collectionName);
 
 			switch (Utils::getRequestMethod()) {
-				case 'GET': $this->getWBO($userId, $collectionId, $wboId); break;
-				case 'PUT': $this->putWBO($userId, $collectionId, $wboId); break;
-				case 'DELETE': $this->deleteWBO($userId, $collectionId, $wboId); break;
+				case 'GET': $this->getWBO($syncId, $collectionId, $wboId); break;
+				case 'PUT': $this->putWBO($syncId, $collectionId, $wboId); break;
+				case 'DELETE': $this->deleteWBO($syncId, $collectionId, $wboId); break;
 				default:
 					Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
 					Utils::writeLog("URL: Invalid request method" . Utils::getRequestMethod() . " for WBO.");
@@ -161,17 +161,18 @@ class StorageService extends Service
 	* "crypto": 1332607162.21, "forms": 1332607170.80, "meta": 1332607246.96,
 	* "bookmarks": 1332607162.45, "prefs": 1332607246.72, "history": 1332607245.16}
 	*
-	* @param integer $userId The user ID whose info/collections will be
+	* @param integer $syncId The Sync ID whose info/collections will be
 	* retrieved.
 	* @return bool True on success, false otherwise.
 	*/
-	private function getInfoCollections($userId) {
+	private function getInfoCollections($syncId) {
 
 		// Get collections with last modification times
-		$resultArray = Storage::getCollectionModifiedTimes($userId);
+		$resultArray = Storage::getCollectionModifiedTimes($syncId);
 
 		if ($resultArray === false) {
-			Utils::writeLog("DB: Could not get info collections for user " . $userId . ".");
+			Utils::writeLog("DB: Could not get info collections for user " .
+			$syncId . ".");
 			return false;
 		} else {
 			OutputData::write($resultArray);
@@ -198,17 +199,18 @@ class StorageService extends Service
 	* "crypto": 0.347, "forms": 119.666, "meta": 0.343,
 	* "bookmarks": 267.791, "prefs": 15.642, "history": 2577.264}
 	*
-	* @param integer $userId The user ID whose info/collection_sage will be
+	* @param integer $syncId The Sync ID whose info/collection_usage will be
 	* retrieved.
 	* @return bool True on success, false otherwise.
 	*/
-	private function getInfoCollectionUsage($userId) {
+	private function getInfoCollectionUsage($syncId) {
 
 		// Get collection with sizes
-		$resultArray = Storage::getCollectionSizes($userId);
+		$resultArray = Storage::getCollectionSizes($syncId);
 
 		if ($resultArray === false) {
-			Utils::writeLog("DB: Could not get info collection usage for user " . $userId . ".");
+			Utils::writeLog("DB: Could not get info collection usage for user "
+			. $syncId . ".");
 			return false;
 		} else {
 			OutputData::write($resultArray);
@@ -235,21 +237,22 @@ class StorageService extends Service
 	* "crypto": 1, "forms": 502, "meta": 1,
 	* "bookmarks": 485, "prefs": 85, "history": 5163}
 	*
-	* @param integer $userId The user ID whose info/collection_counts will be
+	* @param integer $syncId The Sync ID whose info/collection_counts will be
 	* retrieved.
 	* @return bool True on success, false otherwise.
 	*/
-	private function getInfoCollectionCounts($userId) {
+	private function getInfoCollectionCounts($syncId) {
 
 		$query = \OCP\DB::prepare('SELECT `name`, (SELECT COUNT(`payload`) FROM
 			`*PREFIX*mozilla_sync_wbo` WHERE
 			`*PREFIX*mozilla_sync_wbo`.`collectionid` =
 			`*PREFIX*mozilla_sync_collections`.`id`) as `counts` FROM
 			`*PREFIX*mozilla_sync_collections` WHERE `userid` = ?');
-		$result = $query->execute(array($userId));
+		$result = $query->execute(array($syncId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not get info collection counts for user " . $userId . ".");
+			Utils::writeLog("DB: Could not get info collection counts for user "
+			. $syncId . ".");
 			return false;
 		}
 
@@ -289,11 +292,11 @@ class StorageService extends Service
 	*
 	* { 574, null }
 	*
-	* @param integer $userId The user ID whose info/quota will be fetched.
+	* @param integer $syncId The Sync ID whose info/quota will be fetched.
 	* @return bool True on success, false otherwise.
 	*/
-	private function getInfoQuota($userId) {
-		$size = User::getUserUsage($userId);
+	private function getInfoQuota($syncId) {
+		$size = User::getUserUsage($syncId);
 
 		$limit = User::getQuota();
 		if ($limit === 0) {
@@ -311,15 +314,15 @@ class StorageService extends Service
 	* limit results in no restriction. The value is zero by default but can be
 	* set on the admin page.
 	*
-	* @param integer $userId The user ID whose quota will be checked.
+	* @param integer $syncId The Sync ID whose quota will be checked.
 	* @return boolean True if the user is below the quota, false otherwise.
 	*/
-	private function checkUserQuota($userId, $size=0) {
+	private function checkUserQuota($syncId, $size=0) {
 		$quota = User::getQuota();
-		$usage = User::getUserUsage($userId);
+		$usage = User::getUserUsage($syncId);
 
 		if ($quota != 0 && ($usage + $size) >= $quota) {
-			Utils::writeLog("User " . $userId . " reached the sync quota: usage "
+			Utils::writeLog("User " . $syncId . " reached the sync quota: usage "
 					. $usage. ", size of additional data " . $size . ", quota "
 					. $quota . ".");
 			Utils::sendError(Utils::STATUS_INVALID_DATA, 14);
@@ -373,12 +376,12 @@ class StorageService extends Service
 	* In id only mode, identificators are send in one array, for example:
 	*	 ["qqweeqw","testid","nexttestid"]
 	*
-	* @param integer $userId The user ID whose collection will be fetched.
+	* @param integer $syncId The Sync ID whose collection will be fetched.
 	* @param integer $collectionId The ID of the collection to be fetched.
 	* @param array $modifiers Modifiers for the fetching (see above).
 	* @return bool True on success, false otherwise.
 	*/
-	private function getCollection($userId, $collectionId, &$modifiers) {
+	private function getCollection($syncId, $collectionId, &$modifiers) {
 
 		$queryArgs = array();
 
@@ -401,7 +404,8 @@ class StorageService extends Service
 		$result = $query->execute($queryArgs);
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not get collection " . $collectionId . " for user " . $userId . ".");
+			Utils::writeLog("DB: Could not get collection " . $collectionId . "
+			for user " . $syncId . ".");
 			return false;
 		}
 
@@ -437,23 +441,24 @@ class StorageService extends Service
 	* example response:
 	*	{"failed": {}, "modified": 1341650217.16, "success": ["VQYhVASVcpVI"]}
 	*
-	* @param integer $userId The user ID whose WBO will be saved.
+	* @param integer $syncId The Sync user whose WBO will be saved.
 	* @param integer $collectionId The collection this WBO belongs to.
 	* @return bool True on success, false otherwise.
 	*/
-	private function postCollection($userId, $collectionId) {
+	private function postCollection($syncId, $collectionId) {
 		// Get and verify input data
 		$inputData = $this->getInputData();
 		if ((!$inputData->isValid()) &&
 						(count($inputData->getInputArray()) > 0)) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
-			Utils::writeLog("URL: Invalid data for posting collection " . $collectionId . " for user " . $userId . ".");
+			Utils::writeLog("URL: Invalid data for posting collection " .
+			$collectionId . " for user " . $syncId . ".");
 			return false;
 		}
 
 		// Check if user has free space available
 		$size = ((float) strlen(serialize($inputData))/1000.0); // approximate the input data size
-		if(!$this->checkUserQuota($userId, $size)) {
+		if(!$this->checkUserQuota($syncId, $size)) {
 			return false;
 		}
 
@@ -467,13 +472,14 @@ class StorageService extends Service
 
 		// Iterate through input array and store all WBO in the database
 		for ($i = 0; $i < count($inputData->getInputArray()); $i++) {
-			$result = Storage::saveWBO($userId, $modifiedTime, $collectionId,
+			$result = Storage::saveWBO($syncId, $modifiedTime, $collectionId,
 				$inputData[$i]);
 			if ($result === true) {
 				$successArray[] = $inputData[$i]['id'];
 			} else {
 				$failedArray[] = $inputData[$i]['id'];
-				Utils::writeLog("DB: Failed to post collection " . $collectionId . " for user " . $userId . ".", \OCP\Util::WARN);
+				Utils::writeLog("DB: Failed to post collection " . $collectionId
+				. " for user " . $syncId . ".", \OCP\Util::WARN);
 			}
 		}
 
@@ -493,12 +499,12 @@ class StorageService extends Service
 	*
 	* Additional request parameters may modify the selection of which items to delete @see getCollection
 	*
-	* @param integer $userId The user whose collection will be deleted.
+	* @param integer $syncId The Sync user whose collection will be deleted.
 	* @param integer $collectionId The ID of the collection to be deleted.
 	* @param array $modifiers Modifiers specifying the collection.
 	* @return bool True on success, false otherwise.
 	*/
-	private function deleteCollection($userId, $collectionId, &$modifiers) {
+	private function deleteCollection($syncId, $collectionId, &$modifiers) {
 
 		$queryArgs = array();
 
@@ -512,7 +518,8 @@ class StorageService extends Service
 		$result = $query->execute( $queryArgs );
 
 		if ($result == false) {
-			Utils::writeLog("DB: Failed to delete WBO for collection " . $collectionId . " for user " . $userId . ".");
+			Utils::writeLog("DB: Failed to delete WBO for collection " .
+			$collectionId . " for user " . $syncId . ".");
 			return false;
 		}
 
@@ -528,7 +535,8 @@ class StorageService extends Service
 			$result = $query->execute(array($collectionId));
 
 			if ($result == false) {
-				Utils::writeLog("DB: Failed to delete collection " . $collectionId . " for user " . $userId . ".");
+				Utils::writeLog("DB: Failed to delete collection " .
+				$collectionId . " for user " . $syncId . ".");
 				return false;
 			}
 		}
@@ -543,26 +551,28 @@ class StorageService extends Service
 	*
 	* HTTP request: GET https://server/pathname/version/username/storage/collection/id
 	*
-	* @param integer $userId The user requesting the WBO.
+	* @param integer $syncId The Sync user requesting the WBO.
 	* @param integer $collectionId The collection the WBO belongs to.
 	* @param integer $wboId The WBO's ID.
 	* @return bool True on success, false otherwise.
 	*/
-	private function getWBO($userId, $collectionId, $wboId) {
+	private function getWBO($syncId, $collectionId, $wboId) {
 		$query = \OCP\DB::prepare('SELECT `sortindex`, `payload`, `name` AS
 			`id`, `modified` FROM `*PREFIX*mozilla_sync_wbo` WHERE
 			`collectionid` = ? AND `name` = ?');
 		$result = $query->execute(array($collectionId, $wboId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Failed to get WBO " . $wboId . " of collection " . $collectionId . " for user " . $userId . ".");
+			Utils::writeLog("DB: Failed to get WBO " . $wboId . " of collection	"
+			. $collectionId . " for user " . $syncId . ".");
 			return false;
 		}
 
 		$row = $result->fetchRow();
 		if ($row == false) {
 			Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
-			Utils::writeLog("DB: Could not find requested WBO " . $wboId . " of collection " . $collectionId . " for user " . $userId . ".", \OCP\Util::WARN);
+			Utils::writeLog("DB: Could not find requested WBO " . $wboId .
+			" of collection " . $collectionId . " for user " . $syncId . ".", \OCP\Util::WARN);
 			return true;
 		}
 
@@ -581,24 +591,25 @@ class StorageService extends Service
 	* If the WBO does not contain a payload, it will only update the provided metadata fields on an already defined object.
 	* The server will return the timestamp associated with the modification.
 	*
-	* @param integer $userId The user the WBO belongs to.
+	* @param integer $syncId The Sync user the WBO belongs to.
 	* @param integer $collectionId The collection the WBO belongs to.
 	* @param integer $wboId The WBO's ID.
 	* @return bool True on success, false otherwise.
 	*/
-	private function putWBO($userId, $collectionId, $wboId) {
+	private function putWBO($syncId, $collectionId, $wboId) {
 		// Get and validate input data
 		$inputData = $this->getInputData();
 		if ((!$inputData->isValid()) &&
 				(count($inputData->getInputArray()) == 1)) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_DATA);
-			Utils::writeLog("URL: Invalid input data for putting WBO " . $wboId . " of collection " . $collectionId . " for user " . $userId . ".");
+			Utils::writeLog("URL: Invalid input data for putting WBO " . $wboId
+			. " of collection " . $collectionId . " for user " . $syncId . ".");
 			return false;
 		}
 
 		// Check if user has free space available
 		$size = ((float) strlen(serialize($inputData))/1000.0); // approximate the input data size
-		if(!$this->checkUserQuota($userId, $size)) {
+		if(!$this->checkUserQuota($syncId, $size)) {
 			return false;
 		}
 
@@ -609,11 +620,12 @@ class StorageService extends Service
 			$modifiedTime = Utils::getMozillaTimestamp();
 		}
 
-		$result = Storage::saveWBO($userId, $modifiedTime, $collectionId,
+		$result = Storage::saveWBO($syncId, $modifiedTime, $collectionId,
 			$inputData->getInputArray());
 
 		if ($result == false) {
-			Utils::writeLog("Failed to save WBO " . $wboId . " of collection " . $collectionId . " for user " . $userId . ".");
+			Utils::writeLog("Failed to save WBO " . $wboId . " of collection " .
+			$collectionId . " for user " . $syncId . ".");
 			return false;
 		}
 
@@ -626,17 +638,18 @@ class StorageService extends Service
 	*
 	* HTTP request: DELETE https://server/pathname/version/username/storage/collection/id
 	*
-	* @param integer $userId
-	* @param integer $collectionId
-	* @param integer $wboId
-	* @return bool true if success
+	* @param integer $syncId The Sync user whose WBO will be deleted.
+	* @param integer $collectionId The collection ID the WBO belongs to.
+	* @param integer $wboId The WBO's ID.
+	* @return bool True on success, false otherwise.
 	*/
-	private function deleteWBO($userId, $collectionId, $wboId) {
+	private function deleteWBO($syncId, $collectionId, $wboId) {
 
-		$result = Storage::deleteWBO($userId, $collectionId, $wboId);
+		$result = Storage::deleteWBO($syncId, $collectionId, $wboId);
 
 		if ($result == false) {
-			Utils::writeLog("Failed to delete WBO " . $wboId . " of collection " . $collectionId . " for user " . $userId . ".");
+			Utils::writeLog("Failed to delete WBO " . $wboId . " of collection "
+			. $collectionId . " for user " . $syncId . ".");
 			return false;
 		}
 
@@ -653,20 +666,20 @@ class StorageService extends Service
 	*
 	* All delete requests return the timestamp of the action.
 	*
-	* @param integer $userId The user whose records will be deleted.
+	* @param integer $syncId The Sync user whose records will be deleted.
 	* @return bool True on success, false otherwise.
 	*/
-	private function deleteStorage($userId) {
+	private function deleteStorage($syncId) {
 		// Only continue if X-Confirm-Delete header is set
 		if (!isset($_SERVER['HTTP_X_CONFIRM_DELETE'])) {
-			Utils::writeLog("Did not send X_CONFIRM_DELETE header when trying to delete all records for user " . $userId . ".");
+			Utils::writeLog("Did not send X_CONFIRM_DELETE header when trying to delete all records for user " . $syncId . ".");
 			return false;
 		}
 
-		$result = Storage::deleteStorage($userId);
+		$result = Storage::deleteStorage($syncId);
 
 		if ($result == false) {
-			Utils::writeLog("Failed to delete all records for user " . $userId . ".");
+			Utils::writeLog("Failed to delete all records for user " . $syncId . ".");
 			return false;
 		}
 

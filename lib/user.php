@@ -55,7 +55,7 @@ class User
 	* @param string $userName ownCloud user name to be converted to Sync ID.
 	* @return mixed Mozilla Sync user ID on success, false otherwise.
 	*/
-	public static function userNameToUserId($userName) {
+	public static function userNameToSyncId($userName) {
 		$query = \OCP\DB::prepare('SELECT `id` FROM
 			`*PREFIX*mozilla_sync_users` WHERE `username` = ?');
 		$result = $query->execute(array($userName));
@@ -441,20 +441,20 @@ class User
 	* limit results in no restriction. The value is zero by default but can be
 	* set on the admin page.
 	*
-	* @param string $userId The user whose usage will be returned.
+	* @param int $syncId The user's Sync ID whose usage will be returned.
 	* @return float The usage in kB.
 	*/
-	public static function getUserUsage($userId) {
+	public static function getUserUsage($syncId) {
 		// Sum up character size of all WBO
 		$query = \OCP\DB::prepare('SELECT SUM(CHAR_LENGTH(`payload`)) as `size`
 				FROM `*PREFIX*mozilla_sync_wbo` JOIN
 				`*PREFIX*mozilla_sync_collections` ON
 				`*PREFIX*mozilla_sync_wbo`.`collectionid` =
 				`*PREFIX*mozilla_sync_collections`.`id` WHERE `userid` = ?');
-		$result = $query->execute(array($userId));
+		$result = $query->execute(array($syncId));
 
 		if($result == false || ((int) $result->numRows()) !== 1) {
-			Utils::writeLog("DB: Could not get info quota for user " . $userId . ".");
+			Utils::writeLog("DB: Could not get info quota for user " . $syncId . ".");
 			return false;
 		}
 
