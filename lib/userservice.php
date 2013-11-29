@@ -204,20 +204,20 @@ class UserService extends Service
 			Utils::writeLog("Authentication for deleting user " . $syncHash . " failed.");
 		}
 
-		$userId = User::syncHashToSyncId($syncHash);
-		if ($userId === false) {
+		$syncId = User::syncHashToSyncId($syncHash);
+		if ($syncId === false) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
-			Utils::writeLog("Failed to convert user " . $syncHash . " to user ID.");
+			Utils::writeLog("Failed to convert user " . $syncHash . " to Sync ID.");
 		}
 
-		if (Storage::deleteStorage($userId) === false) {
+		if (Storage::deleteStorage($syncId) === false) {
 			Utils::changeHttpStatus(Utils::STATUS_MAINTENANCE);
-			Utils::writeLog("Failed to delete storage for user " . $userId . ".");
+			Utils::writeLog("Failed to delete storage for user " . $syncId . ".");
 		}
 
-		if (User::deleteUser($userId) === false) {
+		if (User::deleteUser($syncId) === false) {
 			Utils::changeHttpStatus(Utils::STATUS_MAINTENANCE);
-			Utils::writeLog("Failed to delete user " . $userId . ".");
+			Utils::writeLog("Failed to delete user " . $syncId . ".");
 		}
 
 		OutputData::write('0');

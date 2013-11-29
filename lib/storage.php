@@ -17,14 +17,14 @@ class Storage
 	* @brief Get index of collection, if collection doesn't exist it will be
 	* created.
 	*
-	* @param string $userId The user that the collection is belonging to.
+	* @param string $syncId The Sync user that the collection is belonging to.
 	* @param string $collectionName The name of the collection.
 	*/
-	static public function collectionNameToIndex($userId, $collectionName) {
+	static public function collectionNameToIndex($syncId, $collectionName) {
 		$query = \OCP\DB::prepare('SELECT `id` FROM
 			`*PREFIX*mozilla_sync_collections` WHERE `userid` = ? AND
 			`name` = ?');
-		$result = $query->execute(array($userId, $collectionName));
+		$result = $query->execute(array($syncId, $collectionName));
 
 		// Collection found, return its ID
 		$row = $result->fetchRow();
@@ -36,7 +36,7 @@ class Storage
 		$query = \OCP\DB::prepare('INSERT INTO
 			`*PREFIX*mozilla_sync_collections` (`userid`, `name`) VALUES
 			(?, ?)');
-		$result = $query->execute( array($userId, $collectionName));
+		$result = $query->execute(array($syncId, $collectionName));
 
 		// Creation of collection failed
 		if ($result == false) {
@@ -68,14 +68,14 @@ class Storage
 	/**
 	* @brief Store new Weave Basic Object or update previous one.
 	*
-	* @param string $userId The user whose WBO is updated.
+	* @param string $syncId The Sync user whose WBO is updated.
 	* @param int $collectionId The collection ID whose WBO is updated.
 	* @param float $modifiedTime The modification time that will be saved for
 	* the updated WBO.
 	* @param array $wboArray WBO which will be updated. Passed as JSON array.
 	* @return boolean True on success, false otherwise.
 	*/
-	static public function saveWBO($userId, $modifiedTime, $collectionId, $wboArray) {
+	static public function saveWBO($syncId, $modifiedTime, $collectionId, $wboArray) {
 		if (!array_key_exists('id', $wboArray)) {
 			Utils::writeLog("Failed to save WBO as no ID was present.");
 			return false;
@@ -87,21 +87,21 @@ class Storage
 
 		// No WBO found, add a new one
 		if ($result->fetchRow() == false) {
-			return self::insertWBO($userId, $modifiedTime, $collectionId, $wboArray);
+			return self::insertWBO($syncId, $modifiedTime, $collectionId, $wboArray);
 		} else {
-			return self::updateWBO($userId, $modifiedTime, $collectionId, $wboArray);
+			return self::updateWBO($syncId, $modifiedTime, $collectionId, $wboArray);
 		}
 	}
 
 	/**
 	* @brief Delete a WBO.
 	*
-	* @param integer $userId User ID whose WBO will be deleted.
+	* @param integer $syncId The Sync user whose WBO will be deleted.
 	* @param integer $collectionId Collection ID whose WBO will be deleted.
 	* @param integer $wboId WBO's ID which will be deleted.
 	* @return boolean True on success, false otherwise.
 	*/
-	static public function deleteWBO($userId, $collectionId, $wboId) {
+	static public function deleteWBO($syncId, $collectionId, $wboId) {
 		$query = \OCP\DB::prepare('DELETE FROM `*PREFIX*mozilla_sync_wbo`
 			WHERE `collectionid` = ? AND `name` = ?');
 		$result = $query->execute(array($collectionId, $wboId));
@@ -117,14 +117,14 @@ class Storage
 	/**
 	* @brief Inserts a new WBO into the database.
 	*
-	* @param integer $userId User ID whose WBO will be inserted.
+	* @param integer $syncId The Sync user whose WBO will be inserted.
 	* @param integer $collectionId Collection ID whose WBO will be inserted.
 	* @param integer $wboId WBO's ID which will be inserted.
 	* @param array $wboArray WBO as JSON array which will be inserted into the
 	* database.
 	* @return True on success, false otherwise.
 	*/
-	static private function insertWBO($userId, $modifiedTime, $collectionId, $wboArray) {
+	static private function insertWBO($syncId, $modifiedTime, $collectionId, $wboArray) {
 
 		$queryString = 'INSERT INTO `*PREFIX*mozilla_sync_wbo` (`collectionid`, `name`, `modified`, `payload`';
 		$queryArgs = array($collectionId, $wboArray['id'], $modifiedTime, $wboArray['payload']);
@@ -147,7 +147,7 @@ class Storage
 		$result = $query->execute($queryArgs);
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not insert WBO for user " . $userId . " in collection " . $collectionId . ".");
+			Utils::writeLog("DB: Could not insert WBO for user " . $syncId . " in collection " . $collectionId . ".");
 			return false;
 		}
 
@@ -157,14 +157,14 @@ class Storage
 	/**
 	* @brief Updates an already existing WBO.
 	*
-	* @param integer $userId User ID whose WBO will be updated.
+	* @param integer $syncId The Sync user whose WBO will be updated.
 	* @param number $modifiedTime Updated last modification time.
 	* @param integer $collectionId Collection ID whose WBO will be updated.
 	* @param array $wboArray WBO as JSON array which will be updated in the
 	* database.
 	* @return True on success, false otherwise.
 	*/
-	static private function updateWBO($userId, $modifiedTime, $collectionId, $wboArray) {
+	static private function updateWBO($syncId, $modifiedTime, $collectionId, $wboArray) {
 
 		$queryString= 'UPDATE `*PREFIX*mozilla_sync_wbo` SET `modified` = ?';
 		$queryArgs = array($modifiedTime);
@@ -184,7 +184,7 @@ class Storage
 		$result = $query->execute($queryArgs);
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not update WBO for user " . $userId . " in collection " . $collectionId . ".");
+			Utils::writeLog("DB: Could not update WBO for user " . $syncId . " in collection " . $collectionId . ".");
 			return false;
 		}
 
@@ -194,28 +194,28 @@ class Storage
 	/**
 	* @brief Delete complete storage for a user.
 	*
-	* @param integer $userId The user's ID whose storage will be deleted.
+	* @param integer $syncId The user's Sync ID whose storage will be deleted.
 	* @return boolean True on success, false otherwise.
 	*/
-	static public function deleteStorage($userId) {
+	static public function deleteStorage($syncId) {
 		// Delete all WBO for this user
 		$query = \OCP\DB::prepare('DELETE FROM `*PREFIX*mozilla_sync_wbo` WHERE
 			`collectionid` IN (SELECT `id` FROM `*PREFIX*mozilla_sync_collections`
 			WHERE `userid` = ?)');
-		$result = $query->execute(array($userId));
+		$result = $query->execute(array($syncId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not delete storage for user " . $userId . ".");
+			Utils::writeLog("DB: Could not delete storage for user " . $syncId . ".");
 			return false;
 		}
 
 		// Delete all collections for this user
 		$query = \OCP\DB::prepare('DELETE FROM `*PREFIX*mozilla_sync_collections`
 			WHERE `userid` = ?');
-		$result = $query->execute(array($userId));
+		$result = $query->execute(array($syncId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not delete collections for user " . $userId . ".");
+			Utils::writeLog("DB: Could not delete collections for user " . $syncId . ".");
 			return false;
 		}
 
@@ -337,16 +337,16 @@ class Storage
 	/**
 	* @brief Get the last modification times for all collections of a user.
 	*
-	* @param string $userId User ID whose collections are queried, currently logged in user by default.
+	* @param string $syncId The Sync user ID whose collections are queried, currently logged in user by default.
 	* @return mixed Array of collection => modified.
 	*/
-	public static function getCollectionModifiedTimes($userId = NULL) {
+	public static function getCollectionModifiedTimes($syncId = NULL) {
 		// Get logged in user by default
-		if (is_null($userId)) {
-			$userId = User::userNameToUserId(\OCP\User::getUser());
+		if (is_null($syncId)) {
+			$syncId = User::userNameToSyncId(\OCP\User::getUser());
 		}
 
-		if ($userId === false) {
+		if ($syncId === false) {
 			Utils::writeLog("Failed to get user ID before getting the collection modified times.");
 			return false;
 		}
@@ -356,10 +356,11 @@ class Storage
 			`*PREFIX*mozilla_sync_wbo`.`collectionid` =
 			`*PREFIX*mozilla_sync_collections`.`id`) AS `modified` FROM
 			`*PREFIX*mozilla_sync_collections` WHERE `userid` = ?');
-		$result = $query->execute( array($userId) );
+		$result = $query->execute(array($syncId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not get info collections for user " . $userId . ".");
+			Utils::writeLog("DB: Could not get info collections for user " .
+			$syncId . ".");
 			return false;
 		}
 
@@ -410,18 +411,18 @@ class Storage
 	/**
 	* @brief Get the size of each collection for a user.
 	*
-	* @param string $userId The user ID whose collection sizes are returned,
+	* @param string $syncId The Sync user whose collection sizes are returned,
 	* the logged in user by default.
 	* @return mixed Array of collection => size in KB for the specified user.
 	*/
-	public static function getCollectionSizes($userId = NULL) {
+	public static function getCollectionSizes($syncId = NULL) {
 
 		// Get logged in user by default
-		if (is_null($userId)) {
-			$userId = User::userNameToUserId(\OCP\User::getUser());
+		if (is_null($syncId)) {
+			$syncId = User::userNameToSyncId(\OCP\User::getUser());
 		}
 
-		if ($userId === false) {
+		if ($syncId === false) {
 			Utils::writeLog("Failed to get user ID before getting the collection sizes.");
 			return false;
 		}
@@ -431,10 +432,11 @@ class Storage
 			*PREFIX*mozilla_sync_wbo.collectionid =
 			*PREFIX*mozilla_sync_collections.id) as size FROM
 			*PREFIX*mozilla_sync_collections WHERE userid = ?');
-		$result = $query->execute(array($userId));
+		$result = $query->execute(array($syncId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not get info collection usage for user " . $userId . ".");
+			Utils::writeLog("DB: Could not get info collection usage for user "
+			. $syncId . ".");
 			return false;
 		}
 
@@ -460,17 +462,17 @@ class Storage
 	/**
 	* @brief Gets the number of sync clients for a user.
 	*
-	* @param string $userId The user ID whose number of clients are returned, the logged in user by default.
+	* @param string $syncId The Sync user whose number of clients are returned, the logged in user by default.
 	* @return int The number of clients associated with the specified user.
 	*/
-	public static function getNumClients($userId = NULL) {
+	public static function getNumClients($syncId = NULL) {
 
 		// Get logged in user by default
-		if (is_null($userId)) {
-			$userId = User::userNameToUserId(\OCP\User::getUser());
+		if (is_null($syncId)) {
+			$syncId = User::userNameToSyncId(\OCP\User::getUser());
 		}
 
-		if ($userId === false) {
+		if ($syncId === false) {
 			Utils::writeLog("Failed to get user ID before getting the number of clients.");
 			return false;
 		}
@@ -478,10 +480,11 @@ class Storage
 		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*mozilla_sync_wbo`
 			WHERE `collectionid` = (SELECT `id` FROM
 			`*PREFIX*mozilla_sync_collections` WHERE `name` = ? AND `userid` = ?)');
-		$result = $query->execute(array('clients', $userId));
+		$result = $query->execute(array('clients', $syncId));
 
 		if ($result === false) {
-			Utils::writeLog("DB: Could not get number of clients for user " . $userId . ".");
+			Utils::writeLog("DB: Could not get number of clients for user " .
+			$syncId . ".");
 			return false;
 		}
 
