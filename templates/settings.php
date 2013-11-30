@@ -45,7 +45,7 @@
     // Show Sync Status only if Sync account was created
     if (!$noSync && $lastMod !== false) {
         ?>
-    
+
     <br>
 
     <p><label>Sync Status</label>
@@ -78,11 +78,22 @@
         <td><code><?php p(\OCA\mozilla_sync\Storage::getNumClients()); ?></code></td>
       </tr>
     </table>
-	<button type="button" id="deletestorage">
-		<?php p($l->t('Delete storage')); ?>
-	</button>
-	<em><?php p($l->t('Attention! This will delete all your data on the server')); ?>
-	</em>
     </p>
-    <?php } ?>
+
+    <br>
+
+    <p><label>Delete Sync data</label>
+    <table class="nostyle">
+      <tr>
+	    <td><button type="button" id="deletestorage">
+		    <?php p($l->t('Delete storage')); ?>
+	        </button>
+        </td>
+      </tr>
+    </table>
+	<em><?php p($l->t('Attention! This will delete all your Sync data on the server.')); ?></em>
+    </p>
+
+    <?php } // End: Show only when account created ?>
+
 </fieldset>
