@@ -388,7 +388,7 @@ class Storage
 	/**
 	* @brief Get the total size of stored data for the logged in user.
 	*
-	* @return int Size of stored data in KB.
+	* @return int Size of stored data in kB.
 	*/
 	public static function getSyncSize() {
 		// Get all collections with their sizes
@@ -413,7 +413,7 @@ class Storage
 	*
 	* @param string $syncId The Sync user whose collection sizes are returned,
 	* the logged in user by default.
-	* @return mixed Array of collection => size in KB for the specified user.
+	* @return mixed Array of collection => size in kB for the specified user.
 	*/
 	public static function getCollectionSizes($syncId = NULL) {
 
@@ -450,7 +450,7 @@ class Storage
 			}
 
 			$key = $row['name'];
-			// Convert bytes to KB
+			// Convert bytes to kB
 			$value = ((float) $row['size'])/1000.0;
 
 			$resultArray[$key] = $value;

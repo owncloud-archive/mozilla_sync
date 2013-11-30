@@ -181,7 +181,8 @@ class StorageService extends Service
 	}
 
 	/**
-	* @brief Returns a hash of collections associated with the account, along with the data volume used for each (in KB).
+	* @brief Returns a hash of collections associated with the account, along
+	*	with the data volume used for each (in kB).
 	*
 	* HTTP request: GET https://server/pathname/version/username/info/collection_usage
 	*
@@ -276,7 +277,7 @@ class StorageService extends Service
 	}
 
 	/**
-	* @brief  Returns a list containing the user's current usage and quota (in KB). The second value will be null if no quota is defined.
+	* @brief  Returns a list containing the user's current usage and quota (in kB). The second value will be null if no quota is defined.
 	*
 	* HTTP request: GET https://server/pathname/version/username/info/quota
 	*
