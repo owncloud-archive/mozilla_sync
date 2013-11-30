@@ -7,11 +7,14 @@ $email = \OCP\Config::getUserValue(OCP\User::getUser(), 'settings', 'email');
 
 // No email address set
 if (is_null($email)) {
-  $tmpl = new \OCP\Template('mozilla_sync', 'noemail');
+	$tmpl = new \OCP\Template('mozilla_sync', 'noemail');
 } else {
-  $tmpl = new \OCP\Template('mozilla_sync', 'settings');
-  $tmpl->assign('email', $email);
-  $tmpl->assign('syncaddress', OCA\mozilla_sync\Utils::getServerAddress());
+	// Load JavaScript file
+	\OCP\Util::addScript("mozilla_sync", "settings");
+
+	$tmpl = new \OCP\Template('mozilla_sync', 'settings');
+	$tmpl->assign('email', $email);
+	$tmpl->assign('syncaddress', OCA\mozilla_sync\Utils::getServerAddress());
 }
 
 return $tmpl->fetchPage();
