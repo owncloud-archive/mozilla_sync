@@ -6,15 +6,20 @@ It allows users to synchronize Firefox data (e.g. bookmarks, passwords, history,
 
 ### Content
 1. <a href="#installation">Installation</a>
-2. <a href="#helpful-hints">Helpful hints</a>
+2. <a href="#manual">Manual</a>
+3. <a href="#helpful-hints">Helpful hints</a>
     1. <a href="#firefox-on-android">Firefox on Android</a>
     2. <a href="#ldap">LDAP</a>
-3. <a href="#maintainers">Maintainers</a>
-4. <a href="#api">API</a>
+4. <a href="#maintainers">Maintainers</a>
+5. <a href="#api">API</a>
 
 Installation
 ------------
 For install, re-/uninstall and upgrade instruction look at [Changing your Mozilla Sync installation](INSTALL.md).
+
+Manual
+------
+Users and admins should have a look at the [manual](docs/MANUAL.md).
 
 Helpful hints
 -------------
