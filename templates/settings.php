@@ -57,10 +57,22 @@
             if ($size === false) {
                 p($l->t('No data stored yet.'));
             } else {
-                p($size . " KB");
+				$percentage = (float)$size/(float)\OCA\mozilla_sync\User::getQuota()*100.0;
+                p($size . " KB (" . number_format($percentage,1) . "%)");
             }
             ?></td>
       </tr>
+	  <tr>
+		<td><?php p($l->t('Quota size'));?>&nbsp;&nbsp;&nbsp;</td>
+		<td><?php
+			$size = \OCA\mozilla_sync\User::getQuota();
+			if ($size === 0) {
+				p($l->t('unlimited'));
+			} else {
+				p($size . " KB");
+			}
+		?></td>
+	  </tr>
       <tr>
         <td><?php p($l->t('Number of synced devices'));?>&nbsp;&nbsp;&nbsp;</td>
         <td><code><?php p(\OCA\mozilla_sync\Storage::getNumClients()); ?></code></td>
