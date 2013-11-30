@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# kallemooo <karl.h.thoren@gmail.com>, 2013
 # Magnus Höglund <magnus@linux.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-11-24 01:06-0500\n"
-"PO-Revision-Date: 2013-11-13 16:10+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"POT-Creation-Date: 2013-11-27 12:17-0500\n"
+"PO-Revision-Date: 2013-11-24 19:30+0000\n"
+"Last-Translator: kallemooo <karl.h.thoren@gmail.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/owncloud/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,11 +21,11 @@ msgstr ""
 
 #: templates/noemail.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
-msgstr ""
+msgstr "Mozilla Synktjänst"
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings"
-msgstr ""
+msgstr "Ange din e-postadress i kontoinställningarna"
 
 #: templates/settings.php:5
 msgid "Email"
@@ -36,7 +37,7 @@ msgstr "Lösenord"
 
 #: templates/settings.php:10
 msgid "Use your ownCloud account password"
-msgstr ""
+msgstr "Ange ditt ownCloud lösenord:"
 
 #: templates/settings.php:13
 msgid "Server address"
@@ -46,4 +47,4 @@ msgstr "Serveradress"
 msgid ""
 "Once set up, additional devices can be added via Mozilla's device pairing "
 "service or manually."
-msgstr ""
+msgstr "Väl konfigurerad, så kan fler enheter läggas till via Mozillas enhetsparningsstjänst eller manuellt."

@@ -21,7 +21,8 @@ class Utils
 	*/
 	public static function writeLog($output, $level = \OCP\Util::ERROR) {
 		// Prepend file name, line number, calling function to debug output
-		$caller = debug_backtrace()[1];
+		$bt = debug_backtrace();
+		$caller = $bt[1];
 		$output = basename($caller["file"]) . "#" . $caller["line"] . " " . $caller["function"] . "():  " . $output;
 
 		\OCP\Util::writeLog("mozilla_sync", $output, $level);
