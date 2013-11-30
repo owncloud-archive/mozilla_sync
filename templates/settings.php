@@ -61,7 +61,15 @@
             if ($size === false) {
                 p($l->t('No data stored yet.'));
             } else {
-                p($size . " kB");
+                $quota = \OCA\mozilla_sync\User::getQuota();
+				$percentage = 100.0*((float) $size)/((float) $quota);
+                if ($quota === 0) {
+                    $quotaString = "(unlimited quota)";
+                } else {
+                    $quotaString = "(" . number_format($percentage,1) . "% used of quota " .
+                    $quota . " kB)";
+                }
+                p($size . " kB " . $quotaString);
             }
             ?></td>
       </tr>
