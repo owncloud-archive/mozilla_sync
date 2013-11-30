@@ -1,4 +1,4 @@
-User manual
+User Manual
 ===========
 
 Before sync set up
