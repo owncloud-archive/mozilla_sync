@@ -55,7 +55,7 @@ class User
 	* @param string $userName ownCloud user name to be converted to Sync ID.
 	* @return mixed Mozilla Sync user ID on success, false otherwise.
 	*/
-	public static function userNameToUserId($userName) {
+	public static function userNameToSyncId($userName) {
 		$query = \OCP\DB::prepare('SELECT `id` FROM
 			`*PREFIX*mozilla_sync_users` WHERE `username` = ?');
 		$result = $query->execute(array($userName));
@@ -140,7 +140,7 @@ class User
 			(`username`, `sync_user`) VALUES (?, ?)' );
 		$result = $query->execute(array($userName, $syncHash));
 
-		if($result == false) {
+		if ($result == false) {
 			Utils::writeLog("DB: Could not create user " . $userName . " with Sync hash " . $syncHash . ".");
 			return false;
 		}
@@ -407,62 +407,86 @@ class User
 		$groups = array();
 
 		while ($row = $result->fetchRow()) {
-		    $groups[] = $row['gid'];
+			$groups[] = $row['gid'];
 		}
 		return $groups;
 	}
-        
-    /**
-	* @brief Gets the quota for the given user.
+
+	/**
+	* @brief Check if an ownCloud user has an associated Mozilla Sync account.
 	*
-    * It is possible to restrict the quota of Mozilla Sync to a limit. A zero 
-    * limit results in no restriction. The value is zero by default but can be
-    * set on the admin page. 
+	* Table oc_mozilla_sync_users contains user mapping.
 	*
-	* @return float the quota limit
+	* @param string $userName ownCloud user name to be checked for Sync account.
+	* @return mixed True if Sync account is present, false otherwise.
 	*/
-    public static function getUserUsage($userId) {
-        // Sum up character size of all WBO
-        $query = \OCP\DB::prepare('SELECT SUM(CHAR_LENGTH(`payload`)) as `size`
-                FROM `*PREFIX*mozilla_sync_wbo` JOIN
-                `*PREFIX*mozilla_sync_collections` ON
-                `*PREFIX*mozilla_sync_wbo`.`collectionid` =
-                `*PREFIX*mozilla_sync_collections`.`id` WHERE `userid` = ?');
-        $result = $query->execute( array($userId) );
+	public static function hasSyncAccount($userName = null) {
+		// By default the user name is the currently logged in user
+		if (is_null($userName)) {
+			$userName = \OCP\User::getUser();
+		}
 
-        if($result == false || ((int) $result->numRows()) !== 1) {
-            Utils::writeLog("DB: Could not get info quota for user " . $userId . ".");
-            return false;
-        }
+		$query = \OCP\DB::prepare('SELECT 1 FROM
+			`*PREFIX*mozilla_sync_users` WHERE `username` = ?');
+		$result = $query->execute(array($userName));
 
-        $row = $result->fetchRow();
-        return ((float) ($row['size']))/1000.0;
-    }
-        
-    /**
-	* @brief Gets the quota limit for all sync accounts.
+		// Only return true if exactly one row matched for this user name
+		return ((int) $result->numRows()) === 1;
+	}
+
+	/**
+	* @brief Gets the usage for the given user.
 	*
-    * It is possible to restrict the quota of Mozilla Sync to a limit. A zero 
-    * limit results in no restriction. The value is zero by default but can be
-    * set on the admin page. 
+	* It is possible to restrict the quota of Mozilla Sync to a limit. A zero
+	* limit results in no restriction. The value is zero by default but can be
+	* set on the admin page.
 	*
-	* @return integer the quota limit
+	* @param int $syncId The user's Sync ID whose usage will be returned.
+	* @return float The usage in kB.
+	*/
+	public static function getUserUsage($syncId) {
+		// Sum up character size of all WBO
+		$query = \OCP\DB::prepare('SELECT SUM(CHAR_LENGTH(`payload`)) as `size`
+				FROM `*PREFIX*mozilla_sync_wbo` JOIN
+				`*PREFIX*mozilla_sync_collections` ON
+				`*PREFIX*mozilla_sync_wbo`.`collectionid` =
+				`*PREFIX*mozilla_sync_collections`.`id` WHERE `userid` = ?');
+		$result = $query->execute(array($syncId));
+
+		if($result == false || ((int) $result->numRows()) !== 1) {
+			Utils::writeLog("DB: Could not get info quota for user " . $syncId . ".");
+			return false;
+		}
+
+		$row = $result->fetchRow();
+		return ((float) ($row['size']))/1000.0;
+	}
+
+	/**
+	* @brief Gets the quota for all Sync accounts.
+	*
+	* It is possible to restrict the quota of Mozilla Sync to a limit. A zero
+	* limit results in no restriction. The value is zero by default but can be
+	* set on the admin page.
+	*
+	* @return integer The quota in kB or 0 if not quota is set.
 	*/
 	public static function getQuota() {
-        return (int)\OCP\Config::getAppValue('mozilla_sync', 'quota_limit', '0');
+		return ((int) \OCP\Config::getAppValue('mozilla_sync', 'quota_limit', '0'));
 	}
-        
-    /**
-	* @brief Sets the quota limit for all sync accounts.
+
+	/**
+	* @brief Sets the quota for all sync accounts.
 	*
-	* It is possible to restrict the quota of Mozilla Sync to a limit. A zero 
-    * limit results in no restriction. The value is zero by default but can be
-    * set on the admin page. 
+	* It is possible to restrict the quota of Mozilla Sync to a limit. A zero
+	* limit results in no restriction. The value is zero by default but can be
+	* set on the admin page.
 	*
-	* @param integer the quota limit or zero (no limitation active)
+	* @param integer $quota The quota to be set in kB or zero if quota is to be
+	*	deactivated.
 	*/
-	public static function setQuota($limit = 0) {
-        \OCP\Config::setAppValue('mozilla_sync', 'quota_limit', $limit);
+	public static function setQuota($quota = 0) {
+		\OCP\Config::setAppValue('mozilla_sync', 'quota_limit', $quota);
 	}
 }
 

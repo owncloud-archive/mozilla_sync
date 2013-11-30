@@ -28,19 +28,17 @@ class InputData implements \arrayaccess
 
 		$input = '';
 
-		if($jsonInput === self::NO_VALUE) {
+		if ($jsonInput === self::NO_VALUE) {
 			$input = file_get_contents('php://input');
-		}
-		else{
+		} else {
 			$input = $jsonInput;
 		}
 
 		$parseResult = json_decode($input, true);
 
-		if($parseResult == null) {
+		if ($parseResult == null) {
 			$this->parseValidFlag = false;
-		}
-		else{
+		} else {
 			$this->inputArray = $parseResult;
 		}
 	}
@@ -73,10 +71,9 @@ class InputData implements \arrayaccess
 	*/
 	public function hasValues($valuesNameArray) {
 		foreach ($valuesNameArray as $valueName) {
-			if(!$this->hasValue($valueName)) {
+			if (!$this->hasValue($valueName)) {
 				return false;
 			}
-
 		}
 		return true;
 	}
