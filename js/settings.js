@@ -4,7 +4,7 @@ $(document).ready(function(){
 		$.post(OC.filePath('mozilla_sync','ajax','deletestorage.php'), {},
 			function(result){
 				if(result) {
-					OC.Notification.show(t('mozilla_sync', result.data.message));
+					OC.Notification.show(result.data.message);
 				}
 			});
 	});
