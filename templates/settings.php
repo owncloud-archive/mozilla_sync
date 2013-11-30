@@ -82,6 +82,11 @@
         <td><code><?php p(\OCA\mozilla_sync\Storage::getNumClients()); ?></code></td>
       </tr>
     </table>
+	<button type="button" id="deletestorage">
+		<?php p($l->t('Delete storage')); ?>
+	</button>
+	<em><?php p($l->t('Attention! This will delete all your data on the server')); ?>
+	</em>
     </p>
     <?php } ?>
 </fieldset>
