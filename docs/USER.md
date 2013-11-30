@@ -1,19 +1,19 @@
 User Manual
 ===========
 
-Before sync set up
+Before Sync set up
 ------------------
-Looking to your personal settings in ownCloud will show this:
+Before Sync is set up your personal settings in ownCloud will look like this:
 
 <a href="" target="_blank"><img src="imgs/SyncUserWithoutData.png"/></a>
 
-Here you could see your client config data which has to be typed in while settings up your sync first time.
+It shows your client configuration which has to be typed in when setting up Sync for the first time.
 
-After sync set up
+After Sync set up
 -----------------
-If you finished the set up, you get this:
+If you completed the Sync set up, the personal page will look like this:
 
 <a href="" target="_blank"><img src="imgs/SyncUserWithData.png"/></a>
 
-The new section "Sync Status" shows that the set up succeeded and further some data.
-Besides the infos you get the "Delete storage" button, which removes all your data from the server. But, whatch your step! Deleting all the data will not inform your browser/devices, so they will be confused without further instructions.
+The new section *Sync Status* means that the set up succeeded and shows some additional data.
+Furthermore, you get the *Delete storage* button. This will remove all your data from the server and delete your Sync user. Deleting all the data will not inform your paired devices and they will be in an incosistent state.

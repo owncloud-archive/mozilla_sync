@@ -19,7 +19,7 @@ For install, re-/uninstall and upgrade instruction look at [Changing your Mozill
 
 Manual
 ------
-Users and admins should look up the [manual](docs/MANUAL.md).
+Users and admins should have a look at the [manual](docs/MANUAL.md).
 
 Helpful hints
 -------------
