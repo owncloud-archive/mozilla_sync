@@ -19,7 +19,7 @@ $(document).ready(function(){
             { quota: my_quota },
             function(result){
                 if(result.status === "error") {
-                    OC.Notification.show(t('admin', result.data.message));
+                    OC.Notification.show(result.data.message);
                 }
             });
     });
