@@ -19,7 +19,7 @@ For install, re-/uninstall and upgrade instruction look at [Changing your Mozill
 
 Manual
 ------
-Users and admins should have a look at the [manual](docs/MANUAL.md).
+Information for Mozilla Sync users can be found in the [User Manual](docs/USER.md). Information for ownCloud admins can be found in the [Admin Manual](docs/ADMIN.md).
 
 Helpful hints
 -------------
