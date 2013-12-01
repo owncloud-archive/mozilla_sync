@@ -1,3 +1,15 @@
+v1.2: 2013-12-xx
+    * Restrict to group feature added to Admin Page
+    * Quota feature added to Admin Page
+    * Sync status added to Personal Page
+    * Delete server storage added to Personal Page
+    * Extended README, added manuals and documentation
+    * Add debug output to ownCloud log
+    * Remove PHP warnings from ownCloud log
+    * Check for duplicate email addresses
+    * Fix SQLite incompatability
+    * Updated translations
+
 v1.1.1: 2013-11-17
     * Added support for LDAP user backend (issue #23)
     * Remove not-null constraint from ttl DB column
