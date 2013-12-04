@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-11-29 14:15-0500\n"
-"PO-Revision-Date: 2013-11-13 15:57+0000\n"
+"POT-Creation-Date: 2013-12-02 18:20-0500\n"
+"PO-Revision-Date: 2013-12-02 23:20+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Acoli (http://www.transifex.com/projects/p/owncloud/language/ach/)\n"
 "MIME-Version: 1.0\n"
@@ -17,32 +17,128 @@ msgstr ""
 "Language: ach\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: templates/noemail.php:2 templates/settings.php:2
+#: ajax/deletestorage.php:26
+msgid "Failed to delete storage"
+msgstr ""
+
+#: ajax/deletestorage.php:31
+msgid "Failed to delete user"
+msgstr ""
+
+#: ajax/deletestorage.php:35
+msgid "Storage deleted"
+msgstr ""
+
+#: ajax/deletestorage.php:41
+msgid "User not found"
+msgstr ""
+
+#: ajax/setquota.php:24
+msgid "Invalid input"
+msgstr ""
+
+#: ajax/setquota.php:30
+msgid "Quota saved"
+msgstr ""
+
+#: templates/admin.php:2 templates/noemail.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
 msgstr ""
 
+#: templates/admin.php:12
+msgid "Restrict to group"
+msgstr ""
+
+#: templates/admin.php:15
+msgid "Group"
+msgstr ""
+
+#: templates/admin.php:23
+msgid "When activated, only members of this group can access Mozilla Sync."
+msgstr ""
+
+#: templates/admin.php:27 templates/admin.php:30
+msgid "Sync quota"
+msgstr ""
+
+#: templates/admin.php:35
+msgid "To deactivate the quota set it to zero."
+msgstr ""
+
 #: templates/noemail.php:3
-msgid "Please set an email address in your account settings"
+msgid "Please set an email address in your account settings."
 msgstr ""
 
-#: templates/settings.php:5
+#: templates/noemail.php:7
+#, php-format
+msgid "Be sure to set the LDAP login filter to something like %s."
+msgstr ""
+
+#: templates/noemail.php:9
+msgid ""
+"Configure the special attribute Email in your LDAP configuration "
+"accordingly."
+msgstr ""
+
+#: templates/settings.php:7
+#, php-format
+msgid ""
+"Error! You are not allowed to use Mozilla Sync! You need to be a member of "
+"the %s group."
+msgstr ""
+
+#: templates/settings.php:14
 msgid "Email"
-msgstr ""
-
-#: templates/settings.php:9
-msgid "Password"
-msgstr ""
-
-#: templates/settings.php:10
-msgid "Use your ownCloud account password"
-msgstr ""
-
-#: templates/settings.php:13
-msgid "Server address"
 msgstr ""
 
 #: templates/settings.php:17
 msgid ""
-"Once set up, additional devices can be added via Mozilla's device pairing "
-"service or manually."
+"Error! Duplicate email addresses detected! Email addresses need to be unique"
+" for Mozilla Sync to work."
+msgstr ""
+
+#: templates/settings.php:21
+msgid "Password"
+msgstr ""
+
+#: templates/settings.php:22
+msgid "Use your ownCloud account password"
+msgstr ""
+
+#: templates/settings.php:25
+msgid "Server address"
+msgstr ""
+
+#: templates/settings.php:39
+msgid "To set up Mozilla Sync create a new Sync account in Firefox."
+msgstr ""
+
+#: templates/settings.php:41
+msgid ""
+"Mozilla Sync is set up, additional devices can be added via Mozilla's device"
+" pairing service or manually."
+msgstr ""
+
+#: templates/settings.php:54
+msgid "Last sync"
+msgstr ""
+
+#: templates/settings.php:58
+msgid "Size of stored data"
+msgstr ""
+
+#: templates/settings.php:62
+msgid "No data stored yet."
+msgstr ""
+
+#: templates/settings.php:77
+msgid "Number of synced devices"
+msgstr ""
+
+#: templates/settings.php:89
+msgid "Delete storage"
+msgstr ""
+
+#: templates/settings.php:94
+msgid "Attention! This will delete all your Sync data on the server."
 msgstr ""
