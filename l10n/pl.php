@@ -1,5 +1,6 @@
 <?php $TRANSLATIONS = array(
 "Mozilla Sync" => "Mozilla Sync",
+"Group" => "Grupa",
 "Email" => "Email",
 "Password" => "Hasło",
 "Use your ownCloud account password" => "Użyj twoje hasło konta ownCloud",

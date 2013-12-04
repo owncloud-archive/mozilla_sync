@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-02 18:20-0500\n"
-"PO-Revision-Date: 2013-12-02 23:20+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"POT-Creation-Date: 2013-12-04 18:13-0500\n"
+"PO-Revision-Date: 2013-12-03 08:10+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish (Finland) (http://www.transifex.com/projects/p/owncloud/language/fi_FI/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
-msgstr ""
+msgstr "Käyttäjän poistaminen epäonnistui"
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
-msgstr ""
+msgstr "Käyttäjää ei löytynyt"
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
@@ -40,7 +40,7 @@ msgstr ""
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
-msgstr ""
+msgstr "Kiintiö tallennettu"
 
 #: templates/admin.php:2 templates/noemail.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
@@ -52,7 +52,7 @@ msgstr ""
 
 #: templates/admin.php:15
 msgid "Group"
-msgstr ""
+msgstr "Ryhmä"
 
 #: templates/admin.php:23
 msgid "When activated, only members of this group can access Mozilla Sync."
@@ -60,7 +60,7 @@ msgstr ""
 
 #: templates/admin.php:27 templates/admin.php:30
 msgid "Sync quota"
-msgstr ""
+msgstr "Synkronoinnin kiintiö"
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
@@ -122,7 +122,7 @@ msgstr ""
 
 #: templates/settings.php:54
 msgid "Last sync"
-msgstr ""
+msgstr "Viimeisin synkronointi"
 
 #: templates/settings.php:58
 msgid "Size of stored data"
@@ -134,7 +134,7 @@ msgstr ""
 
 #: templates/settings.php:77
 msgid "Number of synced devices"
-msgstr ""
+msgstr "Synkronoitujen laitteiden määrä"
 
 #: templates/settings.php:89
 msgid "Delete storage"

@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# pisike.sipelgas <pisike.sipelgas@gmail.com>, 2013
 # Rivo Zängov <eraser@eraser.ee>, 2012-2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-02 18:20-0500\n"
-"PO-Revision-Date: 2013-12-02 23:20+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"POT-Creation-Date: 2013-12-04 18:13-0500\n"
+"PO-Revision-Date: 2013-12-03 07:40+0000\n"
+"Last-Translator: pisike.sipelgas <pisike.sipelgas@gmail.com>\n"
 "Language-Team: Estonian (Estonia) (http://www.transifex.com/projects/p/owncloud/language/et_EE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,27 +21,27 @@ msgstr ""
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
-msgstr ""
+msgstr "Andmehoidla kustutamine ebaõnnestus"
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
-msgstr ""
+msgstr "Kasutaja kustutamine ebaõnnestus"
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
-msgstr ""
+msgstr "Andmehoidla kustutatud"
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
-msgstr ""
+msgstr "Kasutajat ei leitud"
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
-msgstr ""
+msgstr "Vigane sisend"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
-msgstr ""
+msgstr "Mahupiirang salvestatud"
 
 #: templates/admin.php:2 templates/noemail.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
@@ -48,45 +49,45 @@ msgstr "Mozilla sünkroniseerimine"
 
 #: templates/admin.php:12
 msgid "Restrict to group"
-msgstr ""
+msgstr "Piira grupile"
 
 #: templates/admin.php:15
 msgid "Group"
-msgstr ""
+msgstr "Grupp"
 
 #: templates/admin.php:23
 msgid "When activated, only members of this group can access Mozilla Sync."
-msgstr ""
+msgstr "Kui on aktiveeritud, siis ainult grupi liikmed pääsevad ligi Mozilla Sync-ile."
 
 #: templates/admin.php:27 templates/admin.php:30
 msgid "Sync quota"
-msgstr ""
+msgstr "Sync mahupiirang"
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
-msgstr ""
+msgstr "Deaktiveerimiseks määra mahupiiranguks null."
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
-msgstr ""
+msgstr "Palun määra e-posti aadress oma konto seadetes."
 
 #: templates/noemail.php:7
 #, php-format
 msgid "Be sure to set the LDAP login filter to something like %s."
-msgstr ""
+msgstr "Veendu, et LDAP login filter oleks midagi taolist: %s."
 
 #: templates/noemail.php:9
 msgid ""
 "Configure the special attribute Email in your LDAP configuration "
 "accordingly."
-msgstr ""
+msgstr "Seadista e-posti atribuut vastavalt LDAPi seadetele."
 
 #: templates/settings.php:7
 #, php-format
 msgid ""
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of "
 "the %s group."
-msgstr ""
+msgstr "Viga! Sul pole lubatud kasutada Mozilla Sync-i! Sa peaksid olema %s grupi liige."
 
 #: templates/settings.php:14
 msgid "Email"
@@ -96,7 +97,7 @@ msgstr "E-post"
 msgid ""
 "Error! Duplicate email addresses detected! Email addresses need to be unique"
 " for Mozilla Sync to work."
-msgstr ""
+msgstr "Viga! Leitud dubleeritav e-posti aadress! Mozilla Sync toimimiseks peavad E-posti aadressid olema unikaalsed. "
 
 #: templates/settings.php:21
 msgid "Password"
@@ -112,34 +113,34 @@ msgstr "Serveri aadress"
 
 #: templates/settings.php:39
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
-msgstr ""
+msgstr "Seadistamaks Mozilla Sync-i loo Firefoxis uus Sync konto."
 
 #: templates/settings.php:41
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
-msgstr ""
+msgstr "Mozilla Sync on seadistatud, lisaseadmeid saab lisada käsitsi või kasutades Mozilla seadmete sidumisteenust."
 
 #: templates/settings.php:54
 msgid "Last sync"
-msgstr ""
+msgstr "Viimane sünkroniseering"
 
 #: templates/settings.php:58
 msgid "Size of stored data"
-msgstr ""
+msgstr "Talletatud andmete maht"
 
 #: templates/settings.php:62
 msgid "No data stored yet."
-msgstr ""
+msgstr "Andmeid pole veel talletatud."
 
 #: templates/settings.php:77
 msgid "Number of synced devices"
-msgstr ""
+msgstr "Sünkroniseeritavate seadmete arv"
 
 #: templates/settings.php:89
 msgid "Delete storage"
-msgstr ""
+msgstr "Kustuta andmehoidla"
 
 #: templates/settings.php:94
 msgid "Attention! This will delete all your Sync data on the server."
-msgstr ""
+msgstr "Tähelepanu! See eemaldab serverist kõik sinu sünkroniseeritavad andmed."

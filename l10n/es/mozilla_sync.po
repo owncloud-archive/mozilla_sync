@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Art O. Pal <artopal@fastmail.fm>, 2013
-# Raul Fernandez Garcia <raulfg3@gmail.com>, 2012
+# Raul Fernandez Garcia <raulfg3@gmail.com>, 2012-2013
 # Rubén del Campo <yo@rubendelcampo.es>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-02 18:20-0500\n"
-"PO-Revision-Date: 2013-12-02 23:20+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"POT-Creation-Date: 2013-12-04 18:13-0500\n"
+"PO-Revision-Date: 2013-12-04 22:20+0000\n"
+"Last-Translator: Raul Fernandez Garcia <raulfg3@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/owncloud/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,27 +22,27 @@ msgstr ""
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
-msgstr ""
+msgstr "Falló en borrar el almacén"
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
-msgstr ""
+msgstr "Falló al borrar un usuario"
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
-msgstr ""
+msgstr "Almacen borrado"
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
-msgstr ""
+msgstr "Usuario no encontrado"
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
-msgstr ""
+msgstr "Entrada inválida"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
-msgstr ""
+msgstr "Cuota salvada"
 
 #: templates/admin.php:2 templates/noemail.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
@@ -50,32 +50,32 @@ msgstr "Servicio de sincronización de Mozilla"
 
 #: templates/admin.php:12
 msgid "Restrict to group"
-msgstr ""
+msgstr "Restringir al grupo"
 
 #: templates/admin.php:15
 msgid "Group"
-msgstr ""
+msgstr "Grupo"
 
 #: templates/admin.php:23
 msgid "When activated, only members of this group can access Mozilla Sync."
-msgstr ""
+msgstr "Cuando se active, solamente miembros de este grupo podrán acceder a Mozilla Sync."
 
 #: templates/admin.php:27 templates/admin.php:30
 msgid "Sync quota"
-msgstr ""
+msgstr "Cúota Sync"
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
-msgstr ""
+msgstr "Para desactivar la cuota, poner a cero."
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
-msgstr ""
+msgstr "Por favor , escriba una dirección de correo en la casilla."
 
 #: templates/noemail.php:7
 #, php-format
 msgid "Be sure to set the LDAP login filter to something like %s."
-msgstr ""
+msgstr "Asegurese de configurar el filtro de login de LDAP a algo como %s."
 
 #: templates/noemail.php:9
 msgid ""
@@ -114,34 +114,34 @@ msgstr "Dirección del servidor"
 
 #: templates/settings.php:39
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
-msgstr ""
+msgstr "Para configurar Mozilla Sync, debe crear una cuenta sync en Firefox."
 
 #: templates/settings.php:41
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
-msgstr ""
+msgstr "Mozilla Sync está configurado, los dispositivos adicionales, deben ser añadidos via servicio de emparejamiento de Mozilla o manualmente."
 
 #: templates/settings.php:54
 msgid "Last sync"
-msgstr ""
+msgstr "Ultima sincronización"
 
 #: templates/settings.php:58
 msgid "Size of stored data"
-msgstr ""
+msgstr "Tamaño de los datos almacenados"
 
 #: templates/settings.php:62
 msgid "No data stored yet."
-msgstr ""
+msgstr "Aún no hay datos almacenados."
 
 #: templates/settings.php:77
 msgid "Number of synced devices"
-msgstr ""
+msgstr "Número de dispositivos sincronizados"
 
 #: templates/settings.php:89
 msgid "Delete storage"
-msgstr ""
+msgstr "Eliminar almacen"
 
 #: templates/settings.php:94
 msgid "Attention! This will delete all your Sync data on the server."
-msgstr ""
+msgstr "Atención!, esto borrara todos los datos sincronizados en el servidor."

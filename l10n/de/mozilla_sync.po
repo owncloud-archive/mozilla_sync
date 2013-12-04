@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-02 18:20-0500\n"
-"PO-Revision-Date: 2013-12-02 23:20+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"POT-Creation-Date: 2013-12-04 18:13-0500\n"
+"PO-Revision-Date: 2013-12-04 13:10+0000\n"
+"Last-Translator: Mario Siegmann <mario_siegmann@web.de>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/owncloud/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,27 +23,27 @@ msgstr ""
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
-msgstr ""
+msgstr "Fehler beim Löschen des Speichers"
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
-msgstr ""
+msgstr "Fehler beim Löschen des Nutzers"
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
-msgstr ""
+msgstr "Speicher gelöscht"
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
-msgstr ""
+msgstr "Nutzer nicht gefunden"
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
-msgstr ""
+msgstr "Ungültige Eingabe"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
-msgstr ""
+msgstr "Kontigent gespeichert"
 
 #: templates/admin.php:2 templates/noemail.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
@@ -51,45 +51,45 @@ msgstr "Mozilla-Sync"
 
 #: templates/admin.php:12
 msgid "Restrict to group"
-msgstr ""
+msgstr "Auf Gruppe beschränkt"
 
 #: templates/admin.php:15
 msgid "Group"
-msgstr ""
+msgstr "Gruppe"
 
 #: templates/admin.php:23
 msgid "When activated, only members of this group can access Mozilla Sync."
-msgstr ""
+msgstr "Wenn aktiviert, können nur Gruppenmitglieder dieser Gruppe auf die Mozilla Synchronisation zugreifen."
 
 #: templates/admin.php:27 templates/admin.php:30
 msgid "Sync quota"
-msgstr ""
+msgstr "Kontingent zur Synchronisation"
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
-msgstr ""
+msgstr "Um das Kontingent zu deaktivieren, auf Null setzen."
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
-msgstr ""
+msgstr "Bitte gib in Deinen Kontoeinstellungen eine EMail-Adresse ein."
 
 #: templates/noemail.php:7
 #, php-format
 msgid "Be sure to set the LDAP login filter to something like %s."
-msgstr ""
+msgstr "Bitte stelle sicher, dass der LDAP-Anmeldefilter ähnlich %s eingestellt ist."
 
 #: templates/noemail.php:9
 msgid ""
 "Configure the special attribute Email in your LDAP configuration "
 "accordingly."
-msgstr ""
+msgstr "Bitte entsprechend die spezielle Attribut-E-Mail in der LDAP-Konfiguration konfigurieren."
 
 #: templates/settings.php:7
 #, php-format
 msgid ""
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of "
 "the %s group."
-msgstr ""
+msgstr "Fehler! Du bist zur Nutzung der Mozilla Synchronisation nicht berechtigt! Du musst Mitglied der %s Gruppe sein."
 
 #: templates/settings.php:14
 msgid "Email"
@@ -99,7 +99,7 @@ msgstr "E-Mail"
 msgid ""
 "Error! Duplicate email addresses detected! Email addresses need to be unique"
 " for Mozilla Sync to work."
-msgstr ""
+msgstr "Fehler! Doppelte E-Mail Adresse gefunden! E-Mail Adressen müssen für die Mozilla Synchronisation eindeutig sein."
 
 #: templates/settings.php:21
 msgid "Password"
@@ -115,34 +115,34 @@ msgstr "Adresse des Servers"
 
 #: templates/settings.php:39
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
-msgstr ""
+msgstr "Für die Mozilla Synchronisation muss ein neues Synchronisationskonto in Firefox eingerichtet werden."
 
 #: templates/settings.php:41
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
-msgstr ""
+msgstr "Die Mozilla Synchronisation ist eingerichtet. Zusätzliche Geräte können manuell oder über den Mozilla Gerätepaarungsservice hinzugefügt werden."
 
 #: templates/settings.php:54
 msgid "Last sync"
-msgstr ""
+msgstr "Letzte Synchronisation"
 
 #: templates/settings.php:58
 msgid "Size of stored data"
-msgstr ""
+msgstr "Größe der gespeicherten Daten"
 
 #: templates/settings.php:62
 msgid "No data stored yet."
-msgstr ""
+msgstr "Keine Daten bis jetzt gespeichert."
 
 #: templates/settings.php:77
 msgid "Number of synced devices"
-msgstr ""
+msgstr "Anzahl der synchronisierten Geräte"
 
 #: templates/settings.php:89
 msgid "Delete storage"
-msgstr ""
+msgstr "Speicher löschen"
 
 #: templates/settings.php:94
 msgid "Attention! This will delete all your Sync data on the server."
-msgstr ""
+msgstr "Achtung! Dies wird alle Deine Synchronisationsdaten auf dem Server löschen."
