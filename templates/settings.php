@@ -67,9 +67,9 @@
                     $quotaString = "(unlimited quota)";
                 } else {
                     $quotaString = "(" . number_format($percentage,1) . "% used of quota " .
-                    $quota . " kB)";
+                    human_file_size($quota*1000) . ")";
                 }
-                p($size . " kB " . $quotaString);
+                p(human_file_size($size*1000) . " " . $quotaString);
             }
             ?></td>
       </tr>

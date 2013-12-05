@@ -10,7 +10,8 @@
 $tmpl = new \OCP\Template('mozilla_sync', 'admin');
 
 $tmpl->assign('mozillaSyncRestrictGroupEnabled', \OCA\mozilla_sync\User::getAuthorizedGroup());
-$tmpl->assign('mozillaSyncQuota', \OCA\mozilla_sync\User::getQuota());
+$tmpl->assign('mozillaSyncQuota',
+	human_file_size(\OCA\mozilla_sync\User::getQuota())*1000);
 
 return $tmpl->fetchPage();
 
