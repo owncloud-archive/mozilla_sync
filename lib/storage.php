@@ -331,7 +331,9 @@ class Storage
 			}
 		}
 
-		return date(DATE_ISO8601, $lastMod);
+		$formatStr = "Y-m-d H:i:s T";
+
+		return date($formatStr, $lastMod);
 	}
 
 	/**
