@@ -311,7 +311,7 @@ class Storage
 	/**
 	* @brief Gets the time of the last modification for the logged in user.
 	*
-	* @return string Last modification time formatted according to ISO 8601.
+	* @return string Last modification time.
 	*/
 	public static function getLastModifiedTime() {
 		// Get collections with all modification times
