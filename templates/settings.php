@@ -62,11 +62,11 @@
                 p($l->t('No data stored yet.'));
             } else {
                 $quota = \OCA\mozilla_sync\User::getQuota();
-				$percentage = 100.0*((float) $size)/((float) $quota);
                 if ($quota === 0) {
                     $quotaString = "(unlimited quota)";
                 } else {
-                    $quotaString = "(" . number_format($percentage,1) . "% used of quota " .
+                    $percentage = 100.0*((float) $size)/((float) $quota);
+                    $quotaString = "(" . number_format($percentage, 1) . "% used of quota " .
                     human_file_size($quota*1000) . ")";
                 }
                 p(human_file_size($size*1000) . " " . $quotaString);
