@@ -437,6 +437,9 @@ class User
 	/**
 	* @brief Gets the usage for the given user.
 	*
+	* Returns the current usage for a specific user in kB. For SQLite
+	* the number of thousand characters are returned, since there is no byte length
+	* function for SQLite databases.
 	* It is possible to restrict the quota of Mozilla Sync to a limit. A zero
 	* limit results in no restriction. The value is zero by default but can be
 	* set on the admin page.
@@ -446,7 +449,7 @@ class User
 	*/
 	public static function getUserUsage($syncId) {
 		// Sum up character size of all WBO
-		$query = \OCP\DB::prepare('SELECT SUM(CHAR_LENGTH(`payload`)) as `size`
+		$query = \OCP\DB::prepare('SELECT SUM(LENGTH(`payload`)) as `size`
 				FROM `*PREFIX*mozilla_sync_wbo` JOIN
 				`*PREFIX*mozilla_sync_collections` ON
 				`*PREFIX*mozilla_sync_wbo`.`collectionid` =
