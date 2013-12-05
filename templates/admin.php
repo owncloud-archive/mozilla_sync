@@ -28,7 +28,7 @@
             </td>
             <td id="syncquota">
                 <input type="text" id="syncquotainput" name="syncquota" data-placeholder="<?php p($l->t('Sync quota'))?>"
-                    value="<?php p($_['mozillaSyncQuota']); ?>">
+                    value="<?php p($_['mozillaSyncQuota']); ?>"> kB
             </td>
         </tr>
     </table>
