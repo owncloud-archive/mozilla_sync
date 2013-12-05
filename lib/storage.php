@@ -411,6 +411,10 @@ class Storage
 	/**
 	* @brief Get the size of each collection for a user.
 	*
+	* Returns the size of each collection for a specific user in kB. For SQLite
+	*	the number of thousand characters are returned, since there is no byte length
+	*	function for SQLite databases.
+	*
 	* @param string $syncId The Sync user whose collection sizes are returned,
 	* the logged in user by default.
 	* @return mixed Array of collection => size in kB for the specified user.
@@ -427,7 +431,7 @@ class Storage
 			return false;
 		}
 
-		$query = \OCP\DB::prepare('SELECT name, (SELECT SUM(CHAR_LENGTH(payload))
+		$query = \OCP\DB::prepare('SELECT name, (SELECT SUM(LENGTH(payload))
 			FROM *PREFIX*mozilla_sync_wbo WHERE
 			*PREFIX*mozilla_sync_wbo.collectionid =
 			*PREFIX*mozilla_sync_collections.id) as size FROM
