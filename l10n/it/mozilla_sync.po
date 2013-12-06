@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-04 18:13-0500\n"
-"PO-Revision-Date: 2013-12-03 10:10+0000\n"
+"POT-Creation-Date: 2013-12-05 22:31-0500\n"
+"PO-Revision-Date: 2013-12-05 23:20+0000\n"
 "Last-Translator: polxmod <paolo.velati@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/owncloud/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgstr "Mozilla Sync"
 
 #: templates/admin.php:12
 msgid "Restrict to group"
-msgstr ""
+msgstr "Limitare al gruppo"
 
 #: templates/admin.php:15
 msgid "Group"
@@ -58,7 +58,7 @@ msgstr "Gruppo"
 
 #: templates/admin.php:23
 msgid "When activated, only members of this group can access Mozilla Sync."
-msgstr ""
+msgstr "Quando attivato, solo i membri di questo gruppo possono accedere a Mozilla Sync."
 
 #: templates/admin.php:27 templates/admin.php:30
 msgid "Sync quota"
@@ -66,16 +66,16 @@ msgstr "Sincronizza quota"
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
-msgstr ""
+msgstr "Impostare a zero per disattivare la quota"
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
-msgstr ""
+msgstr "Imposta il tuo indirizzo email nelle impostazioni dell'account."
 
 #: templates/noemail.php:7
 #, php-format
 msgid "Be sure to set the LDAP login filter to something like %s."
-msgstr ""
+msgstr "Assicurati di configurare il filtro login LDAP su qualcosa simile a %s."
 
 #: templates/noemail.php:9
 msgid ""
@@ -114,34 +114,34 @@ msgstr "Indirizzo del server"
 
 #: templates/settings.php:39
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
-msgstr ""
+msgstr "Per configurare Mozilla Sync, creare un nuovo account Sync in Firefox."
 
 #: templates/settings.php:41
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
-msgstr ""
+msgstr "Mozilla Sync è configurato, dispositivi addizionali possono essere aggiunti attraverso il servizio pairing di Mozilla o manualmente."
 
 #: templates/settings.php:54
 msgid "Last sync"
-msgstr ""
+msgstr "Ultima sincronizzazione"
 
 #: templates/settings.php:58
 msgid "Size of stored data"
-msgstr ""
+msgstr "Dimensione dei dati salvati"
 
 #: templates/settings.php:62
 msgid "No data stored yet."
-msgstr ""
+msgstr "Ancora nessun dato salvato."
 
 #: templates/settings.php:77
 msgid "Number of synced devices"
-msgstr ""
+msgstr "Numero di dispositivi sincronizzati"
 
 #: templates/settings.php:89
 msgid "Delete storage"
-msgstr ""
+msgstr "Eliminazione archiviazione"
 
 #: templates/settings.php:94
 msgid "Attention! This will delete all your Sync data on the server."
-msgstr ""
+msgstr "Attenzione! Questo cancellerà tutti i tuoi dati di Sincronizzazione dal server."
