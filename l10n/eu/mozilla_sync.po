@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-05 22:31-0500\n"
-"PO-Revision-Date: 2013-12-02 23:40+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"POT-Creation-Date: 2013-12-07 22:34-0500\n"
+"PO-Revision-Date: 2013-12-07 11:50+0000\n"
+"Last-Translator: asieriko <asieriko@gmail.com>\n"
 "Language-Team: Basque (http://www.transifex.com/projects/p/owncloud/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,27 +21,27 @@ msgstr ""
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
-msgstr ""
+msgstr "Ezin izan da biltegiratzea ezabatu"
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
-msgstr ""
+msgstr "Ezin izan da erabiltzailea ezabatu"
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
-msgstr ""
+msgstr "Biltegiratzea ezabatu da"
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
-msgstr ""
+msgstr "Ez da erabiltzailea aurkitu"
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
-msgstr ""
+msgstr "Baliogabeko sarrera"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
-msgstr ""
+msgstr "Kuota gorde da"
 
 #: templates/admin.php:2 templates/noemail.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
@@ -49,7 +49,7 @@ msgstr "Mozilla Sync"
 
 #: templates/admin.php:12
 msgid "Restrict to group"
-msgstr ""
+msgstr "Mugatu taldera"
 
 #: templates/admin.php:15
 msgid "Group"
@@ -57,37 +57,37 @@ msgstr "Taldea"
 
 #: templates/admin.php:23
 msgid "When activated, only members of this group can access Mozilla Sync."
-msgstr ""
+msgstr "Gaitutakoan, bakarrik talde honetako partaideak erabili ahal izango dute Mozilla Sync."
 
 #: templates/admin.php:27 templates/admin.php:30
 msgid "Sync quota"
-msgstr ""
+msgstr "Sinkronizazio kuota"
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
-msgstr ""
+msgstr "Kuota desgaitzeko ezarri zero."
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
-msgstr ""
+msgstr "Mesedez ezarri e-posta helbide bat zure kontuaren ezarpenetan."
 
 #: templates/noemail.php:7
 #, php-format
 msgid "Be sure to set the LDAP login filter to something like %s."
-msgstr ""
+msgstr "Ziurtatu zure LDAP iragazkiak honen antzeko zerbait duela %s."
 
 #: templates/noemail.php:9
 msgid ""
 "Configure the special attribute Email in your LDAP configuration "
 "accordingly."
-msgstr ""
+msgstr "Konfiguratu zure LDAP konfigurazioan dagokion Email atributu berezia."
 
 #: templates/settings.php:7
 #, php-format
 msgid ""
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of "
 "the %s group."
-msgstr ""
+msgstr "Errorea! Ez zaude Mozilla Sync erabiltzeko baimenduta! %s taldearen partaidea izan behar zara."
 
 #: templates/settings.php:14
 msgid "Email"
@@ -97,7 +97,7 @@ msgstr "E-posta"
 msgid ""
 "Error! Duplicate email addresses detected! Email addresses need to be unique"
 " for Mozilla Sync to work."
-msgstr ""
+msgstr "Errorea! Bikoiztutako e-posta helbideak aurkitu dira! E-posta helbideak bakarrak izan behar dira Mozilla Syncek funtziona dezan."
 
 #: templates/settings.php:21
 msgid "Password"
@@ -113,34 +113,34 @@ msgstr "Zerbitzariaren helbidea"
 
 #: templates/settings.php:39
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
-msgstr ""
+msgstr "Mozilla Sync erabiltzeko sortu Sync kontu berria Firefoxen."
 
 #: templates/settings.php:41
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
-msgstr ""
+msgstr "Mozilla Sync konfiguratuta dago, gailu gehiago Mozilla gailu parekatze zerbitzuarekin edo eskuz gehi daitezke."
 
 #: templates/settings.php:54
 msgid "Last sync"
-msgstr ""
+msgstr "Azkenengo sinkronizazioa"
 
 #: templates/settings.php:58
 msgid "Size of stored data"
-msgstr ""
+msgstr "Gordetako datuen tamaina"
 
 #: templates/settings.php:62
 msgid "No data stored yet."
-msgstr ""
+msgstr "Oraindik ez da daturik gorde."
 
 #: templates/settings.php:77
 msgid "Number of synced devices"
-msgstr ""
+msgstr "Sinkronizatutako gailu kopurua"
 
 #: templates/settings.php:89
 msgid "Delete storage"
-msgstr ""
+msgstr "Ezabatu biltegiratzea"
 
 #: templates/settings.php:94
 msgid "Attention! This will delete all your Sync data on the server."
-msgstr ""
+msgstr "Kontuz! Honek zerbitzarian sinkronizatutako datu guztiak ezabatuko ditu."
