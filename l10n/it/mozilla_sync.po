@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-05 22:31-0500\n"
-"PO-Revision-Date: 2013-12-05 23:20+0000\n"
+"POT-Creation-Date: 2013-12-07 22:34-0500\n"
+"PO-Revision-Date: 2013-12-06 23:10+0000\n"
 "Last-Translator: polxmod <paolo.velati@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/owncloud/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -81,14 +81,14 @@ msgstr "Assicurati di configurare il filtro login LDAP su qualcosa simile a %s."
 msgid ""
 "Configure the special attribute Email in your LDAP configuration "
 "accordingly."
-msgstr ""
+msgstr "Configura correttamente l'attributo speciale Email nelle tua impostazioni LDAP."
 
 #: templates/settings.php:7
 #, php-format
 msgid ""
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of "
 "the %s group."
-msgstr ""
+msgstr "Errore! Non sei autorizzato ad utilizzare Mozilla Sync! Devi essere membro del gruppo %s."
 
 #: templates/settings.php:14
 msgid "Email"
@@ -98,7 +98,7 @@ msgstr "Posta elettronica"
 msgid ""
 "Error! Duplicate email addresses detected! Email addresses need to be unique"
 " for Mozilla Sync to work."
-msgstr ""
+msgstr "Errore! Indirizzo mail duplicato trovato! L'indirizzo email deve essere unico per funzionare con Mozilla Sync."
 
 #: templates/settings.php:21
 msgid "Password"
