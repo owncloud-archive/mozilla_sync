@@ -1,3 +1,8 @@
+v1.2.1: 2013-12-08
+    * Fix quota display in admin panel
+    * Improved error logging
+    * Updated translations
+
 v1.2: 2013-12-05
     * Restrict to group feature added to Admin Page
     * Quota feature added to Admin Page
