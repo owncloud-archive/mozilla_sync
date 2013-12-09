@@ -1,3 +1,7 @@
+v1.2.2: 2013-12-09
+    * Fix quota bug in ownCloud 6
+    * Change settings and admin page for ownCloud 6
+
 v1.2.1: 2013-12-08
     * Fix quota display in admin panel
     * Improved error logging
