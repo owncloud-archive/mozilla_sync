@@ -12,7 +12,7 @@
                 <label for="restrictgroup"><?php p($l->t("Restrict to group")); ?></label>
             </td>
             <td id="group">
-                <select id="groupselect" name="group" data-placeholder="<?php p($l->t('Group'))?>">
+                <select id="groupselect" name="groupselect">
                     <?php foreach (\OCA\mozilla_sync\User::getAllGroups() as $group): ?>
                         <option value="<?php p($group);?>"><?php p($group);?></option>
                     <?php endforeach;?>
@@ -24,10 +24,10 @@
     <table class="nostyle">
         <tr>
             <td>
-                <label for="syncquota"><?php p($l->t("Sync quota")); ?></label>
+                <label for="syncquotainput"><?php p($l->t("Sync quota")); ?></label>
             </td>
             <td id="syncquota">
-                <input type="text" id="syncquotainput" name="syncquota" data-placeholder="<?php p($l->t('Sync quota'))?>"
+                <input type="text" id="syncquotainput" name="syncquotainput"
                     value="<?php p($_['mozillaSyncQuota']); ?>"> kB
             </td>
         </tr>
