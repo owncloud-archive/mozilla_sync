@@ -1,5 +1,5 @@
 <fieldset class="personalblock" id="mozilla_sync">
-    <label><?php p($l->t('Mozilla Sync')); ?></label>
+    <h2><?php p($l->t('Mozilla Sync')); ?></h2>
     <table class="nostyle">
         <tr>
             <td id="enable">
@@ -27,7 +27,7 @@
                 <label for="syncquotainput"><?php p($l->t("Sync quota")); ?></label>
             </td>
             <td id="syncquota">
-                <input type="text" id="syncquotainput" name="syncquotainput"
+                <input type="text" id="syncquotainput" name="syncquotainput" title="<?php p($l->t("0 is unlimited")); ?>"
                     value="<?php p($_['mozillaSyncQuota']); ?>"> kB
             </td>
         </tr>
