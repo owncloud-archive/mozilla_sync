@@ -1,5 +1,5 @@
 <fieldset class="personalblock">
-	<legend><?php p($l->t('Mozilla Sync')); ?></legend>
+	<h2><?php p($l->t('Mozilla Sync')); ?></h2>
     <?php
     if (!\OCA\mozilla_sync\User::checkUserIsAllowed()) {
         $authorizedGroup = \OCA\mozilla_sync\User::getAuthorizedGroup();

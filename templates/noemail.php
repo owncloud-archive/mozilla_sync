@@ -1,5 +1,5 @@
 <fieldset class="personalblock">
-	<legend><?php p($l->t('Mozilla Sync')); ?></legend>
+	<h2><?php p($l->t('Mozilla Sync')); ?></h2>
   <?php p($l->t('Please set an email address in your account settings.'));
     // Print info regarding LDAP
     if (\OCP\App::isEnabled('user_ldap')) {
