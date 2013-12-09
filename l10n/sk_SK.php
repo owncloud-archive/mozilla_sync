@@ -7,7 +7,6 @@
 "Quota saved" => "Kvóta uložená",
 "Mozilla Sync" => "Mozilla Sync",
 "Restrict to group" => "Obmedzenia skupiny",
-"Group" => "Skupina",
 "When activated, only members of this group can access Mozilla Sync." => "Pokiaľ je aktivovaný, iba členovia tejto skupiny majú umožnený prístup do Mozilla Sync.",
 "Sync quota" => "Kvóta synchronizácie",
 "To deactivate the quota set it to zero." => "Pre deaktiváciu kvóty nastavte nulu.",

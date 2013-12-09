@@ -7,7 +7,6 @@
 "Quota saved" => "Kuota gorde da",
 "Mozilla Sync" => "Mozilla Sync",
 "Restrict to group" => "Mugatu taldera",
-"Group" => "Taldea",
 "When activated, only members of this group can access Mozilla Sync." => "Gaitutakoan, bakarrik talde honetako partaideak erabili ahal izango dute Mozilla Sync.",
 "Sync quota" => "Sinkronizazio kuota",
 "To deactivate the quota set it to zero." => "Kuota desgaitzeko ezarri zero.",

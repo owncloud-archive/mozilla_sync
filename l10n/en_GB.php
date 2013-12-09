@@ -7,7 +7,6 @@
 "Quota saved" => "Quota saved",
 "Mozilla Sync" => "Mozilla Sync",
 "Restrict to group" => "Restrict to group",
-"Group" => "Group",
 "When activated, only members of this group can access Mozilla Sync." => "When activated, only members of this group can access Mozilla Sync.",
 "Sync quota" => "Sync quota",
 "To deactivate the quota set it to zero." => "To deactivate the quota set it to zero.",

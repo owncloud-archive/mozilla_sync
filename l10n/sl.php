@@ -7,7 +7,6 @@
 "Quota saved" => "Omejitev prostora je shranjena",
 "Mozilla Sync" => "Usklajevanje Mozilla",
 "Restrict to group" => "Omeji na skupino",
-"Group" => "Skupina",
 "Email" => "Elektronski naslov",
 "Password" => "Geslo",
 "Use your ownCloud account password" => "Uporabite geslo računa ownCloud",

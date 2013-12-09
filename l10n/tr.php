@@ -7,7 +7,6 @@
 "Quota saved" => "Kota kaydedildi",
 "Mozilla Sync" => "Mozilla Sync",
 "Restrict to group" => "Gruba sınırla",
-"Group" => "Grup",
 "When activated, only members of this group can access Mozilla Sync." => "Etkinleştirildiğinde, sadece bu grubun üyeleri Mozilla Sync'e erişebilir.",
 "Sync quota" => "Kotayı eşitle",
 "To deactivate the quota set it to zero." => "Kotayı devre dışı bırakmak için sıfır olarak ayarlayın",

@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-07 22:34-0500\n"
-"PO-Revision-Date: 2013-12-05 18:10+0000\n"
-"Last-Translator: mateju <>\n"
+"POT-Creation-Date: 2013-12-09 06:40-0500\n"
+"PO-Revision-Date: 2013-12-09 11:40+0000\n"
+"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/owncloud/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,16 +52,16 @@ msgstr "Usklajevanje Mozilla"
 msgid "Restrict to group"
 msgstr "Omeji na skupino"
 
-#: templates/admin.php:15
-msgid "Group"
-msgstr "Skupina"
-
 #: templates/admin.php:23
 msgid "When activated, only members of this group can access Mozilla Sync."
 msgstr ""
 
-#: templates/admin.php:27 templates/admin.php:30
+#: templates/admin.php:27
 msgid "Sync quota"
+msgstr ""
+
+#: templates/admin.php:30
+msgid "0 is unlimited"
 msgstr ""
 
 #: templates/admin.php:35

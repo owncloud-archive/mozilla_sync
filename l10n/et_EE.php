@@ -7,7 +7,6 @@
 "Quota saved" => "Mahupiirang salvestatud",
 "Mozilla Sync" => "Mozilla sünkroniseerimine",
 "Restrict to group" => "Piira grupile",
-"Group" => "Grupp",
 "When activated, only members of this group can access Mozilla Sync." => "Kui on aktiveeritud, siis ainult grupi liikmed pääsevad ligi Mozilla Sync-ile.",
 "Sync quota" => "Sync mahupiirang",
 "To deactivate the quota set it to zero." => "Deaktiveerimiseks määra mahupiiranguks null.",

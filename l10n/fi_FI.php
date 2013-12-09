@@ -3,7 +3,6 @@
 "User not found" => "Käyttäjää ei löytynyt",
 "Quota saved" => "Kiintiö tallennettu",
 "Mozilla Sync" => "Mozilla-synkronointi",
-"Group" => "Ryhmä",
 "Sync quota" => "Synkronoinnin kiintiö",
 "Email" => "Sähköpostiosoite",
 "Password" => "Salasana",

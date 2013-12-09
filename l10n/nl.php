@@ -7,7 +7,6 @@
 "Quota saved" => "Quota opgeslagen",
 "Mozilla Sync" => "Mozilla Sync",
 "Restrict to group" => "Beperk tot groep",
-"Group" => "Groep",
 "When activated, only members of this group can access Mozilla Sync." => "Wanneer geactiveerd, kunnen alleen leden van deze groep Mozilla Sync gebruiken.",
 "Sync quota" => "Sync quota",
 "To deactivate the quota set it to zero." => "Om quota de deactiveren: instellen op nul",

@@ -7,7 +7,6 @@
 "Quota saved" => "Kontigent gespeichert",
 "Mozilla Sync" => "Mozilla-Sync",
 "Restrict to group" => "Auf Gruppe beschränkt",
-"Group" => "Gruppe",
 "When activated, only members of this group can access Mozilla Sync." => "Wenn aktiviert, können nur Gruppenmitglieder dieser Gruppe auf die Mozilla Synchronisation zugreifen.",
 "Sync quota" => "Kontingent zur Synchronisation",
 "To deactivate the quota set it to zero." => "Um das Kontingent zu deaktivieren, auf Null setzen.",
