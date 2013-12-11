@@ -1,7 +1,20 @@
 <?php $TRANSLATIONS = array(
+"Failed to delete storage" => "Αποτυχία διαγραφής αποθηκευτικού χώρου",
+"Failed to delete user" => "Αποτυχία διαγραφής χρήστη",
+"Storage deleted" => "Ο αποθηκευτικός χώρος διαγράφηκε",
+"User not found" => "Δεν βρέθηκε χρήστης",
+"Invalid input" => "Μη έγκυρη εισαγωγή",
 "Mozilla Sync" => "Mozilla Sync",
+"0 is unlimited" => "0 για απεριόριστο",
+"Please set an email address in your account settings." => "Παρακαλώ όρισε μια διεύθυνση ηλ. ταχυδρομείου στις ρυθμίσεις λογαριασμού σας.",
 "Email" => "Ηλ. ταχυδρομείο",
 "Password" => "Συνθηματικό",
 "Use your ownCloud account password" => "Χρησιμοποίηστε το λογαριασμό ownCloud σας",
-"Server address" => "Διεύθυνση εξυπηρέτη"
+"Server address" => "Διεύθυνση εξυπηρέτη",
+"Last sync" => "Τελευταίος συγχρονισμός",
+"Size of stored data" => "Μέγεθος αποθηκευμένων δεδομένων",
+"No data stored yet." => "Δεν έχουν αποθηκευτεί δεδομένα.",
+"Number of synced devices" => "Αριθμός συσκευών που συγχρονίζουν",
+"Delete storage" => "Διαγραφή αποθηκευτικού χώρου",
+"Attention! This will delete all your Sync data on the server." => "Προσοχή! Θα διαγράψετε όλα τα συγχρονισμένα δεδομένα στον διακομιστή."
 );

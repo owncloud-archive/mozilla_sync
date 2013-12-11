@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-09 06:40-0500\n"
-"PO-Revision-Date: 2013-12-09 11:40+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"POT-Creation-Date: 2013-12-11 13:39-0500\n"
+"PO-Revision-Date: 2013-12-09 12:00+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish (Finland) (http://www.transifex.com/projects/p/owncloud/language/fi_FI/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +36,7 @@ msgstr "Käyttäjää ei löytynyt"
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
-msgstr ""
+msgstr "Virheellinen syöte"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
@@ -48,11 +48,11 @@ msgstr "Mozilla-synkronointi"
 
 #: templates/admin.php:12
 msgid "Restrict to group"
-msgstr ""
+msgstr "Rajoita ryhmään"
 
 #: templates/admin.php:23
 msgid "When activated, only members of this group can access Mozilla Sync."
-msgstr ""
+msgstr "Kun käytössä, vain tämän ryhmän jäsenet voivat käyttää Mozilla Syncia."
 
 #: templates/admin.php:27
 msgid "Sync quota"
@@ -60,11 +60,11 @@ msgstr "Synkronoinnin kiintiö"
 
 #: templates/admin.php:30
 msgid "0 is unlimited"
-msgstr ""
+msgstr "0 on rajoittamaton"
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
-msgstr ""
+msgstr "Poista kiintiö käytöstä asettamalla arvoksi 0."
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
@@ -86,7 +86,7 @@ msgstr ""
 msgid ""
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of "
 "the %s group."
-msgstr ""
+msgstr "Virhe! Oikeutesi eivät riitä Mozillan synkronointipalvelun käyttöön. Käyttöä varten tarvitaan ryhmän %s jäsenyys."
 
 #: templates/settings.php:14
 msgid "Email"
@@ -112,7 +112,7 @@ msgstr "Palvelimen osoite"
 
 #: templates/settings.php:39
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
-msgstr ""
+msgstr "Luo uusi Sync-tili Firefoxissa käyttääksesi Mozillan synkronointipalvelua."
 
 #: templates/settings.php:41
 msgid ""
@@ -142,4 +142,4 @@ msgstr ""
 
 #: templates/settings.php:94
 msgid "Attention! This will delete all your Sync data on the server."
-msgstr ""
+msgstr "Huomio! Tämä poistaa kaikki synkronointitietosi palvelimelta."

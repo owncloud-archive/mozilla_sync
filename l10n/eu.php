@@ -9,6 +9,7 @@
 "Restrict to group" => "Mugatu taldera",
 "When activated, only members of this group can access Mozilla Sync." => "Gaitutakoan, bakarrik talde honetako partaideak erabili ahal izango dute Mozilla Sync.",
 "Sync quota" => "Sinkronizazio kuota",
+"0 is unlimited" => "0 mugarik gabe esan nahi du",
 "To deactivate the quota set it to zero." => "Kuota desgaitzeko ezarri zero.",
 "Please set an email address in your account settings." => "Mesedez ezarri e-posta helbide bat zure kontuaren ezarpenetan.",
 "Be sure to set the LDAP login filter to something like %s." => "Ziurtatu zure LDAP iragazkiak honen antzeko zerbait duela %s.",

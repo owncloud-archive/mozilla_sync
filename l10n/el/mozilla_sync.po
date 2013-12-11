@@ -4,15 +4,16 @@
 # 
 # Translators:
 # Efstathios Iosifidis <iefstathios@gmail.com>, 2012
+# Efstathios Iosifidis <iefstathios@gmail.com>, 2013
 # Konstantinos Tzanidis <tzanidis@gmail.com>, 2012
 # Marios Bekatoros <>, 2012-2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-09 06:40-0500\n"
-"PO-Revision-Date: 2013-12-09 11:40+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"POT-Creation-Date: 2013-12-11 13:39-0500\n"
+"PO-Revision-Date: 2013-12-09 22:50+0000\n"
+"Last-Translator: Efstathios Iosifidis <iefstathios@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/owncloud/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,23 +23,23 @@ msgstr ""
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
-msgstr ""
+msgstr "Αποτυχία διαγραφής αποθηκευτικού χώρου"
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
-msgstr ""
+msgstr "Αποτυχία διαγραφής χρήστη"
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
-msgstr ""
+msgstr "Ο αποθηκευτικός χώρος διαγράφηκε"
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
-msgstr ""
+msgstr "Δεν βρέθηκε χρήστης"
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
-msgstr ""
+msgstr "Μη έγκυρη εισαγωγή"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
@@ -62,7 +63,7 @@ msgstr ""
 
 #: templates/admin.php:30
 msgid "0 is unlimited"
-msgstr ""
+msgstr "0 για απεριόριστο"
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
@@ -70,7 +71,7 @@ msgstr ""
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
-msgstr ""
+msgstr "Παρακαλώ όρισε μια διεύθυνση ηλ. ταχυδρομείου στις ρυθμίσεις λογαριασμού σας."
 
 #: templates/noemail.php:7
 #, php-format
@@ -124,24 +125,24 @@ msgstr ""
 
 #: templates/settings.php:54
 msgid "Last sync"
-msgstr ""
+msgstr "Τελευταίος συγχρονισμός"
 
 #: templates/settings.php:58
 msgid "Size of stored data"
-msgstr ""
+msgstr "Μέγεθος αποθηκευμένων δεδομένων"
 
 #: templates/settings.php:62
 msgid "No data stored yet."
-msgstr ""
+msgstr "Δεν έχουν αποθηκευτεί δεδομένα."
 
 #: templates/settings.php:77
 msgid "Number of synced devices"
-msgstr ""
+msgstr "Αριθμός συσκευών που συγχρονίζουν"
 
 #: templates/settings.php:89
 msgid "Delete storage"
-msgstr ""
+msgstr "Διαγραφή αποθηκευτικού χώρου"
 
 #: templates/settings.php:94
 msgid "Attention! This will delete all your Sync data on the server."
-msgstr ""
+msgstr "Προσοχή! Θα διαγράψετε όλα τα συγχρονισμένα δεδομένα στον διακομιστή."

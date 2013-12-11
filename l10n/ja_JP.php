@@ -1,7 +1,25 @@
 <?php $TRANSLATIONS = array(
+"Failed to delete storage" => "ストレージ削除が失敗しました",
+"Failed to delete user" => "ユーザー削除が失敗しました",
+"Storage deleted" => "ストレージを削除しました",
+"User not found" => "ユーザーを見つかりません",
+"Invalid input" => "不正な入力",
+"Quota saved" => "クオータを保存しました",
 "Mozilla Sync" => "Mozilla 同期",
+"Restrict to group" => "グループに制限する",
+"When activated, only members of this group can access Mozilla Sync." => "有効化に設定後このグループのメンバーのみMozillaシンクにアクセス可能",
+"Sync quota" => "クォータ同期",
+"0 is unlimited" => "0を指定した場合は無制限",
+"To deactivate the quota set it to zero." => "クォーターの無効にする場合0に設定する",
+"Please set an email address in your account settings." => "アカウント設定でメールアドレスを設定してください",
+"Be sure to set the LDAP login filter to something like %s." => "%s の様にLDAPログインフィルターを設定してください",
 "Email" => "メール",
 "Password" => "パスワード",
 "Use your ownCloud account password" => "ownCloudのアカウントのパスワードを使用してください:",
-"Server address" => "サーバアドレス"
+"Server address" => "サーバアドレス",
+"Last sync" => "最終同期",
+"No data stored yet." => "データがありません",
+"Number of synced devices" => "同期済デバイス数",
+"Delete storage" => "ストレージを削除する",
+"Attention! This will delete all your Sync data on the server." => "注目！サーバーに全ての同期したデータを削除する。"
 );

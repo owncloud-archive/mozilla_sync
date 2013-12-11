@@ -9,6 +9,7 @@
 "Restrict to group" => "Piira grupile",
 "When activated, only members of this group can access Mozilla Sync." => "Kui on aktiveeritud, siis ainult grupi liikmed pääsevad ligi Mozilla Sync-ile.",
 "Sync quota" => "Sync mahupiirang",
+"0 is unlimited" => "0 tähendab piiramatut",
 "To deactivate the quota set it to zero." => "Deaktiveerimiseks määra mahupiiranguks null.",
 "Please set an email address in your account settings." => "Palun määra e-posti aadress oma konto seadetes.",
 "Be sure to set the LDAP login filter to something like %s." => "Veendu, et LDAP login filter oleks midagi taolist: %s.",

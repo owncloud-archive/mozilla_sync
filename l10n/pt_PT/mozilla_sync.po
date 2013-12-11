@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Duarte Velez Grilo <duartegrilo@gmail.com>, 2012
+# Helder Meneses <helder.meneses@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-09 06:40-0500\n"
-"PO-Revision-Date: 2013-12-09 11:40+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"POT-Creation-Date: 2013-12-11 13:39-0500\n"
+"PO-Revision-Date: 2013-12-11 14:00+0000\n"
+"Last-Translator: Helder Meneses <helder.meneses@gmail.com>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/owncloud/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,11 +29,11 @@ msgstr ""
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
-msgstr ""
+msgstr "Armazenamento eliminado"
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
-msgstr ""
+msgstr "Utilizador não encontrado"
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
@@ -60,7 +61,7 @@ msgstr ""
 
 #: templates/admin.php:30
 msgid "0 is unlimited"
-msgstr ""
+msgstr "0 é ilimitado"
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
@@ -122,7 +123,7 @@ msgstr ""
 
 #: templates/settings.php:54
 msgid "Last sync"
-msgstr ""
+msgstr "Última sincronização"
 
 #: templates/settings.php:58
 msgid "Size of stored data"
@@ -138,7 +139,7 @@ msgstr ""
 
 #: templates/settings.php:89
 msgid "Delete storage"
-msgstr ""
+msgstr "Eliminar armazenamento"
 
 #: templates/settings.php:94
 msgid "Attention! This will delete all your Sync data on the server."

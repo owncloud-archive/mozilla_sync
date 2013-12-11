@@ -9,6 +9,7 @@
 "Restrict to group" => "Gruba sınırla",
 "When activated, only members of this group can access Mozilla Sync." => "Etkinleştirildiğinde, sadece bu grubun üyeleri Mozilla Sync'e erişebilir.",
 "Sync quota" => "Kotayı eşitle",
+"0 is unlimited" => "0 limitsiz demektir",
 "To deactivate the quota set it to zero." => "Kotayı devre dışı bırakmak için sıfır olarak ayarlayın",
 "Please set an email address in your account settings." => "Lütfen hesap ayarlarınızda bir e-posta adresi ayarlayın",
 "Be sure to set the LDAP login filter to something like %s." => "LDAP oturum filtresini %s benzeri bir şey olarak ayarladığınızdan emin olun.",

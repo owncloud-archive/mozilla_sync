@@ -1,13 +1,21 @@
 <?php $TRANSLATIONS = array(
 "Failed to delete user" => "Käyttäjän poistaminen epäonnistui",
 "User not found" => "Käyttäjää ei löytynyt",
+"Invalid input" => "Virheellinen syöte",
 "Quota saved" => "Kiintiö tallennettu",
 "Mozilla Sync" => "Mozilla-synkronointi",
+"Restrict to group" => "Rajoita ryhmään",
+"When activated, only members of this group can access Mozilla Sync." => "Kun käytössä, vain tämän ryhmän jäsenet voivat käyttää Mozilla Syncia.",
 "Sync quota" => "Synkronoinnin kiintiö",
+"0 is unlimited" => "0 on rajoittamaton",
+"To deactivate the quota set it to zero." => "Poista kiintiö käytöstä asettamalla arvoksi 0.",
+"Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Virhe! Oikeutesi eivät riitä Mozillan synkronointipalvelun käyttöön. Käyttöä varten tarvitaan ryhmän %s jäsenyys.",
 "Email" => "Sähköpostiosoite",
 "Password" => "Salasana",
 "Use your ownCloud account password" => "Käytä ownCloud-tilisi salasanaa",
 "Server address" => "Palvelimen osoite",
+"To set up Mozilla Sync create a new Sync account in Firefox." => "Luo uusi Sync-tili Firefoxissa käyttääksesi Mozillan synkronointipalvelua.",
 "Last sync" => "Viimeisin synkronointi",
-"Number of synced devices" => "Synkronoitujen laitteiden määrä"
+"Number of synced devices" => "Synkronoitujen laitteiden määrä",
+"Attention! This will delete all your Sync data on the server." => "Huomio! Tämä poistaa kaikki synkronointitietosi palvelimelta."
 );

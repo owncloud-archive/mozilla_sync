@@ -9,6 +9,7 @@
 "Restrict to group" => "Restrict to group",
 "When activated, only members of this group can access Mozilla Sync." => "When activated, only members of this group can access Mozilla Sync.",
 "Sync quota" => "Sync quota",
+"0 is unlimited" => "0 is unlimited",
 "To deactivate the quota set it to zero." => "To deactivate the quota set it to zero.",
 "Please set an email address in your account settings." => "Please set an email address in your account settings.",
 "Be sure to set the LDAP login filter to something like %s." => "Be sure to set the LDAP login filter to something like %s.",

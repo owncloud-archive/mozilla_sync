@@ -9,6 +9,7 @@
 "Restrict to group" => "Restringir ao grupo",
 "When activated, only members of this group can access Mozilla Sync." => "Quando ativado, somente os membros deste grupo podem acessar Mozilla Sync.",
 "Sync quota" => "Quota de sincronização",
+"0 is unlimited" => "0 para ilimitado",
 "To deactivate the quota set it to zero." => "Para desativar a quota configurá-la para zero.",
 "Please set an email address in your account settings." => "Por favor, defina um endereço de e-mail nas configurações da conta.",
 "Be sure to set the LDAP login filter to something like %s." => "Certifique-se de definir o filtro de login LDAP para algo como %s.",

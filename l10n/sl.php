@@ -7,6 +7,7 @@
 "Quota saved" => "Omejitev prostora je shranjena",
 "Mozilla Sync" => "Usklajevanje Mozilla",
 "Restrict to group" => "Omeji na skupino",
+"0 is unlimited" => "0 predstavlja neomejeno vrednost",
 "Email" => "Elektronski naslov",
 "Password" => "Geslo",
 "Use your ownCloud account password" => "Uporabite geslo računa ownCloud",
