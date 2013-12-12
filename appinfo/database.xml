@@ -157,6 +157,7 @@
       <field>
         <name>ttl</name>
         <type>integer</type>
+        <notnull>false</notnull>
         <unsigned>true</unsigned>
         <length>4</length>
       </field>
