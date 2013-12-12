@@ -22,7 +22,7 @@ app_name=mozilla_sync
 build_directory=build/
 package_name=$(build_directory)$(app_name)
 
-version=$(shell cat appinfo/info.xml | grep 'version>' | sed -e 's/<version>//' | sed -e 's!</version>!!' | tr -d '[:space:]')
+version=$(shell cat appinfo/version | tr -d '[:space:]')
 
 dist:
 	git archive HEAD --format=zip --prefix=$(app_name)/ > $(package_name)-$(version).zip
