@@ -1,8 +1,20 @@
 <?php $TRANSLATIONS = array(
+"Storage deleted" => "Support de stockage supprimé",
+"User not found" => "Utilisateur introuvable",
+"Invalid input" => "Saisie invalide",
+"Quota saved" => "Quota sauvé",
 "Mozilla Sync" => "Mozilla Sync",
+"Restrict to group" => "Restreindre au groupe",
+"When activated, only members of this group can access Mozilla Sync." => "Lorsque ceci est activé, seulement les membres de ce groupe peuvent accéder à Mozilla Sync.",
+"Sync quota" => "Synchronisation du quota",
 "0 is unlimited" => "0 est illimité",
+"Please set an email address in your account settings." => "Veuillez définir une adresse courriel dans vos paramètres de compte.",
 "Email" => "Adresse mail",
 "Password" => "Mot de passe",
 "Use your ownCloud account password" => "Utiliser votre mot de passe ownCloud",
-"Server address" => "Adresse du serveur"
+"Server address" => "Adresse du serveur",
+"Last sync" => "Dernière synchronisation ",
+"Size of stored data" => "Taille des données stockées",
+"No data stored yet." => "Aucune donnée stockée.",
+"Number of synced devices" => "Nombre d'appareils synchronisés"
 );
