@@ -1,3 +1,7 @@
+v1.2.3: 2013-12-13
+    * Fix not null contraint in database
+    * Updated translations
+
 v1.2.2: 2013-12-09
     * Fix quota bug in ownCloud 6
     * Change settings and admin page for ownCloud 6
