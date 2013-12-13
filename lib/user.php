@@ -175,8 +175,7 @@ class User
 	* @return bool True if the user exists, false otherwise.
 	*/
 	public static function syncUserExists($syncHash) {
-		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*mozilla_sync_users`
-			WHERE `sync_user` = ?');
+		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*mozilla_sync_users` WHERE `sync_user` = ?');
 		$result = $query->execute(array($syncHash));
 
 		return (((int) $result->numRows()) === 1);
@@ -353,8 +352,7 @@ class User
 	*/
 	private static function checkGroupMembership($userName, $groupName) {
 		// Check if user is member of group
-		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*group_user` WHERE
-			`uid` = ? AND `gid` = ?');
+		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*group_user` WHERE `uid` = ? AND `gid` = ?');
 		$result = $query->execute(array($userName, $groupName));
 
 		// Only return true if exactly one row matched for this email address
@@ -426,8 +424,7 @@ class User
 			$userName = \OCP\User::getUser();
 		}
 
-		$query = \OCP\DB::prepare('SELECT 1 FROM
-			`*PREFIX*mozilla_sync_users` WHERE `username` = ?');
+		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*mozilla_sync_users` WHERE `username` = ?');
 		$result = $query->execute(array($userName));
 
 		// Only return true if exactly one row matched for this user name
@@ -449,11 +446,7 @@ class User
 	*/
 	public static function getUserUsage($syncId) {
 		// Sum up character size of all WBO
-		$query = \OCP\DB::prepare('SELECT SUM(LENGTH(`payload`)) as `size`
-				FROM `*PREFIX*mozilla_sync_wbo` JOIN
-				`*PREFIX*mozilla_sync_collections` ON
-				`*PREFIX*mozilla_sync_wbo`.`collectionid` =
-				`*PREFIX*mozilla_sync_collections`.`id` WHERE `userid` = ?');
+		$query = \OCP\DB::prepare('SELECT SUM(LENGTH(`payload`)) as `size` FROM `*PREFIX*mozilla_sync_wbo` JOIN `*PREFIX*mozilla_sync_collections` ON `*PREFIX*mozilla_sync_wbo`.`collectionid` = `*PREFIX*mozilla_sync_collections`.`id` WHERE `userid` = ?');
 		$result = $query->execute(array($syncId));
 
 		if($result == false || ((int) $result->numRows()) !== 1) {

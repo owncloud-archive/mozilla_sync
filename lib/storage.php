@@ -483,9 +483,7 @@ class Storage
 			return false;
 		}
 
-		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*mozilla_sync_wbo`
-			WHERE `collectionid` = (SELECT `id` FROM
-			`*PREFIX*mozilla_sync_collections` WHERE `name` = ? AND `userid` = ?)');
+		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*mozilla_sync_wbo` WHERE `collectionid` = (SELECT `id` FROM `*PREFIX*mozilla_sync_collections` WHERE `name` = ? AND `userid` = ?)');
 		$result = $query->execute(array('clients', $syncId));
 
 		if ($result === false) {
