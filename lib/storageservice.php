@@ -136,7 +136,8 @@ class StorageService extends Service
 		else {
 			Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
 			Utils::writeLog("URL: Invalid storage service request. Sent " .
-				((string) $this->urlParser->commandCount()) . " commands: " .
+				((string) $this->urlParser->commandCount()) . " commands in URL	"
+				. Utils::getSyncUrl() . ": " .
 				var_export($this->urlParser->getCommands(), true));
 			return false;
 		}
