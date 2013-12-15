@@ -705,13 +705,13 @@ class StorageService extends Service
 	*/
 	public static function forceTypeCasting($row) {
 		// Return modified as float, not string
-		if (is_null($row['modified'])) {
+		if (!isset($row['modified'])) {
 			unset($row['modified']);
 		} else {
 			$row['modified'] = (float) $row['modified'];
 		}
 		// Return sortindex as int, not string
-		if (is_null($row['sortindex'])) {
+		if (!isset($row['sortindex'])) {
 			unset($row['sortindex']);
 		} else {
 			$row['sortindex'] = (int) $row['sortindex'];
