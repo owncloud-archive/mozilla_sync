@@ -33,5 +33,15 @@
         </tr>
     </table>
     <em><?php p($l->t("To deactivate the quota set it to zero."));?></em>
+    <table class="nostyle">
+        <tr>
+            <td>
+                <label><?php p($l->t("Installed version")); ?></label>
+            </td>
+            <td>
+                <?php p($_['mozillaSyncVersion']); ?>
+            </td>
+        </tr>
+    </table>
 </fieldset>
 
