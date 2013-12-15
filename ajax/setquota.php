@@ -15,7 +15,7 @@
 \OCP\JSON::callCheck();
 
 // Load translations
-$l = OC_L10N::get('core');
+$l = OC_L10N::get('mozilla_sync');
 
 // Get inputs and set correct settings
 $quota = filter_var($_POST['quota'], FILTER_VALIDATE_INT);
