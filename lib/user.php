@@ -175,10 +175,12 @@ class User
 	* @return bool True if the user exists, false otherwise.
 	*/
 	public static function syncUserExists($syncHash) {
-		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*mozilla_sync_users` WHERE `sync_user` = ?');
+		$query = \OCP\DB::prepare('SELECT COUNT(*) AS `count` FROM `*PREFIX*mozilla_sync_users` WHERE `sync_user` = ?');
 		$result = $query->execute(array($syncHash));
 
-		return (((int) $result->numRows()) === 1);
+		$row = $result->fetchRow();
+
+		return (((int) $row['count']) === 1);
 	}
 
 	/**
@@ -304,11 +306,12 @@ class User
 		}
 
 		// Check for duplicate emails
-		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*preferences` WHERE `appid` = ? AND `configkey` = ? AND `configvalue` = ?');
+		$query = \OCP\DB::prepare('SELECT COUNT(*) AS `count` FROM `*PREFIX*preferences` WHERE `appid` = ? AND `configkey` = ? AND `configvalue` = ?');
 		$result = $query->execute(array('settings', 'email', $email));
 
 		// Only return true if exactly one row matched for this email address
-		return ((int) $result->numRows()) === 1;
+		$row = $result->fetchRow();
+		return (((int) $row['count']) === 1);
 	}
 
 	/**
@@ -352,11 +355,12 @@ class User
 	*/
 	private static function checkGroupMembership($userName, $groupName) {
 		// Check if user is member of group
-		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*group_user` WHERE `uid` = ? AND `gid` = ?');
+		$query = \OCP\DB::prepare('SELECT COUNT(*) AS `count` FROM `*PREFIX*group_user` WHERE `uid` = ? AND `gid` = ?');
 		$result = $query->execute(array($userName, $groupName));
 
 		// Only return true if exactly one row matched for this email address
-		return ((int) $result->numRows()) === 1;
+		$row = $result->fetchRow();
+		return (((int) $row['count']) === 1);
 	}
 
 	/**
@@ -424,11 +428,12 @@ class User
 			$userName = \OCP\User::getUser();
 		}
 
-		$query = \OCP\DB::prepare('SELECT 1 FROM `*PREFIX*mozilla_sync_users` WHERE `username` = ?');
+		$query = \OCP\DB::prepare('SELECT COUNT(*) AS `count` FROM `*PREFIX*mozilla_sync_users` WHERE `username` = ?');
 		$result = $query->execute(array($userName));
 
 		// Only return true if exactly one row matched for this user name
-		return ((int) $result->numRows()) === 1;
+		$row = $result->fetchRow();
+		return (((int) $row['count']) === 1);
 	}
 
 	/**
@@ -449,7 +454,7 @@ class User
 		$query = \OCP\DB::prepare('SELECT SUM(LENGTH(`payload`)) as `size` FROM `*PREFIX*mozilla_sync_wbo` JOIN `*PREFIX*mozilla_sync_collections` ON `*PREFIX*mozilla_sync_wbo`.`collectionid` = `*PREFIX*mozilla_sync_collections`.`id` WHERE `userid` = ?');
 		$result = $query->execute(array($syncId));
 
-		if($result == false || ((int) $result->numRows()) !== 1) {
+		if ($result == false) {
 			Utils::writeLog("DB: Could not get info quota for user " . $syncId . ".");
 			return false;
 		}
