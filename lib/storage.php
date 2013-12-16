@@ -457,7 +457,7 @@ class Storage
 
 			$key = $row['name'];
 			// Convert bytes to kB
-			$value = ((float) $row['size'])/1000.0;
+			$value = ((float) $row['size'])/1024.0;
 
 			$resultArray[$key] = $value;
 		}
