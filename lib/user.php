@@ -228,6 +228,9 @@ class User
 	*/
 	private static function checkPassword($userName, $password) {
 
+		// Enable authentication app, necessary for LDAP to work
+		\OC_App::loadApps(array('authentication'));
+
 		// Check if user is allowed to use Mozilla Sync
 		if (self::checkUserIsAllowed($userName) === false) {
 			return false;
