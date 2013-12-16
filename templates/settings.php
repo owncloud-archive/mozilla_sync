@@ -67,9 +67,9 @@
                 } else {
                     $percentage = 100.0*((float) $size)/((float) $quota);
                     $quotaString = "(" . number_format($percentage, 1) . "% used of quota " .
-                    human_file_size($quota*1000) . ")";
+                    human_file_size($quota*1024) . ")";
                 }
-                p(human_file_size($size*1000) . " " . $quotaString);
+                p(human_file_size($size*1024) . " " . $quotaString);
             }
             ?></td>
       </tr>
