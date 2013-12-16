@@ -14,6 +14,9 @@
 // Check if valid requesttoken was sent
 \OCP\JSON::callCheck();
 
+// Load translations
+$l = OC_L10N::get('mozilla_sync');
+
 // Get inputs and set correct settings
 $restrictGroup = filter_var($_POST['restrictgroup'], FILTER_VALIDATE_BOOLEAN);
 if ($restrictGroup === true) {
@@ -26,7 +29,7 @@ if ($restrictGroup === true) {
 \OCA\mozilla_sync\User::setAuthorizedGroup($group);
 
 // Send success message
-\OCP\JSON::success();
+\OCP\JSON::success(array( "data" => array( "message" => $l->t("Restriction saved") )));
 
 /* vim: set ts=4 sw=4 tw=80 noet : */
 

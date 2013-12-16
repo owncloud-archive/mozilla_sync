@@ -230,6 +230,9 @@ class User
 	*/
 	private static function checkPassword($userName, $password) {
 
+		// Enable authentication app, necessary for LDAP to work
+		\OC_App::loadApps(array('authentication'));
+
 		// Check if user is allowed to use Mozilla Sync
 		if (self::checkUserIsAllowed($userName) === false) {
 			return false;
@@ -460,7 +463,7 @@ class User
 		}
 
 		$row = $result->fetchRow();
-		return ((float) ($row['size']))/1000.0;
+		return ((float) ($row['size']))/1024.0;
 	}
 
 	/**
@@ -470,7 +473,7 @@ class User
 	* limit results in no restriction. The value is zero by default but can be
 	* set on the admin page.
 	*
-	* @return integer The quota in kB or 0 if not quota is set.
+	* @return integer The quota in kB or 0 if no quota is set.
 	*/
 	public static function getQuota() {
 		return ((int) \OCP\Config::getAppValue('mozilla_sync', 'quota_limit', '0'));

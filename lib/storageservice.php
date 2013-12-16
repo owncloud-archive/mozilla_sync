@@ -461,7 +461,7 @@ class StorageService extends Service
 		}
 
 		// Check if user has free space available
-		$size = ((float) strlen(serialize($inputData))/1000.0); // approximate the input data size
+		$size = ((float) strlen(serialize($inputData))/1024.0); // approximate the input data size
 		if(!$this->checkUserQuota($syncId, $size)) {
 			return false;
 		}
@@ -612,7 +612,7 @@ class StorageService extends Service
 		}
 
 		// Check if user has free space available
-		$size = ((float) strlen(serialize($inputData))/1000.0); // approximate the input data size
+		$size = ((float) strlen(serialize($inputData))/1024.0); // approximate the input data size
 		if(!$this->checkUserQuota($syncId, $size)) {
 			return false;
 		}
