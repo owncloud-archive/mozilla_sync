@@ -1,3 +1,11 @@
+v1.3: 2013-12-17
+    * LDAP authentication works now
+    * Show same usage/quota as Firefox browser
+    * Feedback for changes in admin panel
+    * Show installed app version in admin panel
+    * DB backend updates and fixes
+    * Updated Readme
+
 v1.2.4: 2013-12-14
     * Workaround for ownCloud database bug
     * Better debug output for invalid storage requests
