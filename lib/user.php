@@ -449,7 +449,7 @@ class User
 		$query = \OCP\DB::prepare('SELECT SUM(LENGTH(`payload`)) as `size` FROM `*PREFIX*mozilla_sync_wbo` JOIN `*PREFIX*mozilla_sync_collections` ON `*PREFIX*mozilla_sync_wbo`.`collectionid` = `*PREFIX*mozilla_sync_collections`.`id` WHERE `userid` = ?');
 		$result = $query->execute(array($syncId));
 
-		if($result == false || ((int) $result->numRows()) !== 1) {
+		if ($result == false) {
 			Utils::writeLog("DB: Could not get info quota for user " . $syncId . ".");
 			return false;
 		}
