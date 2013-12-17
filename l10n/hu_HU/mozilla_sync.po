@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# ebela <bela@dandre.hu>, 2013
 # gyeben <gyonkibendeguz@gmail.com>, 2013
 # Laszlo Tornoci <torlasz@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-13 15:38-0500\n"
-"PO-Revision-Date: 2013-12-09 12:00+0000\n"
+"POT-Creation-Date: 2013-12-17 07:39-0500\n"
+"PO-Revision-Date: 2013-12-17 12:39+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/owncloud/language/hu_HU/)\n"
 "MIME-Version: 1.0\n"
@@ -21,27 +22,31 @@ msgstr ""
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
-msgstr ""
+msgstr "A tároló törlése nem sikerült"
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
-msgstr ""
+msgstr "A felhasználó törlése nem sikerült"
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
-msgstr ""
+msgstr "A tároló törölve"
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
+msgstr "A felhasználót nem találhtó"
+
+#: ajax/restrictgroup.php:32
+msgid "Restriction saved"
 msgstr ""
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
-msgstr ""
+msgstr "Hibás bemenet"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
-msgstr ""
+msgstr "Kóta mentve"
 
 #: templates/admin.php:2 templates/noemail.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
@@ -49,15 +54,15 @@ msgstr "Mozilla szinkronizáció"
 
 #: templates/admin.php:12
 msgid "Restrict to group"
-msgstr ""
+msgstr "Korlátozva csoportra"
 
 #: templates/admin.php:23
 msgid "When activated, only members of this group can access Mozilla Sync."
-msgstr ""
+msgstr "Amikor aktíválod, akkor csak az adott csoport tagjai tudják elérni a Mozilla Sync-et"
 
 #: templates/admin.php:27
 msgid "Sync quota"
-msgstr ""
+msgstr "Kóta szinkronizálva"
 
 #: templates/admin.php:30
 msgid "0 is unlimited"
@@ -65,11 +70,15 @@ msgstr "0 = korlátlan"
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
+msgstr "Kóta kikapcsolásához állitsd azt nullára."
+
+#: templates/admin.php:39
+msgid "Installed version"
 msgstr ""
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
-msgstr ""
+msgstr "Álitsd be az email címedet a fiók beállításaidnál."
 
 #: templates/noemail.php:7
 #, php-format

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-13 15:38-0500\n"
-"PO-Revision-Date: 2013-12-09 12:00+0000\n"
+"POT-Creation-Date: 2013-12-17 07:39-0500\n"
+"PO-Revision-Date: 2013-12-17 12:39+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/owncloud/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -36,6 +36,10 @@ msgstr "Shranjeni podatki so izbrisani"
 msgid "User not found"
 msgstr "Uporabnika ni mogoče najti"
 
+#: ajax/restrictgroup.php:32
+msgid "Restriction saved"
+msgstr ""
+
 #: ajax/setquota.php:24
 msgid "Invalid input"
 msgstr "Neveljaven vnos"
@@ -54,11 +58,11 @@ msgstr "Omeji na skupino"
 
 #: templates/admin.php:23
 msgid "When activated, only members of this group can access Mozilla Sync."
-msgstr ""
+msgstr "Izbrana možnost določa, da imajo dostop do Usklajevalnika Mozill le člani skupine"
 
 #: templates/admin.php:27
 msgid "Sync quota"
-msgstr ""
+msgstr "Omejitev usklajevanja"
 
 #: templates/admin.php:30
 msgid "0 is unlimited"
@@ -66,29 +70,33 @@ msgstr "0 predstavlja neomejeno vrednost"
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
+msgstr "Možnost je onemogočena, ko je vrednost omejitve določena z 0."
+
+#: templates/admin.php:39
+msgid "Installed version"
 msgstr ""
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
-msgstr ""
+msgstr "Nastaviti je treba elektronski naslov med nastavitvami računa."
 
 #: templates/noemail.php:7
 #, php-format
 msgid "Be sure to set the LDAP login filter to something like %s."
-msgstr ""
+msgstr "Filter prijave za LDAP je treba nastaviti na naprimer %s."
 
 #: templates/noemail.php:9
 msgid ""
 "Configure the special attribute Email in your LDAP configuration "
 "accordingly."
-msgstr ""
+msgstr "Nastaviti je treba posebne atribute elektronskega naslova med nastavitvami LDAP."
 
 #: templates/settings.php:7
 #, php-format
 msgid ""
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of "
 "the %s group."
-msgstr ""
+msgstr "Napaka! Ni ustreznih dovoljenja za uporabo Usklajevalnika Mozilla! Uporaba je omejena na člane skupine %s."
 
 #: templates/settings.php:14
 msgid "Email"
@@ -98,7 +106,7 @@ msgstr "Elektronski naslov"
 msgid ""
 "Error! Duplicate email addresses detected! Email addresses need to be unique"
 " for Mozilla Sync to work."
-msgstr ""
+msgstr "Napaka! Zaznan je podvojen elektronski naslov. Naslovi morajo biti edinstveni za pravilno delovanje sistema."
 
 #: templates/settings.php:21
 msgid "Password"
@@ -114,13 +122,13 @@ msgstr "Naslov strežnika"
 
 #: templates/settings.php:39
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
-msgstr ""
+msgstr "Na nastavitev Usklajevalnika Mozilla je treba ustvariti nov račun za usklajevanje v programu Firefox."
 
 #: templates/settings.php:41
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
-msgstr ""
+msgstr "Usklajevalnik Mozilla je nastavljen. Dodatne naprave je mogoče dodati preko storitve povezovanja ali pa z ročnimi nastavitvami."
 
 #: templates/settings.php:54
 msgid "Last sync"
@@ -132,16 +140,16 @@ msgstr "Velikost shranjenih podatkov"
 
 #: templates/settings.php:62
 msgid "No data stored yet."
-msgstr ""
+msgstr "Ni še shranjenih podatkov."
 
 #: templates/settings.php:77
 msgid "Number of synced devices"
-msgstr ""
+msgstr "Število usklajenih podatkov"
 
 #: templates/settings.php:89
 msgid "Delete storage"
-msgstr ""
+msgstr "Izbriši shrambo"
 
 #: templates/settings.php:94
 msgid "Attention! This will delete all your Sync data on the server."
-msgstr ""
+msgstr "Opozorilo! S tem dejanjem bodo izbrisani vsi usklajeni podatki na strežniku."

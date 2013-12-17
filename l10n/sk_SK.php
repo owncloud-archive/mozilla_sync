@@ -13,6 +13,7 @@
 "To deactivate the quota set it to zero." => "Pre deaktiváciu kvóty nastavte nulu.",
 "Please set an email address in your account settings." => "Prosím nastavte emailovú adresu v nastaveniach svojho účtu.",
 "Be sure to set the LDAP login filter to something like %s." => "Uistite sa, že nastavenie LDAP prihlasovacií filter na niečo ako %s.",
+"Configure the special attribute Email in your LDAP configuration accordingly." => "Nastavte špeciálny atribút Email vo vašej LDAP konfigurácii.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Chyba! Nie ste oprávnení používať Mozilla Sync! Musíte byť členom skupiny %s.",
 "Email" => "Email",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Chyba! Zistené duplicitné emailové adresy! Emailové adresy musia byť jedinečné pre správne fungovanieMozilla Sync.",

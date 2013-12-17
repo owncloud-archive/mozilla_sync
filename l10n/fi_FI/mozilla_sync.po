@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-13 15:38-0500\n"
-"PO-Revision-Date: 2013-12-09 12:00+0000\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"POT-Creation-Date: 2013-12-17 07:39-0500\n"
+"PO-Revision-Date: 2013-12-17 12:39+0000\n"
+"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Finnish (Finland) (http://www.transifex.com/projects/p/owncloud/language/fi_FI/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,6 +33,10 @@ msgstr ""
 #: ajax/deletestorage.php:41
 msgid "User not found"
 msgstr "Käyttäjää ei löytynyt"
+
+#: ajax/restrictgroup.php:32
+msgid "Restriction saved"
+msgstr ""
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
@@ -65,6 +69,10 @@ msgstr "0 on rajoittamaton"
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
 msgstr "Poista kiintiö käytöstä asettamalla arvoksi 0."
+
+#: templates/admin.php:39
+msgid "Installed version"
+msgstr ""
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
