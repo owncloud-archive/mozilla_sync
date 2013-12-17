@@ -1,6 +1,7 @@
 <?php $TRANSLATIONS = array(
 "Failed to delete user" => "Käyttäjän poistaminen epäonnistui",
 "User not found" => "Käyttäjää ei löytynyt",
+"Restriction saved" => "Rajoitus tallennettu",
 "Invalid input" => "Virheellinen syöte",
 "Quota saved" => "Kiintiö tallennettu",
 "Mozilla Sync" => "Mozilla-synkronointi",
@@ -9,6 +10,7 @@
 "Sync quota" => "Synkronoinnin kiintiö",
 "0 is unlimited" => "0 on rajoittamaton",
 "To deactivate the quota set it to zero." => "Poista kiintiö käytöstä asettamalla arvoksi 0.",
+"Installed version" => "Asennettu versio",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Virhe! Oikeutesi eivät riitä Mozillan synkronointipalvelun käyttöön. Käyttöä varten tarvitaan ryhmän %s jäsenyys.",
 "Email" => "Sähköpostiosoite",
 "Password" => "Salasana",
