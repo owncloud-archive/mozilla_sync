@@ -325,7 +325,7 @@ class Storage
 		$lastMod = false;
 
 		foreach ($modifieds as $modified) {
-			$curr = (int) (substr($modified, 0, -3));
+			$curr = intval($modified);
 			if ($lastMod === false || $curr > $lastMod) {
 				$lastMod = $curr;
 			}
