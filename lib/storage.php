@@ -325,7 +325,13 @@ class Storage
 		$lastMod = false;
 
 		foreach ($modifieds as $modified) {
-			$curr = (int) (substr($modified, 0, -3));
+			// (Probably not the best :>) Check for unixtime
+			if (intval($modified)>1000000000 && intval($modified)<10000000000) {
+				$curr = intval($modified);
+			} else {
+				$curr = (int) (substr($modified, 0, -3));
+			}
+			
 			if ($lastMod === false || $curr > $lastMod) {
 				$lastMod = $curr;
 			}
