@@ -136,7 +136,7 @@
         <name>sortindex</name>
         <type>integer</type>
         <notnull>false</notnull>
-        <unsigned>true</unsigned>
+        <unsigned>false</unsigned>
         <length>4</length>
       </field>
 
