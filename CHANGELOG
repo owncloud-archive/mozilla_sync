@@ -1,3 +1,8 @@
+v1.3.1: 2013-12-21
+    * Database sortindex column fix
+    * Fix last sync date on personal page
+    * Updated translations
+
 v1.3: 2013-12-17
     * LDAP authentication works now
     * Show same usage/quota as Firefox browser
