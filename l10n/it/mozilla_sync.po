@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-20 02:06-0500\n"
-"PO-Revision-Date: 2013-12-17 12:39+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"POT-Creation-Date: 2013-12-21 02:06-0500\n"
+"PO-Revision-Date: 2013-12-20 09:40+0000\n"
+"Last-Translator: polxmod <paolo.velati@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/owncloud/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +38,7 @@ msgstr "Utente non trovato"
 
 #: ajax/restrictgroup.php:32
 msgid "Restriction saved"
-msgstr ""
+msgstr "Restrizione salvata"
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
@@ -74,7 +74,7 @@ msgstr "Imposta a zero per disattivare la quota."
 
 #: templates/admin.php:39
 msgid "Installed version"
-msgstr ""
+msgstr "Versione installata"
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."

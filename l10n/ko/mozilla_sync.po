@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-20 02:06-0500\n"
-"PO-Revision-Date: 2013-12-17 12:39+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"POT-Creation-Date: 2013-12-21 02:06-0500\n"
+"PO-Revision-Date: 2013-12-20 08:10+0000\n"
+"Last-Translator: 책읽는달팽 <bjh13579@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/owncloud/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,19 +23,19 @@ msgstr ""
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
-msgstr ""
+msgstr "저장소 삭제에 실패함"
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
-msgstr ""
+msgstr "사용자 삭제에 실패함"
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
-msgstr ""
+msgstr "저장소 삭제됨"
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
-msgstr ""
+msgstr "사용자를 찾을수 없음"
 
 #: ajax/restrictgroup.php:32
 msgid "Restriction saved"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
-msgstr ""
+msgstr "잘못된 입력"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
@@ -59,7 +59,7 @@ msgstr ""
 
 #: templates/admin.php:23
 msgid "When activated, only members of this group can access Mozilla Sync."
-msgstr ""
+msgstr "이를 허용할시, 이 그룹의 구성원들만 Mozilla Sync에 접근 가능합니다."
 
 #: templates/admin.php:27
 msgid "Sync quota"
@@ -75,7 +75,7 @@ msgstr ""
 
 #: templates/admin.php:39
 msgid "Installed version"
-msgstr ""
+msgstr "설치된 버전"
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
@@ -133,7 +133,7 @@ msgstr ""
 
 #: templates/settings.php:54
 msgid "Last sync"
-msgstr ""
+msgstr "마지막 동기화"
 
 #: templates/settings.php:58
 msgid "Size of stored data"
@@ -149,7 +149,7 @@ msgstr ""
 
 #: templates/settings.php:89
 msgid "Delete storage"
-msgstr ""
+msgstr "저장소 삭제"
 
 #: templates/settings.php:94
 msgid "Attention! This will delete all your Sync data on the server."
