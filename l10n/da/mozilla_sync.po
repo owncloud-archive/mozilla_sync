@@ -5,13 +5,14 @@
 # Translators:
 # Sappe, 2013
 # osos <osos@openeyes.dk>, 2012
+# Peter Jespersen <flywheeldk@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-24 02:05-0500\n"
-"PO-Revision-Date: 2013-12-17 12:39+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"POT-Creation-Date: 2013-12-25 02:05-0500\n"
+"PO-Revision-Date: 2013-12-25 06:29+0000\n"
+"Last-Translator: Peter Jespersen <flywheeldk@gmail.com>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/owncloud/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,7 +74,7 @@ msgstr ""
 
 #: templates/admin.php:39
 msgid "Installed version"
-msgstr ""
+msgstr "Installeret version"
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
@@ -113,7 +114,7 @@ msgstr "Kodeord"
 
 #: templates/settings.php:22
 msgid "Use your ownCloud account password"
-msgstr ""
+msgstr "Brug kodeordet til din ownCloud konto"
 
 #: templates/settings.php:25
 msgid "Server address"
