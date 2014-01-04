@@ -7,13 +7,13 @@
 # Efstathios Iosifidis <iefstathios@gmail.com>, 2013
 # Konstantinos Tzanidis <tzanidis@gmail.com>, 2012
 # Marios Bekatoros <>, 2012-2013
-# vkehayas <vkehayas@gmail.com>, 2013
+# vkehayas <vkehayas@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-02 02:06-0500\n"
-"PO-Revision-Date: 2013-12-28 13:54+0000\n"
+"POT-Creation-Date: 2014-01-04 02:06-0500\n"
+"PO-Revision-Date: 2014-01-02 17:50+0000\n"
 "Last-Translator: vkehayas <vkehayas@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/owncloud/language/el/)\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr "Εγκατεστημένη έκδοση"
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
-msgstr "Παρακαλώ όρισε μια διεύθυνση ηλ. ταχυδρομείου στις ρυθμίσεις λογαριασμού σας."
+msgstr "Παρακαλώ ορίστε μια διεύθυνση ηλ. ταχυδρομείου στις ρυθμίσεις λογαριασμού σας."
 
 #: templates/noemail.php:7
 #, php-format
@@ -112,15 +112,15 @@ msgstr "Σφάλμα! Η διεύθυνση ηλ. ταχυδρομείου υπ�
 
 #: templates/settings.php:21
 msgid "Password"
-msgstr "Συνθηματικό"
+msgstr "Κωδικός πρόσβασης"
 
 #: templates/settings.php:22
 msgid "Use your ownCloud account password"
-msgstr "Χρησιμοποίηστε το λογαριασμό ownCloud σας"
+msgstr "Χρησιμοποίηστε τον κωδικό πρόσβασης του λογαριασμού ownCloud σας"
 
 #: templates/settings.php:25
 msgid "Server address"
-msgstr "Διεύθυνση εξυπηρέτη"
+msgstr "Διεύθυνση διακομιστή"
 
 #: templates/settings.php:39
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
@@ -142,11 +142,11 @@ msgstr "Μέγεθος αποθηκευμένων δεδομένων"
 
 #: templates/settings.php:62
 msgid "No data stored yet."
-msgstr "Δεν έχουν αποθηκευτεί δεδομένα."
+msgstr "Δεν έχουν αποθηκευτεί δεδομένα ακόμα."
 
 #: templates/settings.php:77
 msgid "Number of synced devices"
-msgstr "Αριθμός συσκευών που συγχρονίζουν"
+msgstr "Αριθμός συγχρονιζόμενων συσκευών"
 
 #: templates/settings.php:89
 msgid "Delete storage"

@@ -6,14 +6,14 @@
 # Daisuke Deguchi <ddeguchi@nagoya-u.jp>, 2012
 # plazmism <gomidori@live.jp>, 2013
 # iLikeIT <dj_dark_junglist@yahoo.com>, 2013
-# tt yn <tetuyano+transi@gmail.com>, 2013
+# tt yn <tetuyano+transi@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-02 02:06-0500\n"
-"PO-Revision-Date: 2013-12-17 12:39+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-01-04 02:06-0500\n"
+"PO-Revision-Date: 2014-01-03 14:50+0000\n"
+"Last-Translator: tt yn <tetuyano+transi@gmail.com>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,7 +39,7 @@ msgstr "ユーザーを見つかりません"
 
 #: ajax/restrictgroup.php:32
 msgid "Restriction saved"
-msgstr ""
+msgstr "使用制限を保存"
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
@@ -75,7 +75,7 @@ msgstr "クォーターの無効にする場合0に設定する"
 
 #: templates/admin.php:39
 msgid "Installed version"
-msgstr ""
+msgstr "インストールされているバージョン"
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
@@ -90,14 +90,14 @@ msgstr "%s の様にLDAPログインフィルターを設定してください"
 msgid ""
 "Configure the special attribute Email in your LDAP configuration "
 "accordingly."
-msgstr ""
+msgstr "LDAP設定の中で特殊なメールアドレスの属性を設定する。"
 
 #: templates/settings.php:7
 #, php-format
 msgid ""
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of "
 "the %s group."
-msgstr ""
+msgstr "エラー! Mozilla Sync の使用許可がありません。グループ %s のメンバーになる必要があります。 "
 
 #: templates/settings.php:14
 msgid "Email"
@@ -107,7 +107,7 @@ msgstr "メール"
 msgid ""
 "Error! Duplicate email addresses detected! Email addresses need to be unique"
 " for Mozilla Sync to work."
-msgstr ""
+msgstr "エラー! 同一のメールアドレスが登録されているのを発見しました! Mozilla Sync を使用するには、1IDにつきEmail アドレスは1つである必要があります。"
 
 #: templates/settings.php:21
 msgid "Password"
