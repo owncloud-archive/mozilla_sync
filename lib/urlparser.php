@@ -38,7 +38,8 @@ class UrlParser {
 		// There should be at least 2 arguments: version, username
 		if (count($urlArray) < 2) {
 			$this->parseValidFlag = false;
-			Utils::writeLog("URL: Found only " . count($urlArray) . " arguments, but need at least 2.");
+			Utils::writeLog("URL: Found only " . count($urlArray) . " arguments, but need at least 2 in URL "
+				. Utils::getSyncUrl() . ": " . var_export($urlArray, true));
 			return;
 		}
 
