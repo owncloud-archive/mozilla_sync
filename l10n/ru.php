@@ -7,10 +7,15 @@
 "Quota saved" => "Квота сохранена",
 "Mozilla Sync" => "Mozilla Sync",
 "When activated, only members of this group can access Mozilla Sync." => "Когда активировано, только члены группы имеют доступ к Mozilla Sync.",
+"Sync quota" => "Квота синхронизации",
 "0 is unlimited" => "0 - без ограничений",
+"To deactivate the quota set it to zero." => "Для снятия квоты установите значение 0",
+"Installed version" => "Установленная версия",
 "Email" => "E-mail",
 "Password" => "Пароль",
 "Use your ownCloud account password" => "Используйте пароль учётной записи OwnCloud",
 "Server address" => "Адрес сервера",
+"Last sync" => "Последняя синхронизация",
+"Size of stored data" => "Размер сохраненных данных",
 "Delete storage" => "Удалить хранилище"
 );
