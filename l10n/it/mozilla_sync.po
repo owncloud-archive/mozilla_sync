@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-21 02:06-0500\n"
-"PO-Revision-Date: 2013-12-20 09:40+0000\n"
-"Last-Translator: polxmod <paolo.velati@gmail.com>\n"
+"POT-Creation-Date: 2014-01-06 02:06-0500\n"
+"PO-Revision-Date: 2013-12-22 22:30+0000\n"
+"Last-Translator: Vincenzo Reale <vinx.reale@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/owncloud/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +42,7 @@ msgstr "Restrizione salvata"
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
-msgstr "Input non valido"
+msgstr "Inserimento non valido"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
@@ -83,7 +83,7 @@ msgstr "Imposta il tuo indirizzo email nelle impostazioni dell'account."
 #: templates/noemail.php:7
 #, php-format
 msgid "Be sure to set the LDAP login filter to something like %s."
-msgstr "Assicurati di configurare il filtro login LDAP su qualcosa simile a %s."
+msgstr "Assicurati di impostare il filtro di accesso LDAP a qualcosa di simile a %s."
 
 #: templates/noemail.php:9
 msgid ""

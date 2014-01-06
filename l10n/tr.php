@@ -17,7 +17,7 @@
 "Be sure to set the LDAP login filter to something like %s." => "LDAP oturum filtresini %s benzeri bir şey olarak ayarladığınızdan emin olun.",
 "Configure the special attribute Email in your LDAP configuration accordingly." => "LDAP yapılandırmanızdaki E-posta özel niteliğini ilgili şekilde yapılandırın.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Hata! Mozilla Sync kullanma izniniz yok! %s grubunun üyesi olmanız gerekli.",
-"Email" => "Eposta",
+"Email" => "E-posta",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Hata! Yinelenmiş e-posta adresleri tespit edildi! Mozilla Sync'in çalışabilmesi için e-posta adreslerinin benzersiz olması gereklidir",
 "Password" => "Parola",
 "Use your ownCloud account password" => "ownCloud hesap parolasını kullanın",

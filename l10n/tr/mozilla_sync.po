@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Necdet Yücel <necdetyucel@gmail.com>, 2012
-# volkangezer <volkangezer@gmail.com>, 2013
+# volkangezer <volkangezer@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2013-12-21 02:06-0500\n"
-"PO-Revision-Date: 2013-12-17 16:30+0000\n"
+"POT-Creation-Date: 2014-01-06 02:06-0500\n"
+"PO-Revision-Date: 2014-01-03 14:10+0000\n"
 "Last-Translator: volkangezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/owncloud/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -99,7 +99,7 @@ msgstr "Hata! Mozilla Sync kullanma izniniz yok! %s grubunun üyesi olmanız ger
 
 #: templates/settings.php:14
 msgid "Email"
-msgstr "Eposta"
+msgstr "E-posta"
 
 #: templates/settings.php:17
 msgid ""
