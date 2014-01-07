@@ -31,7 +31,7 @@ This must be enabled on your server in order for synchronization to work with Fi
 
 If you use *nginx* you need to add  ````RC4-SHA```` to the ```ssl_ciphers``` section in your ````nginx.conf````. For more information see the [nginx documentation](http://wiki.nginx.org/HttpSslModule#ssl_ciphers).
 
-If you use *apache* you need to add ```RC4-SHA``` to the ```SSLCipherSuite``` to your ````apache2.conf````. For more information see the [apache2 documentation](https://httpd.apache.org/docs/2.2/mod/mod_ssl.html#sslciphersuite).
+If you use *apache* you need to add ```RC4-SHA``` to the ```SSLCipherSuite``` section in your ````apache2.conf````. For more information see the [apache2 documentation](https://httpd.apache.org/docs/2.2/mod/mod_ssl.html#sslciphersuite).
 
 Mozilla has a document listing the [recommended TLS ciphers](https://wiki.mozilla.org/Security/Server_Side_TLS#Recommended_Ciphersuite).
 
