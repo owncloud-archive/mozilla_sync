@@ -3,19 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# suganthi <suganthi@nic.lk>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2014-01-07 02:06-0500\n"
-"PO-Revision-Date: 2013-12-17 12:39+0000\n"
+"PO-Revision-Date: 2014-01-06 23:45+0000\n"
 "Last-Translator: I Robot\n"
-"Language-Team: Tamil (Sri-Lanka) (http://www.transifex.com/projects/p/owncloud/language/ta_LK/)\n"
+"Language-Team: Urdu (http://www.transifex.com/projects/p/owncloud/language/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ta_LK\n"
+"Language: ur\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ajax/deletestorage.php:26
@@ -64,7 +63,7 @@ msgstr ""
 
 #: templates/admin.php:30
 msgid "0 is unlimited"
-msgstr "0 ஆனது எல்லையற்றது"
+msgstr ""
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
@@ -98,7 +97,7 @@ msgstr ""
 
 #: templates/settings.php:14
 msgid "Email"
-msgstr "மின்னஞ்சல்"
+msgstr ""
 
 #: templates/settings.php:17
 msgid ""
@@ -108,7 +107,7 @@ msgstr ""
 
 #: templates/settings.php:21
 msgid "Password"
-msgstr "கடவுச்சொல்"
+msgstr ""
 
 #: templates/settings.php:22
 msgid "Use your ownCloud account password"
@@ -116,7 +115,7 @@ msgstr ""
 
 #: templates/settings.php:25
 msgid "Server address"
-msgstr "சேவையக முகவரி"
+msgstr ""
 
 #: templates/settings.php:39
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
