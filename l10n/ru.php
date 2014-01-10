@@ -11,11 +11,16 @@
 "0 is unlimited" => "0 - без ограничений",
 "To deactivate the quota set it to zero." => "Для снятия квоты установите значение 0",
 "Installed version" => "Установленная версия",
+"Please set an email address in your account settings." => "Пожалуйста укажите адрес электронной почты в настройках учётной записи",
+"Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Ошибка! Вы не можете использовать Mozilla Sync, так как не состоите в группе %s.",
 "Email" => "E-mail",
+"Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Ошибка! Введенный email уже зарегистрирован! Email адреса должны быть уникальными для функционирования Mozilla Sync.",
 "Password" => "Пароль",
 "Use your ownCloud account password" => "Используйте пароль учётной записи OwnCloud",
 "Server address" => "Адрес сервера",
+"To set up Mozilla Sync create a new Sync account in Firefox." => "Для настройки Mozilla Sync создайте новую учетную запись Sync в Firefox.",
 "Last sync" => "Последняя синхронизация",
 "Size of stored data" => "Размер сохраненных данных",
-"Delete storage" => "Удалить хранилище"
+"Delete storage" => "Удалить хранилище",
+"Attention! This will delete all your Sync data on the server." => "Внимание! Это действие удалит все ваши данные синхронизации на сервере."
 );
