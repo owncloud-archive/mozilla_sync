@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Dr. ROX <to.dr.rox@gmail.com>, 2014
 # Min2liz <min2lizz@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-10 02:05-0500\n"
-"PO-Revision-Date: 2013-12-17 12:39+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-01-11 02:05-0500\n"
+"PO-Revision-Date: 2014-01-10 08:00+0000\n"
+"Last-Translator: Dr. ROX <to.dr.rox@gmail.com>\n"
 "Language-Team: Lithuanian (Lithuania) (http://www.transifex.com/projects/p/owncloud/language/lt_LT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +25,7 @@ msgstr ""
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
-msgstr ""
+msgstr "Nepavyko ištrinti vartotojo"
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
@@ -32,7 +33,7 @@ msgstr ""
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
-msgstr ""
+msgstr "Vartotojas nerastas"
 
 #: ajax/restrictgroup.php:32
 msgid "Restriction saved"
@@ -72,7 +73,7 @@ msgstr ""
 
 #: templates/admin.php:39
 msgid "Installed version"
-msgstr ""
+msgstr "Įdiegta versija"
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
@@ -130,7 +131,7 @@ msgstr ""
 
 #: templates/settings.php:54
 msgid "Last sync"
-msgstr ""
+msgstr "Paskutinė sinchronizacija"
 
 #: templates/settings.php:58
 msgid "Size of stored data"

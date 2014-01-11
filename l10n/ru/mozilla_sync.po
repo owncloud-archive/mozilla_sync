@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-10 02:05-0500\n"
-"PO-Revision-Date: 2014-01-09 12:30+0000\n"
+"POT-Creation-Date: 2014-01-11 02:05-0500\n"
+"PO-Revision-Date: 2014-01-10 19:30+0000\n"
 "Last-Translator: navigator666 <yuriy.malyovaniy@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/owncloud/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -142,7 +142,7 @@ msgstr "Размер сохраненных данных"
 
 #: templates/settings.php:62
 msgid "No data stored yet."
-msgstr ""
+msgstr "Еще нет данных."
 
 #: templates/settings.php:77
 msgid "Number of synced devices"

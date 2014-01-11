@@ -21,6 +21,7 @@
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Для настройки Mozilla Sync создайте новую учетную запись Sync в Firefox.",
 "Last sync" => "Последняя синхронизация",
 "Size of stored data" => "Размер сохраненных данных",
+"No data stored yet." => "Еще нет данных.",
 "Delete storage" => "Удалить хранилище",
 "Attention! This will delete all your Sync data on the server." => "Внимание! Это действие удалит все ваши данные синхронизации на сервере."
 );
