@@ -6,7 +6,7 @@
 "Restriction saved" => "Restricción guardada",
 "Invalid input" => "Entrada inválida",
 "Quota saved" => "Cuota salvada",
-"Mozilla Sync" => "Servicio de sincronización de Mozilla",
+"Mozilla Sync" => "Mozilla Sync",
 "Restrict to group" => "Restringir al grupo",
 "When activated, only members of this group can access Mozilla Sync." => "Cuando se active, solamente miembros de este grupo podrán acceder a Mozilla Sync.",
 "Sync quota" => "Cúota Sync",
