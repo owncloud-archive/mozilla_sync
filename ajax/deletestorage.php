@@ -15,7 +15,7 @@
 \OCP\JSON::callCheck();
 
 // Load translations
-$l=OC_L10N::get('core');
+$l = OC_L10N::get('mozilla_sync');
 
 // Get userId and try to delete the user
 $syncId = \OCA\mozilla_sync\User::userNameToSyncId(\OCP\User::getUser());
