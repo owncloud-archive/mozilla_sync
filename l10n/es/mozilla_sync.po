@@ -7,14 +7,15 @@
 # juanman <juanma@kde.org.ar>, 2013
 # Raul Fernandez Garcia <raulfg3@gmail.com>, 2012-2013
 # Rubén del Campo <yo@rubendelcampo.es>, 2013
+# victormce <victormce@gmail.com>, 2014
 # willyaranda <willyaranda@mozilla-hispano.org>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-13 02:05-0500\n"
-"PO-Revision-Date: 2014-01-11 08:40+0000\n"
-"Last-Translator: willyaranda <willyaranda@mozilla-hispano.org>\n"
+"POT-Creation-Date: 2014-01-14 02:51-0500\n"
+"PO-Revision-Date: 2014-01-13 10:25+0000\n"
+"Last-Translator: victormce <victormce@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/owncloud/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,7 +81,7 @@ msgstr "Versión instalada"
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
-msgstr "Por favor , escriba una dirección de correo en la casilla."
+msgstr "Escriba una dirección de correo electrónico en la configuración de cuenta."
 
 #: templates/noemail.php:7
 #, php-format

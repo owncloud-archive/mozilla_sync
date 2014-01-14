@@ -13,7 +13,7 @@
 "0 is unlimited" => "0 significa ilimitado",
 "To deactivate the quota set it to zero." => "Para desactivar la cuota, poner a cero.",
 "Installed version" => "Versión instalada",
-"Please set an email address in your account settings." => "Por favor , escriba una dirección de correo en la casilla.",
+"Please set an email address in your account settings." => "Escriba una dirección de correo electrónico en la configuración de cuenta.",
 "Be sure to set the LDAP login filter to something like %s." => "Asegurese de configurar el filtro de login de LDAP a algo como %s.",
 "Configure the special attribute Email in your LDAP configuration accordingly." => "Configure en consecuencia el atributo especial Email en su configuración de LDAP.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "¡Error! ¡No tiene permiso para usar Mozilla Sync! Necesita ser miembro del grupo %s.",
