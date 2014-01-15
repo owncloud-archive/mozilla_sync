@@ -30,6 +30,9 @@ class UrlParser {
 		// Parser is valid at the begining
 		$this->parseValidFlag = true;
 
+		// Foxbrowser workaround
+		$url = str_replace('/?', '?', $url);
+
 		// Remove '/' from beginning and end
 		$url = trim($url, '/');
 
