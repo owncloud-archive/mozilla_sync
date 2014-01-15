@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Duarte Velez Grilo <duartegrilo@gmail.com>, 2012
-# Helder Meneses <helder.meneses@gmail.com>, 2013
+# Helder Meneses <helder.meneses@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-14 02:51-0500\n"
-"PO-Revision-Date: 2013-12-17 12:39+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-01-15 02:53-0500\n"
+"PO-Revision-Date: 2014-01-14 14:16+0000\n"
+"Last-Translator: Helder Meneses <helder.meneses@gmail.com>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/owncloud/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
-msgstr ""
+msgstr "Não foi possivel eliminar o armazenamento"
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
@@ -37,15 +37,15 @@ msgstr "Utilizador não encontrado"
 
 #: ajax/restrictgroup.php:32
 msgid "Restriction saved"
-msgstr ""
+msgstr "Restrição guardada"
 
 #: ajax/setquota.php:24
 msgid "Invalid input"
-msgstr ""
+msgstr "Pedido inválido"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
-msgstr ""
+msgstr "Quota guardada"
 
 #: templates/admin.php:2 templates/noemail.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
@@ -53,15 +53,15 @@ msgstr "Serviço Mozilla Sync"
 
 #: templates/admin.php:12
 msgid "Restrict to group"
-msgstr ""
+msgstr "Restringir ao grupo"
 
 #: templates/admin.php:23
 msgid "When activated, only members of this group can access Mozilla Sync."
-msgstr ""
+msgstr "Quando activado, apenas membros deste grupo podem aceder ao Mozilla Sync."
 
 #: templates/admin.php:27
 msgid "Sync quota"
-msgstr ""
+msgstr "Quota de sincronização"
 
 #: templates/admin.php:30
 msgid "0 is unlimited"
@@ -69,15 +69,15 @@ msgstr "0 é ilimitado"
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
-msgstr ""
+msgstr "Para desactivar a quota, defina o valor a zero."
 
 #: templates/admin.php:39
 msgid "Installed version"
-msgstr ""
+msgstr "Versão instalada"
 
 #: templates/noemail.php:3
 msgid "Please set an email address in your account settings."
-msgstr ""
+msgstr "Por favor defina um endereço de correio electrónico nas suas definições de conta."
 
 #: templates/noemail.php:7
 #, php-format
