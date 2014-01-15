@@ -194,8 +194,11 @@ class User
 	public static function authenticateUser($syncHash) {
 
 		if (!isset($_SERVER['PHP_AUTH_USER'])) {
-			Utils::writeLog("No HTTP authentication header sent.");
-			return false;
+			Utils::writeLog("No HTTP authentication header sent.", \OCP\Util::WARN);
+			// Send 'authentication needed' header for Foxbrowser
+			header("WWW-Authenticate: Basic");
+			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
+			exit();
 		}
 
 		// Sync hash URL parameter and HTTP Authentication header user name do not match
