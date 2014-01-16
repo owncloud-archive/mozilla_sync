@@ -15,6 +15,7 @@
 "Installed version" => "Установленная версия",
 "Please set an email address in your account settings." => "Пожалуйста укажите адрес электронной почты в настройках учётной записи",
 "Be sure to set the LDAP login filter to something like %s." => "Обязательно установите фильтр для входа по LDAP, наподобие %s.",
+"Configure the special attribute Email in your LDAP configuration accordingly." => "Настройте специальный атрибут Email в вашей конфигурации соответствий LDAP.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Ошибка! Вы не можете использовать Mozilla Sync, так как не состоите в группе %s.",
 "Email" => "E-mail",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Ошибка! Введенный email уже зарегистрирован! Email адреса должны быть уникальными для функционирования Mozilla Sync.",

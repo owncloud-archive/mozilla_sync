@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-15 02:53-0500\n"
-"PO-Revision-Date: 2014-01-15 07:53+0000\n"
+"POT-Creation-Date: 2014-01-16 02:07-0500\n"
+"PO-Revision-Date: 2014-01-15 08:00+0000\n"
 "Last-Translator: sam002 <semen@sam002.net>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/owncloud/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -92,7 +92,7 @@ msgstr "Обязательно установите фильтр для вход
 msgid ""
 "Configure the special attribute Email in your LDAP configuration "
 "accordingly."
-msgstr ""
+msgstr "Настройте специальный атрибут Email в вашей конфигурации соответствий LDAP."
 
 #: templates/settings.php:7
 #, php-format
