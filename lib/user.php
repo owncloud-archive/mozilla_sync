@@ -21,7 +21,9 @@ namespace OCA\mozilla_sync;
 *		oc_mozilla_sync_users.
 *	- User name: ownCloud user name, unique string. Stored in oc_users and also
 *		oc_mozilla_sync_users and oc_preferences.
-*	- Email address: ownCloud email address, string. Must be unique for Mozilla
+*	- Sync Email address: Mozilla Sync email address, string. Must be unique for
+*		Mozilla Sync to work. Stored in oc_preferences.
+*	- OC Email address: ownCloud email address, string. Must be unique for Mozilla
 *		Sync to work. Stored in oc_preferences.
 */
 class User
@@ -34,6 +36,17 @@ class User
 	* @return mixed User name on success, false otherwise.
 	*/
 	public static function emailToUserName($email) {
+		// Try to fetch user name with Sync email
+		$query = \OCP\DB::prepare('SELECT `userid` FROM `*PREFIX*preferences`
+			WHERE `appid` = ? AND `configkey` = ? AND `configvalue` = ?');
+		$result = $query->execute(array('mozilla_sync', 'email', $email));
+
+		$row = $result->fetchRow();
+		if ($row) {
+			return $row['userid'];
+		}
+
+		// Try to fetch user name with OC email
 		$query = \OCP\DB::prepare('SELECT `userid` FROM `*PREFIX*preferences`
 			WHERE `appid` = ? AND `configkey` = ? AND `configvalue` = ?');
 		$result = $query->execute(array('settings', 'email', $email));
@@ -267,18 +280,42 @@ class User
 
 
 	/**
-	* @brief Convert ownCloud user name to email address.
+	* @brief Convert ownCloud user name to email address. If an email address
+	*	was deduced, update it in the database.
 	*
-	* @param string $userName User name to be converted to email address.
+	* @param string $userName User name to be converted to email address. The
+	*	currently logged in user by default.
 	* @return mixed Email address on success, false otherwise.
 	*/
-	private static function userNameToEmail($userName) {
-		$email = \OCP\Config::getUserValue($userName, 'settings', 'email');
+	public static function userNameToEmail($userName = null) {
+		// By default the user name is the currently logged in user
+		if (is_null($userName)) {
+			$userName = \OCP\User::getUser();
+		}
 
+		// Try to get Sync email address
+		$email = \OCP\Config::getUserValue($userName, 'mozilla_sync', 'email');
 		if ($email) {
 			return $email;
+		}
+
+		// Try to get OC password-restore email address
+		$email = \OCP\Config::getUserValue($userName, 'settings', 'email');
+		if ($email) {
+			// Update Sync email in database
+			self::setEmail($email, $userName);
+			return $email;
+		}
+
+		// Check if user name is already an email address
+		if(filter_var($userName, FILTER_VALIDATE_EMAIL)) {
+			$email = $userName;
+			// Update Sync email in database
+			self::setEmail($email, $userName);
+			return $email;
 		} else {
-			Utils::writeLog("Could not convert user name " . $userName . " to email address. Make sure that emails are unique!");
+			Utils::writeLog("Could not convert user name " . $userName . " to email address. Make sure that emails are unique!",
+				\OCP\Util::INFO);
 			return false;
 		}
 	}
@@ -308,9 +345,9 @@ class User
 			return false;
 		}
 
-		// Check for duplicate emails
+		// Check for duplicate Sync email addresses
 		$query = \OCP\DB::prepare('SELECT COUNT(*) AS `count` FROM `*PREFIX*preferences` WHERE `appid` = ? AND `configkey` = ? AND `configvalue` = ?');
-		$result = $query->execute(array('settings', 'email', $email));
+		$result = $query->execute(array('mozilla_sync', 'email', $email));
 
 		// Only return true if exactly one row matched for this email address
 		$row = $result->fetchRow();
@@ -491,6 +528,21 @@ class User
 	*/
 	public static function setQuota($quota = 0) {
 		\OCP\Config::setAppValue('mozilla_sync', 'quota_limit', $quota);
+	}
+
+	/**
+	* @brief Sets the Sync email for the currently logged in user.
+	*
+	* @param integer $email The email address to set for the user.
+	* @param string $userName The user's user name. Defaults to the currently logged in user.
+	*/
+	public static function setEmail($email, $userName = null) {
+		// By default the user name is the currently logged in user
+		if (is_null($userName)) {
+			$userName = \OCP\User::getUser();
+		}
+
+		\OCP\Config::setUserValue($userName, 'mozilla_sync', 'email', $email);
 	}
 }
 

@@ -3,8 +3,9 @@
 // Check if user is admin, redirect to home if not
 \OCP\User::checkAdminUser();
 
-// Load JavaScript file
+// Load JavaScript files
 \OCP\Util::addScript("mozilla_sync", "admin");
+\OCP\Util::addScript("mozilla_sync", "show_notification");
 
 // Assign admin template
 $tmpl = new \OCP\Template('mozilla_sync', 'admin');

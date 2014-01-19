@@ -11,8 +11,9 @@
     <p><label>Client Configuration</label>
     <table class="nostyle">
       <tr>
-        <td><?php p($l->t('Email'));?>&nbsp;&nbsp;&nbsp;</td>
-        <td><code><?php p($_['email']);?></code>&nbsp;&nbsp;&nbsp;<?php
+        <td><?php p($l->t('Email'));?></td>
+        <td><input type="email" id="syncemailinput" name="syncemailinput" title="<?php p($l->t("Has to be unique among all Sync users")); ?>" value="<?php p($_['mozillaSyncEmail']); ?>">
+        <?php
             if (!\OCA\mozilla_sync\User::userHasUniqueEmail()) {
                 ?><b><span style="color: red"><?php p($l->t('Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work.'));?></span></b><?php
             }?></td>

@@ -8,4 +8,15 @@ $(document).ready(function(){
 				}
 			});
 	});
+
+    // sync email ajax
+    $('#syncemailinput').change(function() {
+        var my_email = $('#syncemailinput').val();
+        $.post(OC.filePath('mozilla_sync', 'ajax', 'setemail.php'),
+            { email: my_email },
+            function(result){
+                showNotification(result.data.message);
+            });
+
+    });
 });

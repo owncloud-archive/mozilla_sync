@@ -24,7 +24,7 @@ The installation procedure is as follows:
 
 1. Move the resulting ````mozilla_sync```` folder to your ownCloud's apps directory.
 2. Enable it in the web interface's admin panel.
-3. Set an email address for all users that want to use Mozilla Sync. Note: **Email addresses must be unique!**
+3. Set an email address for all users that want to use Mozilla Sync. If the user name is already an email address (e.g. **external_user** app) it will be set automatically when users visit their personal page after installing Mozilla Sync. Note: **Email addresses must be unique!**
 
 ### Sync installation on desktop Firefox
 
