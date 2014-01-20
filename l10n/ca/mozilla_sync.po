@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-19 02:05-0500\n"
-"PO-Revision-Date: 2013-12-17 12:39+0000\n"
+"POT-Creation-Date: 2014-01-20 02:05-0500\n"
+"PO-Revision-Date: 2014-01-20 07:05+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/owncloud/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -39,15 +39,19 @@ msgstr ""
 msgid "Restriction saved"
 msgstr ""
 
-#: ajax/setquota.php:24
+#: ajax/setemail.php:24 ajax/setquota.php:24
 msgid "Invalid input"
+msgstr ""
+
+#: ajax/setemail.php:30
+msgid "Sync email saved"
 msgstr ""
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
 msgstr ""
 
-#: templates/admin.php:2 templates/noemail.php:2 templates/settings.php:2
+#: templates/admin.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
 msgstr "Sincronització Motzilla"
 
@@ -75,21 +79,6 @@ msgstr ""
 msgid "Installed version"
 msgstr ""
 
-#: templates/noemail.php:3
-msgid "Please set an email address in your account settings."
-msgstr ""
-
-#: templates/noemail.php:7
-#, php-format
-msgid "Be sure to set the LDAP login filter to something like %s."
-msgstr ""
-
-#: templates/noemail.php:9
-msgid ""
-"Configure the special attribute Email in your LDAP configuration "
-"accordingly."
-msgstr ""
-
 #: templates/settings.php:7
 #, php-format
 msgid ""
@@ -101,54 +90,58 @@ msgstr ""
 msgid "Email"
 msgstr "Correu electrònic"
 
-#: templates/settings.php:17
+#: templates/settings.php:15
+msgid "Has to be unique among all Sync users"
+msgstr ""
+
+#: templates/settings.php:18
 msgid ""
 "Error! Duplicate email addresses detected! Email addresses need to be unique"
 " for Mozilla Sync to work."
 msgstr ""
 
-#: templates/settings.php:21
+#: templates/settings.php:22
 msgid "Password"
 msgstr "Contrasenya"
 
-#: templates/settings.php:22
+#: templates/settings.php:23
 msgid "Use your ownCloud account password"
 msgstr "Usa la contrasenya del compte ownCloud"
 
-#: templates/settings.php:25
+#: templates/settings.php:26
 msgid "Server address"
 msgstr "Adreça del servidor"
 
-#: templates/settings.php:39
+#: templates/settings.php:40
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
 msgstr ""
 
-#: templates/settings.php:41
+#: templates/settings.php:42
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
 msgstr ""
 
-#: templates/settings.php:54
+#: templates/settings.php:55
 msgid "Last sync"
 msgstr ""
 
-#: templates/settings.php:58
+#: templates/settings.php:59
 msgid "Size of stored data"
 msgstr ""
 
-#: templates/settings.php:62
+#: templates/settings.php:63
 msgid "No data stored yet."
 msgstr ""
 
-#: templates/settings.php:77
+#: templates/settings.php:78
 msgid "Number of synced devices"
 msgstr ""
 
-#: templates/settings.php:89
+#: templates/settings.php:90
 msgid "Delete storage"
 msgstr ""
 
-#: templates/settings.php:94
+#: templates/settings.php:95
 msgid "Attention! This will delete all your Sync data on the server."
 msgstr ""

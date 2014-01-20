@@ -13,7 +13,6 @@
 "0 is unlimited" => "0 é ilimitado",
 "To deactivate the quota set it to zero." => "Para desactivar a quota, defina o valor a zero.",
 "Installed version" => "Versão instalada",
-"Please set an email address in your account settings." => "Por favor defina um endereço de correio electrónico nas suas definições de conta.",
 "Email" => "Email",
 "Password" => "Palavra-passe",
 "Use your ownCloud account password" => "Por favor introduza a sua password ownCloud",

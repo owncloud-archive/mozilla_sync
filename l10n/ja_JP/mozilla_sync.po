@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-19 02:05-0500\n"
-"PO-Revision-Date: 2014-01-03 14:50+0000\n"
-"Last-Translator: tt yn <tetuyano+transi@gmail.com>\n"
+"POT-Creation-Date: 2014-01-20 02:05-0500\n"
+"PO-Revision-Date: 2014-01-20 07:05+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,15 +41,19 @@ msgstr "ユーザーを見つかりません"
 msgid "Restriction saved"
 msgstr "使用制限を保存"
 
-#: ajax/setquota.php:24
+#: ajax/setemail.php:24 ajax/setquota.php:24
 msgid "Invalid input"
 msgstr "不正な入力"
+
+#: ajax/setemail.php:30
+msgid "Sync email saved"
+msgstr ""
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
 msgstr "クオータを保存しました"
 
-#: templates/admin.php:2 templates/noemail.php:2 templates/settings.php:2
+#: templates/admin.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
 msgstr "Mozilla 同期"
 
@@ -77,21 +81,6 @@ msgstr "クォーターの無効にする場合0に設定する"
 msgid "Installed version"
 msgstr "インストールされているバージョン"
 
-#: templates/noemail.php:3
-msgid "Please set an email address in your account settings."
-msgstr "アカウント設定でメールアドレスを設定してください"
-
-#: templates/noemail.php:7
-#, php-format
-msgid "Be sure to set the LDAP login filter to something like %s."
-msgstr "%s の様にLDAPログインフィルターを設定してください"
-
-#: templates/noemail.php:9
-msgid ""
-"Configure the special attribute Email in your LDAP configuration "
-"accordingly."
-msgstr "LDAP設定の中で特殊なメールアドレスの属性を設定する。"
-
 #: templates/settings.php:7
 #, php-format
 msgid ""
@@ -103,54 +92,58 @@ msgstr "エラー! Mozilla Sync の使用許可がありません。グループ
 msgid "Email"
 msgstr "メール"
 
-#: templates/settings.php:17
+#: templates/settings.php:15
+msgid "Has to be unique among all Sync users"
+msgstr ""
+
+#: templates/settings.php:18
 msgid ""
 "Error! Duplicate email addresses detected! Email addresses need to be unique"
 " for Mozilla Sync to work."
 msgstr "エラー! 同一のメールアドレスが登録されているのを発見しました! Mozilla Sync を使用するには、1IDにつきEmail アドレスは1つである必要があります。"
 
-#: templates/settings.php:21
+#: templates/settings.php:22
 msgid "Password"
 msgstr "パスワード"
 
-#: templates/settings.php:22
+#: templates/settings.php:23
 msgid "Use your ownCloud account password"
 msgstr "ownCloudのアカウントのパスワードを使用してください:"
 
-#: templates/settings.php:25
+#: templates/settings.php:26
 msgid "Server address"
 msgstr "サーバアドレス"
 
-#: templates/settings.php:39
+#: templates/settings.php:40
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
 msgstr "Mozilla Sync を設定するには、新しいSyncアカウントをFirefox で作成してください。"
 
-#: templates/settings.php:41
+#: templates/settings.php:42
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
 msgstr "Mozilla Syncは、セットアップされました。Mozillaのデバイスペアリングサービスか、手動でデバイスを追加することができます。"
 
-#: templates/settings.php:54
+#: templates/settings.php:55
 msgid "Last sync"
 msgstr "最終同期"
 
-#: templates/settings.php:58
+#: templates/settings.php:59
 msgid "Size of stored data"
 msgstr "保存データ容量"
 
-#: templates/settings.php:62
+#: templates/settings.php:63
 msgid "No data stored yet."
 msgstr "データがありません"
 
-#: templates/settings.php:77
+#: templates/settings.php:78
 msgid "Number of synced devices"
 msgstr "同期済デバイス数"
 
-#: templates/settings.php:89
+#: templates/settings.php:90
 msgid "Delete storage"
 msgstr "ストレージを削除する"
 
-#: templates/settings.php:94
+#: templates/settings.php:95
 msgid "Attention! This will delete all your Sync data on the server."
 msgstr "注目！サーバーに全ての同期したデータを削除する。"

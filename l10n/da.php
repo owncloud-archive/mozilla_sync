@@ -12,7 +12,6 @@
 "0 is unlimited" => "0 er ubegrænset",
 "To deactivate the quota set it to zero." => "Sæt kvoten til nul for at deaktivere denne.",
 "Installed version" => "Installeret version",
-"Please set an email address in your account settings." => "Venligst indtast en emailadresse i dine kontoindstillinger.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Fejl! Du har ikke tilladelse til at anvende Mozilla Sync! Du skal være medlem af %s gruppen.",
 "Email" => "E-mail",
 "Password" => "Kodeord",

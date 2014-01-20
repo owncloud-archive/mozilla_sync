@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-19 02:05-0500\n"
-"PO-Revision-Date: 2014-01-03 12:30+0000\n"
-"Last-Translator: orinx <orinx@orinx.com>\n"
+"POT-Creation-Date: 2014-01-20 02:05-0500\n"
+"PO-Revision-Date: 2014-01-20 07:05+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/owncloud/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,15 +39,19 @@ msgstr "找不到使用者"
 msgid "Restriction saved"
 msgstr "限制已儲存"
 
-#: ajax/setquota.php:24
+#: ajax/setemail.php:24 ajax/setquota.php:24
 msgid "Invalid input"
 msgstr "無效的輸入"
+
+#: ajax/setemail.php:30
+msgid "Sync email saved"
+msgstr ""
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
 msgstr "配額已儲存"
 
-#: templates/admin.php:2 templates/noemail.php:2 templates/settings.php:2
+#: templates/admin.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
 msgstr "Mozilla 同步"
 
@@ -75,21 +79,6 @@ msgstr "取消容量限制的方式為將其設定為零。"
 msgid "Installed version"
 msgstr "已安裝版本"
 
-#: templates/noemail.php:3
-msgid "Please set an email address in your account settings."
-msgstr "請在您的帳號設定內設定一組 email 信箱。"
-
-#: templates/noemail.php:7
-#, php-format
-msgid "Be sure to set the LDAP login filter to something like %s."
-msgstr "確定您已將 LDAP 登入過濾器設置為如 %s 的字串。"
-
-#: templates/noemail.php:9
-msgid ""
-"Configure the special attribute Email in your LDAP configuration "
-"accordingly."
-msgstr "請於 LDAP 內設置特殊的信箱屬性。"
-
 #: templates/settings.php:7
 #, php-format
 msgid ""
@@ -101,54 +90,58 @@ msgstr "錯誤！您不被允許使用 Mozilla 同步！您必需成為 %s 群�
 msgid "Email"
 msgstr "信箱"
 
-#: templates/settings.php:17
+#: templates/settings.php:15
+msgid "Has to be unique among all Sync users"
+msgstr ""
+
+#: templates/settings.php:18
 msgid ""
 "Error! Duplicate email addresses detected! Email addresses need to be unique"
 " for Mozilla Sync to work."
 msgstr "錯誤！偵測到重複的電子信箱位置！在 Mozilla 同步中電子信箱必須是獨一無二的。"
 
-#: templates/settings.php:21
+#: templates/settings.php:22
 msgid "Password"
 msgstr "密碼"
 
-#: templates/settings.php:22
+#: templates/settings.php:23
 msgid "Use your ownCloud account password"
 msgstr "使用您的 ownCloud 帳號密碼"
 
-#: templates/settings.php:25
+#: templates/settings.php:26
 msgid "Server address"
 msgstr "伺服器位址"
 
-#: templates/settings.php:39
+#: templates/settings.php:40
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
 msgstr "設定 Mozilla Sync 之前請於 Firefox 內創立一個同步帳號。"
 
-#: templates/settings.php:41
+#: templates/settings.php:42
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
 msgstr "Mozilla 同步已設定完畢，您可以從 Mozilla 的裝置配對服務或手動添加額外的裝置。"
 
-#: templates/settings.php:54
+#: templates/settings.php:55
 msgid "Last sync"
 msgstr "最後同步"
 
-#: templates/settings.php:58
+#: templates/settings.php:59
 msgid "Size of stored data"
 msgstr "已儲存的檔案大小"
 
-#: templates/settings.php:62
+#: templates/settings.php:63
 msgid "No data stored yet."
 msgstr "尚無資料被儲存。"
 
-#: templates/settings.php:77
+#: templates/settings.php:78
 msgid "Number of synced devices"
 msgstr "已同步的裝置數"
 
-#: templates/settings.php:89
+#: templates/settings.php:90
 msgid "Delete storage"
 msgstr "刪除儲存空間"
 
-#: templates/settings.php:94
+#: templates/settings.php:95
 msgid "Attention! This will delete all your Sync data on the server."
 msgstr "注意！這個動作將刪除所有您位於伺服器的同步資料。"

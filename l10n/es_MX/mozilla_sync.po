@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-19 02:05-0500\n"
-"PO-Revision-Date: 2014-01-02 00:20+0000\n"
-"Last-Translator: byoship\n"
+"POT-Creation-Date: 2014-01-20 02:05-0500\n"
+"PO-Revision-Date: 2014-01-20 07:05+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Spanish (Mexico) (http://www.transifex.com/projects/p/owncloud/language/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,15 +37,19 @@ msgstr "Usuario no encontrado"
 msgid "Restriction saved"
 msgstr "Restricción guardada"
 
-#: ajax/setquota.php:24
+#: ajax/setemail.php:24 ajax/setquota.php:24
 msgid "Invalid input"
 msgstr "Entrada inválida"
+
+#: ajax/setemail.php:30
+msgid "Sync email saved"
+msgstr ""
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
 msgstr "Cuota salvada"
 
-#: templates/admin.php:2 templates/noemail.php:2 templates/settings.php:2
+#: templates/admin.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
 msgstr "Servicio de sincronización de Mozilla"
 
@@ -73,21 +77,6 @@ msgstr "Para desactivar la cuota, poner a cero."
 msgid "Installed version"
 msgstr "Versión instalada"
 
-#: templates/noemail.php:3
-msgid "Please set an email address in your account settings."
-msgstr "Por favor , escriba una dirección de correo en la casilla."
-
-#: templates/noemail.php:7
-#, php-format
-msgid "Be sure to set the LDAP login filter to something like %s."
-msgstr "Asegurese de configurar el filtro de login de LDAP a algo como %s."
-
-#: templates/noemail.php:9
-msgid ""
-"Configure the special attribute Email in your LDAP configuration "
-"accordingly."
-msgstr "Configure en consecuencia el atributo especial Email en su configuración de LDAP."
-
 #: templates/settings.php:7
 #, php-format
 msgid ""
@@ -99,54 +88,58 @@ msgstr "¡Error! ¡No tiene permiso para usar Mozilla Sync! Necesita ser miembro
 msgid "Email"
 msgstr "E-mail"
 
-#: templates/settings.php:17
+#: templates/settings.php:15
+msgid "Has to be unique among all Sync users"
+msgstr ""
+
+#: templates/settings.php:18
 msgid ""
 "Error! Duplicate email addresses detected! Email addresses need to be unique"
 " for Mozilla Sync to work."
 msgstr "¡Error! ¡Se han detectado direcciones de correo electrónico duplicadas! Las direcciones de correo electrónico deben ser únicas para que Mozilla Sync funcione."
 
-#: templates/settings.php:21
+#: templates/settings.php:22
 msgid "Password"
 msgstr "Contraseña"
 
-#: templates/settings.php:22
+#: templates/settings.php:23
 msgid "Use your ownCloud account password"
 msgstr "Use su contraseña de ownCloud"
 
-#: templates/settings.php:25
+#: templates/settings.php:26
 msgid "Server address"
 msgstr "Dirección del servidor"
 
-#: templates/settings.php:39
+#: templates/settings.php:40
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
 msgstr "Para configurar Mozilla Sync, debe crear una cuenta sync en Firefox."
 
-#: templates/settings.php:41
+#: templates/settings.php:42
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
 msgstr "Mozilla Sync está configurado, los dispositivos adicionales, deben ser añadidos via servicio de emparejamiento de Mozilla o manualmente."
 
-#: templates/settings.php:54
+#: templates/settings.php:55
 msgid "Last sync"
 msgstr "Ultima sincronización"
 
-#: templates/settings.php:58
+#: templates/settings.php:59
 msgid "Size of stored data"
 msgstr "Tamaño de los datos almacenados"
 
-#: templates/settings.php:62
+#: templates/settings.php:63
 msgid "No data stored yet."
 msgstr "Aún no hay datos almacenados."
 
-#: templates/settings.php:77
+#: templates/settings.php:78
 msgid "Number of synced devices"
 msgstr "Número de dispositivos sincronizados"
 
-#: templates/settings.php:89
+#: templates/settings.php:90
 msgid "Delete storage"
 msgstr "Eliminar almacen"
 
-#: templates/settings.php:94
+#: templates/settings.php:95
 msgid "Attention! This will delete all your Sync data on the server."
 msgstr "Atención!, esto borrara todos los datos sincronizados en el servidor."

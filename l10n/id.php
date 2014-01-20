@@ -13,8 +13,6 @@
 "0 is unlimited" => "0 berarti tak terbatas",
 "To deactivate the quota set it to zero." => "Untuk menonaktifkan kuota, atur ke nol.",
 "Installed version" => "Versi terinstal",
-"Please set an email address in your account settings." => "Silakan atur alamat email dalam pengaturan akun.",
-"Be sure to set the LDAP login filter to something like %s." => "Pastikan untuk mengatur filter masuk LDAP seperti %s.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Kesalahan! Anda tidak diizinkan untuk menggunakan Mozilla Sinkron! Anda harus menjadi anggota dari grup %s.",
 "Email" => "Email",
 "Password" => "Sandi",
