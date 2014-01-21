@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Flávio Veras <flaviove@gmail.com>, 2013
+# Flávio Veras <flaviove@gmail.com>, 2013-2014
 # sedir <philippi.sedir@gmail.com>, 2012
 # Rodrigo Tavares <rodrigost23@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-20 02:05-0500\n"
-"PO-Revision-Date: 2014-01-20 07:05+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-01-21 02:05-0500\n"
+"PO-Revision-Date: 2014-01-20 12:30+0000\n"
+"Last-Translator: Flávio Veras <flaviove@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/owncloud/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,7 +46,7 @@ msgstr "Entrada inválida"
 
 #: ajax/setemail.php:30
 msgid "Sync email saved"
-msgstr ""
+msgstr "Sincronização de email salva"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
@@ -93,7 +93,7 @@ msgstr "E-mail"
 
 #: templates/settings.php:15
 msgid "Has to be unique among all Sync users"
-msgstr ""
+msgstr "Tem que ser único entre todos os usuários de Sincronização"
 
 #: templates/settings.php:18
 msgid ""

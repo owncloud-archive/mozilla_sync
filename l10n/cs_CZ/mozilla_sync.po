@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Twiguard, 2013
-# liska_, 2013
+# liska_, 2013-2014
 # pstast <petr@stastny.eu>, 2013-2014
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-20 02:05-0500\n"
-"PO-Revision-Date: 2014-01-20 07:05+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-01-21 02:05-0500\n"
+"PO-Revision-Date: 2014-01-20 19:50+0000\n"
+"Last-Translator: liska_\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/projects/p/owncloud/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,7 +47,7 @@ msgstr "Chybný vstup"
 
 #: ajax/setemail.php:30
 msgid "Sync email saved"
-msgstr ""
+msgstr "Email uložen"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
@@ -94,7 +94,7 @@ msgstr "E-mail"
 
 #: templates/settings.php:15
 msgid "Has to be unique among all Sync users"
-msgstr ""
+msgstr "Musí být jedinečný mezi všemi uživateli"
 
 #: templates/settings.php:18
 msgid ""

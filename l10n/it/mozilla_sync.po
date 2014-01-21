@@ -4,15 +4,15 @@
 # 
 # Translators:
 # ogasser, 2013
-# polxmod <paolo.velati@gmail.com>, 2013
+# polxmod <paolo.velati@gmail.com>, 2013-2014
 # Vincenzo Reale <vinx.reale@gmail.com>, 2012-2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-20 02:05-0500\n"
-"PO-Revision-Date: 2014-01-20 07:05+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-01-21 02:05-0500\n"
+"PO-Revision-Date: 2014-01-20 22:50+0000\n"
+"Last-Translator: polxmod <paolo.velati@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/owncloud/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,7 +46,7 @@ msgstr "Inserimento non valido"
 
 #: ajax/setemail.php:30
 msgid "Sync email saved"
-msgstr ""
+msgstr "Email Sync salvata"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
@@ -93,7 +93,7 @@ msgstr "Posta elettronica"
 
 #: templates/settings.php:15
 msgid "Has to be unique among all Sync users"
-msgstr ""
+msgstr "Deve essere unico tra tutti gli utenti Sync"
 
 #: templates/settings.php:18
 msgid ""
