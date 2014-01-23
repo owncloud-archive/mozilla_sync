@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Mariano <mstreet@kde.org.ar>, 2014
 # Mariano <mstreet@kde.org.ar>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-22 02:05-0500\n"
-"PO-Revision-Date: 2014-01-20 07:05+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-01-23 02:05-0500\n"
+"PO-Revision-Date: 2014-01-22 07:50+0000\n"
+"Last-Translator: Mariano <mstreet@kde.org.ar>\n"
 "Language-Team: Esperanto (http://www.transifex.com/projects/p/owncloud/language/eo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,19 +21,19 @@ msgstr ""
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
-msgstr ""
+msgstr "Malsukcesis forigo de memorilo"
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
-msgstr ""
+msgstr "Malsukcesis forigo de uzanto"
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
-msgstr ""
+msgstr "La memorilo foriĝis"
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
-msgstr ""
+msgstr "Uzanto ne troviĝis"
 
 #: ajax/restrictgroup.php:32
 msgid "Restriction saved"
@@ -40,7 +41,7 @@ msgstr ""
 
 #: ajax/setemail.php:24 ajax/setquota.php:24
 msgid "Invalid input"
-msgstr ""
+msgstr "La enigo ne validas"
 
 #: ajax/setemail.php:30
 msgid "Sync email saved"
@@ -48,11 +49,11 @@ msgstr ""
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
-msgstr ""
+msgstr "La kvoto konserviĝis"
 
 #: templates/admin.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
-msgstr ""
+msgstr "Mozilo Sync"
 
 #: templates/admin.php:12
 msgid "Restrict to group"
@@ -64,7 +65,7 @@ msgstr ""
 
 #: templates/admin.php:27
 msgid "Sync quota"
-msgstr ""
+msgstr "Sinkronigi kvoton"
 
 #: templates/admin.php:30
 msgid "0 is unlimited"
@@ -72,11 +73,11 @@ msgstr "0 signifas senlime"
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
-msgstr ""
+msgstr "Por malkapabligi la kvoton, agordu ĝin kiel nulo."
 
 #: templates/admin.php:39
 msgid "Installed version"
-msgstr ""
+msgstr "Instalita eldono"
 
 #: templates/settings.php:7
 #, php-format
@@ -91,7 +92,7 @@ msgstr "Retpoŝto"
 
 #: templates/settings.php:15
 msgid "Has to be unique among all Sync users"
-msgstr ""
+msgstr "Ĝi devas ununuri inter ĉiuj uzantoj de Sync"
 
 #: templates/settings.php:18
 msgid ""
@@ -105,7 +106,7 @@ msgstr "Pasvorto"
 
 #: templates/settings.php:23
 msgid "Use your ownCloud account password"
-msgstr ""
+msgstr "Uzi la pasvorton de via konto de ownCloud"
 
 #: templates/settings.php:26
 msgid "Server address"
@@ -123,23 +124,23 @@ msgstr ""
 
 #: templates/settings.php:55
 msgid "Last sync"
-msgstr ""
+msgstr "Lasta sinkronigo"
 
 #: templates/settings.php:59
 msgid "Size of stored data"
-msgstr ""
+msgstr "Grando de la enmemorigitaj datumoj"
 
 #: templates/settings.php:63
 msgid "No data stored yet."
-msgstr ""
+msgstr "Neniu datumo enmemoriĝis ankoraŭ."
 
 #: templates/settings.php:78
 msgid "Number of synced devices"
-msgstr ""
+msgstr "Kiomo de sinkronigitaj aparatoj"
 
 #: templates/settings.php:90
 msgid "Delete storage"
-msgstr ""
+msgstr "Forigi memorilon"
 
 #: templates/settings.php:95
 msgid "Attention! This will delete all your Sync data on the server."

@@ -1,6 +1,23 @@
 <?php $TRANSLATIONS = array(
+"Failed to delete storage" => "Malsukcesis forigo de memorilo",
+"Failed to delete user" => "Malsukcesis forigo de uzanto",
+"Storage deleted" => "La memorilo foriĝis",
+"User not found" => "Uzanto ne troviĝis",
+"Invalid input" => "La enigo ne validas",
+"Quota saved" => "La kvoto konserviĝis",
+"Mozilla Sync" => "Mozilo Sync",
+"Sync quota" => "Sinkronigi kvoton",
 "0 is unlimited" => "0 signifas senlime",
+"To deactivate the quota set it to zero." => "Por malkapabligi la kvoton, agordu ĝin kiel nulo.",
+"Installed version" => "Instalita eldono",
 "Email" => "Retpoŝto",
+"Has to be unique among all Sync users" => "Ĝi devas ununuri inter ĉiuj uzantoj de Sync",
 "Password" => "Pasvorto",
-"Server address" => "Servila adreso"
+"Use your ownCloud account password" => "Uzi la pasvorton de via konto de ownCloud",
+"Server address" => "Servila adreso",
+"Last sync" => "Lasta sinkronigo",
+"Size of stored data" => "Grando de la enmemorigitaj datumoj",
+"No data stored yet." => "Neniu datumo enmemoriĝis ankoraŭ.",
+"Number of synced devices" => "Kiomo de sinkronigitaj aparatoj",
+"Delete storage" => "Forigi memorilon"
 );
