@@ -8,7 +8,7 @@
     <?php
     }
     ?>
-    <p><label>Client Configuration</label>
+    <p><strong><?php p($l->t('Client Configuration'));?></strong>
     <table class="nostyle">
       <tr>
         <td><?php p($l->t('Email'));?></td>
@@ -49,7 +49,7 @@
 
     <br>
 
-    <p><label>Sync Status</label>
+    <p><strong><?php p($l->t('Sync Status'));?></strong>
     <table class="nostyle">
       <tr>
         <td><?php p($l->t('Last sync'));?>&nbsp;&nbsp;&nbsp;</td>
@@ -83,7 +83,7 @@
 
     <br>
 
-    <p><label>Delete Sync data</label>
+    <p><strong><?php p($l->t('Delete Sync data'));?></strong>
     <table class="nostyle">
       <tr>
 	    <td><button type="button" id="deletestorage">
