@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-23 02:05-0500\n"
-"PO-Revision-Date: 2014-01-20 17:30+0000\n"
-"Last-Translator: volkangezer <volkangezer@gmail.com>\n"
+"POT-Creation-Date: 2014-01-24 02:11-0500\n"
+"PO-Revision-Date: 2014-01-24 07:11+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/owncloud/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -86,6 +86,10 @@ msgid ""
 "the %s group."
 msgstr "Hata! Mozilla Sync kullanma izniniz yok! %s grubunun üyesi olmanız gerekli."
 
+#: templates/settings.php:11
+msgid "Client Configuration"
+msgstr ""
+
 #: templates/settings.php:14
 msgid "Email"
 msgstr "E-posta"
@@ -122,6 +126,10 @@ msgid ""
 " pairing service or manually."
 msgstr "Mozilla Sync ayarlandı, ek aygıtlar Mozilla'nın aygıt eşleme hizmeti veya el ile eklenebilir."
 
+#: templates/settings.php:52
+msgid "Sync Status"
+msgstr ""
+
 #: templates/settings.php:55
 msgid "Last sync"
 msgstr "Son eşitleme"
@@ -137,6 +145,10 @@ msgstr "Henüz depolanmış bir veri yok."
 #: templates/settings.php:78
 msgid "Number of synced devices"
 msgstr "Eşitlenmiş aygıtların sayısı"
+
+#: templates/settings.php:86
+msgid "Delete Sync data"
+msgstr ""
 
 #: templates/settings.php:90
 msgid "Delete storage"

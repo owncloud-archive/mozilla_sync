@@ -7,12 +7,13 @@
 # etiess <etiess@gmail.com>, 2013
 # ogre_sympathique <ogre.sympathique@speed.1s.fr>, 2013
 # Romain DEP. <rom1dep@gmail.com>, 2012
+# tcit <thomas.citharet@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-23 02:05-0500\n"
-"PO-Revision-Date: 2014-01-20 07:05+0000\n"
+"POT-Creation-Date: 2014-01-24 02:11-0500\n"
+"PO-Revision-Date: 2014-01-24 07:11+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: French (http://www.transifex.com/projects/p/owncloud/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +48,7 @@ msgstr "Saisie invalide"
 
 #: ajax/setemail.php:30
 msgid "Sync email saved"
-msgstr ""
+msgstr "Adresse mail de synchronisation enregistrée"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
@@ -88,13 +89,17 @@ msgid ""
 "the %s group."
 msgstr "Erreur ! Vous n'êtes pas autorisé à utiliser Mozilla Sync ! Vous devez être membre du groupe %s."
 
+#: templates/settings.php:11
+msgid "Client Configuration"
+msgstr ""
+
 #: templates/settings.php:14
 msgid "Email"
 msgstr "Adresse mail"
 
 #: templates/settings.php:15
 msgid "Has to be unique among all Sync users"
-msgstr ""
+msgstr "Doit être unique parmi tous les utilisateurs de Sync"
 
 #: templates/settings.php:18
 msgid ""
@@ -124,6 +129,10 @@ msgid ""
 " pairing service or manually."
 msgstr "Mozilla Sync est configuré. Des périphériques supplémentaires peuvent être ajouté manuellement ou  avec le service Mozilla d'appairage de périphériques."
 
+#: templates/settings.php:52
+msgid "Sync Status"
+msgstr ""
+
 #: templates/settings.php:55
 msgid "Last sync"
 msgstr "Dernière synchronisation "
@@ -139,6 +148,10 @@ msgstr "Aucune donnée stockée."
 #: templates/settings.php:78
 msgid "Number of synced devices"
 msgstr "Nombre d'appareils synchronisés"
+
+#: templates/settings.php:86
+msgid "Delete Sync data"
+msgstr ""
 
 #: templates/settings.php:90
 msgid "Delete storage"

@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-23 02:05-0500\n"
-"PO-Revision-Date: 2014-01-20 07:05+0000\n"
+"POT-Creation-Date: 2014-01-24 02:11-0500\n"
+"PO-Revision-Date: 2014-01-24 07:11+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
@@ -88,6 +88,10 @@ msgid ""
 "the %s group."
 msgstr "エラー! Mozilla Sync の使用許可がありません。グループ %s のメンバーになる必要があります。 "
 
+#: templates/settings.php:11
+msgid "Client Configuration"
+msgstr ""
+
 #: templates/settings.php:14
 msgid "Email"
 msgstr "メール"
@@ -124,6 +128,10 @@ msgid ""
 " pairing service or manually."
 msgstr "Mozilla Syncは、セットアップされました。Mozillaのデバイスペアリングサービスか、手動でデバイスを追加することができます。"
 
+#: templates/settings.php:52
+msgid "Sync Status"
+msgstr ""
+
 #: templates/settings.php:55
 msgid "Last sync"
 msgstr "最終同期"
@@ -139,6 +147,10 @@ msgstr "データがありません"
 #: templates/settings.php:78
 msgid "Number of synced devices"
 msgstr "同期済デバイス数"
+
+#: templates/settings.php:86
+msgid "Delete Sync data"
+msgstr ""
 
 #: templates/settings.php:90
 msgid "Delete storage"

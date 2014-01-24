@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-23 02:05-0500\n"
-"PO-Revision-Date: 2014-01-20 07:05+0000\n"
+"POT-Creation-Date: 2014-01-24 02:11-0500\n"
+"PO-Revision-Date: 2014-01-24 07:11+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/owncloud/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -90,6 +90,10 @@ msgid ""
 "the %s group."
 msgstr "오류! Mozilla Sync를 사용할 수 없습니다! %s 그룹의 구성원이어야 합니다."
 
+#: templates/settings.php:11
+msgid "Client Configuration"
+msgstr ""
+
 #: templates/settings.php:14
 msgid "Email"
 msgstr "이메일"
@@ -126,6 +130,10 @@ msgid ""
 " pairing service or manually."
 msgstr "Mozilla Sync를 설정하였고, 장치를 추가하려면 Mozilla의 장치 페어링 서비스를 사용하거나 수동으로 추가하십시오."
 
+#: templates/settings.php:52
+msgid "Sync Status"
+msgstr ""
+
 #: templates/settings.php:55
 msgid "Last sync"
 msgstr "마지막 동기화"
@@ -141,6 +149,10 @@ msgstr "데이터가 저장되지 않았습니다."
 #: templates/settings.php:78
 msgid "Number of synced devices"
 msgstr "동기화 중인 장치 개수"
+
+#: templates/settings.php:86
+msgid "Delete Sync data"
+msgstr ""
 
 #: templates/settings.php:90
 msgid "Delete storage"

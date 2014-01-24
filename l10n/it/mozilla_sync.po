@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-23 02:05-0500\n"
-"PO-Revision-Date: 2014-01-20 22:50+0000\n"
-"Last-Translator: polxmod <paolo.velati@gmail.com>\n"
+"POT-Creation-Date: 2014-01-24 02:11-0500\n"
+"PO-Revision-Date: 2014-01-24 07:11+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/owncloud/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,6 +87,10 @@ msgid ""
 "the %s group."
 msgstr "Errore. Non sei autorizzato ad utilizzare Mozilla Sync. Devi essere membro del gruppo %s."
 
+#: templates/settings.php:11
+msgid "Client Configuration"
+msgstr ""
+
 #: templates/settings.php:14
 msgid "Email"
 msgstr "Posta elettronica"
@@ -123,6 +127,10 @@ msgid ""
 " pairing service or manually."
 msgstr "Mozilla Sync è configurato, altri dispositivi possono essere aggiunti tramite il servizio di pairing di Mozilla o manualmente."
 
+#: templates/settings.php:52
+msgid "Sync Status"
+msgstr ""
+
 #: templates/settings.php:55
 msgid "Last sync"
 msgstr "Ultima sincronizzazione"
@@ -138,6 +146,10 @@ msgstr "Ancora nessun dato archiviato."
 #: templates/settings.php:78
 msgid "Number of synced devices"
 msgstr "Numero di dispositivi sincronizzati"
+
+#: templates/settings.php:86
+msgid "Delete Sync data"
+msgstr ""
 
 #: templates/settings.php:90
 msgid "Delete storage"
