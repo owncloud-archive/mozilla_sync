@@ -23,6 +23,7 @@
 "Server address" => "Adresse du serveur",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Pour mettre en place Mozilla Sync, créer un nouveau compte Sync dans Firefox.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync est configuré. Des périphériques supplémentaires peuvent être ajouté manuellement ou  avec le service Mozilla d'appairage de périphériques.",
+"Sync Status" => "Statut de synchronisation",
 "Last sync" => "Dernière synchronisation ",
 "Size of stored data" => "Taille des données stockées",
 "No data stored yet." => "Aucune donnée stockée.",

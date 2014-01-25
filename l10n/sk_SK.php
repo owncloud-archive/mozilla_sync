@@ -21,6 +21,7 @@
 "Server address" => "Adresa servera",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Ak chcete nastaviť Mozilla Sync, vytvorte si nový synchronizačný účet vo Firefoxe.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync je nastavený, ďalšie zariadenia možno pridať pomocou služby párovania Mozilla zariadení alebo ručne.",
+"Sync Status" => "Stav synchronizácie",
 "Last sync" => "Posledná synchronizácia",
 "Size of stored data" => "Veľkosť uložených údajov",
 "No data stored yet." => "Žiadne údaje ešte nie sú uložené.",

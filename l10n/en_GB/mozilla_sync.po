@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-24 02:11-0500\n"
-"PO-Revision-Date: 2014-01-24 07:11+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-01-25 02:17-0500\n"
+"PO-Revision-Date: 2014-01-24 14:40+0000\n"
+"Last-Translator: mnestis <transifex@mnestis.net>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/owncloud/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,7 +87,7 @@ msgstr "Error! You are not allowed to use Mozilla Sync! You need to be a member 
 
 #: templates/settings.php:11
 msgid "Client Configuration"
-msgstr ""
+msgstr "Client Configuration"
 
 #: templates/settings.php:14
 msgid "Email"
@@ -127,7 +127,7 @@ msgstr "Mozilla Sync is set up, additional devices can be added via Mozilla's de
 
 #: templates/settings.php:52
 msgid "Sync Status"
-msgstr ""
+msgstr "Sync Status"
 
 #: templates/settings.php:55
 msgid "Last sync"
@@ -147,7 +147,7 @@ msgstr "Number of synced devices"
 
 #: templates/settings.php:86
 msgid "Delete Sync data"
-msgstr ""
+msgstr "Delete Sync data"
 
 #: templates/settings.php:90
 msgid "Delete storage"

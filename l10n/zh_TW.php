@@ -21,6 +21,7 @@
 "Server address" => "伺服器位址",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "設定 Mozilla Sync 之前請於 Firefox 內創立一個同步帳號。",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla 同步已設定完畢，您可以從 Mozilla 的裝置配對服務或手動添加額外的裝置。",
+"Sync Status" => "同步處理狀態",
 "Last sync" => "最後同步",
 "Size of stored data" => "已儲存的檔案大小",
 "No data stored yet." => "尚無資料被儲存。",

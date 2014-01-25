@@ -21,6 +21,7 @@
 "Server address" => "Naslov strežnika",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Na nastavitev Usklajevalnika Mozilla je treba ustvariti nov račun za usklajevanje v programu Firefox.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Usklajevalnik Mozilla je nastavljen. Dodatne naprave je mogoče dodati preko storitve povezovanja ali pa z ročnimi nastavitvami.",
+"Sync Status" => "Stanje usklajevanja",
 "Last sync" => "Zadnjič usklajeno",
 "Size of stored data" => "Velikost shranjenih podatkov",
 "No data stored yet." => "Ni še shranjenih podatkov.",

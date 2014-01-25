@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-24 02:11-0500\n"
-"PO-Revision-Date: 2014-01-24 07:11+0000\n"
+"POT-Creation-Date: 2014-01-25 02:17-0500\n"
+"PO-Revision-Date: 2014-01-24 07:30+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/owncloud/language/sk_SK/)\n"
 "MIME-Version: 1.0\n"
@@ -128,7 +128,7 @@ msgstr "Mozilla Sync je nastavený, ďalšie zariadenia možno pridať pomocou s
 
 #: templates/settings.php:52
 msgid "Sync Status"
-msgstr ""
+msgstr "Stav synchronizácie"
 
 #: templates/settings.php:55
 msgid "Last sync"

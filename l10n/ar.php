@@ -2,5 +2,6 @@
 "0 is unlimited" => "0 = غير محدود",
 "Email" => "البريد الإلكترونى",
 "Password" => "كلمة المرور",
-"Server address" => "عنوان الخادم"
+"Server address" => "عنوان الخادم",
+"Sync Status" => "مزامنة الحالة."
 );

@@ -6,5 +6,6 @@
 "Email" => "El. Paštas",
 "Password" => "Slaptažodis",
 "Server address" => "Serverio adresas",
+"Sync Status" => "Sinchronizacijos būsena",
 "Last sync" => "Paskutinė sinchronizacija"
 );

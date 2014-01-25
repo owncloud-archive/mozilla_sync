@@ -15,6 +15,7 @@
 "Password" => "Pasvorto",
 "Use your ownCloud account password" => "Uzi la pasvorton de via konto de ownCloud",
 "Server address" => "Servila adreso",
+"Sync Status" => "Stato de sinkronigo",
 "Last sync" => "Lasta sinkronigo",
 "Size of stored data" => "Grando de la enmemorigitaj datumoj",
 "No data stored yet." => "Neniu datumo enmemoriĝis ankoraŭ.",

@@ -17,6 +17,7 @@
 "Password" => "Palavra-passe",
 "Use your ownCloud account password" => "Por favor introduza a sua password ownCloud",
 "Server address" => "Endereço do servidor",
+"Sync Status" => "Estado da sincronização",
 "Last sync" => "Última sincronização",
 "Delete storage" => "Eliminar armazenamento"
 );

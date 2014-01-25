@@ -6,5 +6,6 @@
 "Password" => "Hasło",
 "Use your ownCloud account password" => "Użyj twoje hasło konta ownCloud",
 "Server address" => "Adres Serwera",
+"Sync Status" => "Status synchronizacji",
 "Last sync" => "Ostatnia synchronizacja"
 );

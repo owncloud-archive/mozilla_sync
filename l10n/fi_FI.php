@@ -12,12 +12,15 @@
 "To deactivate the quota set it to zero." => "Poista kiintiö käytöstä asettamalla arvoksi 0.",
 "Installed version" => "Asennettu versio",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Virhe! Oikeutesi eivät riitä Mozillan synkronointipalvelun käyttöön. Käyttöä varten tarvitaan ryhmän %s jäsenyys.",
+"Client Configuration" => "Sovelluksen asetukset",
 "Email" => "Sähköpostiosoite",
 "Password" => "Salasana",
 "Use your ownCloud account password" => "Käytä ownCloud-tilisi salasanaa",
 "Server address" => "Palvelimen osoite",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Luo uusi Sync-tili Firefoxissa käyttääksesi Mozillan synkronointipalvelua.",
+"Sync Status" => "Synkronoinnin tila",
 "Last sync" => "Viimeisin synkronointi",
 "Number of synced devices" => "Synkronoitujen laitteiden määrä",
+"Delete Sync data" => "Poista Sync-tiedot",
 "Attention! This will delete all your Sync data on the server." => "Huomio! Tämä poistaa kaikki synkronointitietosi palvelimelta."
 );

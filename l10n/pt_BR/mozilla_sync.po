@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-24 02:11-0500\n"
-"PO-Revision-Date: 2014-01-24 07:11+0000\n"
+"POT-Creation-Date: 2014-01-25 02:17-0500\n"
+"PO-Revision-Date: 2014-01-24 07:30+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/owncloud/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -129,7 +129,7 @@ msgstr "Mozilla Sync foi criada, os dispositivos podem ser adicionados através 
 
 #: templates/settings.php:52
 msgid "Sync Status"
-msgstr ""
+msgstr "Sinconizar Status"
 
 #: templates/settings.php:55
 msgid "Last sync"

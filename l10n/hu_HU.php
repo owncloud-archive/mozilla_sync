@@ -21,6 +21,7 @@
 "Server address" => "A kiszolgáló címe",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "A Mozilla szinkronizáció használatához hozzon létre egy szinkronizációs bejelentkezést a Firefoxban!",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "A Mozilla szinkronizációt sikerült beállítani. További eszközök szinkronizációját vagy a Mozilla eszközpárosító szolgáltatásával, vagy kézzel állíthatja be.",
+"Sync Status" => "Szinkronizálási állapot",
 "Last sync" => "Utolsó szinkronizáció",
 "Size of stored data" => "A tárolt adatok mérete",
 "No data stored yet." => "Még nincs tárolt adat.",

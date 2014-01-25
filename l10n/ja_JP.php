@@ -21,6 +21,7 @@
 "Server address" => "サーバアドレス",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Mozilla Sync を設定するには、新しいSyncアカウントをFirefox で作成してください。",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Syncは、セットアップされました。Mozillaのデバイスペアリングサービスか、手動でデバイスを追加することができます。",
+"Sync Status" => "同期状態",
 "Last sync" => "最終同期",
 "Size of stored data" => "保存データ容量",
 "No data stored yet." => "データがありません",

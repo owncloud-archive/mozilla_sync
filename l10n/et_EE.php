@@ -21,6 +21,7 @@
 "Server address" => "Serveri aadress",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Seadistamaks Mozilla Sync-i loo Firefoxis uus Sync konto.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync on seadistatud, lisaseadmeid saab lisada käsitsi või kasutades Mozilla seadmete sidumisteenust.",
+"Sync Status" => "Sünkroniseeringu staatus",
 "Last sync" => "Viimane sünkroniseering",
 "Size of stored data" => "Talletatud andmete maht",
 "No data stored yet." => "Andmeid pole veel talletatud.",

@@ -21,6 +21,7 @@
 "Server address" => "Адрес сервера",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Для настройки Mozilla Sync создайте новую учетную запись Sync в Firefox.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync настроен, дополнительные устройства могут быть добавлены с помощью службы сопряжения устройств Mozilla или вручную.",
+"Sync Status" => "Синхронизация статуса",
 "Last sync" => "Последняя синхронизация",
 "Size of stored data" => "Размер сохраненных данных",
 "No data stored yet." => "Еще нет данных.",
