@@ -14,6 +14,7 @@
 "To deactivate the quota set it to zero." => "Možnost je onemogočena, ko je vrednost omejitve določena z 0.",
 "Installed version" => "Nameščena različica",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Napaka! Ni ustreznih dovoljenja za uporabo Usklajevalnika Mozilla! Uporaba je omejena na člane skupine %s.",
+"Client Configuration" => "Nastavitve odjemalca",
 "Email" => "Elektronski naslov",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Napaka! Zaznan je podvojen elektronski naslov. Naslovi morajo biti edinstveni za pravilno delovanje sistema.",
 "Password" => "Geslo",
@@ -21,11 +22,12 @@
 "Server address" => "Naslov strežnika",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Na nastavitev Usklajevalnika Mozilla je treba ustvariti nov račun za usklajevanje v programu Firefox.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Usklajevalnik Mozilla je nastavljen. Dodatne naprave je mogoče dodati preko storitve povezovanja ali pa z ročnimi nastavitvami.",
-"Sync Status" => "Stanje usklajevanja",
+"Sync Status" => "Stanje usklajenosti",
 "Last sync" => "Zadnjič usklajeno",
 "Size of stored data" => "Velikost shranjenih podatkov",
 "No data stored yet." => "Ni še shranjenih podatkov.",
 "Number of synced devices" => "Število usklajenih podatkov",
+"Delete Sync data" => "Izbriši podatke usklajevanja",
 "Delete storage" => "Izbriši shrambo",
 "Attention! This will delete all your Sync data on the server." => "Opozorilo! S tem dejanjem bodo izbrisani vsi usklajeni podatki na strežniku."
 );
