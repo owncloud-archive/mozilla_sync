@@ -15,6 +15,7 @@
 "To deactivate the quota set it to zero." => "Para desactivar a cota estabelezao a cero.",
 "Installed version" => "Versión instalada",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Erro! Non ten permiso para usar Mozilla Sync! Ten que ser membro do grupo %s.",
+"Client Configuration" => "Configuración do cliente",
 "Email" => "Correo",
 "Has to be unique among all Sync users" => "Ten que ser único entre todos os usuarios de sincronización",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Erro! Detectaronse enderezos de correo duplicados! Os enderezos de correo deben ser únicos para que Mozilla Sync funcione.",
@@ -28,6 +29,7 @@
 "Size of stored data" => "Tamaño dos datos almacenados",
 "No data stored yet." => "Aínda non hai datos almacenados.",
 "Number of synced devices" => "Número de dispositivos sincronizados",
+"Delete Sync data" => "Eliminar os datos de sincronización",
 "Delete storage" => "Eliminar o almacenamento",
 "Attention! This will delete all your Sync data on the server." => "Atención! Isto eliminará todos os datos de sincronización no servidor."
 );

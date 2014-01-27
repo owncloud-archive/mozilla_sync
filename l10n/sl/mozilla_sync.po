@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-01-26 02:22-0500\n"
-"PO-Revision-Date: 2014-01-26 00:00+0000\n"
+"POT-Creation-Date: 2014-01-27 03:16-0500\n"
+"PO-Revision-Date: 2014-01-26 18:10+0000\n"
 "Last-Translator: mateju <>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/owncloud/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "Neveljaven vnos"
 
 #: ajax/setemail.php:30
 msgid "Sync email saved"
-msgstr ""
+msgstr "Elektronski naslov za usklajevanje je shranjen"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
@@ -97,7 +97,7 @@ msgstr "Elektronski naslov"
 
 #: templates/settings.php:15
 msgid "Has to be unique among all Sync users"
-msgstr ""
+msgstr "Mora biti enoznačen med vsemi uporabniki usklajevalnika"
 
 #: templates/settings.php:18
 msgid ""

@@ -5,6 +5,7 @@
 "User not found" => "Kasutajat ei leitud",
 "Restriction saved" => "Piirang salvestatud",
 "Invalid input" => "Vigane sisend",
+"Sync email saved" => "Sync e-mail salvestatud",
 "Quota saved" => "Mahupiirang salvestatud",
 "Mozilla Sync" => "Mozilla sünkroniseerimine",
 "Restrict to group" => "Piira grupile",
@@ -14,7 +15,9 @@
 "To deactivate the quota set it to zero." => "Deaktiveerimiseks määra mahupiiranguks null.",
 "Installed version" => "Paigaldatud versioon",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Viga! Sul pole lubatud kasutada Mozilla Sync-i! Sa peaksid olema %s grupi liige.",
+"Client Configuration" => "Kliendi seadistus",
 "Email" => "E-post",
+"Has to be unique among all Sync users" => "Peab olema unikaalne üle kõigi Sync kasutajate",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Viga! Leitud dubleeritav e-posti aadress! Mozilla Sync toimimiseks peavad E-posti aadressid olema unikaalsed. ",
 "Password" => "Parool",
 "Use your ownCloud account password" => "Kasuta oma ownCloudi konto parooli",
@@ -26,6 +29,7 @@
 "Size of stored data" => "Talletatud andmete maht",
 "No data stored yet." => "Andmeid pole veel talletatud.",
 "Number of synced devices" => "Sünkroniseeritavate seadmete arv",
+"Delete Sync data" => "Kustuta Sync andmed",
 "Delete storage" => "Kustuta andmehoidla",
 "Attention! This will delete all your Sync data on the server." => "Tähelepanu! See eemaldab serverist kõik sinu sünkroniseeritavad andmed."
 );
