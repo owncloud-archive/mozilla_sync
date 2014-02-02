@@ -40,7 +40,7 @@ class Storage
 
 		// Creation of collection failed
 		if ($result == false) {
-			Utils::writeLog("DB: Could not create collection " . $collectionName . ".");
+			Utils::writeLogDbError("DB: Could not create collection " . $collectionName . ".", $query);
 			return false;
 		}
 
@@ -107,7 +107,7 @@ class Storage
 		$result = $query->execute(array($collectionId, $wboId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not delete WBO " . $wboId . ".", \OCP\Util::INFO);
+			Utils::writeLogDbError("DB: Could not delete WBO " . $wboId . ".", $query, \OCP\Util::INFO);
 			return false;
 		}
 
@@ -147,7 +147,7 @@ class Storage
 		$result = $query->execute($queryArgs);
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not insert WBO for user " . $syncId . " in collection " . $collectionId . ".");
+			Utils::writeLogDbError("DB: Could not insert WBO for user " . $syncId . " in collection " . $collectionId . ".", $query);
 			return false;
 		}
 
@@ -184,7 +184,7 @@ class Storage
 		$result = $query->execute($queryArgs);
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not update WBO for user " . $syncId . " in collection " . $collectionId . ".");
+			Utils::writeLogDbError("DB: Could not update WBO for user " . $syncId . " in collection " . $collectionId . ".", $query);
 			return false;
 		}
 
@@ -205,7 +205,7 @@ class Storage
 		$result = $query->execute(array($syncId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not delete storage for user " . $syncId . ".");
+			Utils::writeLogDbError("DB: Could not delete storage for user " . $syncId . ".", $query);
 			return false;
 		}
 
@@ -215,7 +215,7 @@ class Storage
 		$result = $query->execute(array($syncId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not delete collections for user " . $syncId . ".");
+			Utils::writeLogDbError("DB: Could not delete collections for user " . $syncId . ".", $query);
 			return false;
 		}
 
@@ -361,8 +361,8 @@ class Storage
 		$result = $query->execute(array($syncId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not get info collections for user " .
-			$syncId . ".");
+			Utils::writeLogDbError("DB: Could not get info collections for user " .
+			$syncId . ".", $query);
 			return false;
 		}
 
@@ -441,8 +441,8 @@ class Storage
 		$result = $query->execute(array($syncId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not get info collection usage for user "
-			. $syncId . ".");
+			Utils::writeLogDbError("DB: Could not get info collection usage for user "
+			. $syncId . ".", $query);
 			return false;
 		}
 
@@ -487,8 +487,8 @@ class Storage
 		$result = $query->execute(array('clients', $syncId));
 
 		if ($result === false) {
-			Utils::writeLog("DB: Could not get number of clients for user " .
-			$syncId . ".");
+			Utils::writeLogDbError("DB: Could not get number of clients for user " .
+			$syncId . ".", $query);
 			return false;
 		}
 
