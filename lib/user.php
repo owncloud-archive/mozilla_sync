@@ -154,7 +154,7 @@ class User
 		$result = $query->execute(array($userName, $syncHash));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not create user " . $userName . " with Sync hash " . $syncHash . ".");
+			Utils::writeLogDbError("DB: Could not create user " . $userName . " with Sync hash " . $syncHash . ".", $query);
 			return false;
 		}
 
@@ -173,7 +173,7 @@ class User
 		$result = $query->execute(array($syncId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not delete user with Sync ID " . $syncId . ".");
+			Utils::writeLogDbError("DB: Could not delete user with Sync ID " . $syncId . ".", $query);
 			return false;
 		}
 
@@ -498,7 +498,7 @@ class User
 		$result = $query->execute(array($syncId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not get info quota for user " . $syncId . ".");
+			Utils::writeLogDbError("DB: Could not get info quota for user " . $syncId . ".", $query);
 			return false;
 		}
 

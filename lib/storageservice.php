@@ -255,8 +255,8 @@ class StorageService extends Service
 		$result = $query->execute(array($syncId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not get info collection counts for user "
-			. $syncId . ".");
+			Utils::writeLogDbError("DB: Could not get info collection counts for user "
+			. $syncId . ".", $query);
 			return false;
 		}
 
@@ -408,8 +408,8 @@ class StorageService extends Service
 		$result = $query->execute($queryArgs);
 
 		if ($result == false) {
-			Utils::writeLog("DB: Could not get collection " . $collectionId . "
-			for user " . $syncId . ".");
+			Utils::writeLogDbError("DB: Could not get collection " . $collectionId . "
+			for user " . $syncId . ".", $query);
 			return false;
 		}
 
@@ -522,8 +522,8 @@ class StorageService extends Service
 		$result = $query->execute( $queryArgs );
 
 		if ($result == false) {
-			Utils::writeLog("DB: Failed to delete WBO for collection " .
-			$collectionId . " for user " . $syncId . ".");
+			Utils::writeLogDbError("DB: Failed to delete WBO for collection " .
+			$collectionId . " for user " . $syncId . ".", $query);
 			return false;
 		}
 
@@ -539,8 +539,8 @@ class StorageService extends Service
 			$result = $query->execute(array($collectionId));
 
 			if ($result == false) {
-				Utils::writeLog("DB: Failed to delete collection " .
-				$collectionId . " for user " . $syncId . ".");
+				Utils::writeLogDbError("DB: Failed to delete collection " .
+				$collectionId . " for user " . $syncId . ".", $query);
 				return false;
 			}
 		}
@@ -567,8 +567,8 @@ class StorageService extends Service
 		$result = $query->execute(array($collectionId, $wboId));
 
 		if ($result == false) {
-			Utils::writeLog("DB: Failed to get WBO " . $wboId . " of collection	"
-			. $collectionId . " for user " . $syncId . ".");
+			Utils::writeLogDbError("DB: Failed to get WBO " . $wboId . " of collection	"
+			. $collectionId . " for user " . $syncId . ".", $query);
 			return false;
 		}
 
