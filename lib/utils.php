@@ -23,9 +23,29 @@ class Utils
 		// Prepend file name, line number, calling function to debug output
 		$bt = debug_backtrace();
 		$caller = $bt[1];
+
+		// If called by writeLogDbError(), go back one further in the backtrace
+		if ($caller["function"] === "writeLogDbError") {
+			$caller = $bt[2];
+		}
+
 		$output = basename($caller["file"]) . "#" . $caller["line"] . " " . $caller["function"] . "():  " . $output;
 
 		\OCP\Util::writeLog("mozilla_sync", $output, $level);
+	}
+
+	/**
+	* @brief Writes debug output including additional SQL error info to the	ownCloud log.
+	*
+	* @param string $output The string appended to ownCloud log.
+	* @param \Doctrine\DBAL\Driver\Statement $query The query whose information
+	*	will be added to the debug output.
+	* @param int $level Log level of debug output. Default is \OCP\Util::ERROR.
+	*/
+	public static function writeLogDbError($output, $query, $level = \OCP\Util::ERROR) {
+		$output = $output . " SQLSTATE: " . $query->errorCode() . ". Error info: " . var_export($query->errorInfo(), true);
+
+		self::writeLog($output, $level);
 	}
 
 	/**
