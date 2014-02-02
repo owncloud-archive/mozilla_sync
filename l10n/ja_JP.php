@@ -5,6 +5,7 @@
 "User not found" => "ユーザーを見つかりません",
 "Restriction saved" => "使用制限を保存",
 "Invalid input" => "不正な入力",
+"Sync email saved" => "同期用メールアドレスを保存しました",
 "Quota saved" => "クオータを保存しました",
 "Mozilla Sync" => "Mozilla 同期",
 "Restrict to group" => "グループに制限する",
@@ -14,7 +15,9 @@
 "To deactivate the quota set it to zero." => "クォーターの無効にする場合0に設定する",
 "Installed version" => "インストールされているバージョン",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "エラー! Mozilla Sync の使用許可がありません。グループ %s のメンバーになる必要があります。 ",
+"Client Configuration" => "クライアント設定",
 "Email" => "メール",
+"Has to be unique among all Sync users" => "同期を利用している全てのユーザー内で一意ある必要があります",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "エラー! 同一のメールアドレスが登録されているのを発見しました! Mozilla Sync を使用するには、1IDにつきEmail アドレスは1つである必要があります。",
 "Password" => "パスワード",
 "Use your ownCloud account password" => "ownCloudのアカウントのパスワードを使用してください:",
@@ -26,6 +29,7 @@
 "Size of stored data" => "保存データ容量",
 "No data stored yet." => "データがありません",
 "Number of synced devices" => "同期済デバイス数",
+"Delete Sync data" => "同期情報削除",
 "Delete storage" => "ストレージを削除する",
 "Attention! This will delete all your Sync data on the server." => "注目！サーバーに全ての同期したデータを削除する。"
 );

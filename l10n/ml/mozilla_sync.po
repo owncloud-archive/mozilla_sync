@@ -3,20 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# g.ciprian <g.ciprian@osn.ro>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2014-02-02 02:06-0500\n"
-"PO-Revision-Date: 2014-01-24 07:11+0000\n"
+"PO-Revision-Date: 2014-01-31 07:18+0000\n"
 "Last-Translator: I Robot\n"
-"Language-Team: Romanian (http://www.transifex.com/projects/p/owncloud/language/ro/)\n"
+"Language-Team: Malayalam (http://www.transifex.com/projects/p/owncloud/language/ml/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"Language: ml\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
@@ -68,7 +67,7 @@ msgstr ""
 
 #: templates/admin.php:30
 msgid "0 is unlimited"
-msgstr "0 e nelimitat"
+msgstr ""
 
 #: templates/admin.php:35
 msgid "To deactivate the quota set it to zero."
@@ -91,7 +90,7 @@ msgstr ""
 
 #: templates/settings.php:14
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 #: templates/settings.php:15
 msgid "Has to be unique among all Sync users"
@@ -105,7 +104,7 @@ msgstr ""
 
 #: templates/settings.php:22
 msgid "Password"
-msgstr "Parolă"
+msgstr ""
 
 #: templates/settings.php:23
 msgid "Use your ownCloud account password"
@@ -113,7 +112,7 @@ msgstr ""
 
 #: templates/settings.php:26
 msgid "Server address"
-msgstr "Adresa server-ului"
+msgstr ""
 
 #: templates/settings.php:40
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
