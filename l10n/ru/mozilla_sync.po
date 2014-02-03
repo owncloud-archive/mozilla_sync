@@ -9,13 +9,14 @@
 # stushev, 2014
 # VicDeo <victor.dubiniuk@gmail.com>, 2012
 # navigator666 <yuriy.malyovaniy@gmail.com>, 2014
+# Evgeniy Malyanov <maljanow@outlook.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-02-02 02:06-0500\n"
-"PO-Revision-Date: 2014-01-24 07:30+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-02-03 02:20-0500\n"
+"PO-Revision-Date: 2014-02-02 15:00+0000\n"
+"Last-Translator: Evgeniy Malyanov <maljanow@outlook.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/owncloud/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,7 +50,7 @@ msgstr "Не верный ввод"
 
 #: ajax/setemail.php:30
 msgid "Sync email saved"
-msgstr ""
+msgstr "Email сохранен"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"

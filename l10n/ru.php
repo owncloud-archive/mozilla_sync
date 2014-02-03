@@ -5,6 +5,7 @@
 "User not found" => "Пользователь не найден",
 "Restriction saved" => "Ограничение сохранены",
 "Invalid input" => "Не верный ввод",
+"Sync email saved" => "Email сохранен",
 "Quota saved" => "Квота сохранена",
 "Mozilla Sync" => "Mozilla Sync",
 "Restrict to group" => "Ограничения группы",
