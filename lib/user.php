@@ -153,7 +153,7 @@ class User
 			(`username`, `sync_user`) VALUES (?, ?)' );
 		$result = $query->execute(array($userName, $syncHash));
 
-		if ($result == false) {
+		if ($result === false) {
 			Utils::writeLogDbError("DB: Could not create user " . $userName . " with Sync hash " . $syncHash . ".", $query);
 			return false;
 		}
@@ -172,7 +172,7 @@ class User
 			WHERE `id` = ?');
 		$result = $query->execute(array($syncId));
 
-		if ($result == false) {
+		if ($result === false) {
 			Utils::writeLogDbError("DB: Could not delete user with Sync ID " . $syncId . ".", $query);
 			return false;
 		}
@@ -497,7 +497,7 @@ class User
 		$query = \OCP\DB::prepare('SELECT SUM(LENGTH(`payload`)) as `size` FROM `*PREFIX*mozilla_sync_wbo` JOIN `*PREFIX*mozilla_sync_collections` ON `*PREFIX*mozilla_sync_wbo`.`collectionid` = `*PREFIX*mozilla_sync_collections`.`id` WHERE `userid` = ?');
 		$result = $query->execute(array($syncId));
 
-		if ($result == false) {
+		if ($result === false) {
 			Utils::writeLogDbError("DB: Could not get info quota for user " . $syncId . ".", $query);
 			return false;
 		}

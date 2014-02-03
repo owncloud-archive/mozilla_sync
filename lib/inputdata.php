@@ -36,7 +36,7 @@ class InputData implements \arrayaccess
 
 		$parseResult = json_decode($input, true);
 
-		if ($parseResult == null) {
+		if (is_null($parseResult)) {
 			$this->parseValidFlag = false;
 		} else {
 			$this->inputArray = $parseResult;

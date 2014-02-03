@@ -137,7 +137,7 @@ class UrlParser {
 			$key = $tmpArray[0];
 
 			// Split argument list
-			if (strpos($tmpArray[1], ',') == false) {
+			if (strpos($tmpArray[1], ',') === false) {
 				$value = $tmpArray[1];
 			} else {
 				$value = explode(',', $tmpArray[1]);
