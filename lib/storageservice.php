@@ -518,10 +518,10 @@ class StorageService extends Service
 		$whereString .= Storage::modifiersToString($modifiers, $queryArgs, $limit, $offset);
 
 		// Delete all WBO of a collection
-		$query = \OCP\DB::prepare( 'DELETE FROM `*PREFIX*mozilla_sync_wbo` ' . $whereString, $limit, $offset );
-		$result = $query->execute( $queryArgs );
+		$query = \OCP\DB::prepare('DELETE FROM `*PREFIX*mozilla_sync_wbo` ' . $whereString, $limit, $offset);
+		$result = $query->execute($queryArgs);
 
-		if ($result == false) {
+		if ($result === false) {
 			Utils::writeLogDbError("DB: Failed to delete WBO for collection " .
 			$collectionId . " for user " . $syncId . ".", $query);
 			return false;
@@ -533,12 +533,11 @@ class StorageService extends Service
 		$result = $query->execute(array($collectionId));
 
 		// No WBO found, delete entire collection
-		if ($result->fetchRow() == false) {
-			$query = \OCP\DB::prepare('DELETE FROM
-			`*PREFIX*mozilla_sync_collections` WHERE `id` = ?');
+		if ($result->fetchRow() === false) {
+			$query = \OCP\DB::prepare('DELETE FROM `*PREFIX*mozilla_sync_collections` WHERE `id` = ?');
 			$result = $query->execute(array($collectionId));
 
-			if ($result == false) {
+			if ($result === false) {
 				Utils::writeLogDbError("DB: Failed to delete collection " .
 				$collectionId . " for user " . $syncId . ".", $query);
 				return false;
