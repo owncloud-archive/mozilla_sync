@@ -39,10 +39,8 @@ class UrlParser {
 			return;
 		}
 
-		// Get path and query part
+		// Get URL path
 		$url = $components["path"];
-		$params = $components["query"];
-
 
 		// Remove '/' from beginning and end
 		$url = trim($url, '/');
@@ -77,9 +75,10 @@ class UrlParser {
 		// Parse commands
 		$this->commandsArray = $urlArray;
 
-		// Only do this if there are parameters in the URL
-		if (!is_null($params)) {
 
+		// Get URL params (everything after the '?')
+		if (isset($components["query"])) {
+			$params = $components["query"];
 			$params = trim($params, '&');
 
 			$this->params = explode('&', $params);
