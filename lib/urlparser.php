@@ -142,8 +142,8 @@ class UrlParser {
 			return $resultArray;
 		}
 
-		$modifiersArray = explode('&', $this->params);
-		foreach ($modifiersArray as $value) {
+		// Iterate over all URL params
+		foreach ($this->params as $value) {
 			$tmpArray = explode('=', $value);
 			if (count($tmpArray) != 2) {
 				continue;
@@ -151,7 +151,7 @@ class UrlParser {
 
 			$key = $tmpArray[0];
 
-			// Split argument list
+			// Split argument list, important for IDs
 			if (strpos($tmpArray[1], ',') === false) {
 				$value = $tmpArray[1];
 			} else {
