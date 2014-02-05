@@ -39,8 +39,8 @@ class Storage
 		$result = $query->execute(array($syncId, $collectionName));
 
 		// Creation of collection failed
-		if ($result == false) {
-			Utils::writeLog("DB: Could not create collection " . $collectionName . ".");
+		if ($result === false) {
+			Utils::writeLogDbError("DB: Could not create collection " . $collectionName . ".", $query);
 			return false;
 		}
 
@@ -57,7 +57,7 @@ class Storage
 			`ttl` > 0 AND (`modified` + `ttl`) < CAST(? AS DECIMAL(15,2))');
 		$result = $query->execute(array(Utils::getMozillaTimestamp()));
 
-		if ($result == false) {
+		if ($result === false) {
 			// Also returns false when no old WBO was found -> don't Utils::writeLog() as it would spam the log
 			return false;
 		}
@@ -86,7 +86,7 @@ class Storage
 		$result = $query->execute(array($collectionId, $wboArray['id']));
 
 		// No WBO found, add a new one
-		if ($result->fetchRow() == false) {
+		if (is_null($result->fetchRow())) {
 			return self::insertWBO($syncId, $modifiedTime, $collectionId, $wboArray);
 		} else {
 			return self::updateWBO($syncId, $modifiedTime, $collectionId, $wboArray);
@@ -106,8 +106,8 @@ class Storage
 			WHERE `collectionid` = ? AND `name` = ?');
 		$result = $query->execute(array($collectionId, $wboId));
 
-		if ($result == false) {
-			Utils::writeLog("DB: Could not delete WBO " . $wboId . ".", \OCP\Util::INFO);
+		if ($result === false) {
+			Utils::writeLogDbError("DB: Could not delete WBO " . $wboId . ".", $query, \OCP\Util::INFO);
 			return false;
 		}
 
@@ -146,8 +146,8 @@ class Storage
 		$query = \OCP\DB::prepare($queryString);
 		$result = $query->execute($queryArgs);
 
-		if ($result == false) {
-			Utils::writeLog("DB: Could not insert WBO for user " . $syncId . " in collection " . $collectionId . ".");
+		if ($result === false) {
+			Utils::writeLogDbError("DB: Could not insert WBO for user " . $syncId . " in collection " . $collectionId . ".", $query);
 			return false;
 		}
 
@@ -183,8 +183,8 @@ class Storage
 		$query = \OCP\DB::prepare($queryString);
 		$result = $query->execute($queryArgs);
 
-		if ($result == false) {
-			Utils::writeLog("DB: Could not update WBO for user " . $syncId . " in collection " . $collectionId . ".");
+		if ($result === false) {
+			Utils::writeLogDbError("DB: Could not update WBO for user " . $syncId . " in collection " . $collectionId . ".", $query);
 			return false;
 		}
 
@@ -204,8 +204,8 @@ class Storage
 			WHERE `userid` = ?)');
 		$result = $query->execute(array($syncId));
 
-		if ($result == false) {
-			Utils::writeLog("DB: Could not delete storage for user " . $syncId . ".");
+		if ($result === false) {
+			Utils::writeLogDbError("DB: Could not delete storage for user " . $syncId . ".", $query);
 			return false;
 		}
 
@@ -214,8 +214,8 @@ class Storage
 			WHERE `userid` = ?');
 		$result = $query->execute(array($syncId));
 
-		if ($result == false) {
-			Utils::writeLog("DB: Could not delete collections for user " . $syncId . ".");
+		if ($result === false) {
+			Utils::writeLogDbError("DB: Could not delete collections for user " . $syncId . ".", $query);
 			return false;
 		}
 
@@ -238,7 +238,7 @@ class Storage
 
 		// IDs
 		if (isset($modifiers['ids'])) {
-			if (gettype($modifiers['ids']) == 'array') {
+			if (gettype($modifiers['ids']) === 'array') {
 				$first = true;
 				$whereString .= ' AND (';
 				foreach ($modifiers['ids'] as $value) {
@@ -286,11 +286,11 @@ class Storage
 
 		// Sort
 		if (isset($modifiers['sort'])) {
-			if ($modifiers['sort'] == 'oldest') {
+			if ($modifiers['sort'] === 'oldest') {
 				$whereString .= ' ORDER BY `modified` ASC';
-			} else if ($modifiers['sort'] == 'newest') {
+			} else if ($modifiers['sort'] === 'newest') {
 				$whereString .= ' ORDER BY `modified` DESC';
-			} else if ($modifiers['sort'] == 'index') {
+			} else if ($modifiers['sort'] === 'index') {
 				$whereString .= ' ORDER BY `sortindex` DESC';
 			}
 		}
@@ -360,9 +360,9 @@ class Storage
 			`*PREFIX*mozilla_sync_collections` WHERE `userid` = ?');
 		$result = $query->execute(array($syncId));
 
-		if ($result == false) {
-			Utils::writeLog("DB: Could not get info collections for user " .
-			$syncId . ".");
+		if ($result === false) {
+			Utils::writeLogDbError("DB: Could not get info collections for user " .
+			$syncId . ".", $query);
 			return false;
 		}
 
@@ -371,7 +371,7 @@ class Storage
 		while (($row = $result->fetchRow())) {
 
 			// Skip empty collections
-			if ($row['modified'] == null) {
+			if (is_null($row['modified'])) {
 				continue;
 			}
 
@@ -440,9 +440,9 @@ class Storage
 			*PREFIX*mozilla_sync_collections WHERE userid = ?');
 		$result = $query->execute(array($syncId));
 
-		if ($result == false) {
-			Utils::writeLog("DB: Could not get info collection usage for user "
-			. $syncId . ".");
+		if ($result === false) {
+			Utils::writeLogDbError("DB: Could not get info collection usage for user "
+			. $syncId . ".", $query);
 			return false;
 		}
 
@@ -451,7 +451,7 @@ class Storage
 		while (($row = $result->fetchRow())) {
 
 			// Skip empty collections
-			if ($row['size'] == null) {
+			if (is_null($row['size'])) {
 				continue;
 			}
 
@@ -487,8 +487,8 @@ class Storage
 		$result = $query->execute(array('clients', $syncId));
 
 		if ($result === false) {
-			Utils::writeLog("DB: Could not get number of clients for user " .
-			$syncId . ".");
+			Utils::writeLogDbError("DB: Could not get number of clients for user " .
+			$syncId . ".", $query);
 			return false;
 		}
 
