@@ -8,9 +8,7 @@
     <?php
     }
     ?>
-    <p>
-        <strong><?php p($l->t('Client Configuration'));?></strong>
-    </p>
+    <h3><?php p($l->t('Client Configuration'));?></h3>
     <p>
         <?php p($l->t('Email'));?>
         <input type="email" id="syncemailinput" name="syncemailinput" title="<?php p($l->t("Has to be unique among all Sync users")); ?>" value="<?php p($_['mozillaSyncEmail']); ?>">
@@ -53,9 +51,7 @@
 
     <br/>
 
-    <p>
-        <strong><?php p($l->t('Sync Status'));?></strong>
-    </p>
+    <h3><?php p($l->t('Sync Status'));?></h3>
     <p>
         <?php p($l->t('Last sync'));?>&nbsp;&nbsp;&nbsp;
         <?php p($lastMod); ?>
@@ -86,17 +82,12 @@
 
     <br/>
 
-    <p>
-        <strong><?php p($l->t('Delete Sync data'));?></strong>
-    </p>
-    <p>
 	<p>
         <button type="button" id="deletestorage">
-		    <?php p($l->t('Delete storage')); ?>
+		    <?php p($l->t('Delete Sync data')); ?>
 	        </button>
-    </p>
-	<p>
-        <em><?php p($l->t('Attention! This will delete all your Sync data on the server.')); ?></em>
+    <br/>
+    <em><?php p($l->t('Attention! This will delete all your Sync data on the server.')); ?></em>
     </p>
 
     <?php } // End: Show only when account created ?>

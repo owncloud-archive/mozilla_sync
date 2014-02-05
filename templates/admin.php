@@ -13,8 +13,7 @@
                 <option value="<?php p($group);?>"><?php p($group);?></option>
             <?php endforeach;?>
         </select>
-    </p>
-    <p>
+        <br/>
         <em><?php p($l->t("When activated, only members of this group can access Mozilla Sync."));?></em>
     </p>
     <br/>
@@ -22,8 +21,7 @@
         <label for="syncquotainput"><?php p($l->t("Sync quota")); ?></label>
         <input type="text" id="syncquotainput" name="syncquotainput" title="<?php p($l->t("0 is unlimited")); ?>"
             value="<?php p($_['mozillaSyncQuota']); ?>"> kB
-    </p>
-    <p>
+        <br/>
         <em><?php p($l->t("To deactivate the quota set it to zero."));?></em>
     </p>
     <br/>
