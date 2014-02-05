@@ -30,6 +30,20 @@ class UrlParser {
 		// Parser is valid at the begining
 		$this->parseValidFlag = true;
 
+		// Parse URL
+		$components = parse_url($url);
+
+		// For seriously malformed URLs false is returned
+		if ($components === false) {
+			$this->parseValidFlag = false;
+			return;
+		}
+
+		// Get path and query part
+		$url = $components["path"];
+		$params = $components["query"];
+
+
 		// Remove '/' from beginning and end
 		$url = trim($url, '/');
 
@@ -62,6 +76,16 @@ class UrlParser {
 
 		// Parse commands
 		$this->commandsArray = $urlArray;
+
+		// Only do this if there are parameters in the URL
+		if (!is_null($params)) {
+
+			$params = trim($params, '&');
+
+			$this->params = explode('&', $params);
+		} else {
+			$this->params = null;
+		}
 	}
 
 	/**
@@ -99,32 +123,27 @@ class UrlParser {
 	* @return string The command at the requested index.
 	*/
 	public function getCommand($commandNumber) {
-
-		$commandArray = explode('?', $this->commandsArray[$commandNumber]);
-
-		return $commandArray[0];
+		return $this->commandsArray[$commandNumber];
 	}
 
 	/**
-	* @brief Return modifiers array form given command.
+	* @brief Return modifiers array, i.e. URL parameters.
 	*
 	* Example:
 	*   tabs?full=1&ids=1,2,3
 	*
-	* @param integer $commandNumber Command index for which modifiers will be
-	* returned.
 	* @return array Modifiers for the corresponding command.
 	*/
-	public function getCommandModifiers($commandNumber) {
+	public function getCommandModifiers() {
 
 		$resultArray = array();
 
-		$commandArray = explode('?', $this->commandsArray[$commandNumber]);
-		if (count($commandArray) != 2) {
+		// Return an empty array for no parameters
+		if (is_null($this->params)) {
 			return $resultArray;
 		}
 
-		$modifiersArray = explode('&', $commandArray[1]);
+		$modifiersArray = explode('&', $this->params);
 		foreach ($modifiersArray as $value) {
 			$tmpArray = explode('=', $value);
 			if (count($tmpArray) != 2) {

@@ -96,7 +96,7 @@ class StorageService extends Service
 				($this->urlParser->getCommand(0) == 'storage')) {
 
 			$collectionName = $this->urlParser->getCommand(1);
-			$modifiers = $this->urlParser->getCommandModifiers(1);
+			$modifiers = $this->urlParser->getCommandModifiers();
 
 			$collectionId = Storage::collectionNameToIndex($syncId, $collectionName);
 
