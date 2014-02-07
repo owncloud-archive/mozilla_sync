@@ -19,15 +19,10 @@
     <br/>
     <p>
         <label for="syncquotainput"><?php p($l->t("Sync quota")); ?></label>
-        <input type="text" id="syncquotainput" name="syncquotainput" title="<?php p($l->t("0 is unlimited")); ?>"
+        <input type="text" id="syncquotainput" name="syncquotainput"
             value="<?php p($_['mozillaSyncQuota']); ?>"> kB
         <br/>
-        <em><?php p($l->t("To deactivate the quota set it to zero."));?></em>
-    </p>
-    <br/>
-    <p>
-                <label><?php p($l->t("Installed version")); ?></label>
-                <?php p($_['mozillaSyncVersion']); ?>
+        <em><?php p($l->t("Set the value to 0 for unlimited quota."));?></em>
     </p>
 </fieldset>
 

@@ -8,23 +8,6 @@
     <?php
     }
     ?>
-    <h3><?php p($l->t('Client Configuration'));?></h3>
-    <p>
-        <?php p($l->t('Email'));?>
-        <input type="email" id="syncemailinput" name="syncemailinput" title="<?php p($l->t("Has to be unique among all Sync users")); ?>" value="<?php p($_['mozillaSyncEmail']); ?>">
-        <?php
-            if (!\OCA\mozilla_sync\User::userHasUniqueEmail()) {
-                ?><b><span style="color: red"><?php p($l->t('Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work.'));?></span></b><?php
-            }?>
-    </p>
-    <p>
-       <?php p($l->t('Password'));?>&nbsp;&nbsp;&nbsp;
-       <?php p($l->t('Use your ownCloud account password'));?>
-    </p>
-    <p>
-        <?php p($l->t('Server address'));?>&nbsp;&nbsp;&nbsp;
-        <code><?php p($_['syncaddress']);?></code>
-    </p>
     <p>
       <em>
       <?php
@@ -43,6 +26,22 @@
         }
         ?>
         </em>
+    </p>
+    <p>
+        <?php p($l->t('Email'));?>
+        <input type="email" id="syncemailinput" name="syncemailinput" title="<?php p($l->t("Has to be unique among all Sync users")); ?>" value="<?php p($_['mozillaSyncEmail']); ?>">
+        <?php
+            if (!\OCA\mozilla_sync\User::userHasUniqueEmail()) {
+                ?><b><span style="color: red"><?php p($l->t('Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work.'));?></span></b><?php
+            }?>
+    </p>
+    <p>
+       <?php p($l->t('Password'));?>&nbsp;&nbsp;&nbsp;
+       <?php p($l->t('Use your ownCloud account password'));?>
+    </p>
+    <p>
+        <?php p($l->t('Server address'));?>&nbsp;&nbsp;&nbsp;
+        <code><?php p($_['syncaddress']);?></code>
     </p>
     <?php
     // Show Sync Status only if Sync account was created
