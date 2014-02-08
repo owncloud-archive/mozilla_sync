@@ -86,7 +86,7 @@ class Storage
 		$result = $query->execute(array($collectionId, $wboArray['id']));
 
 		// No WBO found, add a new one
-		if (is_null($result->fetchRow())) {
+		if ($result->fetchRow() === false) {
 			return self::insertWBO($syncId, $modifiedTime, $collectionId, $wboArray);
 		} else {
 			return self::updateWBO($syncId, $modifiedTime, $collectionId, $wboArray);

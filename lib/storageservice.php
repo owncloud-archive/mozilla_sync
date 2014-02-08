@@ -572,7 +572,7 @@ class StorageService extends Service
 		}
 
 		$row = $result->fetchRow();
-		if (is_null($row)) {
+		if ($row === false) {
 			Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);
 			Utils::writeLog("DB: Could not find requested WBO " . $wboId .
 			" of collection " . $collectionId . " for user " . $syncId . ".", \OCP\Util::WARN);
