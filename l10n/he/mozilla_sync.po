@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-02-05 02:06-0500\n"
-"PO-Revision-Date: 2014-01-24 07:11+0000\n"
+"POT-Creation-Date: 2014-02-08 02:21-0500\n"
+"PO-Revision-Date: 2014-02-08 07:21+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Hebrew (http://www.transifex.com/projects/p/owncloud/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -54,28 +54,20 @@ msgstr ""
 msgid "Mozilla Sync"
 msgstr ""
 
-#: templates/admin.php:12
+#: templates/admin.php:10
 msgid "Restrict to group"
 msgstr ""
 
-#: templates/admin.php:23
+#: templates/admin.php:17
 msgid "When activated, only members of this group can access Mozilla Sync."
 msgstr ""
 
-#: templates/admin.php:27
+#: templates/admin.php:21
 msgid "Sync quota"
 msgstr ""
 
-#: templates/admin.php:30
-msgid "0 is unlimited"
-msgstr "0 - ללא הגבלה"
-
-#: templates/admin.php:35
-msgid "To deactivate the quota set it to zero."
-msgstr ""
-
-#: templates/admin.php:39
-msgid "Installed version"
+#: templates/admin.php:25
+msgid "Set the value to 0 for unlimited quota."
 msgstr ""
 
 #: templates/settings.php:7
@@ -85,47 +77,43 @@ msgid ""
 "the %s group."
 msgstr ""
 
-#: templates/settings.php:11
-msgid "Client Configuration"
-msgstr ""
-
-#: templates/settings.php:14
-msgid "Email"
-msgstr "דואר אלקטרוני"
-
-#: templates/settings.php:15
-msgid "Has to be unique among all Sync users"
-msgstr ""
-
-#: templates/settings.php:18
-msgid ""
-"Error! Duplicate email addresses detected! Email addresses need to be unique"
-" for Mozilla Sync to work."
-msgstr ""
-
-#: templates/settings.php:22
-msgid "Password"
-msgstr "סיסמא"
-
 #: templates/settings.php:23
-msgid "Use your ownCloud account password"
-msgstr ""
-
-#: templates/settings.php:26
-msgid "Server address"
-msgstr "כתובת שרת"
-
-#: templates/settings.php:40
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
 msgstr ""
 
-#: templates/settings.php:42
+#: templates/settings.php:25
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
 msgstr ""
 
-#: templates/settings.php:52
+#: templates/settings.php:31
+msgid "Email"
+msgstr "דואר אלקטרוני"
+
+#: templates/settings.php:32
+msgid "Has to be unique among all Sync users"
+msgstr ""
+
+#: templates/settings.php:35
+msgid ""
+"Error! Duplicate email addresses detected! Email addresses need to be unique"
+" for Mozilla Sync to work."
+msgstr ""
+
+#: templates/settings.php:39
+msgid "Password"
+msgstr "סיסמא"
+
+#: templates/settings.php:40
+msgid "Use your ownCloud account password"
+msgstr ""
+
+#: templates/settings.php:43
+msgid "Server address"
+msgstr "כתובת שרת"
+
+#: templates/settings.php:53
 msgid "Sync Status"
 msgstr ""
 
@@ -149,10 +137,6 @@ msgstr ""
 msgid "Delete Sync data"
 msgstr ""
 
-#: templates/settings.php:90
-msgid "Delete storage"
-msgstr ""
-
-#: templates/settings.php:95
+#: templates/settings.php:89
 msgid "Attention! This will delete all your Sync data on the server."
 msgstr ""

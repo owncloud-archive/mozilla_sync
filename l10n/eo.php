@@ -7,9 +7,6 @@
 "Quota saved" => "La kvoto konserviĝis",
 "Mozilla Sync" => "Mozilo Sync",
 "Sync quota" => "Sinkronigi kvoton",
-"0 is unlimited" => "0 signifas senlime",
-"To deactivate the quota set it to zero." => "Por malkapabligi la kvoton, agordu ĝin kiel nulo.",
-"Installed version" => "Instalita eldono",
 "Email" => "Retpoŝto",
 "Has to be unique among all Sync users" => "Ĝi devas ununuri inter ĉiuj uzantoj de Sync",
 "Password" => "Pasvorto",
@@ -19,6 +16,5 @@
 "Last sync" => "Lasta sinkronigo",
 "Size of stored data" => "Grando de la enmemorigitaj datumoj",
 "No data stored yet." => "Neniu datumo enmemoriĝis ankoraŭ.",
-"Number of synced devices" => "Kiomo de sinkronigitaj aparatoj",
-"Delete storage" => "Forigi memorilon"
+"Number of synced devices" => "Kiomo de sinkronigitaj aparatoj"
 );

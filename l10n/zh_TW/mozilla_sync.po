@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-02-05 02:06-0500\n"
-"PO-Revision-Date: 2014-01-24 07:30+0000\n"
+"POT-Creation-Date: 2014-02-08 02:21-0500\n"
+"PO-Revision-Date: 2014-02-08 07:21+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/owncloud/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -55,29 +55,21 @@ msgstr "配額已儲存"
 msgid "Mozilla Sync"
 msgstr "Mozilla 同步"
 
-#: templates/admin.php:12
+#: templates/admin.php:10
 msgid "Restrict to group"
 msgstr "群組限制"
 
-#: templates/admin.php:23
+#: templates/admin.php:17
 msgid "When activated, only members of this group can access Mozilla Sync."
 msgstr "當被啟動後，只有群組內的會員可以存取 Mozilla 同步。"
 
-#: templates/admin.php:27
+#: templates/admin.php:21
 msgid "Sync quota"
 msgstr "同步配額"
 
-#: templates/admin.php:30
-msgid "0 is unlimited"
-msgstr "0 代表沒有限制"
-
-#: templates/admin.php:35
-msgid "To deactivate the quota set it to zero."
-msgstr "取消容量限制的方式為將其設定為零。"
-
-#: templates/admin.php:39
-msgid "Installed version"
-msgstr "已安裝版本"
+#: templates/admin.php:25
+msgid "Set the value to 0 for unlimited quota."
+msgstr ""
 
 #: templates/settings.php:7
 #, php-format
@@ -86,47 +78,43 @@ msgid ""
 "the %s group."
 msgstr "錯誤！您不被允許使用 Mozilla 同步！您必需成為 %s 群組中的一員。"
 
-#: templates/settings.php:11
-msgid "Client Configuration"
-msgstr ""
-
-#: templates/settings.php:14
-msgid "Email"
-msgstr "信箱"
-
-#: templates/settings.php:15
-msgid "Has to be unique among all Sync users"
-msgstr ""
-
-#: templates/settings.php:18
-msgid ""
-"Error! Duplicate email addresses detected! Email addresses need to be unique"
-" for Mozilla Sync to work."
-msgstr "錯誤！偵測到重複的電子信箱位置！在 Mozilla 同步中電子信箱必須是獨一無二的。"
-
-#: templates/settings.php:22
-msgid "Password"
-msgstr "密碼"
-
 #: templates/settings.php:23
-msgid "Use your ownCloud account password"
-msgstr "使用您的 ownCloud 帳號密碼"
-
-#: templates/settings.php:26
-msgid "Server address"
-msgstr "伺服器位址"
-
-#: templates/settings.php:40
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
 msgstr "設定 Mozilla Sync 之前請於 Firefox 內創立一個同步帳號。"
 
-#: templates/settings.php:42
+#: templates/settings.php:25
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
 msgstr "Mozilla 同步已設定完畢，您可以從 Mozilla 的裝置配對服務或手動添加額外的裝置。"
 
-#: templates/settings.php:52
+#: templates/settings.php:31
+msgid "Email"
+msgstr "信箱"
+
+#: templates/settings.php:32
+msgid "Has to be unique among all Sync users"
+msgstr ""
+
+#: templates/settings.php:35
+msgid ""
+"Error! Duplicate email addresses detected! Email addresses need to be unique"
+" for Mozilla Sync to work."
+msgstr "錯誤！偵測到重複的電子信箱位置！在 Mozilla 同步中電子信箱必須是獨一無二的。"
+
+#: templates/settings.php:39
+msgid "Password"
+msgstr "密碼"
+
+#: templates/settings.php:40
+msgid "Use your ownCloud account password"
+msgstr "使用您的 ownCloud 帳號密碼"
+
+#: templates/settings.php:43
+msgid "Server address"
+msgstr "伺服器位址"
+
+#: templates/settings.php:53
 msgid "Sync Status"
 msgstr "同步處理狀態"
 
@@ -150,10 +138,6 @@ msgstr "已同步的裝置數"
 msgid "Delete Sync data"
 msgstr ""
 
-#: templates/settings.php:90
-msgid "Delete storage"
-msgstr "刪除儲存空間"
-
-#: templates/settings.php:95
+#: templates/settings.php:89
 msgid "Attention! This will delete all your Sync data on the server."
 msgstr "注意！這個動作將刪除所有您位於伺服器的同步資料。"
