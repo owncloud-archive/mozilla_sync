@@ -11,6 +11,7 @@
 "Restrict to group" => "Beperk tot groep",
 "When activated, only members of this group can access Mozilla Sync." => "Wanneer geactiveerd, kunnen alleen leden van deze groep Mozilla Sync gebruiken.",
 "Sync quota" => "Sync quota",
+"Set the value to 0 for unlimited quota." => "Stel de waarde op 0 voor onbeperkt gebruik.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Fout! U mag Mozilla Sync niet gebruiken. U moet lid zijn van de %s groep.",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Om Mozilla Sync te laten werken moet u een nieuw Sync account maken in Firefox.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync is ingesteld. Extra apparaten kunnen via Mozilla's koppelservice of handmatig worden toegevoegd.",

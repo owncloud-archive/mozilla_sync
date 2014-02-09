@@ -11,6 +11,7 @@
 "Restrict to group" => "Gruba sınırla",
 "When activated, only members of this group can access Mozilla Sync." => "Etkinleştirildiğinde, sadece bu grubun üyeleri Mozilla Sync'e erişebilir.",
 "Sync quota" => "Kotayı eşitle",
+"Set the value to 0 for unlimited quota." => "Sınırsız kota için değeri 0 yapın.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Hata! Mozilla Sync kullanma izniniz yok! %s grubunun üyesi olmanız gerekli.",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Mozilla Sync kurulumu için Firefox içerisinde yeni bir Eşitleme hesabı oluşturun.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync ayarlandı, ek aygıtlar Mozilla'nın aygıt eşleme hizmeti veya el ile eklenebilir.",
