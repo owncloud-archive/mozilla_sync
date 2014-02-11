@@ -5,13 +5,14 @@
 # Translators:
 # Cyryl Sochacki <cyrylsochacki@gmail.com>, 2012
 # Cyryl Sochacki <cyrylsochacki@gmail.com>, 2013-2014
+# MarPiRK <marpirk@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-02-09 04:30-0500\n"
-"PO-Revision-Date: 2014-02-08 07:21+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-02-11 02:07-0500\n"
+"PO-Revision-Date: 2014-02-10 19:20+0000\n"
+"Last-Translator: MarPiRK <marpirk@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/owncloud/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,35 +22,35 @@ msgstr ""
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
-msgstr ""
+msgstr "Nieudane usunięcie pamięci."
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
-msgstr ""
+msgstr "Nieudane usunięcie użytkownika."
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
-msgstr ""
+msgstr "Pamięć usunięta"
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
-msgstr ""
+msgstr "Nie znaleziono użytkownika"
 
 #: ajax/restrictgroup.php:32
 msgid "Restriction saved"
-msgstr ""
+msgstr "Ograniczenia zapisane"
 
 #: ajax/setemail.php:24 ajax/setquota.php:24
 msgid "Invalid input"
-msgstr ""
+msgstr "Błędne dane"
 
 #: ajax/setemail.php:30
 msgid "Sync email saved"
-msgstr ""
+msgstr "Email zapisany"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
-msgstr ""
+msgstr "Przydział zapisany"
 
 #: templates/admin.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
@@ -57,36 +58,36 @@ msgstr "Mozilla Sync"
 
 #: templates/admin.php:10
 msgid "Restrict to group"
-msgstr ""
+msgstr "Ogranicz do grupy"
 
 #: templates/admin.php:17
 msgid "When activated, only members of this group can access Mozilla Sync."
-msgstr ""
+msgstr "Po aktywowaniu tylko członkowie tej grupy mają dostęp do Mozilla Sync. "
 
 #: templates/admin.php:21
 msgid "Sync quota"
-msgstr ""
+msgstr "Zsynchronizuj przydział"
 
 #: templates/admin.php:25
 msgid "Set the value to 0 for unlimited quota."
-msgstr ""
+msgstr "Ustaw wartość 0 dla nielimitowanego przydziału."
 
 #: templates/settings.php:7
 #, php-format
 msgid ""
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of "
 "the %s group."
-msgstr ""
+msgstr "Błąd! Nie masz praw do używania Mozilla Sync! Musisz być członkiem grupy %s."
 
 #: templates/settings.php:23
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
-msgstr ""
+msgstr "W celu skonfigurowania Mozilla Sync stwórz nowe konto synchronizacji w Firefox'ie."
 
 #: templates/settings.php:25
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
-msgstr ""
+msgstr "Skonfigurowano Mozilla Sync, dodatkowe urządzenia mogą być dodane przy użyciu usługi parowania urządzeń Mozilli lub ręcznie."
 
 #: templates/settings.php:31
 msgid "Email"
@@ -94,13 +95,13 @@ msgstr "Email"
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
-msgstr ""
+msgstr "Musi być unikalny wśród wszystkich użytkowników"
 
 #: templates/settings.php:35
 msgid ""
 "Error! Duplicate email addresses detected! Email addresses need to be unique"
 " for Mozilla Sync to work."
-msgstr ""
+msgstr "Błąd! Wykryto zduplikowane adresy email! Muszą być one unikalne, żeby Mozilla Sync mogła działać."
 
 #: templates/settings.php:39
 msgid "Password"
@@ -132,12 +133,12 @@ msgstr "Brak przechowywanych danych."
 
 #: templates/settings.php:78
 msgid "Number of synced devices"
-msgstr ""
+msgstr "Ilość zsynchronizowanych urządzeń"
 
 #: templates/settings.php:86
 msgid "Delete Sync data"
-msgstr ""
+msgstr "Usuń dane"
 
 #: templates/settings.php:89
 msgid "Attention! This will delete all your Sync data on the server."
-msgstr ""
+msgstr "Uwaga! W ten sposób usuniesz wszystkie dane konta Sync na serwerze."
