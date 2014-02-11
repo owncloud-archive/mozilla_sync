@@ -54,7 +54,7 @@ class Storage
 	*/
 	static public function deleteOldWbo() {
 		$query = \OCP\DB::prepare('DELETE FROM `*PREFIX*mozilla_sync_wbo` WHERE
-			`ttl` > 0 AND (`modified` + `ttl`) < CAST(? AS DECIMAL(15,2))');
+			`ttl` > 0 AND (`modified` + `ttl`) < CAST(? AS DECIMAL(12,2))');
 		$result = $query->execute(array(Utils::getMozillaTimestamp()));
 
 		if ($result === false) {
@@ -271,10 +271,10 @@ class Storage
 
 		// Time modifiers
 		if (isset($modifiers['older'])) {
-			$whereString .= ' AND `modified` <= CAST( ? AS DECIMAL(15,2))';
+			$whereString .= ' AND `modified` <= CAST( ? AS DECIMAL(12,2))';
 			$queryArgs[] = $modifiers['older'];
 		} else if (isset($modifiers['newer'])) {
-			$whereString .= ' AND `modified` >= CAST( ? AS DECIMAL(15,2))';
+			$whereString .= ' AND `modified` >= CAST( ? AS DECIMAL(12,2))';
 			$queryArgs[] = $modifiers['newer'];
 		} else if (isset($modifiers['index_above'])) {
 			$whereString .= ' AND `sortindex` >= ?';

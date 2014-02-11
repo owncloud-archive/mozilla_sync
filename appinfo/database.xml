@@ -145,7 +145,8 @@
         <type>decimal</type>
         <notnull>true</notnull>
         <default>0.00</default>
-        <length>15</length>
+        <precision>12</precision>
+        <scale>2</scale>
       </field>
 
       <field>
