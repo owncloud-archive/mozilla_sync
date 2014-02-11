@@ -1,3 +1,13 @@
+v1.4: 2014-02-11
+    * IMPORTANT: Incompatible with ownCloud 6.0.0! ownCloud 5.x and ownCloud 6.0.1 work fine.
+    * Added compatibility for iOS Foxbrowser app
+    * Added new interface and backend to store Sync email independently of ownCloud's recovery email
+    * Use correct precision, scale decimal type for database
+    * More robust URL parsing
+    * More lightweight HTML layout
+    * Less but better debug output on errors
+    * Improved README
+
 v1.3.1: 2013-12-21
     * Database sortindex column fix
     * Fix last sync date on personal page
