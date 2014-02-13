@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-02-12 02:14-0500\n"
-"PO-Revision-Date: 2014-02-08 07:21+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-02-13 03:18-0500\n"
+"PO-Revision-Date: 2014-02-12 20:00+0000\n"
+"Last-Translator: pstast <petr@stastny.eu>\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/projects/p/owncloud/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -71,7 +71,7 @@ msgstr "Kvóta synchronizace"
 
 #: templates/admin.php:25
 msgid "Set the value to 0 for unlimited quota."
-msgstr ""
+msgstr "Zadejte hodnotu 0 pro neomezenou kvótu."
 
 #: templates/settings.php:7
 #, php-format
@@ -138,7 +138,7 @@ msgstr "Počet synchronizovaných zařízení"
 
 #: templates/settings.php:86
 msgid "Delete Sync data"
-msgstr "Smazat Sync data"
+msgstr "Smazat data synchronizace"
 
 #: templates/settings.php:89
 msgid "Attention! This will delete all your Sync data on the server."
