@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Christophe Lherieau <skimpax@gmail.com>, 2013
-# etiess <etiess@gmail.com>, 2013
+# etiess <etiess@gmail.com>, 2013-2014
 # ogre_sympathique <ogre.sympathique@speed.1s.fr>, 2013
 # Romain DEP. <rom1dep@gmail.com>, 2012
 # tcit <thomas.citharet@gmail.com>, 2014
@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-02-11 02:07-0500\n"
-"PO-Revision-Date: 2014-02-08 07:21+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-02-14 05:17-0500\n"
+"PO-Revision-Date: 2014-02-11 09:00+0000\n"
+"Last-Translator: etiess <etiess@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/owncloud/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,7 +72,7 @@ msgstr "Synchronisation du quota"
 
 #: templates/admin.php:25
 msgid "Set the value to 0 for unlimited quota."
-msgstr ""
+msgstr "Mettre la valeur à 0 pour un quota illimité."
 
 #: templates/settings.php:7
 #, php-format
@@ -139,7 +139,7 @@ msgstr "Nombre d'appareils synchronisés"
 
 #: templates/settings.php:86
 msgid "Delete Sync data"
-msgstr ""
+msgstr "Supprimer les données de synchronisation"
 
 #: templates/settings.php:89
 msgid "Attention! This will delete all your Sync data on the server."

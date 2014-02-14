@@ -11,6 +11,7 @@
 "Restrict to group" => "Begrænset til gruppe",
 "When activated, only members of this group can access Mozilla Sync." => "Når dette er aktivieret er det kun medlemmer af denne gruppe der kan anvende Mozilla Sync.",
 "Sync quota" => "Sync kvote",
+"Set the value to 0 for unlimited quota." => "Set værdien til 0 for at ophæve kvota.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Fejl! Du har ikke tilladelse til at anvende Mozilla Sync! Du skal være medlem af %s gruppen.",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "For at sætte Mozilla Sync op, skal du først oprette en kontor i Firefox.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync er sat op. Yderligere enheder kan tilføjes via Mozillas enhedsparringsserivce eller manuelt.",

@@ -11,6 +11,7 @@
 "Restrict to group" => "Restreindre au groupe",
 "When activated, only members of this group can access Mozilla Sync." => "Lorsque ceci est activé, seulement les membres de ce groupe peuvent accéder à Mozilla Sync.",
 "Sync quota" => "Synchronisation du quota",
+"Set the value to 0 for unlimited quota." => "Mettre la valeur à 0 pour un quota illimité.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Erreur ! Vous n'êtes pas autorisé à utiliser Mozilla Sync ! Vous devez être membre du groupe %s.",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Pour mettre en place Mozilla Sync, créer un nouveau compte Sync dans Firefox.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync est configuré. Des périphériques supplémentaires peuvent être ajouté manuellement ou  avec le service Mozilla d'appairage de périphériques.",
@@ -25,5 +26,6 @@
 "Size of stored data" => "Taille des données stockées",
 "No data stored yet." => "Aucune donnée stockée.",
 "Number of synced devices" => "Nombre d'appareils synchronisés",
+"Delete Sync data" => "Supprimer les données de synchronisation",
 "Attention! This will delete all your Sync data on the server." => "Attention ! Cela va supprimer toutes vos données Sync sur le serveur."
 );
