@@ -10,7 +10,7 @@
 // Assign admin template
 $tmpl = new \OCP\Template('mozilla_sync', 'admin');
 
-$tmpl->assign('mozillaSyncRestrictGroupEnabled', \OCA\mozilla_sync\User::getAuthorizedGroup());
+$tmpl->assign('mozillaSyncRestrictGroup', \OCA\mozilla_sync\User::getAuthorizedGroup());
 $tmpl->assign('mozillaSyncQuota', \OCA\mozilla_sync\User::getQuota());
 
 return $tmpl->fetchPage();
