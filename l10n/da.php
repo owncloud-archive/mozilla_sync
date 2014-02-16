@@ -13,7 +13,7 @@
 "Sync quota" => "Sync kvote",
 "Set the value to 0 for unlimited quota." => "Set værdien til 0 for at ophæve kvota.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Fejl! Du har ikke tilladelse til at anvende Mozilla Sync! Du skal være medlem af %s gruppen.",
-"To set up Mozilla Sync create a new Sync account in Firefox." => "For at sætte Mozilla Sync op, skal du først oprette en kontor i Firefox.",
+"To set up Mozilla Sync create a new Sync account in Firefox." => "For at sætte Mozilla Sync op, skal du først oprette en konto i Firefox.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync er sat op. Yderligere enheder kan tilføjes via Mozillas enhedsparringsserivce eller manuelt.",
 "Email" => "E-mail",
 "Has to be unique among all Sync users" => "Skal være unik blandt alle Sync-brugere",

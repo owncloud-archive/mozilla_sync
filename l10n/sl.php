@@ -11,6 +11,7 @@
 "Restrict to group" => "Omeji na skupino",
 "When activated, only members of this group can access Mozilla Sync." => "Izbrana možnost določa, da imajo dostop do Usklajevalnika Mozill le člani skupine",
 "Sync quota" => "Omejitev usklajevanja",
+"Set the value to 0 for unlimited quota." => "Vrednost 0 onemogoči omejitev.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Napaka! Ni ustreznih dovoljenja za uporabo Usklajevalnika Mozilla! Uporaba je omejena na člane skupine %s.",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Na nastavitev Usklajevalnika Mozilla je treba ustvariti nov račun za usklajevanje v programu Firefox.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Usklajevalnik Mozilla je nastavljen. Dodatne naprave je mogoče dodati preko storitve povezovanja ali pa z ročnimi nastavitvami.",
