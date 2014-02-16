@@ -1,6 +1,6 @@
 $(document).ready(function(){
     // restrict group ajax
-    $('#restrictgroup,#group').change(function() {
+    $('#restrictgroup,#groupselect').change(function() {
         $.post(OC.filePath('mozilla_sync', 'ajax', 'restrictgroup.php'),
             { restrictgroup: $('#restrictgroup[type=checkbox]').is(':checked'),
             groupselect: $('#groupselect').val()},
