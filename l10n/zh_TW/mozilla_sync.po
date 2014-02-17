@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-02-16 02:18-0500\n"
+"POT-Creation-Date: 2014-02-17 03:22-0500\n"
 "PO-Revision-Date: 2014-02-08 07:21+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/owncloud/language/zh_TW/)\n"
@@ -59,15 +59,15 @@ msgstr "Mozilla 同步"
 msgid "Restrict to group"
 msgstr "群組限制"
 
-#: templates/admin.php:17
+#: templates/admin.php:20
 msgid "When activated, only members of this group can access Mozilla Sync."
 msgstr "當被啟動後，只有群組內的會員可以存取 Mozilla 同步。"
 
-#: templates/admin.php:21
+#: templates/admin.php:24
 msgid "Sync quota"
 msgstr "同步配額"
 
-#: templates/admin.php:25
+#: templates/admin.php:28
 msgid "Set the value to 0 for unlimited quota."
 msgstr ""
 

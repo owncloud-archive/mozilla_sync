@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-02-16 02:18-0500\n"
+"POT-Creation-Date: 2014-02-17 03:22-0500\n"
 "PO-Revision-Date: 2014-02-08 07:21+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: French (Canada) (http://www.transifex.com/projects/p/owncloud/language/fr_CA/)\n"
@@ -57,15 +57,15 @@ msgstr ""
 msgid "Restrict to group"
 msgstr ""
 
-#: templates/admin.php:17
+#: templates/admin.php:20
 msgid "When activated, only members of this group can access Mozilla Sync."
 msgstr ""
 
-#: templates/admin.php:21
+#: templates/admin.php:24
 msgid "Sync quota"
 msgstr ""
 
-#: templates/admin.php:25
+#: templates/admin.php:28
 msgid "Set the value to 0 for unlimited quota."
 msgstr ""
 
