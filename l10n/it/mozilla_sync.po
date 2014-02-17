@@ -4,13 +4,13 @@
 # 
 # Translators:
 # ogasser, 2013
-# polxmod <paolo.velati@gmail.com>, 2013-2014
+# Paolo Velati <paolo.velati@gmail.com>, 2013-2014
 # Vincenzo Reale <vinx.reale@gmail.com>, 2012-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-02-17 03:22-0500\n"
+"POT-Creation-Date: 2014-02-17 18:30-0500\n"
 "PO-Revision-Date: 2014-02-09 11:51+0000\n"
 "Last-Translator: Vincenzo Reale <vinx.reale@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/owncloud/language/it/)\n"
