@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-02-24 02:06-0500\n"
-"PO-Revision-Date: 2014-02-08 07:21+0000\n"
+"POT-Creation-Date: 2014-02-25 02:05-0500\n"
+"PO-Revision-Date: 2014-02-24 11:47+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Khmer (http://www.transifex.com/projects/p/owncloud/language/km/)\n"
 "MIME-Version: 1.0\n"
@@ -102,7 +102,7 @@ msgstr ""
 
 #: templates/settings.php:39
 msgid "Password"
-msgstr ""
+msgstr "ពាក្យសម្ងាត់"
 
 #: templates/settings.php:40
 msgid "Use your ownCloud account password"
