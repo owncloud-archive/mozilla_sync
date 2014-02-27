@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-02-26 02:05-0500\n"
-"PO-Revision-Date: 2014-02-08 07:21+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-02-27 02:05-0500\n"
+"PO-Revision-Date: 2014-02-26 14:50+0000\n"
+"Last-Translator: orinx <orinx@orinx.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/owncloud/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +45,7 @@ msgstr "無效的輸入"
 
 #: ajax/setemail.php:30
 msgid "Sync email saved"
-msgstr ""
+msgstr "同步 email 已儲存"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
@@ -69,7 +69,7 @@ msgstr "同步配額"
 
 #: templates/admin.php:28
 msgid "Set the value to 0 for unlimited quota."
-msgstr ""
+msgstr "如果想解除容量限制，請將這個值設爲 0"
 
 #: templates/settings.php:7
 #, php-format
@@ -94,7 +94,7 @@ msgstr "信箱"
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
-msgstr ""
+msgstr "每個使用者皆需要為不同值"
 
 #: templates/settings.php:35
 msgid ""
@@ -136,7 +136,7 @@ msgstr "已同步的裝置數"
 
 #: templates/settings.php:86
 msgid "Delete Sync data"
-msgstr ""
+msgstr "刪除同步資訊"
 
 #: templates/settings.php:89
 msgid "Attention! This will delete all your Sync data on the server."
