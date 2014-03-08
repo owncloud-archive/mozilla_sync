@@ -5,6 +5,7 @@
 "User not found" => "사용자를 찾을 수 없음",
 "Restriction saved" => "접근 제한 저장됨",
 "Invalid input" => "잘못된 입력",
+"Sync email saved" => "싱크 email 저장됨",
 "Quota saved" => "할당량 저장됨",
 "Mozilla Sync" => "Mozilla Sync",
 "Restrict to group" => "그룹으로 제한",
@@ -18,9 +19,11 @@
 "Password" => "암호",
 "Use your ownCloud account password" => "ownCloud 계정 암호 사용",
 "Server address" => "서버 주소",
+"Sync Status" => "싱크 상태",
 "Last sync" => "마지막 동기화",
 "Size of stored data" => "저장된 데이터 크기",
 "No data stored yet." => "데이터가 저장되지 않았습니다.",
 "Number of synced devices" => "동기화 중인 장치 개수",
+"Delete Sync data" => "싱크 데이터 삭제",
 "Attention! This will delete all your Sync data on the server." => "알림! 서버에 저장된 모든 동기화 데이터를 삭제합니다."
 );
