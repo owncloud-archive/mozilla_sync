@@ -1,5 +1,22 @@
 <?php $TRANSLATIONS = array(
+"Failed to delete user" => "Nu s-a putut sterge utilizatorul",
+"User not found" => "Utilizatorul nu a fost gasit",
+"Restriction saved" => "Restrictie salvata",
+"Invalid input" => "Intrare nevalida",
+"Quota saved" => "Cota salvata",
+"Mozilla Sync" => "Mozilla Sync",
+"When activated, only members of this group can access Mozilla Sync." => "Cand este activat, doar membrii acestui grup pot accesa Mozilla Sync.",
+"Set the value to 0 for unlimited quota." => "Setati valoarea 0 pentru cota nelimitata.",
+"Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Eroare! Nu aveti dretpul de a folosi Mozilla Sync! Trebuie sa fiti membru al grupului %s.",
+"To set up Mozilla Sync create a new Sync account in Firefox." => "Pentru a pregati Mozilla Sync trebuie sa creati un nou cont Sync in Firefox.",
+"Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync este pregatit, dispozitive suplimentare pot fi adaugate manual sau prin intermediul serviciului Mozilla de imperechere a dispozitivelor.  ",
 "Email" => "Email",
+"Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Eroare! S-a detectat o adresa email dublata. Adresele de email trebuie sa fie unice pentru ca Mozilla Sync sa functioneze.",
 "Password" => "Parolă",
-"Server address" => "Adresa server-ului"
+"Use your ownCloud account password" => "Folositi parola contului dumneavoastra ownCloud",
+"Server address" => "Adresa server-ului",
+"Last sync" => "Ultima sincronizare",
+"No data stored yet." => "Nu a fost stocata nici o data inca.",
+"Number of synced devices" => "Numar de dispozitive sincronizate",
+"Attention! This will delete all your Sync data on the server." => "Atentie! Veti sterge toate datele Sync de pe server."
 );
