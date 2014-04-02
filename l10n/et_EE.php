@@ -11,6 +11,7 @@
 "Restrict to group" => "Piira grupile",
 "When activated, only members of this group can access Mozilla Sync." => "Kui on aktiveeritud, siis ainult grupi liikmed pääsevad ligi Mozilla Sync-ile.",
 "Sync quota" => "Sync mahupiirang",
+"Set the value to 0 for unlimited quota." => "Piiramatu kvoodi seadistuseks määra väärtuseks 0.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Viga! Sul pole lubatud kasutada Mozilla Sync-i! Sa peaksid olema %s grupi liige.",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Seadistamaks Mozilla Sync-i loo Firefoxis uus Sync konto.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync on seadistatud, lisaseadmeid saab lisada käsitsi või kasutades Mozilla seadmete sidumisteenust.",
