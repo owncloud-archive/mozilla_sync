@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-04-08 02:06-0400\n"
-"PO-Revision-Date: 2014-04-07 14:16+0000\n"
+"POT-Creation-Date: 2014-04-09 02:05-0400\n"
+"PO-Revision-Date: 2014-04-08 20:00+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/owncloud/language/ast/)\n"
 "MIME-Version: 1.0\n"
@@ -88,7 +88,7 @@ msgstr ""
 
 #: templates/settings.php:31
 msgid "Email"
-msgstr ""
+msgstr "Corréu-e"
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
@@ -102,7 +102,7 @@ msgstr ""
 
 #: templates/settings.php:39
 msgid "Password"
-msgstr ""
+msgstr "Contraseña"
 
 #: templates/settings.php:40
 msgid "Use your ownCloud account password"
