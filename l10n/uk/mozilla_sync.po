@@ -5,13 +5,13 @@
 # Translators:
 # skoptev <skoptev@ukr.net>, 2012
 # VicDeo <victor.dubiniuk@gmail.com>, 2012
-# zubr139 <zubr139@ukr.net>, 2013
+# zubr139, 2013
 # volodya327 <volodya327@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-04-17 15:03-0400\n"
+"POT-Creation-Date: 2014-04-18 02:06-0400\n"
 "PO-Revision-Date: 2014-03-11 06:11+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/owncloud/language/uk/)\n"
