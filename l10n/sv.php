@@ -5,7 +5,7 @@
 "User not found" => "Användare ej funnen",
 "Restriction saved" => "Begränsning sparad",
 "Invalid input" => "Ogiltlig input",
-"Sync email saved" => "Synk mejl sparad",
+"Sync email saved" => "Synk mail sparad",
 "Quota saved" => "Kvot sparad",
 "Mozilla Sync" => "Mozilla Synktjänst",
 "Restrict to group" => "Begränsa till grupp",
