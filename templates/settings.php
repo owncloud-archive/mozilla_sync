@@ -31,7 +31,9 @@
         <?php p($l->t('Email'));?>
         <input type="email" id="syncemailinput" name="syncemailinput" title="<?php p($l->t("Has to be unique among all Sync users")); ?>" value="<?php p($_['mozillaSyncEmail']); ?>">
         <?php
-            if (!\OCA\mozilla_sync\User::userHasUniqueEmail()) {
+            if (!\OCA\mozilla_sync\User::userNameToEmail()) {
+                ?><b><span style="color: red"><?php p($l->t('Error! Email address not set!'));?></span></b><?php
+            } else if (!\OCA\mozilla_sync\User::userHasUniqueEmail()) {
                 ?><b><span style="color: red"><?php p($l->t('Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work.'));?></span></b><?php
             }?>
     </p>
