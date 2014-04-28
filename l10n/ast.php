@@ -6,6 +6,7 @@
 "Set the value to 0 for unlimited quota." => "Afitar el valor 0 pa cuota illimitada.",
 "Email" => "Corréu-e",
 "Password" => "Contraseña",
+"Server address" => "Direición del sirvidor",
 "No data stored yet." => "Entá nun hai datos atroxaos",
 "Number of synced devices" => "Númberu de preseos sincronizaos",
 "Attention! This will delete all your Sync data on the server." => "¡Atención! Esto desaniciará tolos tos datos de Sync nel sirvidor."
