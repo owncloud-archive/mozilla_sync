@@ -1,4 +1,4 @@
-<fieldset class="personalblock">
+<div class="section">
 	<h2><?php p($l->t('Mozilla Sync')); ?></h2>
     <?php
     if (!\OCA\mozilla_sync\User::checkUserIsAllowed()) {
@@ -91,4 +91,4 @@
 
     <?php } // End: Show only when account created ?>
 
-</fieldset>
+</div>
