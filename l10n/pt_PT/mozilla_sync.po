@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-05-02 02:06-0400\n"
-"PO-Revision-Date: 2014-04-29 10:02+0000\n"
+"POT-Creation-Date: 2014-05-03 02:06-0400\n"
+"PO-Revision-Date: 2014-05-02 16:50+0000\n"
 "Last-Translator: Helder Meneses <helder.meneses@gmail.com>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/owncloud/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
@@ -86,7 +86,7 @@ msgstr "Para configurar o Mozilla Sync deve criar uma nova conta de sincronizaç
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
-msgstr ""
+msgstr "O Mozilla Sync está configurado. Podem ser adicionados mais dispositivos através do serviço de ligação da Mozilla ou manualmente."
 
 #: templates/settings.php:31
 msgid "Email"
@@ -124,15 +124,15 @@ msgstr "Última sincronização"
 
 #: templates/settings.php:59
 msgid "Size of stored data"
-msgstr ""
+msgstr "Tamanho dos dados guardados"
 
 #: templates/settings.php:63
 msgid "No data stored yet."
-msgstr ""
+msgstr "Nenhuns dados guardados."
 
 #: templates/settings.php:78
 msgid "Number of synced devices"
-msgstr ""
+msgstr "Número de dispositivos sincronizados"
 
 #: templates/settings.php:86
 msgid "Delete Sync data"
