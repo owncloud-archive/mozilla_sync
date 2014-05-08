@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# arifpedia <arifpedia@gmail.com>, 2014
+# Arif Budiman <arifpedia@gmail.com>, 2014
 # elmakong <mr.pige_ina@yahoo.co.id>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-05-07 02:06-0400\n"
+"POT-Creation-Date: 2014-05-08 02:06-0400\n"
 "PO-Revision-Date: 2014-04-29 10:02+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/owncloud/language/id/)\n"
