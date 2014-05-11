@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Iñigo Varela <ivarela@softastur.org>, 2014
 # Tornes Llume <l.lumex03.tornes@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-05-10 02:06-0400\n"
-"PO-Revision-Date: 2014-04-29 10:02+0000\n"
+"POT-Creation-Date: 2014-05-11 02:06-0400\n"
+"PO-Revision-Date: 2014-05-11 05:01+0000\n"
 "Last-Translator: Iñigo Varela <ivarela@softastur.org>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/owncloud/language/ast/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +21,7 @@ msgstr ""
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
-msgstr ""
+msgstr "Fallu al desaniciar almacenamientu"
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
@@ -28,7 +29,7 @@ msgstr "Fallo al desaniciar al usuariu"
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
-msgstr ""
+msgstr "Almacenamientu desaniciáu"
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
@@ -36,7 +37,7 @@ msgstr "Usuariu non alcontráu"
 
 #: ajax/restrictgroup.php:32
 msgid "Restriction saved"
-msgstr ""
+msgstr "Restricción guardada"
 
 #: ajax/setemail.php:24 ajax/setquota.php:24
 msgid "Invalid input"
@@ -44,19 +45,19 @@ msgstr "Entrada inválida"
 
 #: ajax/setemail.php:30
 msgid "Sync email saved"
-msgstr ""
+msgstr "Sinc. de corréu-e guardada "
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
-msgstr ""
+msgstr "Cuota guardada"
 
 #: templates/admin.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
-msgstr ""
+msgstr "Mozilla Sync"
 
 #: templates/admin.php:10
 msgid "Restrict to group"
-msgstr ""
+msgstr "Restrinxir al grupu"
 
 #: templates/admin.php:20
 msgid "When activated, only members of this group can access Mozilla Sync."
@@ -64,7 +65,7 @@ msgstr "Cuando s'active, namái los miembros d'esti grupu puen acceder a Mozilla
 
 #: templates/admin.php:24
 msgid "Sync quota"
-msgstr ""
+msgstr "Sinc. cuota"
 
 #: templates/admin.php:28
 msgid "Set the value to 0 for unlimited quota."
@@ -75,17 +76,17 @@ msgstr "Afitar el valor 0 pa cuota illimitada."
 msgid ""
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of "
 "the %s group."
-msgstr ""
+msgstr "Fallu! Nun tienes permisu pa usar Mozilla Sync! Necesites ser miembru del grupu %s."
 
 #: templates/settings.php:23
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
-msgstr ""
+msgstr "Pa configurar Mozilla Sync, tienes de crear una cuenta sync en Firefox. "
 
 #: templates/settings.php:25
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
-msgstr ""
+msgstr "Configuróse Mozilla Sync, los preseos adicionales, tienen d'amestase vía serviciu d'empareyamientu de Mozilla o manualmente."
 
 #: templates/settings.php:31
 msgid "Email"
@@ -93,13 +94,13 @@ msgstr "Corréu-e"
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
-msgstr ""
+msgstr "Tien de ser única ente los usuarios de Sync"
 
 #: templates/settings.php:35
 msgid ""
 "Error! Duplicate email addresses detected! Email addresses need to be unique"
 " for Mozilla Sync to work."
-msgstr ""
+msgstr "¡Fallu! ¡Deteutáronse direiciones de corréu duplicaes! Les direiciones de corréu-e tienen de ser úniques pa que Mozilla Sync funcione."
 
 #: templates/settings.php:39
 msgid "Password"
@@ -107,7 +108,7 @@ msgstr "Contraseña"
 
 #: templates/settings.php:40
 msgid "Use your ownCloud account password"
-msgstr ""
+msgstr "Usa la to contraseña de ownCloud"
 
 #: templates/settings.php:43
 msgid "Server address"
@@ -115,15 +116,15 @@ msgstr "Direición del sirvidor"
 
 #: templates/settings.php:53
 msgid "Sync Status"
-msgstr ""
+msgstr "Estáu de sinc."
 
 #: templates/settings.php:55
 msgid "Last sync"
-msgstr ""
+msgstr "Cabera sinc."
 
 #: templates/settings.php:59
 msgid "Size of stored data"
-msgstr ""
+msgstr "Tamañu de los datos almacenaos"
 
 #: templates/settings.php:63
 msgid "No data stored yet."
@@ -135,7 +136,7 @@ msgstr "Númberu de preseos sincronizaos"
 
 #: templates/settings.php:86
 msgid "Delete Sync data"
-msgstr ""
+msgstr "Desaniciar datos de sinc."
 
 #: templates/settings.php:89
 msgid "Attention! This will delete all your Sync data on the server."
