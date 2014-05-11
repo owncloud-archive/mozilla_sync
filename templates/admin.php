@@ -1,4 +1,4 @@
-<fieldset class="personalblock" id="mozilla_sync">
+<div id="mozilla_sync" class="section">
     <h2><?php p($l->t('Mozilla Sync')); ?></h2>
     <p>
         <input type="checkbox" name="restrictgroup" id="restrictgroup"
@@ -27,5 +27,4 @@
         <br/>
         <em><?php p($l->t("Set the value to 0 for unlimited quota."));?></em>
     </p>
-</fieldset>
-
+</div>
