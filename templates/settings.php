@@ -28,7 +28,7 @@
         </em>
     </p>
     <p>
-        <?php p($l->t('Email'));?>
+        <?php p($l->t('Email:'));?>
         <input type="email" id="syncemailinput" name="syncemailinput" title="<?php p($l->t("Has to be unique among all Sync users")); ?>" value="<?php p($_['mozillaSyncEmail']); ?>">
         <?php
             if (!\OCA\mozilla_sync\User::userHasUniqueEmail()) {
@@ -36,11 +36,11 @@
             }?>
     </p>
     <p>
-       <?php p($l->t('Password'));?>&nbsp;&nbsp;&nbsp;
+       <?php p($l->t('Password:'));?>&nbsp;&nbsp;&nbsp;
        <?php p($l->t('Use your ownCloud account password'));?>
     </p>
     <p>
-        <?php p($l->t('Server address'));?>&nbsp;&nbsp;&nbsp;
+        <?php p($l->t('Server address:'));?>&nbsp;&nbsp;&nbsp;
         <code><?php p($_['syncaddress']);?></code>
     </p>
     <?php
@@ -52,11 +52,11 @@
 
     <h3><?php p($l->t('Sync Status'));?></h3>
     <p>
-        <?php p($l->t('Last sync'));?>&nbsp;&nbsp;&nbsp;
+        <?php p($l->t('Last sync:'));?>&nbsp;&nbsp;&nbsp;
         <?php p($lastMod); ?>
     </p>
     <p>
-        <?php p($l->t('Size of stored data'));?>&nbsp;&nbsp;&nbsp;
+        <?php p($l->t('Size of stored data:'));?>&nbsp;&nbsp;&nbsp;
         <?php
             $size = \OCA\mozilla_sync\Storage::getSyncSize();
             if ($size === false) {
@@ -75,7 +75,7 @@
             ?>
     </p>
     <p>
-        <?php p($l->t('Number of synced devices'));?>&nbsp;&nbsp;&nbsp;
+        <?php p($l->t('Number of synced devices:'));?>&nbsp;&nbsp;&nbsp;
         <code><?php p(\OCA\mozilla_sync\Storage::getNumClients()); ?></code>
     </p>
 
