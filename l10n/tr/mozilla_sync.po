@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-05-25 02:05-0400\n"
-"PO-Revision-Date: 2014-05-24 11:51+0000\n"
+"POT-Creation-Date: 2014-05-26 02:05-0400\n"
+"PO-Revision-Date: 2014-05-25 21:40+0000\n"
 "Last-Translator: volkangezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/owncloud/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Mozilla Sync"
 
 #: templates/admin.php:10
 msgid "Restrict to group"
-msgstr "Gruba sınırla"
+msgstr "Şu gruba sınırla:"
 
 #: templates/admin.php:20
 msgid "When activated, only members of this group can access Mozilla Sync."
@@ -65,7 +65,7 @@ msgstr "Etkinleştirildiğinde, sadece bu grubun üyeleri Mozilla Sync'e erişeb
 
 #: templates/admin.php:24
 msgid "Sync quota"
-msgstr "Kotayı eşitle"
+msgstr "Eşitleme kotası"
 
 #: templates/admin.php:28
 msgid "Set the value to 0 for unlimited quota."
@@ -94,7 +94,7 @@ msgstr "E-posta"
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
-msgstr "Tüm Eşitleme kullanıcıları arasında benzersiz olmalı"
+msgstr "Tüm Sync kullanıcıları arasında benzersiz olmalı"
 
 #: templates/settings.php:35
 msgid ""
