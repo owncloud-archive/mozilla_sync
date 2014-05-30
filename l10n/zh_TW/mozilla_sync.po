@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-05-29 02:05-0400\n"
-"PO-Revision-Date: 2014-05-11 05:01+0000\n"
-"Last-Translator: orinx <orinx@orinx.com>\n"
+"POT-Creation-Date: 2014-05-30 02:05-0400\n"
+"PO-Revision-Date: 2014-05-30 06:05+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/owncloud/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -89,8 +89,8 @@ msgid ""
 msgstr "Mozilla 同步已設定完畢，您可以從 Mozilla 的裝置配對服務或手動添加額外的裝置。"
 
 #: templates/settings.php:31
-msgid "Email"
-msgstr "信箱"
+msgid "Email:"
+msgstr ""
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
@@ -103,36 +103,36 @@ msgid ""
 msgstr "錯誤！偵測到重複的電子信箱位置！在 Mozilla 同步中電子信箱必須是獨一無二的。"
 
 #: templates/settings.php:39
-msgid "Password"
-msgstr "密碼"
+msgid "Password:"
+msgstr ""
 
 #: templates/settings.php:40
 msgid "Use your ownCloud account password"
 msgstr "使用您的 ownCloud 帳號密碼"
 
 #: templates/settings.php:43
-msgid "Server address"
-msgstr "伺服器位址"
+msgid "Server address:"
+msgstr ""
 
 #: templates/settings.php:53
 msgid "Sync Status"
 msgstr "同步處理狀態"
 
 #: templates/settings.php:55
-msgid "Last sync"
-msgstr "最後同步"
+msgid "Last sync:"
+msgstr ""
 
 #: templates/settings.php:59
-msgid "Size of stored data"
-msgstr "已儲存的檔案大小"
+msgid "Size of stored data:"
+msgstr ""
 
 #: templates/settings.php:63
 msgid "No data stored yet."
 msgstr "尚無資料被儲存。"
 
 #: templates/settings.php:78
-msgid "Number of synced devices"
-msgstr "已同步的裝置數"
+msgid "Number of synced devices:"
+msgstr ""
 
 #: templates/settings.php:86
 msgid "Delete Sync data"

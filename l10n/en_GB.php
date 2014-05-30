@@ -15,17 +15,11 @@
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group.",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "To set up Mozilla Sync create a new Sync account in Firefox.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually.",
-"Email" => "Email",
 "Has to be unique among all Sync users" => "Has to be unique amongst all Sync users",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work.",
-"Password" => "Password",
 "Use your ownCloud account password" => "Use your ownCloud account password",
-"Server address" => "Server address",
 "Sync Status" => "Sync Status",
-"Last sync" => "Last sync",
-"Size of stored data" => "Size of stored data",
 "No data stored yet." => "No data stored yet.",
-"Number of synced devices" => "Number of synced devices",
 "Delete Sync data" => "Delete Sync data",
 "Attention! This will delete all your Sync data on the server." => "Attention! This will delete all your Sync data on the server."
 );

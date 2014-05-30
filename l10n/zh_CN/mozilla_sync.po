@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-05-29 02:05-0400\n"
-"PO-Revision-Date: 2014-05-11 05:01+0000\n"
-"Last-Translator: smartree <smartree@gmail.com>\n"
+"POT-Creation-Date: 2014-05-30 02:05-0400\n"
+"PO-Revision-Date: 2014-05-30 06:05+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/owncloud/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -89,8 +89,8 @@ msgid ""
 msgstr "已配置好Mozilla同步服务，其它设备可以通过Mozilla的设备配对服务或者手工添加进来。"
 
 #: templates/settings.php:31
-msgid "Email"
-msgstr "Email"
+msgid "Email:"
+msgstr ""
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
@@ -103,36 +103,36 @@ msgid ""
 msgstr "错误！重复的Email地址！必须提供未在Mozilla同步服务使用过的Email地址。"
 
 #: templates/settings.php:39
-msgid "Password"
-msgstr "密码"
+msgid "Password:"
+msgstr ""
 
 #: templates/settings.php:40
 msgid "Use your ownCloud account password"
 msgstr "使用你的ownCloud账号密码"
 
 #: templates/settings.php:43
-msgid "Server address"
-msgstr "服务器地址"
+msgid "Server address:"
+msgstr ""
 
 #: templates/settings.php:53
 msgid "Sync Status"
 msgstr "同步状态"
 
 #: templates/settings.php:55
-msgid "Last sync"
-msgstr "最后同步"
+msgid "Last sync:"
+msgstr ""
 
 #: templates/settings.php:59
-msgid "Size of stored data"
-msgstr "存储数据大小"
+msgid "Size of stored data:"
+msgstr ""
 
 #: templates/settings.php:63
 msgid "No data stored yet."
 msgstr "尚未存储数据。"
 
 #: templates/settings.php:78
-msgid "Number of synced devices"
-msgstr "已同步的设备数"
+msgid "Number of synced devices:"
+msgstr ""
 
 #: templates/settings.php:86
 msgid "Delete Sync data"

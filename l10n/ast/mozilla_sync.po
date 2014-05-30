@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-05-29 02:05-0400\n"
-"PO-Revision-Date: 2014-05-11 05:01+0000\n"
-"Last-Translator: Iñigo Varela <ivarela@softastur.org>\n"
+"POT-Creation-Date: 2014-05-30 02:05-0400\n"
+"PO-Revision-Date: 2014-05-30 06:05+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/owncloud/language/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -89,8 +89,8 @@ msgid ""
 msgstr "Configuróse Mozilla Sync, los preseos adicionales, tienen d'amestase vía serviciu d'empareyamientu de Mozilla o manualmente."
 
 #: templates/settings.php:31
-msgid "Email"
-msgstr "Corréu-e"
+msgid "Email:"
+msgstr ""
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
@@ -103,36 +103,36 @@ msgid ""
 msgstr "¡Fallu! ¡Deteutáronse direiciones de corréu duplicaes! Les direiciones de corréu-e tienen de ser úniques pa que Mozilla Sync funcione."
 
 #: templates/settings.php:39
-msgid "Password"
-msgstr "Contraseña"
+msgid "Password:"
+msgstr ""
 
 #: templates/settings.php:40
 msgid "Use your ownCloud account password"
 msgstr "Usa la to contraseña de ownCloud"
 
 #: templates/settings.php:43
-msgid "Server address"
-msgstr "Direición del sirvidor"
+msgid "Server address:"
+msgstr ""
 
 #: templates/settings.php:53
 msgid "Sync Status"
 msgstr "Estáu de sinc."
 
 #: templates/settings.php:55
-msgid "Last sync"
-msgstr "Cabera sinc."
+msgid "Last sync:"
+msgstr ""
 
 #: templates/settings.php:59
-msgid "Size of stored data"
-msgstr "Tamañu de los datos almacenaos"
+msgid "Size of stored data:"
+msgstr ""
 
 #: templates/settings.php:63
 msgid "No data stored yet."
 msgstr "Entá nun hai datos atroxaos"
 
 #: templates/settings.php:78
-msgid "Number of synced devices"
-msgstr "Númberu de preseos sincronizaos"
+msgid "Number of synced devices:"
+msgstr ""
 
 #: templates/settings.php:86
 msgid "Delete Sync data"

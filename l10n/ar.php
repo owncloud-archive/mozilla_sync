@@ -15,17 +15,11 @@
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "خطا! غير مسموح لك باستخدام مزامنة موزيلا! يجب ان تكون عضوا في هذه المجموعة %s",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "لاعداد مزامنة موزيلا انشئ حساب مزامنة جديد باستخدام فايرفوكس.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "تم اعداد مزامنة موزيلا, الاجهزة الاضافية يمكن اضافتها عن طريق خدمة الاقتران أو بشكل يدوي.",
-"Email" => "البريد الإلكترونى",
 "Has to be unique among all Sync users" => "يجب ان يكون فريد من بين كل مستخدمين المزامنة",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "خطا! يوجد عنوان بريد الكتروني متكرر! عنوان البريد الالكتروني يجب ان يكون فريد لـ استخدام مزامنة موزيلا.",
-"Password" => "كلمة المرور",
 "Use your ownCloud account password" => "استخدم كلمة المرور الخاصة بحسابك في ownCloud",
-"Server address" => "عنوان الخادم",
 "Sync Status" => "مزامنة الحالة.",
-"Last sync" => "آخر مزامنة",
-"Size of stored data" => "حجم البيانات المحفوظة",
 "No data stored yet." => "لا يوجد بيانات محفوظة حالياً.",
-"Number of synced devices" => "عدد الاجهزة المتزامنة",
 "Delete Sync data" => "حذف بيانات المزامنة",
 "Attention! This will delete all your Sync data on the server." => "انتباه! سوف يتم حذف جميع بيانات المزامنة في الخادم."
 );

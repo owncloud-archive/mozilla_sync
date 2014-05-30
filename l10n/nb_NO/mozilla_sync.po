@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-05-29 02:05-0400\n"
-"PO-Revision-Date: 2014-05-11 05:01+0000\n"
-"Last-Translator: vidaren <news@vidartysse.net>\n"
+"POT-Creation-Date: 2014-05-30 02:05-0400\n"
+"PO-Revision-Date: 2014-05-30 06:05+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Norwegian Bokmål (Norway) (http://www.transifex.com/projects/p/owncloud/language/nb_NO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -90,8 +90,8 @@ msgid ""
 msgstr "Mozilla Sync er satt opp. Flere enheter kan legges til via Mozillas tjeneste for paring av enheter eller de kan legges til manuelt."
 
 #: templates/settings.php:31
-msgid "Email"
-msgstr "Epost"
+msgid "Email:"
+msgstr ""
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
@@ -104,36 +104,36 @@ msgid ""
 msgstr "Feil! Duplikat av e-postadresse ble oppdaget! E-postadresser må være unike for at Mozilla Sync skal virke."
 
 #: templates/settings.php:39
-msgid "Password"
-msgstr "Passord"
+msgid "Password:"
+msgstr ""
 
 #: templates/settings.php:40
 msgid "Use your ownCloud account password"
 msgstr "Bruk passordet for ownCloud-kontoen din"
 
 #: templates/settings.php:43
-msgid "Server address"
-msgstr "Server-adresse"
+msgid "Server address:"
+msgstr ""
 
 #: templates/settings.php:53
 msgid "Sync Status"
 msgstr "Sync-status"
 
 #: templates/settings.php:55
-msgid "Last sync"
-msgstr "Siste synkronisering"
+msgid "Last sync:"
+msgstr ""
 
 #: templates/settings.php:59
-msgid "Size of stored data"
-msgstr "Størrelsen på lagrede data"
+msgid "Size of stored data:"
+msgstr ""
 
 #: templates/settings.php:63
 msgid "No data stored yet."
 msgstr "Ingen data lagret ennå."
 
 #: templates/settings.php:78
-msgid "Number of synced devices"
-msgstr "Antall synkroniserte enheter"
+msgid "Number of synced devices:"
+msgstr ""
 
 #: templates/settings.php:86
 msgid "Delete Sync data"

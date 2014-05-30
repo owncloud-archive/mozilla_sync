@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-05-29 02:05-0400\n"
-"PO-Revision-Date: 2014-05-11 05:01+0000\n"
+"POT-Creation-Date: 2014-05-30 02:05-0400\n"
+"PO-Revision-Date: 2014-05-30 06:05+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/owncloud/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -91,8 +91,8 @@ msgid ""
 msgstr ""
 
 #: templates/settings.php:31
-msgid "Email"
-msgstr "Ел.пошта"
+msgid "Email:"
+msgstr ""
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
@@ -105,27 +105,27 @@ msgid ""
 msgstr ""
 
 #: templates/settings.php:39
-msgid "Password"
-msgstr "Пароль"
+msgid "Password:"
+msgstr ""
 
 #: templates/settings.php:40
 msgid "Use your ownCloud account password"
 msgstr "Використовуйте свій пароль облікового запису ownCloud"
 
 #: templates/settings.php:43
-msgid "Server address"
-msgstr "Адреса сервера"
+msgid "Server address:"
+msgstr ""
 
 #: templates/settings.php:53
 msgid "Sync Status"
 msgstr ""
 
 #: templates/settings.php:55
-msgid "Last sync"
+msgid "Last sync:"
 msgstr ""
 
 #: templates/settings.php:59
-msgid "Size of stored data"
+msgid "Size of stored data:"
 msgstr ""
 
 #: templates/settings.php:63
@@ -133,7 +133,7 @@ msgid "No data stored yet."
 msgstr ""
 
 #: templates/settings.php:78
-msgid "Number of synced devices"
+msgid "Number of synced devices:"
 msgstr ""
 
 #: templates/settings.php:86

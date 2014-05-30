@@ -15,17 +15,11 @@
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Hiba! Ön nem jogosult a Mozilla szinkronizáció használatára! Ehhez a %s csoport tagjának kellene lennie.",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "A Mozilla szinkronizáció használatához hozzon létre egy szinkronizációs bejelentkezést a Firefoxban!",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "A Mozilla szinkronizációt sikerült beállítani. További eszközök szinkronizációját vagy a Mozilla eszközpárosító szolgáltatásával, vagy kézzel állíthatja be.",
-"Email" => "E-mail",
 "Has to be unique among all Sync users" => "Felhasználónként egyedinek kell lennie",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Hiba! A megadott e-mail cím már létezik az adatbázisban! A Mozilla szinkronizáció csak akkor működik, ha minden felhasználónak egyedi e-mail címe van.",
-"Password" => "Jelszó",
 "Use your ownCloud account password" => "Használja az ownCloud bejelentkezésének jelszavát",
-"Server address" => "A kiszolgáló címe",
 "Sync Status" => "Szinkronizálási állapot",
-"Last sync" => "Utolsó szinkronizáció",
-"Size of stored data" => "A tárolt adatok mérete",
 "No data stored yet." => "Még nincs tárolt adat.",
-"Number of synced devices" => "A szinkronizált eszközök száma",
 "Delete Sync data" => "Szinkronizált adatok törlése",
 "Attention! This will delete all your Sync data on the server." => "Figyelem! Ezzel törölni fogja minden Mozilla szinkronizációs adatát, ami a kiszolgálón van tárolva!"
 );
