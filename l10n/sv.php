@@ -15,11 +15,17 @@
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Fel! Du har inte tillstånd att använda Mozilla Sync! Du behöver vara en medlem av gruppen %s.",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "För att sätta upp Mozilla Synk, skapa ett nytt synk-konto i Firefox.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync är uppsatt, ytterligare enheter kan läggas till via Mozillas enhet parningstjänst eller manuellt.",
+"Email:" => "E-post:",
 "Has to be unique among all Sync users" => "Måste vara unik mellan alla synk användare",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Fel! Dubblett av e-postadresser detekterad! E-postadresser måste vara unika för att Mozilla Sync ska fungera.",
+"Password:" => "Lösenord:",
 "Use your ownCloud account password" => "Ange ditt ownCloud lösenord:",
+"Server address:" => "Serveradress:",
 "Sync Status" => "Synkroniseringsstatus",
+"Last sync:" => "Senaste synk:",
+"Size of stored data:" => "Storlek på lagrad data:",
 "No data stored yet." => "Ingen data lagrad ännu.",
+"Number of synced devices:" => "Antal synkroniserade enheter:",
 "Delete Sync data" => "Radera synk-data",
 "Attention! This will delete all your Sync data on the server." => "Observera! Detta kommer radera din synk-data från servern."
 );

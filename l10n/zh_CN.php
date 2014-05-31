@@ -17,6 +17,7 @@
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "已配置好Mozilla同步服务，其它设备可以通过Mozilla的设备配对服务或者手工添加进来。",
 "Has to be unique among all Sync users" => "必须保证在所有同步用户中唯一",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "错误！重复的Email地址！必须提供未在Mozilla同步服务使用过的Email地址。",
+"Password:" => "密码：",
 "Use your ownCloud account password" => "使用你的ownCloud账号密码",
 "Sync Status" => "同步状态",
 "No data stored yet." => "尚未存储数据。",

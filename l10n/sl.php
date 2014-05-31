@@ -17,6 +17,7 @@
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Usklajevalnik Mozilla je nastavljen. Dodatne naprave je mogoče dodati preko storitve povezovanja ali pa z ročnimi nastavitvami.",
 "Has to be unique among all Sync users" => "Mora biti enoznačen med vsemi uporabniki usklajevalnika",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Napaka! Zaznan je podvojen elektronski naslov. Naslovi morajo biti edinstveni za pravilno delovanje sistema.",
+"Password:" => "Geslo:",
 "Use your ownCloud account password" => "Uporabite geslo računa ownCloud",
 "Sync Status" => "Stanje usklajenosti",
 "No data stored yet." => "Ni še shranjenih podatkov.",

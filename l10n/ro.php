@@ -13,6 +13,7 @@
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync este pregatit, dispozitive suplimentare pot fi adaugate manual sau prin intermediul serviciului Mozilla de imperechere a dispozitivelor.  ",
 "Has to be unique among all Sync users" => "Trebuie sa fie unic printre toti utilizatorii Sync",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Eroare! S-a detectat o adresa email dublata. Adresele de email trebuie sa fie unice pentru ca Mozilla Sync sa functioneze.",
+"Password:" => "Parolă:",
 "Use your ownCloud account password" => "Folositi parola contului dumneavoastra ownCloud",
 "Sync Status" => "Stare Sync",
 "No data stored yet." => "Nu a fost stocata nici o data inca.",

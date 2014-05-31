@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-05-30 02:05-0400\n"
-"PO-Revision-Date: 2014-05-30 06:05+0000\n"
+"POT-Creation-Date: 2014-05-31 02:05-0400\n"
+"PO-Revision-Date: 2014-05-30 06:21+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/owncloud/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -104,7 +104,7 @@ msgstr "錯誤！偵測到重複的電子信箱位置！在 Mozilla 同步中電
 
 #: templates/settings.php:39
 msgid "Password:"
-msgstr ""
+msgstr "密碼："
 
 #: templates/settings.php:40
 msgid "Use your ownCloud account password"

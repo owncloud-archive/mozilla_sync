@@ -15,6 +15,7 @@
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Mozilla Sync를 사용하려면 Firefox에서 새로운 Sync 계정을 설정하십시오.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync를 설정하였고, 장치를 추가하려면 Mozilla의 장치 페어링 서비스를 사용하거나 수동으로 추가하십시오.",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "오류! 중복된 이메일 주소입니다! Mozilla Sync를 사용하려면 유일한 이메일 주소를 사용해야 합니다.",
+"Password:" => "암호:",
 "Use your ownCloud account password" => "ownCloud 계정 암호 사용",
 "Sync Status" => "싱크 상태",
 "No data stored yet." => "데이터가 저장되지 않았습니다.",

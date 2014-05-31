@@ -17,6 +17,7 @@
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync je nastaven. Další zařízení mohou být přidána přes službu párování zařízení (Mozilla) nebo ručně.",
 "Has to be unique among all Sync users" => "Musí být jedinečný mezi všemi uživateli",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Chyba! Byla detekována duplicitní e-mailová adresa! E-mailová adresa musí být unikátní pro použití Mozilla Sync.",
+"Password:" => "Heslo:",
 "Use your ownCloud account password" => "Použijte heslo svého ownCloud účtu",
 "Sync Status" => "Stav synchronizace",
 "No data stored yet." => "Zatím nebyla uložena žádná data.",

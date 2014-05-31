@@ -17,6 +17,7 @@
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync konfiguratuta dago, gailu gehiago Mozilla gailu parekatze zerbitzuarekin edo eskuz gehi daitezke.",
 "Has to be unique among all Sync users" => "Sync erabiltzaile guztien artean bakarra izan behar da",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Errorea! Bikoiztutako e-posta helbideak aurkitu dira! E-posta helbideak bakarrak izan behar dira Mozilla Syncek funtziona dezan.",
+"Password:" => "Pasahitza:",
 "Use your ownCloud account password" => "Erabili zure ownCloud kontuko pasahitza",
 "Sync Status" => "Syncen Egoera",
 "No data stored yet." => "Oraindik ez da daturik gorde.",

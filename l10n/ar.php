@@ -17,6 +17,7 @@
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "تم اعداد مزامنة موزيلا, الاجهزة الاضافية يمكن اضافتها عن طريق خدمة الاقتران أو بشكل يدوي.",
 "Has to be unique among all Sync users" => "يجب ان يكون فريد من بين كل مستخدمين المزامنة",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "خطا! يوجد عنوان بريد الكتروني متكرر! عنوان البريد الالكتروني يجب ان يكون فريد لـ استخدام مزامنة موزيلا.",
+"Password:" => "كلمة المرور: ",
 "Use your ownCloud account password" => "استخدم كلمة المرور الخاصة بحسابك في ownCloud",
 "Sync Status" => "مزامنة الحالة.",
 "No data stored yet." => "لا يوجد بيانات محفوظة حالياً.",

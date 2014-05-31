@@ -17,6 +17,7 @@
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "A Mozilla szinkronizációt sikerült beállítani. További eszközök szinkronizációját vagy a Mozilla eszközpárosító szolgáltatásával, vagy kézzel állíthatja be.",
 "Has to be unique among all Sync users" => "Felhasználónként egyedinek kell lennie",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Hiba! A megadott e-mail cím már létezik az adatbázisban! A Mozilla szinkronizáció csak akkor működik, ha minden felhasználónak egyedi e-mail címe van.",
+"Password:" => "Jelszó:",
 "Use your ownCloud account password" => "Használja az ownCloud bejelentkezésének jelszavát",
 "Sync Status" => "Szinkronizálási állapot",
 "No data stored yet." => "Még nincs tárolt adat.",

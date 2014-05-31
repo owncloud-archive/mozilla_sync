@@ -17,6 +17,7 @@
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Skonfigurowano Mozilla Sync, dodatkowe urządzenia mogą być dodane przy użyciu usługi parowania urządzeń Mozilli lub ręcznie.",
 "Has to be unique among all Sync users" => "Musi być unikalny wśród wszystkich użytkowników",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Błąd! Wykryto zduplikowane adresy email! Muszą być one unikalne, żeby Mozilla Sync mogła działać.",
+"Password:" => "Hasło:",
 "Use your ownCloud account password" => "Użyj twoje hasło konta ownCloud",
 "Sync Status" => "Status synchronizacji",
 "No data stored yet." => "Brak przechowywanych danych.",
