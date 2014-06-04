@@ -15,12 +15,17 @@
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Błąd! Nie masz praw do używania Mozilla Sync! Musisz być członkiem grupy %s.",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "W celu skonfigurowania Mozilla Sync stwórz nowe konto synchronizacji w Firefox'ie.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Skonfigurowano Mozilla Sync, dodatkowe urządzenia mogą być dodane przy użyciu usługi parowania urządzeń Mozilli lub ręcznie.",
+"Email:" => "Email:",
 "Has to be unique among all Sync users" => "Musi być unikalny wśród wszystkich użytkowników",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Błąd! Wykryto zduplikowane adresy email! Muszą być one unikalne, żeby Mozilla Sync mogła działać.",
 "Password:" => "Hasło:",
 "Use your ownCloud account password" => "Użyj twoje hasło konta ownCloud",
+"Server address:" => "Adres serwera:",
 "Sync Status" => "Status synchronizacji",
+"Last sync:" => "Ostatni sync:",
+"Size of stored data:" => "Rozmiar przechowanych danych:",
 "No data stored yet." => "Brak przechowywanych danych.",
+"Number of synced devices:" => "Liczba zsynchronizowanych urządzeń:",
 "Delete Sync data" => "Usuń dane",
 "Attention! This will delete all your Sync data on the server." => "Uwaga! W ten sposób usuniesz wszystkie dane konta Sync na serwerze."
 );

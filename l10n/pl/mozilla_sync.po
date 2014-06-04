@@ -5,14 +5,15 @@
 # Translators:
 # Cyryl Sochacki <cyrylsochacki@gmail.com>, 2012
 # Cyryl Sochacki <cyrylsochacki@gmail.com>, 2013-2014
+# bobie <maciej.przybecki@gmail.com>, 2014
 # MarPiRK <marpirk@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-06-02 02:05-0400\n"
-"PO-Revision-Date: 2014-05-30 06:21+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-06-04 02:05-0400\n"
+"PO-Revision-Date: 2014-06-02 11:31+0000\n"
+"Last-Translator: bobie <maciej.przybecki@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/owncloud/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -91,7 +92,7 @@ msgstr "Skonfigurowano Mozilla Sync, dodatkowe urządzenia mogą być dodane prz
 
 #: templates/settings.php:31
 msgid "Email:"
-msgstr ""
+msgstr "Email:"
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
@@ -113,7 +114,7 @@ msgstr "Użyj twoje hasło konta ownCloud"
 
 #: templates/settings.php:43
 msgid "Server address:"
-msgstr ""
+msgstr "Adres serwera:"
 
 #: templates/settings.php:53
 msgid "Sync Status"
@@ -121,11 +122,11 @@ msgstr "Status synchronizacji"
 
 #: templates/settings.php:55
 msgid "Last sync:"
-msgstr ""
+msgstr "Ostatni sync:"
 
 #: templates/settings.php:59
 msgid "Size of stored data:"
-msgstr ""
+msgstr "Rozmiar przechowanych danych:"
 
 #: templates/settings.php:63
 msgid "No data stored yet."
@@ -133,7 +134,7 @@ msgstr "Brak przechowywanych danych."
 
 #: templates/settings.php:78
 msgid "Number of synced devices:"
-msgstr ""
+msgstr "Liczba zsynchronizowanych urządzeń:"
 
 #: templates/settings.php:86
 msgid "Delete Sync data"
