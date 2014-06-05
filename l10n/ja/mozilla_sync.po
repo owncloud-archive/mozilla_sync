@@ -4,17 +4,17 @@
 # 
 # Translators:
 # Daisuke Deguchi <ddeguchi@nagoya-u.jp>, 2012
-# plazmism <gomidori@live.jp>, 2013
-# iLikeIT <dj_dark_junglist@yahoo.com>, 2013
+# タカハシ <gomidori@live.jp>, 2013
+# Jake G. <dj_dark_junglist@yahoo.com>, 2013
 # kuromabo <md81bird@hitaki.net>, 2014
-# tt yn <tetuyano+transi@gmail.com>, 2013-2014
+# YANO Tetsu <tetuyano+transi@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-06-04 02:05-0400\n"
-"PO-Revision-Date: 2014-05-30 06:21+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-06-05 02:09-0400\n"
+"PO-Revision-Date: 2014-06-04 17:31+0000\n"
+"Last-Translator: kuromabo <md81bird@hitaki.net>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -93,11 +93,11 @@ msgstr "Mozilla Syncは、セットアップされました。Mozillaのデバ�
 
 #: templates/settings.php:31
 msgid "Email:"
-msgstr ""
+msgstr "メール:"
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
-msgstr "同期を利用している全てのユーザー内で一意ある必要があります"
+msgstr "同期を利用しているすべてのユーザー内で一意ある必要があります"
 
 #: templates/settings.php:35
 msgid ""
@@ -115,7 +115,7 @@ msgstr "ownCloudのアカウントのパスワードを使用してください:
 
 #: templates/settings.php:43
 msgid "Server address:"
-msgstr ""
+msgstr "サーバーアドレス:"
 
 #: templates/settings.php:53
 msgid "Sync Status"
@@ -123,11 +123,11 @@ msgstr "同期状態"
 
 #: templates/settings.php:55
 msgid "Last sync:"
-msgstr ""
+msgstr "最終同期:"
 
 #: templates/settings.php:59
 msgid "Size of stored data:"
-msgstr ""
+msgstr "保存データ容量:"
 
 #: templates/settings.php:63
 msgid "No data stored yet."
@@ -135,7 +135,7 @@ msgstr "データがありません"
 
 #: templates/settings.php:78
 msgid "Number of synced devices:"
-msgstr ""
+msgstr "同期済デバイス数:"
 
 #: templates/settings.php:86
 msgid "Delete Sync data"

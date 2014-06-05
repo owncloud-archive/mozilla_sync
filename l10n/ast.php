@@ -15,11 +15,17 @@
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Fallu! Nun tienes permisu pa usar Mozilla Sync! Necesites ser miembru del grupu %s.",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Pa configurar Mozilla Sync, tienes de crear una cuenta sync en Firefox. ",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Configuróse Mozilla Sync, los preseos adicionales, tienen d'amestase vía serviciu d'empareyamientu de Mozilla o manualmente.",
+"Email:" => "Corréu:",
 "Has to be unique among all Sync users" => "Tien de ser única ente los usuarios de Sync",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "¡Fallu! ¡Deteutáronse direiciones de corréu duplicaes! Les direiciones de corréu-e tienen de ser úniques pa que Mozilla Sync funcione.",
+"Password:" => "Contraseña:",
 "Use your ownCloud account password" => "Usa la to contraseña de ownCloud",
+"Server address:" => "Direición del sirvidor:",
 "Sync Status" => "Estáu de sinc.",
+"Last sync:" => "Cabera sincronización:",
+"Size of stored data:" => "Tamañu de los datos atroxaos:",
 "No data stored yet." => "Entá nun hai datos atroxaos",
+"Number of synced devices:" => "Númberu de preseos sincronizaos:",
 "Delete Sync data" => "Desaniciar datos de sinc.",
 "Attention! This will delete all your Sync data on the server." => "¡Atención! Esto desaniciará tolos tos datos de Sync nel sirvidor."
 );

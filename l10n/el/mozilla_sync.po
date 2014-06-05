@@ -7,13 +7,13 @@
 # Efstathios Iosifidis <iefstathios@gmail.com>, 2013-2014
 # Konstantinos Tzanidis <tzanidis@gmail.com>, 2012
 # Marios Bekatoros <>, 2012-2013
-# pe_ppe <peppe@cs.uoi.gr>, 2014
-# vkehayas <vkehayas@gmail.com>, 2013-2014
+# Spyros Melissovas <peppe@cs.uoi.gr>, 2014
+# Vassilis Kehayas <vkehayas@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-06-04 02:05-0400\n"
+"POT-Creation-Date: 2014-06-05 02:09-0400\n"
 "PO-Revision-Date: 2014-06-01 17:52+0000\n"
 "Last-Translator: Efstathios Iosifidis <iefstathios@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/owncloud/language/el/)\n"

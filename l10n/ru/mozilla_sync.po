@@ -3,19 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# baden <badaevd@mail.ru>, 2013
+# badenbaden <badaevd@mail.ru>, 2013
 # Denis <reg.transifex.net@demitel.ru>, 2014
 # jekader <jekader@gmail.com>, 2013
-# sam002 <semen@sam002.net>, 2014
-# stushev, 2014
-# VicDeo <victor.dubiniuk@gmail.com>, 2012
-# navigator666 <yuriy.malyovaniy@gmail.com>, 2014
-# Evgeniy Malyanov <maljanow@outlook.com>, 2014
+# Semen V. Dubina <semen@sam002.net>, 2014
+# Simon Tushev, 2014
+# Victor Dubiniuk <victor.dubiniuk@gmail.com>, 2012
+# Yuriy Malyovaniy <yuriy.malyovaniy@gmail.com>, 2014
+# Малянов Евгений Викторович <maljanow@outlook.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-06-04 02:05-0400\n"
+"POT-Creation-Date: 2014-06-05 02:09-0400\n"
 "PO-Revision-Date: 2014-05-30 06:21+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/owncloud/language/ru/)\n"
