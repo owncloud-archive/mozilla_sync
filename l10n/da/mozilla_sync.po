@@ -6,13 +6,13 @@
 # Anders J. Sørensen, 2013-2014
 # Leif Lodahl <leiflodahl@gmail.com>, 2014
 # Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2014
-# osos <osos@openeyes.dk>, 2012
+# Johannes Hessellund <osos@openeyes.dk>, 2012
 # Peter Jespersen <flywheeldk@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-06-06 02:05-0400\n"
+"POT-Creation-Date: 2014-06-07 02:05-0400\n"
 "PO-Revision-Date: 2014-05-30 06:21+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/owncloud/language/da/)\n"
