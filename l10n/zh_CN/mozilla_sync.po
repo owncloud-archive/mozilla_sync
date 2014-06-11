@@ -5,13 +5,14 @@
 # Translators:
 # hanfeng <appweb.cn@gmail.com>, 2012
 # Smartree <smartree@gmail.com>, 2014
+# phy <transifex@phy25.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-06-10 02:05-0400\n"
-"PO-Revision-Date: 2014-05-30 06:21+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-06-11 02:05-0400\n"
+"PO-Revision-Date: 2014-06-11 04:00+0000\n"
+"Last-Translator: phy <transifex@phy25.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/owncloud/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -86,11 +87,11 @@ msgstr "要配置Mozilla同步服务需要先在Firefox里创建一个同步帐�
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
-msgstr "已配置好Mozilla同步服务，其它设备可以通过Mozilla的设备配对服务或者手工添加进来。"
+msgstr "已配置好 Mozilla 同步服务，其它设备可以通过 Mozilla 的设备配对服务增加，或者手工增加进来。"
 
 #: templates/settings.php:31
 msgid "Email:"
-msgstr ""
+msgstr "电子邮件："
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
@@ -112,7 +113,7 @@ msgstr "使用你的ownCloud账号密码"
 
 #: templates/settings.php:43
 msgid "Server address:"
-msgstr ""
+msgstr "服务器地址："
 
 #: templates/settings.php:53
 msgid "Sync Status"
@@ -120,11 +121,11 @@ msgstr "同步状态"
 
 #: templates/settings.php:55
 msgid "Last sync:"
-msgstr ""
+msgstr "最后同步："
 
 #: templates/settings.php:59
 msgid "Size of stored data:"
-msgstr ""
+msgstr "存储数据大小："
 
 #: templates/settings.php:63
 msgid "No data stored yet."
@@ -132,7 +133,7 @@ msgstr "尚未存储数据。"
 
 #: templates/settings.php:78
 msgid "Number of synced devices:"
-msgstr ""
+msgstr "已同步的设备数："
 
 #: templates/settings.php:86
 msgid "Delete Sync data"

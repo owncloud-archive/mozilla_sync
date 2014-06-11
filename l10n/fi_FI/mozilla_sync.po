@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-06-10 02:05-0400\n"
-"PO-Revision-Date: 2014-05-30 06:21+0000\n"
+"POT-Creation-Date: 2014-06-11 02:05-0400\n"
+"PO-Revision-Date: 2014-06-10 07:10+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish (Finland) (http://www.transifex.com/projects/p/owncloud/language/fi_FI/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
-msgstr ""
+msgstr "Tallennustilan poistaminen epäonnistui"
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
@@ -28,7 +28,7 @@ msgstr "Käyttäjän poistaminen epäonnistui"
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
-msgstr ""
+msgstr "Tallennustila poistettu"
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
@@ -68,7 +68,7 @@ msgstr "Synkronoinnin kiintiö"
 
 #: templates/admin.php:28
 msgid "Set the value to 0 for unlimited quota."
-msgstr ""
+msgstr "Aseta arvoksi 0 määrittääksesi rajoittamattoman kiintiön."
 
 #: templates/settings.php:7
 #, php-format
@@ -85,7 +85,7 @@ msgstr "Luo uusi Sync-tili Firefoxissa käyttääksesi Mozillan synkronointipalv
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
-msgstr ""
+msgstr "Mozilla Syncin asetukset on tehty. Lisälaitteita on mahdollista liittää Mozillan laiteparituspalvelun kautta tai manuaalisesti."
 
 #: templates/settings.php:31
 msgid "Email:"
@@ -93,13 +93,13 @@ msgstr "Sähköposti:"
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
-msgstr ""
+msgstr "Täytyy olla yksilöllinen kaikkien Sync-käyttäjien kesken"
 
 #: templates/settings.php:35
 msgid ""
 "Error! Duplicate email addresses detected! Email addresses need to be unique"
 " for Mozilla Sync to work."
-msgstr ""
+msgstr "Virhe! Havaittiin päällekkäinen sähköpostiosoite! Sähköpostiosoitteiden tulee olla yksilöllisiä, jotta Mozilla Sync toimii."
 
 #: templates/settings.php:39
 msgid "Password:"
@@ -127,7 +127,7 @@ msgstr "Tallennetun tiedon koko:"
 
 #: templates/settings.php:63
 msgid "No data stored yet."
-msgstr ""
+msgstr "Tietoja ei ole vielä tallennettu."
 
 #: templates/settings.php:78
 msgid "Number of synced devices:"
