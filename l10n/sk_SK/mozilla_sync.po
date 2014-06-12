@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-06-11 02:05-0400\n"
-"PO-Revision-Date: 2014-05-30 06:21+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-06-12 02:05-0400\n"
+"PO-Revision-Date: 2014-06-11 06:50+0000\n"
+"Last-Translator: Marián Hvolka <marian.hvolka@stuba.sk>\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/owncloud/language/sk_SK/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -91,7 +91,7 @@ msgstr "Mozilla Sync je nastavený, ďalšie zariadenia možno pridať pomocou s
 
 #: templates/settings.php:31
 msgid "Email:"
-msgstr ""
+msgstr "Email:"
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
@@ -113,7 +113,7 @@ msgstr "Použite svoje heslo k účtu ​​ownCloud "
 
 #: templates/settings.php:43
 msgid "Server address:"
-msgstr ""
+msgstr "Adresa servera:"
 
 #: templates/settings.php:53
 msgid "Sync Status"
@@ -121,11 +121,11 @@ msgstr "Stav synchronizácie"
 
 #: templates/settings.php:55
 msgid "Last sync:"
-msgstr ""
+msgstr "Posledná synchronizácia:"
 
 #: templates/settings.php:59
 msgid "Size of stored data:"
-msgstr ""
+msgstr "Veľkosť uložených údajov:"
 
 #: templates/settings.php:63
 msgid "No data stored yet."
@@ -133,7 +133,7 @@ msgstr "Žiadne údaje ešte nie sú uložené."
 
 #: templates/settings.php:78
 msgid "Number of synced devices:"
-msgstr ""
+msgstr "Počet synchronizovaných zariadení:"
 
 #: templates/settings.php:86
 msgid "Delete Sync data"
@@ -141,4 +141,4 @@ msgstr "Vymaž všetky synchronizačné dáta"
 
 #: templates/settings.php:89
 msgid "Attention! This will delete all your Sync data on the server."
-msgstr "Pozor! Týmto dôjde k vymazaniu všetkých synchronizovaných údajov na serveri."
+msgstr "Pozor! Týmto dôjde k vymazaniu všetkých zosynchronizovaných údajov na serveri."

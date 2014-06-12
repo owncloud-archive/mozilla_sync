@@ -15,12 +15,17 @@
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Chyba! Nie ste oprávnení používať Mozilla Sync! Musíte byť členom skupiny %s.",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Ak chcete nastaviť Mozilla Sync, vytvorte si nový synchronizačný účet vo Firefoxe.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Mozilla Sync je nastavený, ďalšie zariadenia možno pridať pomocou služby párovania Mozilla zariadení alebo ručne.",
+"Email:" => "Email:",
 "Has to be unique among all Sync users" => "Musí byť unikátny medzi všetkými používateľmi synchronizácie",
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Chyba! Zistené duplicitné emailové adresy! Emailové adresy musia byť jedinečné pre správne fungovanieMozilla Sync.",
 "Password:" => "Heslo:",
 "Use your ownCloud account password" => "Použite svoje heslo k účtu ​​ownCloud ",
+"Server address:" => "Adresa servera:",
 "Sync Status" => "Stav synchronizácie",
+"Last sync:" => "Posledná synchronizácia:",
+"Size of stored data:" => "Veľkosť uložených údajov:",
 "No data stored yet." => "Žiadne údaje ešte nie sú uložené.",
+"Number of synced devices:" => "Počet synchronizovaných zariadení:",
 "Delete Sync data" => "Vymaž všetky synchronizačné dáta",
-"Attention! This will delete all your Sync data on the server." => "Pozor! Týmto dôjde k vymazaniu všetkých synchronizovaných údajov na serveri."
+"Attention! This will delete all your Sync data on the server." => "Pozor! Týmto dôjde k vymazaniu všetkých zosynchronizovaných údajov na serveri."
 );
