@@ -18,6 +18,7 @@
 "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." => "Ошибка! Введенный email уже зарегистрирован! Email адреса должны быть уникальными для функционирования Mozilla Sync.",
 "Password:" => "Пароль:",
 "Use your ownCloud account password" => "Используйте пароль учётной записи OwnCloud",
+"Server address:" => "Адрес сервера:",
 "Sync Status" => "Синхронизация статуса",
 "No data stored yet." => "Еще нет данных.",
 "Delete Sync data" => "Удаление данных Sync",
