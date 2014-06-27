@@ -7,9 +7,14 @@
 "Quota saved" => "La kvoto konserviĝis",
 "Mozilla Sync" => "Mozilo Sync",
 "Sync quota" => "Sinkronigi kvoton",
+"Email:" => "Retpoŝto:",
 "Has to be unique among all Sync users" => "Ĝi devas ununuri inter ĉiuj uzantoj de Sync",
 "Password:" => "Pasvorto:",
 "Use your ownCloud account password" => "Uzi la pasvorton de via konto de ownCloud",
+"Server address:" => "Servila adreso:",
 "Sync Status" => "Stato de sinkronigo",
-"No data stored yet." => "Neniu datumo enmemoriĝis ankoraŭ."
+"Last sync:" => "Lasta sinkronigo:",
+"Size of stored data:" => "Grando de memorata datumaro:",
+"No data stored yet." => "Neniu datumo enmemoriĝis ankoraŭ.",
+"Number of synced devices:" => "Kiamo de sinkronigitaj aparatoj:"
 );
