@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-07-01 02:05-0400\n"
-"PO-Revision-Date: 2014-05-30 06:21+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-07-02 02:05-0400\n"
+"PO-Revision-Date: 2014-07-01 07:14+0000\n"
+"Last-Translator: Matej Urbančič <>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/owncloud/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -91,7 +91,7 @@ msgstr "Usklajevalnik Mozilla je nastavljen. Dodatne naprave je mogoče dodati p
 
 #: templates/settings.php:31
 msgid "Email:"
-msgstr ""
+msgstr "Elektronski naslov:"
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
@@ -113,7 +113,7 @@ msgstr "Uporabite geslo računa ownCloud"
 
 #: templates/settings.php:43
 msgid "Server address:"
-msgstr ""
+msgstr "Naslov strežnika:"
 
 #: templates/settings.php:53
 msgid "Sync Status"
@@ -121,11 +121,11 @@ msgstr "Stanje usklajenosti"
 
 #: templates/settings.php:55
 msgid "Last sync:"
-msgstr ""
+msgstr "Zadnje posodabljanje:"
 
 #: templates/settings.php:59
 msgid "Size of stored data:"
-msgstr ""
+msgstr "Velikost shranjenih podatkov:"
 
 #: templates/settings.php:63
 msgid "No data stored yet."
@@ -133,7 +133,7 @@ msgstr "Ni še shranjenih podatkov."
 
 #: templates/settings.php:78
 msgid "Number of synced devices:"
-msgstr ""
+msgstr "Število naprav za usklajevanje:"
 
 #: templates/settings.php:86
 msgid "Delete Sync data"
