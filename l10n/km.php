@@ -6,5 +6,9 @@
 "Invalid input" => "ការ​បញ្ចូល មិន​ត្រឹម​ត្រូវ",
 "Quota saved" => "បាន​រក្សា​ទុក​បរិមាណ​កំណត់",
 "Mozilla Sync" => "Mozilla Sync",
-"Use your ownCloud account password" => "ប្រើ​ពាក្យ​សម្ងាត់​គណនី ownCloud របស់​អ្នក"
+"Email:" => "អ៊ីមែល៖",
+"Password:" => "ពាក្យ​សម្ងាត់៖",
+"Use your ownCloud account password" => "ប្រើ​ពាក្យ​សម្ងាត់​គណនី ownCloud របស់​អ្នក",
+"Server address:" => "អាសយដ្ឋាន​ម៉ាស៊ីន​បម្រើ៖",
+"Size of stored data:" => "ទំហំ​ទិន្នន័យ​ដែល​បាន​រក្សាទុក៖"
 );
