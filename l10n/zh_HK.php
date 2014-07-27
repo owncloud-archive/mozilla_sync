@@ -1,4 +1,6 @@
 <?php $TRANSLATIONS = array(
-"Email" => "電郵",
-"Password" => "密碼"
+"Email:" => "電子郵件：",
+"Password:" => "密碼：",
+"Server address:" => "伺服器地址：",
+"Last sync:" => "最後同步："
 );
