@@ -9,7 +9,7 @@
 "Quota saved" => "クォータを保存しました",
 "Mozilla Sync" => "Mozilla Sync",
 "Restrict to group" => "グループに制限する",
-"When activated, only members of this group can access Mozilla Sync." => "有効にした場合、このグループのメンバーのみMozilla Syncにアクセス可能です。",
+"When activated, only members of this group can access Mozilla Sync." => "有効にした場合、このグループのメンバーのみMozilla Syncにアクセスできます。",
 "Sync quota" => "クォータ同期",
 "Set the value to 0 for unlimited quota." => "値を0に設定するとクォータは無制限になります。",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "エラー! Mozilla Syncの使用許可がありません。グループ %s のメンバーになる必要があります。 ",
