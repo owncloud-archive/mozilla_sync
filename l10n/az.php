@@ -6,5 +6,7 @@
 "Invalid input" => "Səhv daxil edildi",
 "Mozilla Sync" => "Mozilla Sync",
 "Restrict to group" => "Qrup üçün yetkini məhdudlaşdır",
-"Sync quota" => "Sinxronizasiya məhdudiyyəti"
+"Sync quota" => "Sinxronizasiya məhdudiyyəti",
+"Email:" => "Email:",
+"Password:" => "Şifrə:"
 );

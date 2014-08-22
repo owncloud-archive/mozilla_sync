@@ -4,13 +4,14 @@
 # 
 # Translators:
 # pointhi, 2014
+# Rechi95 <rechi@aon.at>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-08-21 02:05-0400\n"
-"PO-Revision-Date: 2014-05-30 06:05+0000\n"
-"Last-Translator: I Robot\n"
+"POT-Creation-Date: 2014-08-22 02:05-0400\n"
+"PO-Revision-Date: 2014-08-21 18:30+0000\n"
+"Last-Translator: Rechi95 <rechi@aon.at>\n"
 "Language-Team: German (Austria) (http://www.transifex.com/projects/p/owncloud/language/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -89,7 +90,7 @@ msgstr "Mozilla-Sync ist eingerichtet. Zusätzliche Geräte können manuell oder
 
 #: templates/settings.php:31
 msgid "Email:"
-msgstr ""
+msgstr "Email:"
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
@@ -103,7 +104,7 @@ msgstr "Fehler! Doppelte E-Mail Adresse gefunden! E-Mail Adressen müssen für M
 
 #: templates/settings.php:39
 msgid "Password:"
-msgstr ""
+msgstr "Passwort:"
 
 #: templates/settings.php:40
 msgid "Use your ownCloud account password"
@@ -119,7 +120,7 @@ msgstr "Synchronisation-Status"
 
 #: templates/settings.php:55
 msgid "Last sync:"
-msgstr ""
+msgstr "Letzte Synchronisierung:"
 
 #: templates/settings.php:59
 msgid "Size of stored data:"
@@ -131,7 +132,7 @@ msgstr "Keine Daten bisher gespeichert."
 
 #: templates/settings.php:78
 msgid "Number of synced devices:"
-msgstr ""
+msgstr "Anzahl der synchronisierten Geräte: "
 
 #: templates/settings.php:86
 msgid "Delete Sync data"
