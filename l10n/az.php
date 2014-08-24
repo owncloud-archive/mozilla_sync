@@ -7,6 +7,7 @@
 "Mozilla Sync" => "Mozilla Sync",
 "Restrict to group" => "Qrup üçün yetkini məhdudlaşdır",
 "Sync quota" => "Sinxronizasiya məhdudiyyəti",
+"Set the value to 0 for unlimited quota." => "Limitsiz istifadə üçün 0 mənasını təyin edin.",
 "Email:" => "Email:",
 "Password:" => "Şifrə:"
 );
