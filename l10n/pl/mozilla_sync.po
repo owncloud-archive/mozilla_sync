@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
-"POT-Creation-Date: 2014-08-25 02:05-0400\n"
-"PO-Revision-Date: 2014-06-02 11:31+0000\n"
+"POT-Creation-Date: 2014-08-26 02:05-0400\n"
+"PO-Revision-Date: 2014-08-25 08:20+0000\n"
 "Last-Translator: Maciej Przybecki <maciej.przybecki@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/owncloud/language/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
-msgstr "Nieudane usunięcie pamięci."
+msgstr "Nieudane usunięcie danych."
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
@@ -31,7 +31,7 @@ msgstr "Nieudane usunięcie użytkownika."
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
-msgstr "Pamięć usunięta"
+msgstr "Dane usunięte"
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
@@ -39,7 +39,7 @@ msgstr "Nie znaleziono użytkownika"
 
 #: ajax/restrictgroup.php:32
 msgid "Restriction saved"
-msgstr "Ograniczenia zapisane"
+msgstr "Ograniczenie zapisane"
 
 #: ajax/setemail.php:24 ajax/setquota.php:24
 msgid "Invalid input"
@@ -51,7 +51,7 @@ msgstr "Email zapisany"
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
-msgstr "Przydział zapisany"
+msgstr "Quota zapisana"
 
 #: templates/admin.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
@@ -67,11 +67,11 @@ msgstr "Po aktywowaniu tylko członkowie tej grupy mają dostęp do Mozilla Sync
 
 #: templates/admin.php:24
 msgid "Sync quota"
-msgstr "Zsynchronizuj przydział"
+msgstr "Zsynchronizuj quotę"
 
 #: templates/admin.php:28
 msgid "Set the value to 0 for unlimited quota."
-msgstr "Ustaw wartość 0 dla nielimitowanego przydziału."
+msgstr "Ustaw wartość 0 dla nielimitowanej quoty."
 
 #: templates/settings.php:7
 #, php-format
@@ -138,8 +138,8 @@ msgstr "Liczba zsynchronizowanych urządzeń:"
 
 #: templates/settings.php:86
 msgid "Delete Sync data"
-msgstr "Usuń dane"
+msgstr "Usuń dane synchronizacji"
 
 #: templates/settings.php:89
 msgid "Attention! This will delete all your Sync data on the server."
-msgstr "Uwaga! W ten sposób usuniesz wszystkie dane konta Sync na serwerze."
+msgstr "Uwaga! W ten sposób usuniesz wszystkie dane synchronizacji na serwerze."

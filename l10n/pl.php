@@ -1,17 +1,17 @@
 <?php $TRANSLATIONS = array(
-"Failed to delete storage" => "Nieudane usunięcie pamięci.",
+"Failed to delete storage" => "Nieudane usunięcie danych.",
 "Failed to delete user" => "Nieudane usunięcie użytkownika.",
-"Storage deleted" => "Pamięć usunięta",
+"Storage deleted" => "Dane usunięte",
 "User not found" => "Nie znaleziono użytkownika",
-"Restriction saved" => "Ograniczenia zapisane",
+"Restriction saved" => "Ograniczenie zapisane",
 "Invalid input" => "Błędne dane",
 "Sync email saved" => "Email zapisany",
-"Quota saved" => "Przydział zapisany",
+"Quota saved" => "Quota zapisana",
 "Mozilla Sync" => "Mozilla Sync",
 "Restrict to group" => "Ogranicz do grupy",
 "When activated, only members of this group can access Mozilla Sync." => "Po aktywowaniu tylko członkowie tej grupy mają dostęp do Mozilla Sync. ",
-"Sync quota" => "Zsynchronizuj przydział",
-"Set the value to 0 for unlimited quota." => "Ustaw wartość 0 dla nielimitowanego przydziału.",
+"Sync quota" => "Zsynchronizuj quotę",
+"Set the value to 0 for unlimited quota." => "Ustaw wartość 0 dla nielimitowanej quoty.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Błąd! Nie masz praw do używania Mozilla Sync! Musisz być członkiem grupy %s.",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "W celu skonfigurowania Mozilla Sync stwórz nowe konto synchronizacji w Firefox'ie.",
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." => "Skonfigurowano Mozilla Sync, dodatkowe urządzenia mogą być dodane przy użyciu usługi parowania urządzeń Mozilli lub ręcznie.",
@@ -26,6 +26,6 @@
 "Size of stored data:" => "Rozmiar przechowanych danych:",
 "No data stored yet." => "Brak przechowywanych danych.",
 "Number of synced devices:" => "Liczba zsynchronizowanych urządzeń:",
-"Delete Sync data" => "Usuń dane",
-"Attention! This will delete all your Sync data on the server." => "Uwaga! W ten sposób usuniesz wszystkie dane konta Sync na serwerze."
+"Delete Sync data" => "Usuń dane synchronizacji",
+"Attention! This will delete all your Sync data on the server." => "Uwaga! W ten sposób usuniesz wszystkie dane synchronizacji na serwerze."
 );
