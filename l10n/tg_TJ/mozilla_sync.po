@@ -3,90 +3,88 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Hussein Atef Salem <hussein-atef@hotmail.com>, 2012
-# suliman al-ajlan <291101251@std.qu.edu.sa>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2014-09-30 02:05-0400\n"
-"PO-Revision-Date: 2014-05-30 06:21+0000\n"
-"Last-Translator: I Robot\n"
-"Language-Team: Arabic (http://www.transifex.com/projects/p/owncloud/language/ar/)\n"
+"PO-Revision-Date: 2012-09-03 13:15+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Tajik (Tajikistan) (http://www.transifex.com/projects/p/owncloud/language/tg_TJ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ar\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: tg_TJ\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ajax/deletestorage.php:26
 msgid "Failed to delete storage"
-msgstr "فشل في حذف وحدة التخزين"
+msgstr ""
 
 #: ajax/deletestorage.php:31
 msgid "Failed to delete user"
-msgstr "فشل في ازالة المستخدم"
+msgstr ""
 
 #: ajax/deletestorage.php:35
 msgid "Storage deleted"
-msgstr "حذف وحدة التخزين"
+msgstr ""
 
 #: ajax/deletestorage.php:41
 msgid "User not found"
-msgstr "لم يتم العثور على المستخدم"
+msgstr ""
 
 #: ajax/restrictgroup.php:32
 msgid "Restriction saved"
-msgstr "تم حفظ التقييد"
+msgstr ""
 
 #: ajax/setemail.php:24 ajax/setquota.php:24
 msgid "Invalid input"
-msgstr "مدخل غير صالح"
+msgstr ""
 
 #: ajax/setemail.php:30
 msgid "Sync email saved"
-msgstr "تم حفظ مزامنة البريد الالكتروني"
+msgstr ""
 
 #: ajax/setquota.php:30
 msgid "Quota saved"
-msgstr "تم حفظ Quota"
+msgstr ""
 
 #: templates/admin.php:2 templates/settings.php:2
 msgid "Mozilla Sync"
-msgstr "مزامنة موزيلا"
+msgstr ""
 
 #: templates/admin.php:10
 msgid "Restrict to group"
-msgstr "تقييد على مجموعة"
+msgstr ""
 
 #: templates/admin.php:20
 msgid "When activated, only members of this group can access Mozilla Sync."
-msgstr "عند التفعيل,اعضاء المجموعة فقط يمكنهم الوصول الى مزامنة موزيلا "
+msgstr ""
 
 #: templates/admin.php:24
 msgid "Sync quota"
-msgstr "مزامنة quota"
+msgstr ""
 
 #: templates/admin.php:28
 msgid "Set the value to 0 for unlimited quota."
-msgstr "ضع القيمة 0 لـ يصبح quota غير محدود."
+msgstr ""
 
 #: templates/settings.php:7
 #, php-format
 msgid ""
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of "
 "the %s group."
-msgstr "خطا! غير مسموح لك باستخدام مزامنة موزيلا! يجب ان تكون عضوا في هذه المجموعة %s"
+msgstr ""
 
 #: templates/settings.php:23
 msgid "To set up Mozilla Sync create a new Sync account in Firefox."
-msgstr "لاعداد مزامنة موزيلا انشئ حساب مزامنة جديد باستخدام فايرفوكس."
+msgstr ""
 
 #: templates/settings.php:25
 msgid ""
 "Mozilla Sync is set up, additional devices can be added via Mozilla's device"
 " pairing service or manually."
-msgstr "تم اعداد مزامنة موزيلا, الاجهزة الاضافية يمكن اضافتها عن طريق خدمة الاقتران أو بشكل يدوي."
+msgstr ""
 
 #: templates/settings.php:31
 msgid "Email:"
@@ -94,21 +92,21 @@ msgstr ""
 
 #: templates/settings.php:32
 msgid "Has to be unique among all Sync users"
-msgstr "يجب ان يكون فريد من بين كل مستخدمين المزامنة"
+msgstr ""
 
 #: templates/settings.php:35
 msgid ""
 "Error! Duplicate email addresses detected! Email addresses need to be unique"
 " for Mozilla Sync to work."
-msgstr "خطا! يوجد عنوان بريد الكتروني متكرر! عنوان البريد الالكتروني يجب ان يكون فريد لـ استخدام مزامنة موزيلا."
+msgstr ""
 
 #: templates/settings.php:39
 msgid "Password:"
-msgstr "كلمة المرور: "
+msgstr ""
 
 #: templates/settings.php:40
 msgid "Use your ownCloud account password"
-msgstr "استخدم كلمة المرور الخاصة بحسابك في ownCloud"
+msgstr ""
 
 #: templates/settings.php:43
 msgid "Server address:"
@@ -116,7 +114,7 @@ msgstr ""
 
 #: templates/settings.php:53
 msgid "Sync Status"
-msgstr "مزامنة الحالة."
+msgstr ""
 
 #: templates/settings.php:55
 msgid "Last sync:"
@@ -128,7 +126,7 @@ msgstr ""
 
 #: templates/settings.php:63
 msgid "No data stored yet."
-msgstr "لا يوجد بيانات محفوظة حالياً."
+msgstr ""
 
 #: templates/settings.php:78
 msgid "Number of synced devices:"
@@ -136,8 +134,8 @@ msgstr ""
 
 #: templates/settings.php:86
 msgid "Delete Sync data"
-msgstr "حذف بيانات المزامنة"
+msgstr ""
 
 #: templates/settings.php:89
 msgid "Attention! This will delete all your Sync data on the server."
-msgstr "انتباه! سوف يتم حذف جميع بيانات المزامنة في الخادم."
+msgstr ""
