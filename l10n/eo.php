@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "Malsukcesis forigo de memorilo",
 "Failed to delete user" => "Malsukcesis forigo de uzanto",
 "Storage deleted" => "La memorilo foriĝis",
@@ -18,3 +19,4 @@
 "No data stored yet." => "Neniu datumo enmemoriĝis ankoraŭ.",
 "Number of synced devices:" => "Kiamo de sinkronigitaj aparatoj:"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

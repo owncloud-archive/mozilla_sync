@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "刪除儲存空間失敗",
 "Failed to delete user" => "刪除使用者失敗",
 "Storage deleted" => "已刪除儲存空間",
@@ -24,3 +25,4 @@
 "Delete Sync data" => "刪除同步資訊",
 "Attention! This will delete all your Sync data on the server." => "注意！這個動作將刪除所有您位於伺服器的同步資料。"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

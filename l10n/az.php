@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "Informasiya daşıyıcısını silmək mümkün olmadı",
 "Failed to delete user" => "İstifadəçini silmək mümkün olmadı",
 "Storage deleted" => "İnformasiya daşıyıcısı silindi",
@@ -11,3 +12,4 @@
 "Email:" => "Email:",
 "Password:" => "Şifrə:"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

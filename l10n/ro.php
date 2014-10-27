@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "Nu s-a putut șterge spațiul de stocare",
 "Failed to delete user" => "Nu s-a putut sterge utilizatorul",
 "Storage deleted" => "Spațiu de stocare a fost șters",
@@ -28,3 +29,4 @@
 "Delete Sync data" => "Șterge datele sincronizate",
 "Attention! This will delete all your Sync data on the server." => "Atentie! Veti sterge toate datele Sync de pe server."
 );
+$PLURAL_FORMS = "nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));";

@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "Produciuse un fallo ao eliminar o almacenamento",
 "Failed to delete user" => "Produciuse un fallo ao eliminar o usuario",
 "Storage deleted" => "Almacenamento eliminado",
@@ -29,3 +30,4 @@
 "Delete Sync data" => "Eliminar os datos de sincronización",
 "Attention! This will delete all your Sync data on the server." => "Atención! Isto eliminará todos os datos de sincronización no servidor."
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

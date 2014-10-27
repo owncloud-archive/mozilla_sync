@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "A tároló törlése nem sikerült",
 "Failed to delete user" => "A felhasználó törlése nem sikerült",
 "Storage deleted" => "A tároló törölve",
@@ -24,3 +25,4 @@
 "Delete Sync data" => "Szinkronizált adatok törlése",
 "Attention! This will delete all your Sync data on the server." => "Figyelem! Ezzel törölni fogja minden Mozilla szinkronizációs adatát, ami a kiszolgálón van tárolva!"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "Klarte ikke å slette lageret",
 "Failed to delete user" => "Klarte ikke å slette bruker",
 "Storage deleted" => "Lageret ble slettet",
@@ -29,3 +30,4 @@
 "Delete Sync data" => "Slett Sync-data",
 "Attention! This will delete all your Sync data on the server." => "Obs! Dette vil slette alle dine Sync-data på serveren."
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

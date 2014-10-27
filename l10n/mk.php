@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "Неуспешно бришење на податоците",
 "Failed to delete user" => "Неуспешно бришење на корисник",
 "Storage deleted" => "Податоците се избришани",
@@ -16,3 +17,4 @@
 "Size of stored data:" => "Големина на снимените податоци:",
 "Number of synced devices:" => "Број на синхронизирани уреди:"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;";

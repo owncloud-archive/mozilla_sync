@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "خطا در حذف مخزن",
 "Failed to delete user" => "خطا در حذف کاربر",
 "Storage deleted" => "مخزن (استوریج) حذف شد",
@@ -24,3 +25,4 @@
 "Delete Sync data" => "پاک کردن داده همگام شده",
 "Attention! This will delete all your Sync data on the server." => "توجه! با این کار تمام داده های همگام سازی شده در سرور حذف خواهند شد."
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

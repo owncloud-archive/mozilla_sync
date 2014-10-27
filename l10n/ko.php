@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "저장소를 삭제할 수 없음",
 "Failed to delete user" => "사용자를 삭제할 수 없음",
 "Storage deleted" => "저장소 삭제됨",
@@ -22,3 +23,4 @@
 "Delete Sync data" => "싱크 데이터 삭제",
 "Attention! This will delete all your Sync data on the server." => "알림! 서버에 저장된 모든 동기화 데이터를 삭제합니다."
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "সংরক্ষণাগারে রক্ষিত ফাইলসমূহ মোছা গেলনা",
 "Failed to delete user" => "ব্যবহারকারী মুছে ফেলা ব্যার্থ হলো",
 "Storage deleted" => "সংরক্ষণাগার শুন্য ",
@@ -29,3 +30,4 @@
 "Delete Sync data" => "সিঙ্কের ডাটা মোছ",
 "Attention! This will delete all your Sync data on the server." => "লক্ষ্য করুন!!! এটি সার্ভারে আপনার সব সিঙ্ক ডাটা মুছে ফেলবে।"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

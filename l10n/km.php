@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "លុប​ឃ្លាំង​ផ្ទុក​មិន​បាន​សម្រេច",
 "Failed to delete user" => "លុប​អ្នក​ប្រើ​មិន​បាន​សម្រេច",
 "Storage deleted" => "បាន​លុប​ឃ្លាំង​ផ្ទុក",
@@ -12,3 +13,4 @@
 "Server address:" => "អាសយដ្ឋាន​ម៉ាស៊ីន​បម្រើ៖",
 "Size of stored data:" => "ទំហំ​ទិន្នន័យ​ដែល​បាន​រក្សាទុក៖"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "Ezin izan da biltegiratzea ezabatu",
 "Failed to delete user" => "Ezin izan da erabiltzailea ezabatu",
 "Storage deleted" => "Biltegiratzea ezabatu da",
@@ -29,3 +30,4 @@
 "Delete Sync data" => "Ezabatu Syncen datuak",
 "Attention! This will delete all your Sync data on the server." => "Kontuz! Honek zerbitzarian sinkronizatutako datu guztiak ezabatuko ditu."
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

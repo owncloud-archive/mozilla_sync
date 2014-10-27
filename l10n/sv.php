@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "Misslyckades att radera lagring",
 "Failed to delete user" => "Misslyckades att radera användare",
 "Storage deleted" => "Lagring raderad",
@@ -29,3 +30,4 @@
 "Delete Sync data" => "Radera synk-data",
 "Attention! This will delete all your Sync data on the server." => "Observera! Detta kommer radera din synk-data från servern."
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

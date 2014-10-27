@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Failed to delete storage" => "Αποτυχία διαγραφής αποθηκευτικού χώρου",
 "Failed to delete user" => "Αποτυχία διαγραφής χρήστη",
 "Storage deleted" => "Ο αποθηκευτικός χώρος διαγράφηκε",
@@ -29,3 +30,4 @@
 "Delete Sync data" => "Διαγραφή δεδομένων Συγχρονισμού",
 "Attention! This will delete all your Sync data on the server." => "Προσοχή! Θα διαγράψετε όλα τα συγχρονισμένα δεδομένα στον διακομιστή."
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";
