@@ -1,6 +1,6 @@
 <?php
 $TRANSLATIONS = array(
-"Failed to delete storage" => "ストレージ削除が失敗しました",
+"Failed to delete storage" => "ストレージの削除に失敗しました",
 "Failed to delete user" => "ユーザーの削除に失敗しました",
 "Storage deleted" => "ストレージを削除しました",
 "User not found" => "ユーザーが見つかりません",
