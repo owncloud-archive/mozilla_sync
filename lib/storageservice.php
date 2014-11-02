@@ -37,6 +37,19 @@ class StorageService extends Service
 
 		// Get Mozilla Sync user hash and authenticate user
 		$syncHash = $this->urlParser->getSyncHash();
+
+		if ( User::isAutoCreateUser() && !User::hasSyncAccount($syncHash) ) {
+			
+			if (User::authenticateUser($syncHash, false) === false) {
+				Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
+				Utils::writeLog("Couldn't autocreate account for user " . $syncHash . " authentication failed.");
+				return false;
+			}
+
+			//auto create account
+			User::autoCreateUser($syncHash);
+		}
+
 		if (User::authenticateUser($syncHash) === false) {
 			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
 			Utils::writeLog("Could not authenticate user " . $syncHash . ".");

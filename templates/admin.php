@@ -1,4 +1,4 @@
-<div id="mozilla_sync" class="section">
+<fieldset id="mozilla_sync" class="personalblock">
     <h2><?php p($l->t('Mozilla Sync')); ?></h2>
     <p>
         <input type="checkbox" name="restrictgroup" id="restrictgroup"
@@ -27,4 +27,16 @@
         <br/>
         <em><?php p($l->t("Set the value to 0 for unlimited quota."));?></em>
     </p>
-</div>
+    <br/>
+    <p>
+        <input type="checkbox" name="msautocreate" id="msautocreate"
+            <?php if ($_['mozillaSyncAutoCreateUser']) {
+                    print_unescaped('checked="checked" ');
+                }
+            ?>
+        />
+        <label for="msautocreate"><?php p($l->t("Auto create sync account")); ?></label>
+        <br/>
+        <em><?php p($l->t("When activated, the Mozilla Sync registration API will be disabled and instead accounts will be auto created using a user's existing credentials"));?></em>
+    </p>
+</fieldset>

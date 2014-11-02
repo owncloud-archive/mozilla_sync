@@ -127,6 +127,29 @@ class User
 	}
 
 	/**
+	* @brief Auto create Mozilla Sync user account
+	*
+	* @param string $userName The ownCloud userName.
+	* @return bool True on success, false otherwise.
+	*/
+	public static function autoCreateUser($userName = null) {
+
+		// By default the user name is the currently logged in user
+		if (is_null($userName)) {
+			$userName = \OCP\User::getUser();
+			if ( $userName === false ) {
+				Utils::writeLog("Could not get user name");
+				return false;
+			}
+		}
+
+		if ( !self::userNameToSyncId($userName) ) {
+			//User record doesn't exist so create it
+			return self::createUserRecord($userName, $userName);
+		}
+	}
+
+	/**
 	* @brief Create a new Mozilla Sync user.
 	*
 	* @param string $syncHash The Mozilla Sync user hash of the new user.
@@ -148,6 +171,18 @@ class User
 			Utils::writeLog("Password for user " . $userName . " did not match.");
 			return false;
 		}
+		
+		return self::createUserRecord($syncHash, $userName);
+	}
+
+	/**
+	* @brief Create a new Mozilla Sync user record.
+	*
+	* @param string $syncHash The Mozilla Sync user hash of the new user.
+	* @param string $userName The ownCloud userName.
+	* @return bool True on success, false otherwise.
+	*/
+	public static function createUserRecord($syncHash, $userName) {
 
 		$query = \OCP\DB::prepare('INSERT INTO `*PREFIX*mozilla_sync_users`
 			(`username`, `sync_user`) VALUES (?, ?)' );
@@ -202,9 +237,10 @@ class User
 	*
 	* @param string $syncHash Mozilla Sync user hash parameter extracted from
 	*	the URL.
+	* @param string $lookupUserName Lookup ownCloud username. If false assumes $syncHash is username (default = true)
 	* @return bool True on authentication success, false otherwise.
 	*/
-	public static function authenticateUser($syncHash) {
+	public static function authenticateUser($syncHash, $lookupUserName = true) {
 
 		if (!isset($_SERVER['PHP_AUTH_USER'])) {
 			Utils::writeLog("No HTTP authentication header sent.", \OCP\Util::WARN);
@@ -220,10 +256,14 @@ class User
 			return false;
 		}
 
-		// Get user name corresponding to Sync hash
-		$userName = self::syncHashToUserName($syncHash);
-		if ($userName === false) {
-			return false;
+		if ( $lookupUserName ) {
+			// Get user name corresponding to Sync hash
+			$userName = self::syncHashToUserName($syncHash);
+			if ($userName === false) {
+				return false;
+			}
+		} else {
+			$userName = $syncHash;
 		}
 
 		// Check the password in the ownCloud database
@@ -468,6 +508,10 @@ class User
 		// By default the user name is the currently logged in user
 		if (is_null($userName)) {
 			$userName = \OCP\User::getUser();
+			if ( $userName === false ) {
+				Utils::writeLog("Could not get user name");
+				return false;
+			}
 		}
 
 		$query = \OCP\DB::prepare('SELECT COUNT(*) AS `count` FROM `*PREFIX*mozilla_sync_users` WHERE `username` = ?');
@@ -545,6 +589,28 @@ class User
 		}
 
 		\OCP\Config::setUserValue($userName, 'mozilla_sync', 'email', $email);
+	}
+
+	/**
+	* @brief Gets auto create account flag
+	*
+	* If true Mozilla Sync accounts are auto created for ownCloud users, i.e. no registration required
+	*
+	* @return boolean
+	*/
+	public static function isAutoCreateUser() {
+		return ((bool) \OCP\Config::getAppValue('mozilla_sync', 'auto_create_user', '0'));
+	}
+
+	/**
+	* @brief Sets auto create account flag
+	*
+	* If true Mozilla Sync accounts are auto created for ownCloud users, i.e. no registration required
+	*
+	* @param boolean $autocreate
+	*/
+	public static function setAutoCreateUser($autocreate) {
+		\OCP\Config::setAppValue('mozilla_sync', 'auto_create_user', $autocreate);
 	}
 }
 
