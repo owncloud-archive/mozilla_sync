@@ -23,4 +23,13 @@ $(document).ready(function(){
             });
 
     });
+
+    // auto create ajax
+    $('#msautocreate').change(function() {
+        $.post(OC.filePath('mozilla_sync', 'ajax', 'setautocreate.php'),
+            { autocreate: $('#msautocreate[type=checkbox]').is(':checked') },
+            function(result){
+                showNotification(result.data.message);
+            });
+    });
 });

@@ -36,10 +36,22 @@ class UserService extends Service
 			return false;
 		}
 
+		$syncHash = $this->urlParser->getSyncHash();
+
+		if ( User::isAutoCreateUser() && !User::hasSyncAccount($syncHash) ) {
+			
+			if (User::authenticateUser($syncHash, false) === false) {
+				Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
+				Utils::writeLog("Couldn't autocreate account for user " . $syncHash . " authentication failed.");
+				return false;
+			}
+
+			//auto create account
+			User::autoCreateUser($syncHash);
+		}
+
 		// Map request to functions
 		if ($this->urlParser->commandCount() === 0) {
-
-			$syncHash = $this->urlParser->getSyncHash();
 
 			switch (Utils::getRequestMethod()) {
 				case 'GET': $this->findUser($syncHash); break;
@@ -52,7 +64,6 @@ class UserService extends Service
 		} else if (($this->urlParser->commandCount() === 1) &&
 			(Utils::getRequestMethod() === 'POST')) {
 
-			$syncHash = $this->urlParser->getSyncHash();
 			$password = $this->urlParser->getCommand(0);
 
 			$this->changePassword($syncHash, $password);
@@ -139,6 +150,12 @@ class UserService extends Service
 	*/
 	private function createUser($syncHash) {
 
+		if ( User::isAutoCreateUser() ) {
+			//auto create accounts only
+			Utils::sendError(400, 4);
+			Utils::writeLog("Failed to create user " . $syncHash . ". Registration disabled.");
+		}
+
 		$inputData = $this->getInputData();
 
 		// JSON parse failure
@@ -193,6 +210,12 @@ class UserService extends Service
 	*  @param string $syncHash Mozilla Sync user hash of the user to be deleted.
 	*/
 	private function deleteUser($syncHash) {
+
+		if ( User::isAutoCreateUser() ) {
+			//auto create accounts only
+			Utils::changeHttpStatus(Utils::STATUS_INVALID_USER);
+			Utils::writeLog("Failed to delete user " . $syncHash . ". Delete disabled");
+		}
 
 		if (User::syncUserExists($syncHash) === false) {
 			Utils::changeHttpStatus(Utils::STATUS_NOT_FOUND);

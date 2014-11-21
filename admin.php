@@ -12,6 +12,7 @@ $tmpl = new \OCP\Template('mozilla_sync', 'admin');
 
 $tmpl->assign('mozillaSyncRestrictGroup', \OCA\mozilla_sync\User::getAuthorizedGroup());
 $tmpl->assign('mozillaSyncQuota', \OCA\mozilla_sync\User::getQuota());
+$tmpl->assign('mozillaSyncAutoCreateUser', \OCA\mozilla_sync\User::isAutoCreateUser());
 
 return $tmpl->fetchPage();
 

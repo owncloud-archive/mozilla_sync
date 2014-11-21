@@ -1,4 +1,4 @@
-<div class="section">
+<fieldset class="personalblock">
 	<h2><?php p($l->t('Mozilla Sync')); ?></h2>
     <?php
     if (!\OCA\mozilla_sync\User::checkUserIsAllowed()) {
@@ -11,18 +11,41 @@
     <p>
       <em>
       <?php
+
         // Verify whether a Sync account was already created
         $noSync = false;
-        if (!\OCA\mozilla_sync\User::hasSyncAccount()) {
-            $noSync = true;
+
+if ( \OCA\mozilla_sync\User::isAutoCreateUser() ) {
+
+            // Create account if it does not already exist
+            if (!\OCA\mozilla_sync\User::hasSyncAccount()) {
+                //create account
+                \OCA\mozilla_sync\User::autoCreateUser();
+
+                $formatStr = "Y-m-d H:i:s T";
+                $lastMod = date($formatStr, time());
+
+            } else {
+                $lastMod = \OCA\mozilla_sync\Storage::getLastModifiedTime();
+            }
+
+            p($l->t("To use Mozilla Sync enter the credentials in to Mozilla Sync client"));
+        
         } else {
-            $lastMod = \OCA\mozilla_sync\Storage::getLastModifiedTime();
-        }
-        // Display if no account was created or no data was uploaded yet
-        if ($noSync || $lastMod === false) {
-            p($l->t("To set up Mozilla Sync create a new Sync account in Firefox."));
-        } else {
-            p($l->t("Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually."));
+
+            // Verify whether a Sync account was already created
+            $noSync = false;
+            if (!\OCA\mozilla_sync\User::hasSyncAccount()) {
+                $noSync = true;
+            } else {
+                $lastMod = \OCA\mozilla_sync\Storage::getLastModifiedTime();
+            }
+            // Display if no account was created or no data was uploaded yet
+            if ($noSync || $lastMod === false) {
+                p($l->t("To set up Mozilla Sync create a new Sync account in Firefox."));
+            } else {
+                p($l->t("Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually."));
+            }
         }
         ?>
         </em>
@@ -50,7 +73,7 @@
 
     <br/>
 
-    <h3><?php p($l->t('Sync Status'));?></h3>
+    <strong><?php p($l->t('Sync Status'));?></strong>
     <p>
         <?php p($l->t('Last sync:'));?>&nbsp;&nbsp;&nbsp;
         <?php p($lastMod); ?>
@@ -91,4 +114,4 @@
 
     <?php } // End: Show only when account created ?>
 
-</div>
+</fieldset>
