@@ -18,6 +18,7 @@ OC.L10N.register(
     "Set the value to 0 for unlimited quota." : "Установите 0 для снятия ограничений.",
     "Auto create sync account" : "Автоматическое создание аккаунта Sync",
     "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." : "Ошибка! Вы не можете использовать Mozilla Sync, так как не состоите в группе %s.",
+    "To use Mozilla Sync enter the credentials in to Mozilla Sync client" : "Введите учетные данные Mozilla Sync client для использования Mozilla Sync",
     "To set up Mozilla Sync create a new Sync account in Firefox." : "Для настройки Mozilla Sync создайте новую учетную запись Sync в Firefox.",
     "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." : "Mozilla Sync настроен, дополнительные устройства могут быть добавлены с помощью службы сопряжения устройств Mozilla или вручную.",
     "Email:" : "Почта:",
