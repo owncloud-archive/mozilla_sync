@@ -16,6 +16,7 @@ $TRANSLATIONS = array(
 "Sync quota" => "Omejitev usklajevanja",
 "Set the value to 0 for unlimited quota." => "Vrednost 0 onemogoči omejitev.",
 "Auto create sync account" => "Samodejno ustvarjanje računa za usklajevanje",
+"When activated, the Mozilla Sync registration API will be disabled and instead accounts will be auto created using a user's existing credentials" => "Ko je možnost omogočena, bo API za registracijo onemogočen, namesto tega pa bodo ustvarjeni računi z uporabo obstoječih poveril uporabnika.",
 "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." => "Napaka! Ni ustreznih dovoljenja za uporabo Usklajevalnika Mozilla! Uporaba je omejena na člane skupine %s.",
 "To use Mozilla Sync enter the credentials in to Mozilla Sync client" => "Za uporabo usklajevanja z Mozillo je treba vpisati ustrezna poverila v program.",
 "To set up Mozilla Sync create a new Sync account in Firefox." => "Na nastavitev Usklajevalnika Mozilla je treba ustvariti nov račun za usklajevanje v programu Firefox.",
