@@ -17,6 +17,7 @@ OC.L10N.register(
     "Sync quota" : "Квота синхронизации",
     "Set the value to 0 for unlimited quota." : "Установите 0 для снятия ограничений.",
     "Auto create sync account" : "Автоматическое создание аккаунта Sync",
+    "When activated, the Mozilla Sync registration API will be disabled and instead accounts will be auto created using a user's existing credentials" : "После включения, API регистрации Mozilla Sync будет отключен, вместо него, для создания учетных записей будут использованы уже существующие данные пользователя",
     "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." : "Ошибка! Вы не можете использовать Mozilla Sync, так как не состоите в группе %s.",
     "To use Mozilla Sync enter the credentials in to Mozilla Sync client" : "Введите учетные данные Mozilla Sync client для использования Mozilla Sync",
     "To set up Mozilla Sync create a new Sync account in Firefox." : "Для настройки Mozilla Sync создайте новую учетную запись Sync в Firefox.",
