@@ -19,7 +19,7 @@ OC.L10N.register(
     "Auto create sync account" : "同期アカウントを自動作成",
     "When activated, the Mozilla Sync registration API will be disabled and instead accounts will be auto created using a user's existing credentials" : "有効にした場合、Mozilla Syncアカウントは今のユーザー権限で自動的に作成されますが、Mozilla 同期APIは無効になります。",
     "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." : "エラー! Mozilla Syncの使用許可がありません。グループ %s のメンバーになる必要があります。 ",
-    "To use Mozilla Sync enter the credentials in to Mozilla Sync client" : "Mozilla Syncを利用するには、Mozilla Sync クライアントに同期権限を入力して下さい。",
+    "To use Mozilla Sync enter the credentials in to Mozilla Sync client" : "Mozilla Syncを利用するには、Mozilla Sync クライアントに同期権限を入力してください。",
     "To set up Mozilla Sync create a new Sync account in Firefox." : "Mozilla Syncを設定するには、新しいSyncアカウントをFirefox で作成してください。",
     "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." : "Mozilla Syncは、セットアップされました。Mozillaのデバイスペアリングサービスか、手動でデバイスを追加することができます。",
     "Email:" : "メール:",
