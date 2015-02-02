@@ -33,7 +33,7 @@ OC.L10N.register(
     "Size of stored data:" : "Størrelse af lagrede data:",
     "No data stored yet." : "Ingen data gemt endnu.",
     "Number of synced devices:" : "Antal synkroniserede enheder:",
-    "Delete Sync data" : "Slet Sync-data",
-    "Attention! This will delete all your Sync data on the server." : "Advarsel! Dette vil dette vil slette alle Sync-data på serveren."
+    "Delete Sync data" : "Slet Synkroniseringsdata",
+    "Attention! This will delete all your Sync data on the server." : "Advarsel! Dette vil dette vil slette alle Synckroniseringsdata på serveren."
 },
 "nplurals=2; plural=(n != 1);");
