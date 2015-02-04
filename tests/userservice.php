@@ -16,7 +16,7 @@ class Test_UserService extends PHPUnit_Framework_TestCase {
 	// Create ownCloud Test User
 	OC_User::createUser($this->userName, $this->password);
 	OC_User::setUserId($this->userName);
-	OCP\Config::setUserValue($this->userName,'settings', 'email', $this->email);
+	\OC::$server->getConfig()->setUserValue($this->userName,'settings', 'email', $this->email);
 
 	OCA_mozilla_sync\OutputData::$outputFlag = OCA_mozilla_sync\OutputData::ConstOutputBuffer;
 	OCA_mozilla_sync\Utils::setTestState();
@@ -30,7 +30,7 @@ class Test_UserService extends PHPUnit_Framework_TestCase {
 	  OCA_mozilla_sync\User::deleteUser($userId);
 	}
 
-	OC_Preferences::deleteUser($this->userName);
+	\OC::$server->getConfig()->deleteAllUserValues($this->userName);
 	OC_User::deleteUser($this->userName);
   }
 
