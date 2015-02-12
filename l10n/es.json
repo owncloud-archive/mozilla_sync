@@ -32,6 +32,6 @@
     "No data stored yet." : "Aún no hay datos almacenados.",
     "Number of synced devices:" : "Número de dispositivos sincronizados:",
     "Delete Sync data" : "Eliminar datos de Sync",
-    "Attention! This will delete all your Sync data on the server." : "Atención!, esto borrara todos los datos sincronizados en el servidor."
+    "Attention! This will delete all your Sync data on the server." : "¡Atención! Esto borrará todos los datos sincronizados en el servidor."
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
