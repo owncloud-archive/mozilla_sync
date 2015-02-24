@@ -1,4 +1,4 @@
-<fieldset id="mozilla_sync" class="personalblock">
+<div id="mozilla_sync" class="section">
     <h2><?php p($l->t('Mozilla Sync')); ?></h2>
     <p>
         <input type="checkbox" name="restrictgroup" id="restrictgroup"
@@ -39,4 +39,4 @@
         <br/>
         <em><?php p($l->t("When activated, the Mozilla Sync registration API will be disabled and instead accounts will be auto created using a user's existing credentials"));?></em>
     </p>
-</fieldset>
+</div>
