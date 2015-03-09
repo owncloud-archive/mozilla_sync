@@ -14,6 +14,7 @@ OC.L10N.register(
     "When activated, only members of this group can access Mozilla Sync." : "Όταν ενεργοποιηθεί, μόνο μέλη αυτής της ομάδας θα μπορούν να έχουν πρόσβαση στο Mozilla Sync.",
     "Sync quota" : "Συγχρονισμός μεριδίων",
     "Set the value to 0 for unlimited quota." : "Ορίστε την τιμή σε 0 για απεριόριστο μερίδιο.",
+    "Auto create sync account" : "Αυτόματη δημιουργία λογαριασμού συγχρονισμού.",
     "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." : "Σφάλμα! Δεν έχετε άδεια να χρησιμοποιήσετε το Mozilla Sync! Πρέπει να είστε μέλος της ομάδας %s.",
     "To set up Mozilla Sync create a new Sync account in Firefox." : "Για να ρυθμίσετε το Mozilla Sync δημιουργήστε έναν νέο λογαρισμό Συγχρονισμού στο Firefox.",
     "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." : "Το Mozilla Sync ρυθμίστηκε, επιπλέον συσκευές μπορούν να προστεθούν μέσω της υπηρεσίας προσθήκης συσκευών του Mozilla ή χειροκίνητα.",
