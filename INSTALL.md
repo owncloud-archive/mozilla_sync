@@ -9,7 +9,7 @@ Changing your Mozilla Sync installation
     4. <a href="#troubleshooting">Troubleshooting</a>
 2. <a href="#uninstall">Uninstall</a>
 3. <a href="#reinstall">Reinstall</a>
-4. <a href="#ppgrade">Upgrade</a>
+4. <a href="#upgrade">Upgrade</a>
 
 Install
 -------
@@ -27,6 +27,23 @@ The installation procedure is as follows:
 3. Set an email address for all users that want to use Mozilla Sync. If the user name is already an email address (e.g. **external_user** app) it will be set automatically when users visit their personal page after installing Mozilla Sync. Note: **Email addresses must be unique!**
 
 ### Sync installation on desktop Firefox
+
+**IMPORTANT:** If you are using Firefox > 29 you need to do this steps befor you can continue with original instructions:
+
+1. Browse to ````about:config```` and press Yes,...
+
+2. Add a new string named
+        **services.sync.tokenServerURI**
+
+3. Fill it with your URL looks like ````http://YOURCLOUDDOMAIN/remote.php/mozilla_sync/````
+
+4. Add a new string named
+        **services.sync.username**
+
+5. Fill it with something other than your Username e.g. blablubb
+
+6. Restart Firefox and continue with below instructions.
+
 
 To init the sync of bookmarks, etc. you have to create an account with a desktop installation of Firefox. If you want to sync other devices (e.q. smart phones) do the following installation steps and than pair your device.
 
