@@ -11,6 +11,7 @@
     "Restrict to group" : "Limitează la un grup",
     "When activated, only members of this group can access Mozilla Sync." : "Cand este activat, doar membrii acestui grup pot accesa Mozilla Sync.",
     "Set the value to 0 for unlimited quota." : "Setati valoarea 0 pentru cota nelimitata.",
+    "Auto create sync account" : "Crează automat contul de sincronizare",
     "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." : "Eroare! Nu aveti dretpul de a folosi Mozilla Sync! Trebuie sa fiti membru al grupului %s.",
     "To set up Mozilla Sync create a new Sync account in Firefox." : "Pentru a pregati Mozilla Sync trebuie sa creati un nou cont Sync in Firefox.",
     "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." : "Mozilla Sync este pregatit, dispozitive suplimentare pot fi adaugate manual sau prin intermediul serviciului Mozilla de imperechere a dispozitivelor.  ",
