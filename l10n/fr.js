@@ -21,7 +21,7 @@ OC.L10N.register(
     "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." : "Erreur ! Vous n'êtes pas autorisé à utiliser Mozilla Sync ! Vous devez être membre du groupe %s.",
     "To use Mozilla Sync enter the credentials in to Mozilla Sync client" : "Pour utiliser Mozilla Sync, entrez les identifiants dans le client Mozilla Sync",
     "To set up Mozilla Sync create a new Sync account in Firefox." : "Pour mettre en place Mozilla Sync, créez un nouveau compte Sync dans Firefox.",
-    "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." : "Mozilla Sync est configuré. Des périphériques supplémentaires peuvent être ajouté manuellement ou avec le service Mozilla d'appairage de périphériques.",
+    "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." : "Mozilla Sync est configuré. Des périphériques supplémentaires peuvent être ajoutés manuellement ou à l'aide du service d'appairage de périphériques de Mozilla.",
     "Email:" : "Adresse courriel :",
     "Has to be unique among all Sync users" : "Doit être unique parmi tous les utilisateurs de Sync",
     "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." : "Erreur ! Un doublon d'adresse e-mail a été détecté ! Les adresses e-mail doivent être uniques pour que Mozilla Sync puisse fonctionner.",
