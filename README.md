@@ -26,7 +26,7 @@ Helpful hints
 
 ### Firefox on Android
 
-Older versions of Firefox on Android used only the ````RC4-SHA```` SSL cipher suite. This has been fixed and "TLS_DHE_RSA_WITH_AES_256_CBC_SHA" and "TLS_DHE_RSA_WITH_AES_128_CBC_SHA" have been added to Firefox 29
+Older versions of Firefox on Android used only the ````RC4-SHA```` SSL cipher suite. This has been fixed and "TLS_DHE_RSA_WITH_AES_256_CBC_SHA" and "TLS_DHE_RSA_WITH_AES_128_CBC_SHA" have been added to Firefox 29.
 
 Mozilla has a document listing the [recommended TLS ciphers](https://wiki.mozilla.org/Security/Server_Side_TLS#Recommended_Ciphersuite).
 
