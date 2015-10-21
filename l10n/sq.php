@@ -1,6 +1,6 @@
 <?php
 $TRANSLATIONS = array(
-"Failed to delete storage" => "Fshirja e depos dështoi",
+"Failed to delete storage" => "Fshirja e depozitës dështoi",
 "Failed to delete user" => "Fshirja e përdoruesit dështoi",
 "Storage deleted" => "Depozita u fshi",
 "User not found" => "S’u gjet përdorues",
