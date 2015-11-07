@@ -24,6 +24,7 @@ OC.L10N.register(
     "Mozilla Sync is set up, additional devices can be added via Mozilla's device pairing service or manually." : "Mozilla Sync es configurat. De periferics suplementaris pòdon èsser apondut manualament o amb lo servici Mozilla d'aparatge de periferics.",
     "Email:" : "Adreça corrièl :",
     "Has to be unique among all Sync users" : "Deu èsser unic demest totes los utilizaires de Sync",
+    "Error! Duplicate email addresses detected! Email addresses need to be unique for Mozilla Sync to work." : "Error ! Un doblon d'adreça e-mail es estat detectat ! Las adreças e-mail devon èsser unicas per que Mozilla Sync pòsca foncionar.",
     "Password:" : "Senhal :",
     "Use your ownCloud account password" : "Utilizatz vòstre senhal ownCloud",
     "Server address:" : "Adreça del servidor :",
