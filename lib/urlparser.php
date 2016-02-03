@@ -27,7 +27,7 @@ class UrlParser {
 	*/
 	public function __construct($url) {
 
-		// Parser is valid at the begining
+		// Parser is valid at the beginning
 		$this->parseValidFlag = true;
 
 		// Parse URL

@@ -48,7 +48,7 @@ v1.2: 2013-12-05
     * Add debug output to ownCloud log
     * Remove PHP warnings from ownCloud log
     * Check for duplicate email addresses
-    * Fix SQLite incompatability
+    * Fix SQLite incompatibility
     * Updated translations
 
 v1.1.1: 2013-11-17
