@@ -1,7 +1,7 @@
 <?php
 $TRANSLATIONS = array(
 "Failed to delete storage" => "Fehler beim Löschen des Speichers",
-"Failed to delete user" => "Fehler beim Löschen des Nutzers",
+"Failed to delete user" => "Fehler beim Löschen des Benutzers",
 "Storage deleted" => "Speicher gelöscht",
 "User not found" => "Nutzer nicht gefunden",
 "Restriction saved" => "Einschränkung gespeichert",
