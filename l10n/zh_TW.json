@@ -15,6 +15,7 @@
     "Sync quota" : "同步配額",
     "Set the value to 0 for unlimited quota." : "如果想解除容量限制，請將這個值設爲 0",
     "Auto create sync account" : "自動建立同步帳號",
+    "When activated, the Mozilla Sync registration API will be disabled and instead accounts will be auto created using a user's existing credentials" : "不使用Mozilla同步API，同步帳號將由使用者已有的憑證建立。",
     "Error! You are not allowed to use Mozilla Sync! You need to be a member of the %s group." : "錯誤！您不被允許使用 Mozilla 同步！您必需成為 %s 群組中的一員。",
     "To use Mozilla Sync enter the credentials in to Mozilla Sync client" : "要使用Mozilla Sync，請在Mozilla Sync客戶端輸入憑證",
     "To set up Mozilla Sync create a new Sync account in Firefox." : "設定 Mozilla Sync 之前請於 Firefox 內創立一個同步帳號。",
