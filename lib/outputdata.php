@@ -18,7 +18,7 @@ namespace OCA\mozilla_sync;
 *  - '0'
 *  - '1'
 *  - 'success'
-*  Or can be used to write json formated output. In this case argument of function write should be an array.
+*  Or can be used to write json formatted output. In this case argument of function write should be an array.
 *
 */
 class OutputData
