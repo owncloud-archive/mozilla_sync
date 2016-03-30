@@ -27,6 +27,7 @@ The installation procedure is as follows:
 3. Set an email address for all users that want to use Mozilla Sync. If the user name is already an email address (e.g. **external_user** app) it will be set automatically when users visit their personal page after installing Mozilla Sync. Note: **Email addresses must be unique!**
 
 ### Sync installation on desktop Firefox
+##### Hint: This will only work in Firefox < 29. But it will remain if you upate it to newest Firefox 34
 
 **IMPORTANT:** If you are using Firefox > 29 you need to do this steps befor you can continue with original instructions:
 
