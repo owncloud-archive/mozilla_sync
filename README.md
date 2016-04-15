@@ -5,13 +5,19 @@ Simple ownCloud app integrating the Mozilla Sync API.
 It allows users to synchronize Firefox data (e.g. bookmarks, passwords, history,...) using their ownCloud server.
 
 ### Content
-1. <a href="#installation">Installation</a>
-2. <a href="#manual">Manual</a>
-3. <a href="#helpful-hints">Helpful hints</a>
+1. <a href="#installation">Warning</a>
+2. <a href="#installation">Installation</a>
+3. <a href="#manual">Manual</a>
+4. <a href="#helpful-hints">Helpful hints</a>
     1. <a href="#firefox-on-android">Firefox on Android</a>
     2. <a href="#ldap">LDAP</a>
-4. <a href="#maintainers">Maintainers</a>
-5. <a href="#api">API</a>
+5. <a href="#maintainers">Maintainers</a>
+6. <a href="#api">API</a>
+
+Warning
+-------
+The Mozilla Sync app only works with **Firefox 44 or older**.
+Mozilla fundamentally changed the Sync protocol and therefore this ownCloud app can not be used with recent versions of Firefox anymore.
 
 Installation
 ------------
