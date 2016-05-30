@@ -1,8 +1,10 @@
 Mozilla Sync app
 ================
 
-Simple ownCloud app integrating the Mozilla Sync API.
+Simple ownCloud app integrating the Mozilla Sync-1.1 API.
 It allows users to synchronize Firefox data (e.g. bookmarks, passwords, history,...) using their ownCloud server.
+It worked only until Firefox 28.    
+Since Firefox 29 only the incompatible [Sync-1.5 server](http://docs.services.mozilla.com/howtos/run-sync-1.5.html#howto-run-sync15) is supported by firefox browsers, but not by this current version of the Mozilla Sync app. :-(
 
 ### Content
 1. <a href="#installation">Installation</a>
