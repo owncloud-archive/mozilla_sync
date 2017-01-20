@@ -589,6 +589,22 @@ class User
 		}
 
 		\OCP\Config::setUserValue($userName, 'mozilla_sync', 'email', $email);
+
+		// If the user has a Sync account set up, update the Sync User representation
+		$query = \OCP\DB::prepare('SELECT `sync_user` FROM `*PREFIX*mozilla_sync_users` WHERE `username` = ?');
+		$result = $query->execute(array($userName));
+
+		$row = $result->fetchRow();
+		if ($row) {
+			$query = \OCP\DB::prepare('UPDATE `*PREFIX*mozilla_sync_users` SET `sync_user` = ? WHERE `username` = ?');
+			$syncUser = Utils::encodeUsername($email);
+			$result = $query->execute(array($syncUser, $userName));
+
+			if ($result === false) {
+				Utils::writeLogDbError("DB: Failed to update encoded username "
+				. $syncUser . " for user " . $userName . ".", $query);
+			}
+		}
 	}
 
 	/**

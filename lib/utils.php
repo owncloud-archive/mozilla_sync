@@ -241,6 +241,19 @@ class Utils
 			return 'storageapi';
 		}
 	}
+
+	/**
+	* @brief Encodes an email address into its Sync representation
+	*/
+	public static function encodeUsername($email) {
+
+		// Make email lower, then convert to UTF8, then compute SHA1, then base32 and lower again
+		$hash = sha1(utf8_encode(strtolower($email)));
+
+		$encoded = Base32::encodeByteStr(pack('H*', $hash));
+
+		return strtolower($encoded);
+	}
 }
 
 /* vim: set ts=4 sw=4 tw=80 noet : */
